@@ -1,0 +1,76 @@
+/******************************************
+***setting defaults  for the calculators***
+******************************************/
+.container {
+  width: 250px;
+}
+
+.calculator {
+  position: relative;
+}
+
+.calculator .name {
+  text-align: center;
+}
+
+.calc {
+  margin-top: 3vh;
+}
+
+.calc .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calc .answer {
+  margin-top: 2vh;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.calc .answer .ans {
+  margin-top: 1.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calc .answer .isPrime #isPrime {
+  font-family: var(--body-font);
+  font-size: var(--label);
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px), (min-width: 1600px) {
+  .container {
+    width: 350px;
+  }
+  .calc .field {
+    width: 120px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .container {
+    width: var(--width);
+  }
+  .calc .answer {
+    margin-top: 5vh;
+  }
+  .calc .answer .ans {
+    margin-top: 2.5vh;
+  }
+}
+/*# sourceMappingURL=prime-checker.css.map */

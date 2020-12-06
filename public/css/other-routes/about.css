@@ -1,0 +1,376 @@
+.container {
+  margin: 20vh auto 10vh;
+  width: var(--width);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 200px;
+      grid-template-columns: auto 200px;
+  -webkit-column-gap: 5vw;
+          column-gap: 5vw;
+}
+
+.about {
+  width: 100%;
+}
+
+.about .text {
+  margin: 8vh auto;
+  width: 100%;
+  font-family: var(--body-font);
+}
+
+.about .text:first-child {
+  margin-top: 1vh;
+}
+
+.about .text .head {
+  font-size: var(--calc-links);
+  font-family: var(--head-font);
+}
+
+.about .text .quote {
+  margin: 1vh 1vw;
+  font-size: var(--paragraph);
+  color: var(--darker-gray);
+}
+
+.about .text .speach {
+  margin: 2vh auto;
+  font-size: var(--paragraph-small);
+  color: var(--main-gray);
+}
+
+.profiles {
+  position: relative;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  overflow: hidden;
+}
+
+.profiles .part {
+  margin: 2vh auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.profiles .part .partName {
+  font-family: var(--head-font);
+  font-size: var(--paragraph);
+  width: 100%;
+  text-align: center;
+}
+
+.profiles .id {
+  position: relative;
+  margin: 3vh auto;
+  width: 160px;
+  height: 160px;
+  background-color: var(--black);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  color: var(--white);
+}
+
+.profiles .id .image {
+  width: 100%;
+  width: 100%;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.profiles .id .photo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.profiles .id .photo .inner {
+  width: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.profiles .id .name {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  font-family: var(--head-font);
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--paragraph);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profiles .id .description {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-family: var(--body-font);
+  text-align: center;
+}
+
+.profiles .id .description .work {
+  font-size: 0;
+  font-weight: 400;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profiles .id .description .workingPlace {
+  font-size: 0;
+  font-weight: 400;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profiles .id .description .links {
+  padding: 0;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 0;
+  font-size: 0;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+.profiles .id .description .links a {
+  color: var(--white);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+.profiles .id .description .links .facebook:hover {
+  color: #4167b2;
+  text-shadow: 0 0 10px rgba(65, 103, 178, 0.5);
+}
+
+.profiles .id .description .links .instagram:hover {
+  color: #f32f6f;
+  text-shadow: 0 0 10px rgba(243, 47, 111, 0.5);
+}
+
+.profiles .id .description .links .youtube:hover {
+  color: #f80000;
+  text-shadow: 0 0 10px rgba(248, 0, 0, 0.5);
+}
+
+.profiles .id:hover {
+  width: 100%;
+  height: 200px;
+}
+
+.profiles .id:hover .image {
+  opacity: 0.4;
+  -webkit-filter: blur(6px);
+          filter: blur(6px);
+}
+
+.profiles .id:hover .photo {
+  width: 40%;
+  height: 40%;
+  bottom: 105px;
+}
+
+.profiles .id:hover .name {
+  bottom: 70px;
+  font-size: var(--paragraph);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.profiles .id:hover .description {
+  bottom: 3px;
+}
+
+.profiles .id:hover .description .work {
+  font-size: 17px;
+}
+
+.profiles .id:hover .description .workingPlace {
+  font-size: 14px;
+}
+
+.profiles .id:hover .description .links {
+  font-size: var(--paragraph);
+  width: 60%;
+}
+
+.madeWithLove {
+  margin: 2vh auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: "nunito", sans-serif;
+  font-size: 18px;
+}
+
+.madeWithLove .fas {
+  margin: auto;
+  cursor: pointer;
+}
+
+.madeWithLove .fa-heart:hover {
+  color: var(--main-red);
+}
+
+.madeWithLove .fa-heart.beat {
+  color: var(--main-red);
+  -webkit-animation: shake 0.2s ease-in-out 0s 2;
+          animation: shake 0.2s ease-in-out 0s 2;
+}
+
+.madeWithLove .fa-music:hover {
+  color: #ce00e1;
+}
+
+.madeWithLove .fa-music.cycle {
+  color: #ce00e1;
+  -webkit-animation: cycle 0.4s ease-in-out 0s;
+          animation: cycle 0.4s ease-in-out 0s;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    font-size: 100%;
+  }
+  25% {
+    font-size: 125%;
+  }
+  75% {
+    font-size: 75%;
+  }
+  100% {
+    font-size: 100%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    font-size: 100%;
+  }
+  25% {
+    font-size: 125%;
+  }
+  75% {
+    font-size: 75%;
+  }
+  100% {
+    font-size: 100%;
+  }
+}
+
+@-webkit-keyframes cycle {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    font-size: 125%;
+  }
+}
+
+@keyframes cycle {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    font-size: 125%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .container {
+    -ms-grid-columns: auto 260px;
+        grid-template-columns: auto 260px;
+  }
+  .profiles .id {
+    width: 210px;
+    height: 210px;
+  }
+  .profiles .id:hover {
+    width: 100%;
+    height: 260px;
+  }
+  .profiles .id:hover .photo {
+    width: 45%;
+    height: 45%;
+    bottom: 120px;
+  }
+  .profiles .id:hover .name {
+    bottom: 80px;
+  }
+  .madeWithLove {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .profiles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+  .profiles .part {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .profiles .id:hover {
+    width: 260px;
+    height: 260px;
+  }
+  .profiles .id:hover .photo {
+    width: 45%;
+    height: 45%;
+    bottom: 120px;
+  }
+  .profiles .id:hover .name {
+    bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profiles {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+/*# sourceMappingURL=about.css.map */

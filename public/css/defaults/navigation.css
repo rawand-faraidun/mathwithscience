@@ -1,0 +1,238 @@
+/********************************
+***header & Navigation Designs***
+********************************/
+header {
+  padding: 10px 5rem 0 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  height: 10vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--white);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+header.header-scroll {
+  height: 8vh;
+  padding: unset 5rem 0 5rem;
+}
+
+header .brand {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-family: var(--brand-font);
+  font-size: var(--label);
+  font-weight: bold;
+}
+
+header .brand a {
+  color: var(--black);
+}
+
+header .brand .logo {
+  width: 18px;
+}
+
+header nav {
+  z-index: 1;
+  width: 35%;
+  font-family: var(--body-font);
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+header .nav-links {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: var(--paragraph);
+}
+
+header .nav-links li {
+  position: relative;
+}
+
+header .nav-links a {
+  color: var(--main-gray);
+  letter-spacing: 2px;
+}
+
+header .nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -2vh;
+  height: 3px;
+  background-color: var(--darker-gray);
+  border-radius: 20px;
+  width: 0%;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+header .nav-links a:hover {
+  color: var(--darker-gray);
+}
+
+header .nav-links a:hover::before {
+  width: 100%;
+}
+
+header .nav-links .active {
+  font-weight: bold;
+}
+
+header .nav-bars {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 24px;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+header .line {
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  height: 3px;
+  width: 96%;
+  background: var(--main-blue);
+  border: none;
+  border-radius: 3px;
+}
+
+.closer {
+  display: none;
+  z-index: -1;
+  position: fixed;
+  top: 12vh;
+  right: 0;
+  width: 0;
+  height: 88vh;
+  background-color: var(--darker-gray);
+  opacity: 0;
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  header nav {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  header {
+    height: 8vh;
+  }
+  .header-scroll {
+    height: 6vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 12vh;
+    width: 100%;
+    padding: 0 7% 0 7%;
+    background-color: var(--mobile-header-bg);
+    border-radius: 0;
+  }
+  header .brand {
+    font-size: 28px;
+  }
+  header .brand .logo {
+    width: 24px;
+  }
+  header nav {
+    -webkit-box-flex: unset;
+        -ms-flex: unset;
+            flex: unset;
+    position: fixed;
+    top: 12vh;
+    height: 88vh;
+    right: -60%;
+    background-color: var(--navLinks-bg);
+    width: 60%;
+  }
+  header .nav-links {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 22px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  header .nav-links a::before {
+    display: none;
+  }
+  header .nav-bars {
+    display: block;
+  }
+  header .line {
+    display: none;
+  }
+  .closer {
+    display: block;
+  }
+}
+
+.header-768-scroll {
+  height: 10vh;
+}
+
+.nav-768-scroll, .closer-768-scroll {
+  top: 10vh;
+  height: 90vh;
+}
+
+.nav-open {
+  right: 0;
+}
+
+.closer-open {
+  width: 100vw;
+  opacity: 0.2;
+}
+
+@media screen and (max-width: 414px) {
+  header nav {
+    right: -70%;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  header {
+    padding: 0 5% 0 5%;
+  }
+}
+/*# sourceMappingURL=navigation.css.map */

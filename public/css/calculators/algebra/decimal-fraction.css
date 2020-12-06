@@ -1,0 +1,121 @@
+/******************************************
+***setting defaults  for the calculators***
+******************************************/
+.calculator {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.calculator .mid {
+  width: 3px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--main-blue)), to(var(--main-green)));
+  background-image: linear-gradient(var(--main-blue), var(--main-green));
+  border: none;
+  border-radius: 2px;
+}
+
+.calc {
+  margin-top: 3vh;
+  font-family: var(--body-font);
+}
+
+.calc .label {
+  margin-top: 0.5vh;
+}
+
+.calc .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calc .answer {
+  margin-top: 2vh;
+}
+
+.calc .answer .ans {
+  margin-top: 1.5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.decimal {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.fraction {
+  width: 250px;
+}
+
+.fraction .fractionInput .field {
+  width: 43px;
+}
+
+.fraction .division {
+  font-size: var(--label);
+}
+
+@media screen and (max-width: 1024px), (min-width: 1600px) {
+  .fraction {
+    width: 300px;
+  }
+  .fraction .fractionInput .field {
+    width: 57px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 11vh auto 12vh auto;
+    width: 350px;
+  }
+  .calculator {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .calculator .mid {
+    width: unset;
+    height: 3px;
+  }
+  .decimal {
+    margin-bottom: 4vh;
+    width: 100%;
+  }
+  .fraction {
+    margin-top: 4vh;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .container {
+    width: var(--width);
+  }
+  .decimal {
+    margin-bottom: 8vh;
+  }
+  .fraction {
+    margin-top: 8vh;
+  }
+}
+/*# sourceMappingURL=decimal-fraction.css.map */

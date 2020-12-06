@@ -1,0 +1,88 @@
+/********************************
+***Calculator controls Designs***
+********************************/
+//placing the calculator
+.container {
+    margin: 5vh auto;
+    width: fit-content;
+}
+.calculator {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 5vh;
+
+    //for part
+    .calc {
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 3vw;
+    }
+
+    //today button in current date
+    .nowBtn {
+        width: fit-content;
+        font-family: var(--body-font);
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    //for input fields
+    .field {
+        width: 60px;
+    }
+
+    //for input dropdown
+    .dropdown {
+        width: 60px;
+        font-family: var(--body-font);
+        font-size: var(--paragraph);
+        border: none;
+        border-bottom: solid 2px var(--main-green);
+
+        option {
+            font-size: 16px;
+        }
+    }
+}
+
+//the results part
+.result {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5vw;
+
+    //for each column
+    .column {
+        display: grid;
+        row-gap: 1vh;
+    }
+
+    //for each answer
+    .answer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    //result text fields
+    .answerField {
+        width: 100px;
+    }
+}
+
+//for  mobile
+@media screen and (max-width: 500px) {
+    .container {
+        width: var(--width);
+        .calc {
+            .label {
+                display: none;
+            }
+        }
+    }
+    .result {
+        grid-template-columns: auto;
+        row-gap: 4vh;
+    }
+}

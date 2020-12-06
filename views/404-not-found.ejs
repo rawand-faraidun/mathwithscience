@@ -1,0 +1,25 @@
+<%# 404-NOT-FOUND.EJS variables %>
+<%# aboutDoc: the texts in about sections %>
+
+<%- include('defaults/header') %>
+
+
+
+
+<section class="container alert404">
+
+    <h1 class="number404">404</h1>
+    <h2 class="text404">can not find "<code class="url"><%= text404 %></code>" page</h2>
+
+    <div class="links">
+        <a href="/" class="link">Home Page</a>
+        <a href="/calculators" class="link">Calculators</a>
+    </div>
+
+</section>
+
+
+
+
+
+<%- include('defaults/footer') %>

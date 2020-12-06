@@ -1,0 +1,104 @@
+/******************************************
+***setting defaults  for the calculators***
+******************************************/
+
+//part holders
+.container {
+    width: 350px;
+}
+//main calclator of the page
+.calculator {
+    position: relative;
+}
+
+//constrols
+.controls {
+    display: flex;
+    justify-content: space-between;
+
+    //method label
+    .name {
+        padding-top: 5px;
+    }
+
+    //method dropdown
+    .dropdown {
+        padding: 3px;
+        border: none;
+        height: 35px;
+        font-family: var(--body-font);
+        font-size: var(--paragraph);
+        background-color: var(--dropdown-gray);
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+
+        //options of the dropdown
+        option {
+            font-size: var(--paragraph-small);
+        }
+
+        //checked option of the dropdown
+        option:checked {
+            background-color: var(--dropdown-checked-gray);
+        }
+    }
+}
+
+//calculation area
+.calc {
+    margin-top: 3vh;
+    width: 100%;
+
+    //input parts of the page
+    .calculationArea {
+        margin-top: 2vh;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        column-gap: 3rem;
+        row-gap: 4vh;
+        width: 100%;
+    }
+
+    //modifing field width
+    .field{
+        width: 100%;
+    }
+}
+
+//for screens bigger than 1600px
+@media screen and (min-width: 1600px) {
+    .container {
+        width: 450px;
+    }
+    .controls {
+        .controlMethod {
+            padding-top: 10px;
+        }
+        .dropdown {
+            height: 45px;
+        }
+    }
+    .calc {
+        margin-top: 4vh;
+        .calculationArea {
+            margin-top: 3vh;
+            column-gap: 5rem;
+            row-gap: 5vh;
+        }
+    }
+}
+
+//for screens smaller than 414px
+@media screen and (max-width: 414px){
+    .container{
+        width: var(--width);
+    }
+    .controls{
+        .dropdown{
+            font-size: var(--paragraph-small);
+        }
+    }
+}

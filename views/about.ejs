@@ -1,0 +1,158 @@
+<%# ABOUT.EJS variables %>
+<%# aboutDoc: the texts in about sections %>
+
+<%- include('defaults/header') %>
+
+
+
+
+<!--page content-->
+<section class="container">
+
+    <!--the about text-->
+    <section class="about">
+
+        <% aboutDoc.forEach(element => { %>
+
+            <!--text parts-->
+            <div class="text">
+                <!--part head-->
+                <h2 class="head"><%= element.heading %></h2>
+
+                <!--part quote-->
+                <h3 class="quote">"<%= element.quote %>"</h3>
+
+                <!--part speaches-->
+                <% element.speaches.forEach(speach =>{%>
+                    <p class="speach"><%= speach.replace('```', '"') %></p>
+                <%}) %>
+            </div>
+        <% }) %>
+
+    </section>
+
+    <section class="profiles">
+
+        <!--the Helpers part-->
+        <div class="part">
+
+            <!--title of the part-->
+            <div class="partName">
+                <h2>With help of: </h2>
+            </div>
+
+            <% aboutHelpers.forEach(helper => { %>
+                <div class="id">
+                    <img src="images/profiles/<%= helper.name.toLowerCase().replace(/\s+/g, '-') %>.jpg" alt="" class="image">
+                    <div class="photo">
+                        <img src="images/profiles/<%= helper.name.toLowerCase().replace(/\s+/g, '-') %>.jpg" alt="" class="inner">
+                    </div>
+                    <div class="name"><%= helper.name %></div>
+                    <div class="description">
+                        <h3 class="work"><%= helper.work %></h3>
+                        <h4 class="workingPlace"><%= helper.workingPlace %></h4>
+                        <ul class="links">
+                            <% helper.socials.forEach(link => { %>
+
+                                <%# cheking if the link is FACEBOOK %> 
+                                <a href="<%= link %>" target="_blank" <% if (link.includes("facebook")) { %>
+                                    class="facebook">
+                                    <i class="fab fa-facebook-f"></i>
+
+                                    <%# cheking if the link is INSTAGRAM %> 
+                                    <% } else if (link.includes("instagram")) { %>
+                                        class="instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    
+                                    <%# CHEKING if the link is YOUTUBE %> 
+                                    <% } else if (link.includes("youtube")) { %>
+                                        class="youtube">
+                                        <i class="fab fa-youtube"></i>
+                                    <% } %>
+
+                                </a>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+
+            <% }) %>
+        </div>
+
+
+        <!--the Creators part-->
+        <div class="part">
+
+            <!--title of the part-->
+            <div class="partName">
+                <h2>Creator:</h2>
+            </div>
+
+            <% aboutCreator.forEach(creator => { %>
+                <div class="id">
+                    <img src="images/profiles/<%= creator.name.toLowerCase().replace(/\s+/g, '-') %>.jpg" alt="" class="image">
+                    <div class="photo">
+                        <img src="images/profiles/<%= creator.name.toLowerCase().replace(/\s+/g, '-') %>.jpg" alt="" class="inner">
+                    </div>
+                    <div class="name"><%= creator.name %></div>
+                    <div class="description">
+                        <h3 class="work"><%= creator.work %></h3>
+                        <h4 class="workingPlace"><%= creator.workingPlace %></h4>
+                        <ul class="links">
+                            <% creator.socials.forEach(link => { %>
+
+                                <%# cheking if the link is FACEBOOK %> 
+                                <a href="<%= link %>" target="_blank" <% if (link.includes("facebook")) { %>
+                                    class="facebook">
+                                    <i class="fab fa-facebook-f"></i>
+
+                                    <%# cheking if the link is INSTAGRAM %> 
+                                    <% } else if (link.includes("instagram")) { %>
+                                        class="instagram">
+                                        <i class="fab fa-instagram"></i>
+                                    
+                                    <%# CHEKING if the link is YOUTUBE %> 
+                                    <% } else if (link.includes("youtube")) { %>
+                                        class="youtube">
+                                        <i class="fab fa-youtube"></i>
+                                    <% } %>
+
+                                </a>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+
+            <% }) %>
+        </div>
+
+    </section>
+
+</section>
+
+
+
+<div class="madeWithLove">
+    <h5>Made with <i class="fas fa-heart" onclick="beat(this)"></i> and <i class="fas fa-music" onclick="cycle(this)"></i>, just for you.</h5>
+
+    <script>
+        //beat animation
+        function beat(shape){
+            shape.classList.add("beat");
+            setTimeout(function(){ 
+                shape.classList.remove("beat");
+            }, 800);
+        }
+        //cycle animation
+        function cycle(shape){
+            shape.classList.add("cycle");
+            setTimeout(function(){ 
+                shape.classList.remove("cycle");
+            }, 500);
+        }
+    </script>
+</div>
+
+
+
+<%- include('defaults/footer') %>

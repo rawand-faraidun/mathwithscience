@@ -1,0 +1,60 @@
+<%# GEOMETRY.EJS variables %>
+<%# calc: calculator section of the page %>
+<%# calcAnswer: name for the answer part of the page %>
+
+<%- include('../defaults/header') %>
+
+<%- include('../pageTitle-backPage') %>
+
+
+
+
+
+<%# text formats file for Unit convesion %>
+<script type="text/javascript" src="javascript/calculators/unit-conversion/formats.js" defer=""></script>
+
+<!--contains what is shown in the page-->
+<section class="container">
+
+    <!--calculator-->
+    <section id="calculator" class="calculator">
+
+        <%# .replace(/\s+|-|'|&|[0-9]/g, '').replace('/', '') %> 
+        <%# this is for removing (SPACES, DASHES, COLONS, UNDERSCORES, & SYMBOLS, NUMBERS, DIVID symbols) %> 
+
+            <% calc.forEach(element => { %>
+            <div class="calc">
+                <label class="label"><%= element.calcName %></label>
+                <input type="number" id="<%= element.calcName.toLowerCase().replace(/\s+|-|'|_|&|[0-9]/g, '').replace('/', '') %>" autocomplete="off"
+                    class="field" placeholder="<%= element.calcPlaceholder %>"
+                    oninput="in<%= element.calcName.replace(/\s+/g, '').replace(/\s+|-|'|_|&|[0-9]/g, '').replace('/', '') %>(this);removeMessage(this)">
+            </div>
+            <% }) %>
+
+    </section>
+
+    <div class="note" id="note">
+        <%# if it was DEGITAL STORAGE page, we show this caution %> 
+        <% if (title.toLowerCase() == "digital storage") { %>
+            <p>Use as both convertors</p>
+            <p>1 Kilobyte = 1000 Byte</p>
+            <p>1 Kilobit = 1000 Bit</p>
+        <% } %>
+        <p>Note: <i>N</i>e<i>Y</i> = <i>N</i> x 10<span class="sup"><i>Y</i></span> <br> 1e-9 = 1 x 10<span
+                class="sup"><i>-9</i></span></p>
+        <p id="tellHover">Hover to see full number</p>
+        <p id="tellHold">Hold or tap to see full number</p>
+    </div>
+
+</section>
+
+
+<!--COPIED pop-up-->
+<div class="copied" id="copied">
+    <h6>Copied!</h6>
+</div>
+
+
+
+
+<%- include('../defaults/footer') %>

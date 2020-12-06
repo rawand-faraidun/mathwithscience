@@ -1,0 +1,147 @@
+.container {
+  width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: var(--width);
+  }
+}
+
+.alert {
+  position: relative;
+  padding: 1.5vh 3vh;
+  margin-bottom: 3vh;
+  font-family: var(--body-font);
+  font-weight: 700;
+  color: var(--white);
+  border-radius: calc(var(--paragraph-small) / 2);
+}
+
+.alert.success {
+  background-color: rgba(0, 138, 99, 0.83);
+}
+
+.alert.failed {
+  background-color: rgba(187, 0, 0, 0.83);
+}
+
+.contact {
+  padding: 3vh;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: calc(var(--paragraph-small) / 2);
+}
+
+.contact .logo {
+  margin-bottom: 2vh;
+  width: 50px;
+}
+
+.contact .heading h1 {
+  font-family: var(--head-font);
+  font-size: var(--calc-links);
+}
+
+.contact .heading h2 {
+  font-family: var(--body-font);
+  font-size: calc(var(--label) - 2px);
+}
+
+.contactForm {
+  margin-top: 5vh;
+  width: 100%;
+}
+
+.contactForm .input {
+  margin-top: 1.5vh;
+  padding: calc(var(--paragraph-small) / 2);
+  border: 1px solid var(--darker-gray);
+  border-radius: calc(var(--paragraph-small) / 2);
+}
+
+.contactForm .input label {
+  text-align: left;
+  display: block;
+  font-family: var(--body-font);
+  font-size: calc(var(--paragraph-small) - 4px);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--darker-gray);
+}
+
+.contactForm .input input,
+.contactForm .input textarea {
+  width: 100%;
+  border: none;
+  background: none;
+  font-family: var(--body-font);
+  font-size: var(--paragraph);
+  color: var(--black);
+}
+
+.contactForm .input textarea {
+  resize: vertical;
+  outline: none;
+}
+
+.contactForm .radio {
+  border: none;
+  overflow: hidden;
+}
+
+.contactForm .radio #radioText {
+  margin-bottom: 1.5vh;
+  text-align: center;
+  text-transform: none;
+  font-size: calc(var(--paragraph) - 2px);
+  color: var(--black);
+}
+
+.contactForm .radio .radios {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.contactForm .radio .radios label {
+  font-size: var(--paragraph-small);
+}
+
+.contactForm .radio .radios label:nth-child(2) {
+  margin-right: var(--paragraph-small);
+}
+
+.contactForm .radio .radios input {
+  margin-top: calc(var(--paragraph-small) / 3.5);
+  width: var(--paragraph);
+  color: var(--darker-gray);
+}
+
+.contactForm .submitBtn {
+  margin-top: 2vh;
+  padding: 10px 0;
+  width: 100%;
+  font-size: var(--paragraph);
+  font-weight: 700;
+  color: var(--white);
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--main-blue)), to(var(--main-green)));
+  background-image: linear-gradient(to right, var(--main-blue), var(--main-green));
+  border: none;
+  border-radius: calc(var(--paragraph-small) / 2);
+  outline: none;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.contactForm .submitBtn:hover {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+}
+/*# sourceMappingURL=contact.css.map */

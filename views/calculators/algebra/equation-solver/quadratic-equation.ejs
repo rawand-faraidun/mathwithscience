@@ -1,0 +1,59 @@
+<%- include('../../../defaults/header') %>
+
+<%- include('../../../pageTitle-backPage') %>
+
+
+
+<!--working area-->
+<section class="container">
+    <!--calculator-->
+    <div id="calculator" class="calculator">
+
+        <!--calculator-->
+        <div class="calc">
+
+            <!--Input parts-->
+            <div class="equation">
+                <h3 class="name">Input the Values</h3>
+                <!--equation-->
+                <h5 class="textLines">
+                    <!--ax² + bx + c = 0-->
+                    <input type="number" id="number1" class="field fieldQuadratic" placeholder="a" autocomplete="off"  oninput="calculate()">
+                    x<span class="sup">2</span>+<input type="number" id="number2" class="field fieldQuadratic" placeholder="b" autocomplete="off"  oninput="calculate()">
+                    x+<input type="number" id="number3" class="field fieldQuadratic" placeholder="c" autocomplete="off"  oninput="calculate()">= 0
+                </h5>
+            </div>
+        
+            <!--output-->
+            <div class="answer">
+                <h3 class="name">Solution:</h3>
+                <!--first x answer-->
+                <div class="ans">
+                    <h5 class="textLines">x<span class="sub">1</span> = </h5>
+                    <input type="number" id="answer1" class="field answerField" autocomplete="off" placeholder=""  readonly>
+                </div>
+                <!--second x answer-->
+                <div class="ans">
+                    <h5 class="textLines">x<span class="sub">2</span> = </h5>
+                    <input type="number" id="answer2" class="field answerField" autocomplete="off" placeholder=""  readonly>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <!--this note appers when a is 0, so they can use quadratic equation insetead of Cubic-->
+            <p id="note">While you are not using "a", use <a href="/calculators/algebra/equation-solver/linear-equation">Linear Equation</a> instead.</p>
+        </div>
+    </div>
+
+    <!--Desmos Graph API-->
+    <script src="https://www.desmos.com/api/v1.4/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+    <!--graph place-->
+    <div id="graph" class="graph"></div>
+</section>
+
+
+
+
+
+<%- include('../../../defaults/footer') %>

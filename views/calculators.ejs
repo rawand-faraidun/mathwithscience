@@ -1,0 +1,46 @@
+<%- include('defaults/header') %>
+
+<%- include('pageTitle-backPage') %>
+
+<%# CALCULATORS.EJS variables %>
+<%# title: the name of the page, used in HEADER.EJS in the page title, and the top of the page to show the page title, uesd in pageTitle-backPage page %>
+<%# css: (WORKS IN HEADER.EJS) used to choose what css page is needed in this page %>
+<%# Calculators: used to get an array of calculators must be shown in this page %>
+<%# thisPageURL: the path of this page, used in the calculators links %>
+<%# backName: name of the Previous page, used in the back button %>
+
+
+
+
+
+<section class="container">
+
+    <!--Calculators Section-->
+    <!--alphabets are for placing, designed in calculator.scss-->
+    <section class="calculators" id="calculators">
+
+        <!--showing all available Calculators-->
+        <% calculators.forEach(calc => { %>
+        <div class="calc">
+            <h2 class="calcLink">
+                <%# cheking if the page was not ready and its description was COMMING SOON, then it must not have a link %>
+                <a <% if (calc.description != "Cooming Soon*") { %> href="<%= thisPageURL %><%= calc.name.toLowerCase().replace(/\s+/g, '-') %>
+                        <% } %> 
+                        "><%= calc.name %>
+                </a></h2>
+
+            <p class="calcParagraph <% if(calc.description === "Cooming Soon*"){ %> commingSoon <% } %> ">
+                <%= calc.description %></p>
+
+        </div>
+        <% }); %>
+
+    </section>
+
+</section>
+
+
+
+
+
+<%- include('defaults/footer') %>

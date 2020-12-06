@@ -1,0 +1,168 @@
+//added API fonts
+@import url("https://fonts.googleapis.com/css?family=Manjari:400,700|Nunito:300,400,700|Open+Sans+Condensed:300|Satisfy&display=swap");
+
+/****************
+***used fonts***
+****************/
+:root {
+    --head-font: "Manjari", sans-serif; //mostly used for the header of the content
+    --body-font: "Nunito", sans-serif; //mostly used for body of the content and links
+    --calculator-font: "Open Sans Condensed", sans-serif; //used for the calculators
+    --brand-font: "Satisfy", cursive; //used for the brand logo font
+}
+
+////////////////
+
+/****************************
+***used paddings and width***
+****************************/
+
+:root {
+    --padding: 2% 5rem; //mostly used for the header of the content
+    --width: calc(100% - 10rem);
+}
+
+@media screen and (max-width: 768px) {
+    :root{
+        --padding: 2% 7%;
+        --width: 86%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    :root{
+        --padding: 2% 5%;
+        --width: 90%;
+    }
+}
+
+
+////////////////
+
+/****************
+***used colors***
+****************/
+:root {
+    //page body color
+    --body-color: #fcfcfc;
+
+    //the two main colors
+    --main-green: #00cc80;
+    --main-blue: #00c2ff;
+
+    //text and most used colors
+    --black: #000000; //mostly used for text colors, mostly headers
+    --white: #ffffff; // used in text colors in the other backgrounds
+
+    --main-gray: #5d5d5d; //mostly used after black, mostly bodies
+    --darker-gray: #313131; //for answers textfields & text hovers
+
+    --main-red: #e10000; //used in error or warnings
+
+    //social media colors
+    --facebook-bg: #4167b2;
+    --instagram-bg: #f32f6f;
+    --google-bg: #f80000;
+
+    //dropdown colors
+    --dropdown-gray: #d1d1d1;
+    --dropdown-checked-gray: #afafaf;
+
+    //mobile header colors
+    --mobile-header-bg: #b2ecff;
+    --navLinks-bg: #e1ffff;
+
+    //footer colors
+    --footer-bg: #4d4d4d;
+    --copyright-text: #a9a9a9;
+}
+
+////////////////
+
+/********************
+***used font sizes***
+********************/
+:root {
+    //mostly used for page titles
+    --page-title: 35px;
+
+    //used for each calculator part title
+    --calc-links: 30px;
+
+    //used for most of the body texts
+    --paragraph-small: 16px; //small paragraphs
+    --paragraph: 18px; //most paragraphs
+    --label: 20px; //textfield labels
+    --name: 28px; //for each part name
+    --input: 18px; //for inputs
+}
+
+@media screen and (min-width: 1600px) {
+    :root {
+        --page-title: 45px;
+        --calc-links: 35px;
+        --paragraph-small: 18px;
+        --paragraph: 22px;
+        --label: 28px;
+        --name: 35px;
+        --input: 25px;
+    }
+}
+
+//////////
+//////////
+
+/******************
+***Page Defaults***
+******************/
+//Defaults
+body {
+    zoom: 100%;
+    overflow-x: hidden;
+    background-color: var(--body-color);
+    a {
+        text-decoration: none;
+    }
+    ul {
+        list-style: none;
+    }
+}
+* {
+    margin: 0px;
+    //padding: 0px;
+    box-sizing: border-box;
+}
+//defaults
+
+//this is for removing arrow keys for inputs
+input{
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+
+
+
+///////////////
+///CONTAINER///
+///////////////
+
+.container {
+    margin: 15vh auto;
+    width: var(--width);
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        min-height: 50vh;
+    }
+}

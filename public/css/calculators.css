@@ -1,0 +1,336 @@
+/**********************
+***title and heading***
+**********************/
+.title {
+  margin: 18vh auto 3rem;
+  width: var(--width);
+  font-family: var(--head-font);
+}
+
+.title .pageTitle {
+  font-size: var(--page-title);
+  font-weight: 400;
+  display: inline-block;
+}
+
+.title .pageTitle::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: var(--main-green);
+  border-radius: 2px;
+  width: 100%;
+}
+
+.title .back {
+  margin-top: 1vh;
+}
+
+.title .back .backName {
+  padding: 5px;
+  display: inline;
+  position: absolute;
+  font-size: 0px;
+  color: var(--main-gray);
+  white-space: nowrap;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.title .back .backArrow .fa-arrow-circle-left {
+  color: var(--main-gray);
+  font-size: var(--calc-links);
+  opacity: 0.5;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.title .back .backArrow:hover .fa-arrow-circle-left {
+  color: var(--main-green);
+  opacity: 1;
+  -webkit-transform: none;
+          transform: none;
+}
+
+.title .back .backArrow:hover + .backName {
+  opacity: 0.3;
+  font-size: var(--calc-links);
+}
+
+/*************************
+***Calculators Sections***
+*************************/
+.container {
+  margin: 8vh auto;
+  min-height: 45vh;
+}
+
+.calculators {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc(33% - 3rem))[3];
+      grid-template-columns: repeat(3, calc(33% - 3rem));
+  -ms-grid-rows: ()[auto-fill];
+      grid-template-rows: repeat(auto-fill);
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
+  row-gap: 4vh;
+}
+
+.calculators .calc {
+  position: relative;
+  height: 100px;
+}
+
+.calculators .calc .calcLink {
+  font-family: var(--head-font);
+  font-size: var(--calc-links);
+  font-weight: 400;
+}
+
+.calculators .calc .calcLink a {
+  color: var(--black);
+}
+
+.calculators .calc .calcLink a:hover {
+  font-weight: bold;
+}
+
+.calculators .calc .calcLink::after {
+  position: absolute;
+  top: var(--page-title);
+  left: 0;
+  content: "";
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: var(--main-gray);
+}
+
+.calculators .calc .calcParagraph {
+  margin-top: 0.5em;
+  color: var(--main-gray);
+  font-family: var(--body-font);
+  font-size: var(--paragraph);
+  text-align: justify;
+}
+
+.calculators .calc .commingSoon {
+  color: var(--main-red);
+}
+
+.sup {
+  vertical-align: super;
+  font-size: 65%;
+}
+
+.sub {
+  vertical-align: sub;
+  font-size: 65%;
+}
+
+.copied {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px 10px 4px 10px;
+  font-family: var(--head-font);
+  font-size: var(--calc-links);
+  color: var(--white);
+  background-color: rgba(88, 88, 88, 0.95);
+  border-radius: 10px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.copied.block {
+  display: block;
+}
+
+.copied.show {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .copied {
+    top: 30%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .calculators {
+    -ms-grid-columns: (calc(33% - 6.4rem))[3];
+        grid-template-columns: repeat(3, calc(33% - 6.4rem));
+    -webkit-column-gap: 10rem;
+            column-gap: 10rem;
+  }
+  .calculators .calc {
+    height: 125px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .calculators {
+    -ms-grid-columns: (calc(50% - 2.5rem))[2];
+        grid-template-columns: repeat(2, calc(50% - 2.5rem));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .calculators {
+    -ms-grid-columns: (auto)[1];
+        grid-template-columns: repeat(1, auto);
+  }
+  .calculators .calc {
+    height: 120px;
+  }
+}
+
+/*********************
+***Calculator Pages***
+*********************/
+.label {
+  font-family: var(--body-font);
+  font-size: var(--label);
+}
+
+.calculator .calc .field:hover + .messageBox {
+  opacity: 1;
+}
+
+.calculator .name {
+  font-family: var(--head-font);
+  font-size: var(--name);
+}
+
+.field {
+  width: 100px;
+  padding-top: 3px;
+  padding-left: 5px;
+  font-size: var(--input);
+  border: none;
+  border-bottom: solid 2px var(--main-green);
+}
+
+.field.error {
+  color: var(--main-red);
+  -webkit-animation: shake 0.2s ease-in-out 0s 2;
+          animation: shake 0.2s ease-in-out 0s 2;
+  border-color: var(--main-red);
+}
+
+.field.answerField {
+  border-color: var(--main-blue);
+}
+
+.messageBox {
+  opacity: 0;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+  padding: 5px 10px;
+  font-family: var(--body-font);
+  font-size: var(--input);
+  white-space: nowrap;
+  color: var(--darker-gray);
+  border-radius: 5px;
+  border: 2px solid rgba(0, 203, 127, 0.4);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.messageBox::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 8px;
+  width: 0;
+  height: 0;
+  border-width: 9px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 203, 127, 0.4) transparent;
+}
+
+.messageBox:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    margin-right: 0rem;
+  }
+  25% {
+    margin-right: 0.5rem;
+  }
+  75% {
+    margin-right: -0.5rem;
+  }
+  100% {
+    margin-right: 0rem;
+  }
+}
+
+@keyframes shake {
+  0% {
+    margin-right: 0rem;
+  }
+  25% {
+    margin-right: 0.5rem;
+  }
+  75% {
+    margin-right: -0.5rem;
+  }
+  100% {
+    margin-right: 0rem;
+  }
+}
+
+.note {
+  margin-top: 9vh;
+  font-size: var(--paragraph-small);
+  font-family: var(--body-font);
+  color: var(--main-gray);
+}
+
+.note #tellHover {
+  display: block;
+}
+
+.note #tellHold {
+  display: none;
+}
+
+@media screen and (min-width: 1600px) {
+  .field {
+    width: 130px;
+  }
+  .messageBox {
+    top: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .field {
+    width: 120px;
+  }
+  .note #tellHover {
+    display: none;
+  }
+  .note #tellHold {
+    display: block;
+  }
+}
+/*# sourceMappingURL=calculators.css.map */

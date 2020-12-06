@@ -1,0 +1,98 @@
+/********************************
+***Calculator controls Designs***
+********************************/
+.container {
+  margin: 5vh auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.calculator {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  row-gap: 5vh;
+}
+
+.calculator .calc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  -webkit-column-gap: 3vw;
+          column-gap: 3vw;
+}
+
+.calculator .nowBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-family: var(--body-font);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calculator .field {
+  width: 60px;
+}
+
+.calculator .dropdown {
+  width: 60px;
+  font-family: var(--body-font);
+  font-size: var(--paragraph);
+  border: none;
+  border-bottom: solid 2px var(--main-green);
+}
+
+.calculator .dropdown option {
+  font-size: 16px;
+}
+
+.result {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  -webkit-column-gap: 5vw;
+          column-gap: 5vw;
+}
+
+.result .column {
+  display: -ms-grid;
+  display: grid;
+  row-gap: 1vh;
+}
+
+.result .answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.result .answerField {
+  width: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: var(--width);
+  }
+  .container .calc .label {
+    display: none;
+  }
+  .result {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    row-gap: 4vh;
+  }
+}
+/*# sourceMappingURL=miscellaneous.css.map */

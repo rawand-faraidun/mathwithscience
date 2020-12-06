@@ -1,0 +1,82 @@
+<%# GEOMETRY.EJS variables %>
+<%# calc: calculator section of the page %>
+<%# calcAnswer: name for the answer part of the page %>
+
+<%- include('../defaults/header') %>
+
+<%- include('../pageTitle-backPage') %>
+
+
+
+
+
+<section class="container">
+    <section class="calculator">
+
+
+        <%# getting calc details %>
+        <% calc.calcNames.forEach((name, i) => { %>
+        <div class="<%= name %>">
+            <%# showing part name %>
+            <h3 class="name"><%= name %>:</h3>
+
+            <div class="calc">
+
+                <%# getting it's input fields %>
+                <% calc.calcInputs.calcIn.forEach(input => { %>
+                <div class="input">
+                    <label class="label"><%= input %>: </label>
+
+                    <%# cheking if the input is dropdown %>
+                    <% if (calc.calcInputs.calcDrop.includes(input.toLowerCase())) { %>
+                    <select class="dropdown" id="<%= input.toLowerCase() %><%= i %>" onchange="get<%= title %>()">
+                        <%# if so, getting its options %>
+                        <% calc.calcInputs.calcDropList.forEach((option, number) => { %>
+                        <option value="<%= number+1 %>"><%= option %></option>
+                        <% }) %>
+
+                    </select>
+                    <%# if not dropdown, so its an input field %>
+                    <% }else { %>
+                    <input type="number" class="field" id="<%= input.toLowerCase() %><%= i %>" placeholder="<%= input %>" oninput="get<%= title %>(this)">
+                    <% } %>
+                </div>
+                <% }) %>
+
+                <%# checking if this calc has get now button %>
+                <% if (calc.calcGetNow.calcGetNowHave.includes(name.toLowerCase())) { %>
+                <label class="nowBtn" onclick="get<%= calc.calcGetNow.calcGetNowName %><%= i %>(); get<%= title %>()"><%= calc.calcGetNow.calcGetNowName %></label>
+                <% } %>
+            </div>
+
+        </div>
+        <% }) %>
+
+
+        <%# showing the results %>
+        <div class="result" id="resultSection">
+            <%# adding columns for them %>
+            <div class="column">
+                <% calc.calcAnswers.forEach((answer, i) => { %>
+
+                <%# shwoing each answer part %>
+                <div class="answer">
+                    <label class="label"><%= answer %>:</label>
+                    <input type="number" class="field answerField" id="result<%= answer %>" readonly>
+                </div>
+
+                <%# changing the column for each 3 %>
+                <% if ((i+1)%3 == 0) { %>
+                </div>
+                <div class="column">
+                <% } %>
+            <% }) %>
+            </div>
+        </div>
+
+
+    </section>
+</section>
+
+
+<%- include('../defaults/footer') %>

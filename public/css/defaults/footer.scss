@@ -1,0 +1,102 @@
+/*******************
+***Footer Designs***
+*******************/
+
+//Page footer
+footer {
+    margin-top: 10vh;
+    position: relative;
+    height: 170px;
+    width: 100%;
+    font-family: var(--body-font);
+    color: var(--white);
+    background-color: var(--footer-bg);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+    //brand and logo part
+    .brand {
+        position: absolute;
+        top: 30px;
+        left: 5rem;
+        font-family: var(--brand-font);
+        font-size: var(--label);
+        font-weight: bold;
+        a {
+            color: var(--white);
+        }
+
+        //web logo
+        .logo {
+            width: 18px;
+        }
+    }
+
+    //the rigthside links
+    .links {
+        position: absolute;
+        bottom: 40px;
+        right: 5rem;
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+        font-size: var(--paragraph);
+
+        a {
+            color: var(--white);
+        }
+    }
+
+    //page copyright details
+    .copyright {
+        position: absolute;
+        bottom: 3px;
+        width: 100%;
+        font-size: 14px;
+        text-align: center;
+        color: var(--copyright-text);
+    }
+}
+
+//for ipad
+@media screen and (min-width: 1600px) {
+    footer {
+        height: 200px;
+    }
+}
+
+//for screen smaller than 1200
+@media screen and (max-width: 1200px) {
+    footer {
+        .links {
+            width: 35%;
+        }
+    }
+}
+
+//for ipad
+@media screen and (max-width: 768px) {
+    footer {
+        height: 200px;
+        .brand {
+            left: 7%;
+        }
+        .links {
+            right: 50%;
+            transform: translateX(50%);
+            width: 86%;
+        }
+    }
+}
+
+//for mobiles
+@media screen and (max-width: 320px) {
+    footer {
+        .brand {
+            left: 5%;
+        }
+        .links {
+            width: 90%;
+        }
+    }
+}

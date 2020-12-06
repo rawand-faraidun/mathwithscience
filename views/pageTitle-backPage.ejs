@@ -1,0 +1,18 @@
+<%# pageTitle-backPage.ejs variables %> 
+<%# title: shows the page title %> 
+<%# backURL: url of the Previous page %> 
+<%# backName: name of the Previous page %> 
+
+
+<!--Calculator title and path on top of page-->
+<div class="title">
+    <h1 class="pageTitle"><%= title %></h1>
+
+    <% //checking if not Calculators main page, then add back button %>
+    <% if (title.toLowerCase() != "calculators") { %>
+    <div class="back">
+        <a href="<%= backURL %>" class="backArrow"><i class="fas fa-arrow-circle-left"></i></a>
+        <h4 class="backName"><%= backName %></h4>
+    </div>
+    <% } %>
+</div>

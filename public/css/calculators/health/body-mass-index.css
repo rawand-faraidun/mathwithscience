@@ -1,0 +1,144 @@
+.container {
+  margin: 14vh auto 20vh;
+  width: 60%;
+}
+
+.calculator {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.calculator .calculation-area {
+  width: 350px;
+}
+
+.calculator .calculation-area .calc {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  row-gap: 3vh;
+}
+
+.calculator .calculation-area .hidden {
+  display: none;
+}
+
+.controls {
+  margin-bottom: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.controls .name {
+  padding-top: 5px;
+}
+
+.controls .dropdown {
+  padding: 3px;
+  border: none;
+  font-family: var(--body-font);
+  font-size: var(--paragraph);
+  background-color: var(--dropdown-gray);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+.controls .dropdown option {
+  font-size: var(--paragraph-small);
+}
+
+.controls .dropdown option:checked {
+  background-color: var(--dropdown-checked-gray);
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.input .label {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.input .field {
+  margin-left: 1vw;
+  width: 100px;
+}
+
+.analyze {
+  font-family: var(--body-font);
+  font-size: var(--paragraph-small);
+}
+
+.analyze h2 {
+  margin-bottom: 1vh;
+  font-size: --label;
+}
+
+.analyze h3 {
+  font-weight: 400;
+}
+
+@media screen and (max-width: 1024px), (min-width: 1600px) {
+  .calculator .calculation-area {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    margin: 10vh auto 18vh;
+    width: var(--width);
+  }
+  .calculator {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .analyze {
+    margin-top: 5vh;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .calculator {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .calculator .calculation-area {
+    width: 100%;
+  }
+  .controls h3 {
+    font-size: 22px;
+  }
+  .controls .dropdown {
+    font-size: var(--paragraph-small);
+  }
+  .input .field {
+    margin-left: 2vw;
+  }
+}
+/*# sourceMappingURL=body-mass-index.css.map */

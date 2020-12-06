@@ -1,0 +1,79 @@
+<%# CALCULATORS.EJS variables %>
+<%# title: the name of the page, used in the page title %>
+<%# css: used to chooese which css file used in this page %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | Math with Science</title>
+    <base href="/">
+    <link rel="shortcut icon" href="images/logo25x25.png" type="image/png">
+    <meta name="description" content="Math with Science is a website to help anyone with theit math problems">
+    <!--Used CSS and JAVASCRIPT files-->
+    <link rel="stylesheet" href="css/defaults/page-defaults.css">
+    <link rel="stylesheet" href="css/defaults/navigation.css">
+    <link rel="stylesheet" href="css/defaults/footer.css">
+
+    <%# if tis a calculator page, it must have calculators.css file %> 
+    <% if (typeof calcPage != 'undefined') { %>
+        <link rel="stylesheet" href="css/calculators.css">
+    <% } %>
+
+    <!--included CSS fiels-->
+    <% if (typeof css != 'undefined') { %>
+        <!--this calculator design-->
+        <link rel="stylesheet" href="css/<%= css %>.css">
+    <% } %>
+
+    <!--included JAVASCRIPT fiels-->
+    <%# cheking if the server sent any javascript file %>
+    <% if (typeof javascript != 'undefined') { %>
+        <script type="text/javascript" src="javascript/<%= javascript %>.js" defer></script>
+    <% } %>
+
+    <%# if tis a calculator page, it must have calc-defaults.js file %> 
+    <% if (typeof calcPage != 'undefined') { %>
+        <script type="text/javascript" src="javascript/defaults/calc-defaults.js" defer></script>
+    <% } %>
+        
+    <script type="text/javascript" src="javascript/defaults/navigation.js"></script>
+    <!--Used ICONS and LIBRARIEs-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/7973968bbb.js"></script>
+</head>
+
+<body>
+
+    <!--page header-->
+    <header id="header">
+        <!--website logo-->
+        <div class="brand">
+            <a href="/">Math with Science <img class="logo" src="images/Logo.svg"></a>
+        </div>
+        <!--navigation and links-->
+        <nav id="nav">
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+
+                <%# cheking if its a Calculator page %>
+                <li><a href="/calculators"
+                        <% if (typeof calcPage != 'undefined') { %>
+                                class="active" 
+                        <% } %>>Calculators</a></li>
+
+                <%# checking if its About page %>
+                <li><a href="/about" <% if (title.toLowerCase() == "about") { %> class="active" <% } %>>About</a></li>
+            </ul>
+        </nav>
+        <!--blue line under nav-->
+        <hr class="line">
+        <!--navigation bars-->
+        <div class="nav-bars" id="bars" onclick="navOpen()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!--navigation closer-->
+        <div id="closer" class="closer" onclick="navClose()"></div>
+    </header>

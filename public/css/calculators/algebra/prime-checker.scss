@@ -1,0 +1,80 @@
+/******************************************
+***setting defaults  for the calculators***
+******************************************/
+
+.container {
+    width: 250px;
+}
+.calculator {
+    position: relative;
+
+    //input header
+    .name {
+        text-align: center;
+    }
+}
+
+//calculation area
+.calc {
+    margin-top: 3vh;
+
+    //input parts
+    .input {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    //the answer part has a different border and placeholder color
+    .answer {
+        margin-top: 2vh;
+        height: fit-content;
+
+        //each answer part
+        .ans {
+            margin-top: 1.5vh;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        //if its prime or not text
+        .isPrime {
+            #isPrime {
+                font-family: var(--body-font);
+                font-size: var(--label);
+                font-weight: 400;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px), (min-width: 1600px) {
+    .container {
+        width: 350px;
+    }
+    .calc {
+        .field {
+            width: 120px;
+        }
+    }
+}
+
+//for mobile screens
+@media screen and (max-width: 414px) {
+    .container {
+        width: var(--width);
+    }
+    .calc {
+        .answer {
+            margin-top: 5vh;
+
+            //each answer part
+            .ans {
+                margin-top: 2.5vh;
+            }
+        }
+    }
+}
