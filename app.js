@@ -39,7 +39,7 @@ app.use(session({
 app.use(flash());
 app.use(helmet({
     contentSecurityPolicy: false,
-  }));
+}));
 
 
 
@@ -68,4 +68,5 @@ app.use((req, res) => {
 
 //setting up the port number for the website
 app.set('port', process.env.PORT || 3000);
+console.log(app.get('port'))
 app.listen(app.get('port'));
