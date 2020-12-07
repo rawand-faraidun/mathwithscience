@@ -17,32 +17,32 @@
     <link rel="stylesheet" href="css/defaults/navigation.css">
     <link rel="stylesheet" href="css/defaults/footer.css">
 
-    <%# if tis a calculator page, it must have calculators.css file %> 
+    <%# if tis a calculator page, it must have calculators.css file %>
     <% if (typeof calcPage != 'undefined') { %>
-        <link rel="stylesheet" href="css/calculators.css">
+    <link rel="stylesheet" href="css/calculators.css">
     <% } %>
 
     <!--included CSS fiels-->
     <% if (typeof css != 'undefined') { %>
-        <!--this calculator design-->
-        <link rel="stylesheet" href="css/<%= css %>.css">
+    <!--this calculator design-->
+    <link rel="stylesheet" href="css/<%= css %>.css">
     <% } %>
 
     <!--included JAVASCRIPT fiels-->
     <%# cheking if the server sent any javascript file %>
     <% if (typeof javascript != 'undefined') { %>
-        <script type="text/javascript" src="javascript/<%= javascript %>.js" defer></script>
+    <script type="text/javascript" src="javascript/<%= javascript %>.js" defer></script>
     <% } %>
 
-    <%# if tis a calculator page, it must have calc-defaults.js file %> 
+    <%# if tis a calculator page, it must have calc-defaults.js file %>
     <% if (typeof calcPage != 'undefined') { %>
-        <script type="text/javascript" src="javascript/defaults/calc-defaults.js" defer></script>
+    <script type="text/javascript" src="javascript/defaults/calc-defaults.js" defer></script>
     <% } %>
-        
+
     <script type="text/javascript" src="javascript/defaults/navigation.js"></script>
-    <!--Used ICONS and LIBRARIEs-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://kit.fontawesome.com/7973968bbb.js"></script>
+    <script src="https://kit.fontawesome.com/f4dd04ab6e.js" crossorigin="anonymous" data-auto-add-css="false"></script>
 </head>
 
 <body>
@@ -59,9 +59,7 @@
                 <li><a href="/">Home</a></li>
 
                 <%# cheking if its a Calculator page %>
-                <li><a href="/calculators"
-                        <% if (typeof calcPage != 'undefined') { %>
-                                class="active" 
+                <li><a href="/calculators" <% if (typeof calcPage != 'undefined') { %> class="active"
                         <% } %>>Calculators</a></li>
 
                 <%# checking if its About page %>
