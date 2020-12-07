@@ -10,6 +10,7 @@ const mongoose = require("mongoose");
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const helmet = require("helmet");
 
 const app = express();
 
@@ -36,6 +37,9 @@ app.use(session({
     saveUninitialized: false
 }));
 app.use(flash());
+app.use(helmet({
+    contentSecurityPolicy: false,
+  }));
 
 
 

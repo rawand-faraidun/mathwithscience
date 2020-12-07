@@ -1,7 +1,7 @@
 {
   "name": "math-with-science",
   "version": "1.0.0",
-  "description": "Math with Science website, free website for healping anyone struglling with math",
+  "description": "Math with Science website, free website for helping anyone struggling with math",
   "main": "app.js",
   "scripts": {
     "test": "nodemon app.js"
@@ -29,6 +29,7 @@
     "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "helmet": "^4.2.0",
     "lodash": "^4.17.20",
     "mongoose": "^5.11.4"
   }
