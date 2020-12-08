@@ -120,7 +120,6 @@
   color: var(--main-gray);
   font-family: var(--body-font);
   font-size: var(--paragraph);
-  text-align: justify;
 }
 
 .calculators .calc .commingSoon {

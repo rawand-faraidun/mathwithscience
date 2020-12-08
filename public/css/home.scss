@@ -319,8 +319,18 @@ main {
                 color: var(--white);
                 transition: 0.3s all ease-in-out;
 
+                // arrow after the links name
+                .arrow {
+                    font-size: 1.2rem;
+                    transition: 0.3s all ease-in-out;
+                    transform: scaleX(-1);
+                }
+
                 &:hover {
                     font-size: 35px;
+                    .arrow {
+                        margin-left: 1rem;
+                    }
                 }
             }
         }
@@ -400,7 +410,7 @@ main {
 .content {
     margin: 20vh auto;
     width: 60%;
-    
+
     //intro text
     .intro {
         .introHeading {
@@ -419,16 +429,15 @@ main {
         color: var(--main-gray);
         text-align: justify;
 
-        .fueature{
+        .fueature {
             margin-bottom: 1.25vh;
-            
+
             //description links
-            a{
+            a {
                 color: var(--footer-bg);
                 text-decoration: underline;
             }
         }
-
     }
 }
 
@@ -450,7 +459,7 @@ main {
             h4 {
                 padding: unset;
             }
-            .signUpBtn{
+            .signUpBtn {
                 margin: auto;
             }
         }

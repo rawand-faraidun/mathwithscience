@@ -276,8 +276,20 @@ main .calculatorHolder {
   transition: 0.3s all ease-in-out;
 }
 
+.calculators .calc h3 a .arrow {
+  font-size: 1.2rem;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
 .calculators .calc h3 a:hover {
   font-size: 35px;
+}
+
+.calculators .calc h3 a:hover .arrow {
+  margin-left: 1rem;
 }
 
 .calculators .calc .textp {
