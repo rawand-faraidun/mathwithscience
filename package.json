@@ -4,6 +4,7 @@
   "description": "Math with Science website, free website for helping anyone struggling with math",
   "main": "app.js",
   "scripts": {
+    "run": "node app.js",
     "test": "nodemon app.js"
   },
   "repository": {
