@@ -10,6 +10,11 @@
     <!-- page descriptions -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% if (title == "Home") { %>
+    <title>Math with Science | free helping website with math and science problems</title>
+    <% } else { %>
+    <title><%= title %> | Math with Science</title>
+    <% } %>
     <link rel="icon" type="image/svg+xml" href="images/Logo.svg">
     <meta property="og:image" type="image/png" content="images/ogimage.png">
     <meta name="category" content="Education">
@@ -19,7 +24,6 @@
     <meta name="web_author" content="Rawand Faraidun, https://www.facebook.com/rawand.faraidun/">
     <meta name="keywords" content="math with science, math, science, online calculator">
     <meta name="description" content="Math with Science is a website to help anyone with theit math problems">
-    <title><%= title %> | Math with Science</title>
     <base href="/">
 
     <!--Used CSS and JAVASCRIPT files-->
@@ -93,6 +97,22 @@
         <!--navigation closer-->
         <div id="closer" class="closer" onclick="navClose()"></div>
     </header>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $('a[href*=\\#]:not([href=\\#])').on('click', function () {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            });
+        });
+    </script>
 
 
     <%# OTHER PAGE HEADER %>
