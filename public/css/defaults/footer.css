@@ -44,8 +44,34 @@ footer .links {
   font-size: var(--paragraph);
 }
 
-footer .links a {
+footer .links .link {
   color: var(--white);
+}
+
+footer .links .link:hover {
+  text-decoration: underline;
+}
+
+footer .links .facebook {
+  color: var(--white);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+footer .links .facebook:hover {
+  color: #6f90d1;
+  text-shadow: 0 0 10px rgba(111, 144, 209, 0.5);
+}
+
+footer .links .instagram {
+  color: var(--white);
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+footer .links .instagram:hover {
+  color: #e2628d;
+  text-shadow: 0 0 10px rgba(226, 98, 141, 0.5);
 }
 
 footer .copyright {

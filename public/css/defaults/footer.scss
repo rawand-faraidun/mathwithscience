@@ -42,8 +42,35 @@ footer {
         justify-content: space-between;
         font-size: var(--paragraph);
 
-        a {
+        // each link
+        .link {
             color: var(--white);
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        //facebook page link
+        .facebook {
+            color: var(--white);
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: rgba($color: #6f90d1, $alpha: 1);
+                text-shadow: 0 0 10px rgba($color: #6f90d1, $alpha: 0.5);
+            }
+        }
+
+        //instagram page link
+        .instagram {
+            color: var(--white);
+            transition: color 0.2s ease-in-out;
+
+            &:hover {
+                color: rgba($color: #e2628d, $alpha: 1);
+                text-shadow: 0 0 10px rgba($color: #e2628d, $alpha: 0.5);
+            }
         }
     }
 

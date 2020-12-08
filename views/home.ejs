@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+    <%- include('defaults/header') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Math with Science</title>
-    <link rel="icon" type="image/svg+xml" href="images/Logo.svg">
-    <meta name="description" content="Math with Science is a website to help anyone with theit math problems">
-    <!--Used CSS and JAVASCRIPT files-->
-    <link rel="stylesheet" href="css/defaults/page-defaults.css">
-    <link rel="stylesheet" href="css/defaults/navigation.css">
-    <link rel="stylesheet" href="css/defaults/footer.css">
-    <link rel="stylesheet" href="css/home.css">
-    <script src="javascript/home.js"></script>
-    <!--Used ICONS and LIBRARIEs-->
-    <script src="https://kit.fontawesome.com/7973968bbb.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(function () {
-            $('a[href*=\\#]:not([href=\\#])').on('click', function () {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.substr(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            });
-        });
-    </script>
-</head>
 
-<body>
-
-    <!--page header-->
-    <header id="header">
-        <!--website logo-->
-        <div class="brand">
-            <a href="/">Math with Science <img class="logo" src="images/Logo.svg"></a>
-        </div>
-        <!--navigation and links-->
-        <nav id="nav">
-            <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#calculators" onclick="navClose()">Calculators</a></li>
-                <li><a href="/about">About</a></li>
-            </ul>
-        </nav>
-        <!--navigation bars-->
-        <div class="nav-bars" id="bars" onclick="navOpen()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <!--navigation closer-->
-        <div id="closer" class="closer" onclick="navClose()"></div>
-    </header>
 
     <!--main contains website title & calculator-->
     <main>

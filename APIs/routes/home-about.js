@@ -21,7 +21,7 @@ router.get(["/", "/" + _.kebabCase("home")], (req, res) => {
         else {
             if (Parents) {
 
-                res.render("home", { ParentCalculators: Parents });
+                res.render("home", { title: "Home", css: "home", ParentCalculators: Parents });
             }
         }
     });
