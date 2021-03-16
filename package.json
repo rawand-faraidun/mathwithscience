@@ -1,7 +1,7 @@
 {
   "name": "math-with-science",
   "version": "1.0.0",
-  "description": "Math with Science is an open source project contains math & science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
+  "description": "Math with Science is an open source project contains math and science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
   "main": "server/server.js",
   "scripts": {
     "start": "node server.js",
