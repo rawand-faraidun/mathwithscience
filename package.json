@@ -4,7 +4,10 @@
   "description": "Math with Science is an open source project contains math & science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
   "main": "server/server.js",
   "scripts": {
-    "test": "nodemon server/server.js"
+    "start": "node server.js",
+    "test": "nodemon server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green' \"npm run test\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,7 @@
   },
   "homepage": "https://github.com/Rawand-Faraidun/math-with-science#readme",
   "dependencies": {
+    "concurrently": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

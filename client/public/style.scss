@@ -1,0 +1,29 @@
+/******************
+***Page Defaults***
+******************/
+
+// setting default values for the page
+body {
+    margin: 0px;
+    padding: 0px;
+    zoom: 100%;
+    overflow-x: hidden;
+    background-color: var(--body-color);
+
+    // removing all underlines of all links
+    a {
+        text-decoration: none;
+    }
+
+    // removing all list styling
+    ul {
+        list-style: none;
+    }
+}
+
+// removing margin and padding and adding color changing transition for all elements
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
