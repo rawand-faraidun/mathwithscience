@@ -5,7 +5,7 @@ import brandBlack from './math-with-science-brand-black.svg';
 import brandWhite from './math-with-science-brand-white.svg';
 
 // importing styling
-import './brand-style.css'
+import './brand.css'
 
 function Brand() {
     return (

@@ -1,7 +1,6 @@
-.brand-logo {
-  background-color: aquamarine;
-}
-
+/********************
+***Brand Designing***
+********************/
 .brand-logo .brand {
   height: var(--brand-image-size);
 }
@@ -21,4 +20,4 @@
 [theme-color="dark"] .brand-logo .brand.brand-white {
   display: block;
 }
-/*# sourceMappingURL=brand-style.css.map */
+/*# sourceMappingURL=brand.css.map */
