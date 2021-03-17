@@ -1,3 +1,138 @@
+@import url("https://fonts.googleapis.com/css?family=Manjari:400,700|Nunito:300,400,700|Open+Sans+Condensed:300|Satisfy&display=swap");
+/****************
+***used fonts***
+****************/
+:root {
+  --head-font-family: "Manjari", sans-serif;
+  --body-font-family: "Nunito", sans-serif;
+  --calculator-font-family: "Open Sans Condensed", sans-serif;
+  --brand-font-family: "Satisfy", cursive;
+}
+
+/************************************
+***used Margin, paddings and width***
+************************************/
+:root {
+  --padding: 1rem 5rem;
+  --margin: 1rem 5rem;
+  --width: calc(100% - 10rem);
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --padding: 1rem 7%;
+    --margin: 1rem 7%;
+    --width: 86%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --padding: 1rem 5%;
+    --margin: 1rem 5%;
+    --width: 90%;
+  }
+}
+
+/****************
+***used colors***
+****************/
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --main-green-color: #00cc80;
+  --main-blue-color: #00c2ff;
+  --main-red-color: #e10000;
+  --main-gray-color: #787878;
+}
+
+:root {
+  --body-color: #fcfcfc;
+  --header-background-color: #fff;
+  --mobile-header-bg-color: #c9c9c9;
+  --mobile-nav-bg-color: #e4e4e4;
+  --mobile-nav-bg-color-rgb: 228, 228, 228;
+  --nav-links-color: #5e5e5e;
+  --nav-links-hover-color: #313131;
+  --head-text-color: #000;
+  --body-text-color: #424242;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --nav-links-color: #272727;
+    --nav-links-hover-color: #272727;
+  }
+}
+
+[theme-color="dark"] {
+  --body-color: #353535;
+  --header-background-color: #212121;
+  --mobile-header-bg-color: #212121;
+  --mobile-nav-bg-color: #292929;
+  --mobile-nav-bg-color-rgb: 41, 41, 41;
+  --nav-links-color: #fdfdfd;
+  --nav-links-hover-color: rgba(255, 255, 255, 0.75);
+  --head-text-color: #fff;
+  --body-text-color: #cfcfcf;
+}
+
+/**************************************
+***used font sizes and other sizings***
+**************************************/
+:root {
+  --header-height-size: 5rem;
+  --first-element-margin-top: calc(
+        var(--header-height-size) - 3vh + 5rem
+    );
+  --brand-image-size: 1.6rem;
+  --nav-link-font-size: 1rem;
+  --x-huge-font-size: 2.5rem;
+  --huge-font-size: 2.25rem;
+  --xxx-large-font-size: 2rem;
+  --xx-large-font-size: 1.8rem;
+  --x-large-font-size: 1.6rem;
+  --large-font-size: 1.4rem;
+  --medium-font-size: 1.125rem;
+  --small-font-size: 1rem;
+  --x-small-font-size: 0.875rem;
+}
+
+@media screen and (min-width: 1500px) {
+  :root {
+    --header-height-size: 6rem;
+    --first-element-margin-top: calc(var(--header-height-size) + 5rem);
+    --brand-image-size: 1.8rem;
+    --nav-link-font-size: 1.125rem;
+    --x-huge-font-size: 2.75rem;
+    --huge-font-size: 2.5rem;
+    --xxx-large-font-size: 2.25rem;
+    --xx-large-font-size: 2rem;
+    --x-large-font-size: 1.75rem;
+    --large-font-size: 1.5rem;
+    --medium-font-size: 1.25rem;
+    --small-font-size: 1.125rem;
+    --x-small-font-size: 1rem;
+    --xx-small-font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --header-height-size: 7rem;
+    --first-element-margin-top: calc(var(--header-height-size) * 2.5);
+    --brand-image-size: 2rem;
+    --nav-link-font-size: 1.4rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --header-height-size: 5.5rem;
+    --first-element-margin-top: calc(var(--header-height-size) * 2.25);
+  }
+}
+
 /******************
 ***Page Defaults***
 ******************/
@@ -17,10 +152,41 @@ body ul {
   list-style: none;
 }
 
-* {
+body * {
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: background 0.6s, background-color 0.6s, color 0.6s ease;
+  transition: background 0.6s, background-color 0.6s, color 0.6s ease;
+}
+
+body.preload * {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+.brand-logo .brand {
+  height: var(--brand-image-size);
+}
+
+.brand-logo .brand.brand-black {
+  display: block;
+}
+
+.brand-logo .brand.brand-white {
+  display: none;
+}
+
+[theme-color="dark"] .brand-logo .brand.brand-black {
+  display: none;
+}
+
+[theme-color="dark"] .brand-logo .brand.brand-white {
+  display: block;
+}
+
+input:focus {
+  outline: none;
 }
 /*# sourceMappingURL=style.css.map */
