@@ -166,26 +166,6 @@ body.preload * {
   transition: none !important;
 }
 
-.brand-logo .brand {
-  height: var(--brand-image-size);
-}
-
-.brand-logo .brand.brand-black {
-  display: block;
-}
-
-.brand-logo .brand.brand-white {
-  display: none;
-}
-
-[theme-color="dark"] .brand-logo .brand.brand-black {
-  display: none;
-}
-
-[theme-color="dark"] .brand-logo .brand.brand-white {
-  display: block;
-}
-
 input:focus {
   outline: none;
 }
