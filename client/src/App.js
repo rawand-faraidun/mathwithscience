@@ -3,6 +3,7 @@ import { BrowserRouter as Router /*,  Switch */ } from 'react-router-dom';
 
 // importing components
 import Header from './components/partials/Header/Header';
+import Home from './components/Home/Home';
 
 
 /**
@@ -22,6 +23,10 @@ function App() {
 
       {/* Adding header of the page */}
       <Header />
+
+
+      {/* Adding Home */}
+      <Home />
 
 
       {/* this is a test element to make the page scroolable */}
