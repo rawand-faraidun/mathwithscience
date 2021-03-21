@@ -1,0 +1,132 @@
+/*********************
+***Navigation Links***
+*********************/
+
+// designing the navigation links holder
+.nav-links {
+    padding-top: 3px;
+    width: fit-content;
+    z-index: 2; // this works like 13 because it's parent z index is 11
+
+    // changing the defaults of the UL in navlinks that contains the links
+    ul {
+        display: flex; // using flex display to show elements in row
+        height: 100%;
+    }
+
+    .link {
+        margin: 0 0.8rem; // adding space between each link
+        position: relative; // using relative positioningto  make ::BEFORE work perfectly
+        letter-spacing: 2px;
+        width: fit-content;
+
+        // each link is <li> andd this the url <a> inside designing
+        a {
+            font-family: var(--body-font-family);
+            font-size: var(--nav-link-font-size);
+            color: var(--nav-links-color);
+        }
+
+        // active link design, defines which page in the navigation the user is in
+        &.active {
+            font-weight: 700;
+        }
+
+        // removing margin left for the first link because there is no other links there
+        &:first-child {
+            margin-left: 0;
+        }
+        // removing margin right for the last link because there is no other links there
+        &:last-child {
+            margin-right: 0;
+        }
+
+        // making a line on each link, showed by hovering
+        &::before {
+            content: "";
+            position: absolute; // using absolute positioning to place it easily above the link
+            bottom: -0.3rem; // it goes on top of the text
+            width: 0;
+            height: 3px;
+            background-color: var(--nav-links-hover-color);
+            border-radius: 3px;
+            width: 0;
+            transition: width 0.25s ease-in-out;
+        }
+
+        // hovering the link
+        &:hover {
+            a {
+                color: var(--nav-links-hover-color);
+            }
+
+            // changing before size to fit with the link
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// redesigning the navigation links for small screens
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 100%;
+        height: 15%;
+
+        ul {
+            align-items: left; // aligning items in center horizontally
+            flex-direction: column; // using column flex to show vertically to show this better
+            justify-content: space-between; // adding space between each link equally
+        }
+
+        .link {
+            margin: unset;
+            position: relative;
+            transform: translateX(-50vw);
+            // each link has a different opening transition defind in .nav-links-opened, this one is for closing
+            transition: transform 0.6s ease-in-out;
+        }
+
+        // adding the animation on navigation opening to Links
+        &.nav-links-opened {
+            .link {
+                transform: translateX(0);
+
+                // each transition works only for navigation drawer opening, the closing one is 0.6s
+                // first link animation
+                &:nth-child(1) {
+                    transition: transform 0.8s ease-in-out;
+                }
+                // second link animation
+                &:nth-child(2) {
+                    transition: transform 0.95s ease-in-out;
+                }
+                // third link animation
+                &:nth-child(3) {
+                    transition: transform 1.1s ease-in-out;
+                }
+                // fourth link animation
+                &:nth-child(4) {
+                    transition: transform 1.25s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+// redesigning the navigation links movbile screens
+@media screen and (max-width: 500px) {
+    // adding more height to the navigation links to be space between them
+    .nav-links {
+        height: 20%;
+    }
+}
+
+// redesigning the navigation links movbile screens
+@media screen and (max-width: 375px) {
+    // adding more height to the navigation links to be space between them
+    .nav-links {
+        height: 28%;
+    }
+}

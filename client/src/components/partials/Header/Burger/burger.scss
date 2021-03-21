@@ -1,0 +1,75 @@
+/**********************
+***Navigation burger***
+**********************/
+
+.nav-burger {
+    position: relative; // using relative position to reposition the burger lines easily
+    width: calc(var(--nav-link-font-size) + 4px);
+    height: var(--nav-link-font-size);
+
+    // styling each burgerline
+    .burger-line {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 3px;
+        background-color: var(--main-background-color);
+        border-radius: 5px;
+        transition: transform 0.6s, top 0.6s, bottom 0.6s, left 0.6s, opacity 0.6s ease;
+
+        // first line
+        &:first-child {
+            top: 0;
+        }
+
+        // second line
+        &:nth-child(2) {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        // last line
+        &:last-child {
+            bottom: 0;
+        }
+    }
+
+    // when the navigation bar pressed and the nav is opened
+    &.nav-bar-opened {
+        .burger-line {
+
+            // repositioning the first line
+            &:first-child {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            
+            // repositioning the last line
+            &:last-child {
+                left: 50%;
+                bottom: 50%;
+                transform: translate(-50%, 50%) rotate(-45deg);
+            }
+
+            &:nth-child(2) {
+                animation: burgerLine2bounce 0.8s forwards;
+                transition: opacity 1s ease-in-out; // when the navigation open, the animation is longer than other lines
+                opacity: 0;
+            }
+
+            // burger line 2 animation when navigation opened
+            @keyframes burgerLine2bounce {
+                0% {
+                    transform: translateX(0);
+                }
+                30% {
+                    transform: translateX(-30px);
+                }
+                to {
+                    transform: translateX(20vw);
+                }
+            }
+        }
+    }
+}

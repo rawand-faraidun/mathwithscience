@@ -1,0 +1,58 @@
+.theme-switch-holder {
+  margin-left: 2.25rem;
+  padding-top: 3px;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-switch-holder .theme-toogler {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: calc((var(--nav-link-font-size) * 2) + 8px);
+  height: var(--nav-link-font-size);
+  background-color: var(--main-gray-color);
+  border-radius: var(--nav-link-font-size);
+}
+
+.theme-switch-holder .theme-toogler:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -4px;
+  width: calc(var(--nav-link-font-size) + 8px);
+  height: calc(var(--nav-link-font-size) + 8px);
+  background: var(--body-color) url("https://i.ibb.co/7JfqXxB/sunny.png");
+  background-size: calc( var(--nav-link-font-size) + 4px);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  -webkit-transition: left 0.2s, background 0.2s ease-in-out;
+  transition: left 0.2s, background 0.2s ease-in-out;
+  -webkit-box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.theme-switch-holder .theme-switch {
+  display: none;
+}
+
+.theme-switch-holder .theme-switch:checked + .theme-toogler::before {
+  left: 50%;
+  background: var(--body-color) url("https://i.ibb.co/FxzBYR9/night.png");
+  background-size: var(--nav-link-font-size);
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+@media screen and (max-width: 1024px) {
+  .theme-switch-holder {
+    margin: 0;
+    margin-top: auto;
+  }
+}
+/*# sourceMappingURL=themeSwitcher.css.map */

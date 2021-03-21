@@ -1,0 +1,37 @@
+/**********
+***Brand***
+**********/
+
+// designing the brand, by default light mode brand is active
+.brand {
+    // each brand
+    img {
+        height: var(--brand-image-size);
+
+        // hidding white brand in light mode
+        &.brand-white {
+            display: none;
+        }
+
+        // showing black brand in light mode
+        &.brand-black {
+            display: block;
+        }
+    }
+}
+
+// switching brand whene the theme is changed
+[theme-color="dark"] {
+    .brand {
+        img {
+            // showing white brand in dark mode
+            &.brand-white {
+                display: block;
+            }
+            // hidding black brand in dark mode
+            &.brand-black {
+                display: none;
+            }
+        }
+    }
+}

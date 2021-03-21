@@ -1,0 +1,49 @@
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+
+// importing styling
+import './brand.css';
+
+// importing images
+import brandWhite from './math-with-science-brand-white.svg';
+import brandBlack from './math-with-science-brand-black.svg';
+
+
+
+/**
+ * @props :
+ *      @isLink : Boolean, this determines if the brand is link or not
+ * 
+ *  @return : Element, returns a brand that can be a link or not
+ */
+function Brand(props) {
+
+    // getting the current path of the website
+    // used in chossing if the brand be a link or not
+    // if this path was pointing to homepage the brand will not be a link even if isLink prop choosen to be true
+    const thisPath = useLocation().pathname;
+
+
+    // if the brand had isLink property and it was not homepage, return the link brand
+    if (Boolean(props.isLink) && thisPath !== '/') {
+        return (
+            <div className={`brand`}>
+                <a href="/">
+                    <img src={brandWhite} alt="Brand" className="brand-white" />
+                    <img src={brandBlack} alt="Brand" className="brand-black" />
+                </a>
+            </div>
+        )
+    }
+    // returning regular brand not link
+    else {
+        return (
+            <div className="brand">
+                <img src={brandWhite} alt="Brand" className="brand-white" />
+                <img src={brandBlack} alt="Brand" className="brand-black" />
+            </div>
+        )
+    }
+}
+
+export default Brand;
