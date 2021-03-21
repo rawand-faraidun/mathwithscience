@@ -4,6 +4,10 @@ import { BrowserRouter as Router /*,  Switch */ } from 'react-router-dom';
 // importing components
 import Header from './components/partials/Header/Header';
 
+
+/**
+ *  @return : Element, returns all the frontend
+ */
 function App() {
 
   // removing the preload class from the body when the page is ready
