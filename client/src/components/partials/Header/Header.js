@@ -55,8 +55,9 @@ function Header() {
 
     // making the background transparent if the location was homepage and the page has not been scrolled more than 250px and navigation was not open
     // adding nore padding to the homepage header will
-    if (thisPath === '/' && yOffset < 250 && navState === false) {
+    if (thisPath === '/' && yOffset < 75 && navState === false) {
         headerHomeStyle.backgroundColor = 'transparent';
+        headerHomeStyle.transition = 'background 0.3s ease';
     }
     else {
         headerHomeStyle.backgroundColor = '';
