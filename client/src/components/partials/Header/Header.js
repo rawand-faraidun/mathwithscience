@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 // importing styling
 import './header.css';
@@ -20,6 +21,7 @@ import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
  */
 function Header() {
 
+
     // this controls navigation state, determines the state of navigation is opened or not
     const [navState, setNavState] = useState(false);
 
@@ -32,6 +34,34 @@ function Header() {
     function closeNavDrawer() {
         setNavState(false);
     }
+
+
+
+    // getting the current path of the website
+    // used in chossing if the header is transparent or not
+    // if this path was pointing to homepage the header background will be transparent
+    const thisPath = useLocation().pathname;
+
+    // getting page Y offset
+    const [yOffset, setYOffset] = useState(window.pageYOffset);
+
+    // this will be the transparent ackground
+    const headerHomeStyle = {};
+
+    // updation page Y ofsett on page scroll
+    window.onscroll = () => {
+        setYOffset(window.pageYOffset);
+    }
+
+    // making the background transparent if the location was homepage and the page has not been scrolled more than 250px and navigation was not open
+    // adding nore padding to the homepage header will
+    if (thisPath === '/' && yOffset < 250 && navState === false) {
+        headerHomeStyle.backgroundColor = 'transparent';
+    }
+    else {
+        headerHomeStyle.backgroundColor = '';
+    }
+
 
 
     // determines the number of rows and columns of the small screen drawer background
@@ -52,12 +82,12 @@ function Header() {
 
     return (
         // header of the website
-        <header className="header">
+        <header className="header" style={headerHomeStyle}>
 
 
             {/* the main part of header, this will be the header of small screens */}
             {/* contains brand and burger */}
-            <div className="nav-main">
+            <div className="nav-main" style={headerHomeStyle}>
 
                 {/* adding brand */}
                 {/* the link Property is used to determine if this brand is link to homepage or not */}
