@@ -9,6 +9,7 @@ import './navlinks.css';
 /**
  * @props :
  *      @isLink : Boolean, this determines if the brand is link or not
+ *      @whiteOnly : Boolean, this determines if the links must always be white or not
  * 
  *  @return : Element, returns the navigation links
  */
@@ -17,6 +18,13 @@ function Navlinks(props) {
     // getting the current path of the website
     // used in chossing which link is gets the active class
     const thisPath = useLocation().pathname;
+
+
+    // making the links white or not based on white only property
+    const navLinksColor = {}
+    if (props.whiteOnly) {
+        navLinksColor.color = 'white';
+    }
 
 
     return (
@@ -31,11 +39,11 @@ function Navlinks(props) {
                 */}
 
                 <li className={`link ${thisPath.startsWith('/calculators') ? "active" : ''}`}>
-                    <a href="/calculators">Branches</a>
+                    <a href="/calculators" style={navLinksColor}>Branches</a>
                 </li>
 
                 <li className={`link ${thisPath.startsWith('/all-calculators') ? "active" : ''}`}>
-                    <a href="/all-calculators">All Calculators</a>
+                    <a href="/all-calculators" style={navLinksColor}>All Calculators</a>
                 </li>
 
                 {/* a link to About if it's wanted to be seen */}

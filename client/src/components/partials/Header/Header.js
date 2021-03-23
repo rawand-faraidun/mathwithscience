@@ -42,25 +42,28 @@ function Header() {
     // if this path was pointing to homepage the header background will be transparent
     const thisPath = useLocation().pathname;
 
+    
     // getting page Y offset
     const [yOffset, setYOffset] = useState(window.pageYOffset);
+
+    // updation page Y ofsett on page scroll
+    // this one doesn't need a state becaise it will always refresh because of navState
+    window.onscroll = () => {
+        setYOffset(window.pageYOffset);
+    }
 
     // this will be the transparent ackground
     const headerHomeStyle = {};
 
-    // updation page Y ofsett on page scroll
-    window.onscroll = () => {
-        setYOffset(window.pageYOffset);
-    }
+    // the white only property for homepage header navigation links and brand
+    let whiteOnly = false;
 
     // making the background transparent if the location was homepage and the page has not been scrolled more than 250px and navigation was not open
     // adding nore padding to the homepage header will
     if (thisPath === '/' && yOffset < 75 && navState === false) {
         headerHomeStyle.backgroundColor = 'transparent';
         headerHomeStyle.transition = 'background 0.3s ease';
-    }
-    else {
-        headerHomeStyle.backgroundColor = '';
+        whiteOnly = true;
     }
 
 
@@ -92,7 +95,7 @@ function Header() {
 
                 {/* adding brand */}
                 {/* the link Property is used to determine if this brand is link to homepage or not */}
-                <Brand isLink="true" />
+                <Brand isLink="true" whiteOnly={whiteOnly} />
 
                 {/* this will take the space between bravd and burger in small screens header */}
                 <div className="nav-main-space"></div>
@@ -110,7 +113,7 @@ function Header() {
                 <Searchbar />
 
                 {/* adding navigation lins */}
-                <Navlinks navState={navState} />
+                <Navlinks navState={navState} whiteOnly={whiteOnly} />
 
                 {/* adding the theme switch */}
                 <ThemeSwitcher />
