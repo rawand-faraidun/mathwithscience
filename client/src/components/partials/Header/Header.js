@@ -28,12 +28,27 @@ function Header() {
     // handles if the burger is clicked to open or close
     function navToggleHandler(state) {
         setNavState(state);
+
+        // playing the animation if the drawer opened
+        if (state === true) {
+            animation.restart();
+        }
+        // pausing and reseting the animation if the drawer closed
+        else {
+            animation.pause();
+            animation.reset();
+        }
     }
 
     // this will close the navigation and set its state to false
     function closeNavDrawer() {
         setNavState(false);
+
+        // pausing and reseting the animation if the drawer closed
+        animation.pause();
+        animation.reset();
     }
+
 
 
 
@@ -68,27 +83,41 @@ function Header() {
 
 
 
+
     // determines the number of rows and columns of the small screen drawer background
     const animationRows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     const animationColumns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+    // the animation random start number
+    function randomAnimation() {
+        // getting rows and columns number
+        let rowsNumber = animationRows.length;
+        let columnsNumber = animationColumns.length;
+
+        // setting start point and end point
+        let start = (rowsNumber * columnsNumber) / 3 * 2;
+        let end = (rowsNumber * columnsNumber);
+
+        // getting result of the random generated nunmber
+        let result = Math.floor(anime.random(start, end));
+
+        return result;
+    }
 
     // using animejs to animate of the small screen drawer background
-    var animation = anime({
-        targets: '.animation .el',
+    const animation = anime({
+        targets: '#animation .el',
         scale: [
             { value: 0.1, easing: 'easeOutSine', duration: 500 },
             { value: 1, easing: 'easeInOutQuad', duration: 1200 }
         ],
         loop: true,
-        delay: anime.stagger(200, { grid: [10, 20], from: 'last' })
+        delay: anime.stagger(200, { grid: [10, 20], from: randomAnimation() })
     });
-    // pauseing the animation when the navigation drawer is closed
-    animation.pause();
-
-    // playing the animation when the navigation drawer is opened
-    if (navState) {
-        animation.play();
+    // pauseing and reseting the animation if the page has not small screen header and drawer
+    if (window.innerWidth > 1024) {
+        animation.pause();
+        animation.reset();
     }
 
 
@@ -127,7 +156,7 @@ function Header() {
                 <ThemeSwitcher />
 
                 {/* the animation in small screens background */}
-                <div className="animation">
+                <div className="animation" id="animation">
                     {
                         // generating rows of the animation
                         animationRows.map((row, i) => {
