@@ -42,7 +42,7 @@ function Header() {
     // if this path was pointing to homepage the header background will be transparent
     const thisPath = useLocation().pathname;
 
-    
+
     // getting page Y offset
     const [yOffset, setYOffset] = useState(window.pageYOffset);
 
@@ -72,8 +72,9 @@ function Header() {
     const animationRows = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     const animationColumns = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
+
     // using animejs to animate of the small screen drawer background
-    anime({
+    var animation = anime({
         targets: '.animation .el',
         scale: [
             { value: 0.1, easing: 'easeOutSine', duration: 500 },
@@ -82,6 +83,13 @@ function Header() {
         loop: true,
         delay: anime.stagger(200, { grid: [10, 20], from: 'last' })
     });
+    // pauseing the animation when the navigation drawer is closed
+    animation.pause();
+
+    // playing the animation when the navigation drawer is opened
+    if (navState) {
+        animation.play();
+    }
 
 
     return (
