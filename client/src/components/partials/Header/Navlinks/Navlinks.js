@@ -21,9 +21,9 @@ function Navlinks(props) {
 
 
     // making the links white or not based on white only property
-    const navLinksColor = {}
+    const navLinksStyling = {}
     if (props.whiteOnly) {
-        navLinksColor.color = 'white';
+        navLinksStyling.color = 'white';
     }
 
 
@@ -39,11 +39,11 @@ function Navlinks(props) {
                 */}
 
                 <li className={`link ${thisPath.startsWith('/calculators') ? "active" : ''}`}>
-                    <a href="/calculators" style={navLinksColor}>Branches</a>
+                    <a href="/calculators" style={navLinksStyling}>Branches</a>
                 </li>
 
                 <li className={`link ${thisPath.startsWith('/all-calculators') ? "active" : ''}`}>
-                    <a href="/all-calculators" style={navLinksColor}>All Calculators</a>
+                    <a href="/all-calculators" style={navLinksStyling}>All Calculators</a>
                 </li>
 
                 {/* a link to About if it's wanted to be seen */}

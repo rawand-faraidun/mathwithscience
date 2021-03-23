@@ -138,7 +138,7 @@ function Header() {
                 <div className="nav-main-space"></div>
 
                 {/* the burger, shows in small screens header */}
-                <Burger navState={navState} navToggleHandler={navToggleHandler} />
+                <Burger navState={navState} navToggleHandler={navToggleHandler} whiteOnly={whiteOnly} />
 
             </div>
 
