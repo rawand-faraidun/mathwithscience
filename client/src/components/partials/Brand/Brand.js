@@ -24,9 +24,6 @@ function Brand(props) {
     // if this path was pointing to homepage the brand will not be a link even if isLink prop choosen to be true
     const thisPath = useLocation().pathname;
 
-    console.log(thisPath);
-
-
     // if the brand had isLink property and it was not homepage, return the link brand
     if (Boolean(props.isLink) && thisPath !== '/' && thisPath !== '/en' && thisPath !== '/kr') {
         return (
