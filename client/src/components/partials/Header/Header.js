@@ -48,7 +48,7 @@ function Header() {
     let whiteOnly = false;
 
     // checking if the user is in homepage
-    if (thisPath === '/') {
+    if (thisPath === '/' || thisPath === '/en' || thisPath === '/kr') {
 
         // updating pageScrolled
         window.onscroll = () => {
@@ -61,7 +61,7 @@ function Header() {
         }
 
         // making the background transparent if the location was homepage and the page has not been scrolled and navigation was not open
-        if (thisPath === '/' && !pageScrolled && !navState) {
+        if (!pageScrolled && !navState) {
             headerHomeStyle.backgroundColor = 'transparent';
             headerHomeStyle.transition = 'background 0.3s ease';
             whiteOnly = true;

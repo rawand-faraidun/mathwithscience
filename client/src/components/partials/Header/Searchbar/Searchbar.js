@@ -29,7 +29,7 @@ function Searchbar() {
     return (
         <div
             className="nav-search-holder"
-            style={{ display: thisPath === '/' ? 'none' : '' }} // the navigation search bar is not shown in homepage
+            style={{ display: thisPath === '/' || thisPath === '/en' || thisPath === '/kr' ? 'none' : '' }} // the navigation search bar is not shown in homepage
         >
             <input
                 type="text"
