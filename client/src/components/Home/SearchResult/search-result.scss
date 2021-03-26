@@ -1,0 +1,69 @@
+/*************
+***Branches***
+*************/
+
+// designing the search result view in homepage
+.search-result {
+    margin: auto;
+    margin-top: 5rem;
+    width: 54rem; // 864px
+    display: grid;
+    grid-template-columns: repeat(3, 16rem);
+    column-gap: 3rem;
+    row-gap: 2rem;
+
+    // designing each branch card
+    .result {
+        padding: 2rem 1rem;
+        // width: 16rem;
+        // height: 16rem;
+        text-align: center;
+        background-color: var(--body-color);
+        border: 1px solid rgba(var(--main-background-color-rgb), 0.15);
+        border-radius: var(--small-font-size);
+        box-shadow: 6px 8px 42px 1px rgba(#000, 0.15);
+        transition: transform 0.2s ease;
+
+        // branch name
+        .result-name {
+            font-family: var(--head-font-family);
+            font-size: var(--x-large-font-size);
+            color: var(--head-text-color);
+        }
+
+        // branch description
+        .result-description {
+            margin-top: 1.5rem;
+            font-family: var(--head-font-family);
+            font-size: var(--small-font-size);
+            color: var(--body-text-color);
+        }
+
+        // hovering each brand card
+        &:hover {
+            transform: scale(1.075); // scalling it to make it larger
+        }
+    }
+}
+
+////////////////
+
+// changing branches grid to 2 columns in small screens
+@media screen and (max-width: 1024px) {
+    .branches {
+        width: 100%;
+        grid-template-columns: repeat(2, calc((100% - 4rem) / 2));
+        column-gap: 4rem;
+        row-gap: 3rem;
+    }
+}
+
+// changing branches grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .branches {
+        margin-top: 3rem;
+        grid-template-columns: repeat(1, 100%);
+        column-gap: unset;
+        row-gap: 1.5rem;
+    }
+}

@@ -109,6 +109,7 @@
 :root {
   --body-color: #fcfcfc;
   --main-background-color: #000;
+  --main-background-color-rgb: 0, 0, 0;
   --header-background-color: #fff;
   --mobile-nav-main-bg-color: #c9c9c9;
   --mobile-nav-holder-bg-color: #e4e4e4;
@@ -116,11 +117,13 @@
   --nav-links-color: #5e5e5e;
   --nav-links-hover-color: #313131;
   --head-text-color: #000;
+  --body-text-color: #424242;
 }
 
 [theme-color="dark"] {
   --body-color: #353535;
   --main-background-color: #fff;
+  --main-background-color-rgb: 255, 255, 255;
   --header-background-color: #212121;
   --mobile-nav-main-bg-color: #212121;
   --mobile-nav-holder-bg-color: #292929;
@@ -128,6 +131,7 @@
   --nav-links-color: #fdfdfd;
   --nav-links-hover-color: rgba(255, 255, 255, 0.75);
   --head-text-color: #fff;
+  --body-text-color: #cfcfcf;
 }
 
 /******************
