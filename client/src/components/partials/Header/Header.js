@@ -76,7 +76,6 @@ function Header() {
 
 
             {/* the main part of header, this will be the header of small screens */}
-            {/* contains brand and burger */}
             <div className="nav-main">
 
                 {/* adding brand */}
@@ -91,7 +90,6 @@ function Header() {
             </div>
 
             {/* this will be the drawer of small screen views */}
-            {/* contains navigation searchbar, links and theme switch */}
             <div className={`nav-holder ${navState ? 'nav-holder-opened' : ''}`}>
 
                 {/* adding search bar */}
