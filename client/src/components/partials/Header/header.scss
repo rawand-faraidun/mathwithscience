@@ -36,17 +36,14 @@
         display: flex; // using flex display to show search bar and links in a line
         align-items: center;
         z-index: 11; // childs z index is 2 to make the gradiant layer qork perfectly if displayed
-
-        // hidding the animation in big screens
-        .animation {
-            display: none;
-        }
     }
 
     .nav-drawer-closer {
         display: none;
     }
 }
+
+////////////////
 
 // changing the header to header and navigation drawe in small screens
 @media screen and (max-width: 1024px) {
@@ -88,11 +85,6 @@
             // the nav drawer shows when the navigation drawer is opened
             &.nav-holder-opened {
                 left: 0;
-            }
-
-            // showing the animation in small screens
-            .animation {
-                display: flex; // using flex display to show in lines
             }
         }
 

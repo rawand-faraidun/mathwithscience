@@ -48,10 +48,6 @@
   z-index: 11;
 }
 
-.header .nav-holder .animation {
-  display: none;
-}
-
 .header .nav-drawer-closer {
   display: none;
 }
@@ -93,11 +89,6 @@
   }
   .header .nav-holder.nav-holder-opened {
     left: 0;
-  }
-  .header .nav-holder .animation {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
   }
   .header .nav-drawer-closer {
     display: block;

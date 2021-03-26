@@ -31,3 +31,12 @@
         }
     }
 }
+
+////////////////
+
+// hidding the animation in big screens
+@media screen and (min-width: 1025px) {
+    .animation {
+        display: none;
+    }
+}
