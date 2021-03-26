@@ -78,7 +78,6 @@
             position: absolute; // using absolute positioning to place it easily under the nav main
             top: var(--header-height-size); // positiong excactly under the header
             left: -75vw;
-            left: 0;
             width: 75vw;
             height: calc(100vh - var(--header-height-size));
             flex-direction: column; // showing the flex as

@@ -81,7 +81,6 @@
     position: absolute;
     top: var(--header-height-size);
     left: -75vw;
-    left: 0;
     width: 75vw;
     height: calc(100vh - var(--header-height-size));
     -webkit-box-orient: vertical;
