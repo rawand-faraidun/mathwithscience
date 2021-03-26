@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router /*,  Switch */ } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 // importing components
 import Header from './components/partials/Header/Header';
@@ -19,26 +19,31 @@ function App() {
 
 
   return (
-    <Router>
+    <>
 
-      {/* Adding header of the page */}
-      <Header />
+      <Router>
+
+        {/* Adding header of the page */}
+        <Header />
+
+        <Switch>
+
+          {/* Adding Home */}
+          <Redirect from="/" to="/en" exact />
+          <Route path={['/en', '/kr']} component={Home} exact />
 
 
-      {/* Adding Home */}
-      <Home />
+        </Switch>
 
 
-      {/* this is a test element to make the page scroolable */}
-      <div className="test" id="test" style={{ position: 'absolute', top: 2000, backgroundColor: 'red', width: '100%' }}>
-        aajv
-                <br />
-                jhsd
-                <br />
-                isvaa
+        {/* this is a test element to make the page scroolable */}
+        <div className="test" id="test" style={{ position: 'absolute', top: 2000, backgroundColor: 'red', width: '100%' }}>
+          aajv
             </div>
 
-    </Router>
+
+      </Router>
+    </>
   );
 }
 
