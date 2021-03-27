@@ -2,12 +2,10 @@
 ***Home Main***
 **************/
 
-// designing Home
-
 // main part of the homepage
 .home-main {
     position: relative; // using relative position to make the animation stay inside
-    padding-top: 10rem;
+    padding-top: 14rem;
     min-height: 59rem;
 
     // homepage animation
@@ -59,7 +57,7 @@
 @media screen and (max-width: 1024px) {
     .home-main {
         padding: var(--padding-sides);
-        padding-top: 10rem;
+        padding-top: 12rem;
 
         .search {
             width: 100%;

@@ -3,7 +3,7 @@
 **************/
 .home-main {
   position: relative;
-  padding-top: 10rem;
+  padding-top: 14rem;
   min-height: 59rem;
 }
 
@@ -45,7 +45,7 @@
 @media screen and (max-width: 1024px) {
   .home-main {
     padding: var(--padding-sides);
-    padding-top: 10rem;
+    padding-top: 12rem;
   }
   .home-main .search {
     width: 100%;
