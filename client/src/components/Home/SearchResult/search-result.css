@@ -47,7 +47,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .branches {
+  .search-result {
     width: 100%;
     -ms-grid-columns: (calc((100% - 4rem) / 2))[2];
         grid-template-columns: repeat(2, calc((100% - 4rem) / 2));
@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .branches {
+  .search-result {
     margin-top: 3rem;
     -ms-grid-columns: (100%)[1];
         grid-template-columns: repeat(1, 100%);
