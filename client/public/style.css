@@ -15,14 +15,14 @@
 :root {
   --padding: 1rem calc((100vw - 84rem) / 2);
   --padding-sides: 1rem calc((100vw - 84rem) / 2);
-  --width: 84rem;
+  --width: 83rem;
 }
 
 @media screen and (max-width: 1600px) {
   :root {
     --padding: 1rem calc((100vw - 75rem) / 2);
     --padding-sides: 1rem calc((100vw - 75rem) / 2);
-    --width: 75rem;
+    --width: 74rem;
   }
 }
 

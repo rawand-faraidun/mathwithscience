@@ -37,7 +37,7 @@
 :root {
     --padding: 1rem calc((100vw - 84rem) / 2); // this gives padding to all
     --padding-sides: 1rem calc((100vw - 84rem) / 2); // this will give padding to sides only
-    --width: 84rem;
+    --width: 83rem; // this has to be 84, but when the scroll bar is active, it will take 1rem so we take it from the wisth to balance it with padding variables
 }
 
 // for screens smaller than 1600px
@@ -45,7 +45,7 @@
     :root {
         --padding: 1rem calc((100vw - 75rem) / 2);
         --padding-sides: 1rem calc((100vw - 75rem) / 2);
-        --width: 75rem;
+        --width: 74rem;
     }
 }
 
