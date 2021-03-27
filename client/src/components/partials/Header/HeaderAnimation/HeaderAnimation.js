@@ -8,6 +8,7 @@ import anime from "animejs";
 
 /**
  *  @return : Element, returns the animation in the small screens header
+ *  @includes : header Animation
  */
 function HeaderAnimation() {
 

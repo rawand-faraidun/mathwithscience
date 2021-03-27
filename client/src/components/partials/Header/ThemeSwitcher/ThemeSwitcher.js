@@ -8,6 +8,7 @@ import './themeSwitcher.css';
 
 /**
 *  @return : Element, the theme switch element
+*  @includes : navigation theme switcher
 */
 function Searchbar() {
 

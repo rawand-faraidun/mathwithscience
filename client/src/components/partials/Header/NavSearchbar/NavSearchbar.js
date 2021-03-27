@@ -8,6 +8,7 @@ import './nav-searchbar.css';
 
 /**
  *  @return : Element, returns the search bar in navigation
+ *  @includes : navigation searchbar
  */
 function Searchbar() {
 

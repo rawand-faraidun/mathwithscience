@@ -7,7 +7,7 @@ import './header.css';
 // importing components
 import Brand from '../Brand/Brand';
 import Burger from './Burger/Burger';
-import Searchbar from './Searchbar/Searchbar';
+import Searchbar from './NavSearchbar/NavSearchbar';
 import Navlinks from './Navlinks/Navlinks';
 import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 import HeaderAnimation from './HeaderAnimation/HeaderAnimation';
@@ -16,6 +16,7 @@ import HeaderAnimation from './HeaderAnimation/HeaderAnimation';
 
 /**
  *  @return : Element, returns the Header element
+ *  @includes : nav-main (Brand and Burger), nav-holder(Searchbar, Navlinks, ThemeSwitcher, HeaderAnimation) and nav-drawer-closer
  */
 function Header() {
 

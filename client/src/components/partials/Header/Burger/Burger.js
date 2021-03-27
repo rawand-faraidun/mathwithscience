@@ -12,6 +12,7 @@ import './burger.css';
  *      @whiteOnly : Boolean, this determines if the burger lines must always be white or not
  * 
  *  @return : Element, returns the burger used in navigation
+ *  @includes : navigation burger
  */
 function Burger(props) {
 
@@ -20,6 +21,7 @@ function Burger(props) {
         props.navToggleHandler(!props.navState);
     }
 
+    // this doesn't need state because when the element re-render it will update to
     // making the lines white or not based on white only property
     const burgerLinesStyling = {}
     if (props.whiteOnly) {

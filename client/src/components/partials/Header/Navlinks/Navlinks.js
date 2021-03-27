@@ -12,6 +12,7 @@ import './navlinks.css';
  *      @whiteOnly : Boolean, this determines if the links must always be white or not
  * 
  *  @return : Element, returns the navigation links
+ *  @includes : navigation links
  */
 function Navlinks(props) {
 
