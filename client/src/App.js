@@ -37,7 +37,7 @@ function App() {
 
 
         {/* this is a test element to make the page scroolable */}
-        <div className="test" id="test" style={{ position: 'absolute', top: 2000, backgroundColor: 'red', width: '100%' }}>
+        <div className="test" id="test" style={{ position: 'absolute', top: 5000, backgroundColor: 'red', width: '100%' }}>
           aajv
             </div>
 
