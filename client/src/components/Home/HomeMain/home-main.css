@@ -1,6 +1,6 @@
-/*********
-***Home***
-*********/
+/**************
+***Home Main***
+**************/
 .home-main {
   position: relative;
   padding-top: 10rem;
@@ -51,4 +51,4 @@
     width: 100%;
   }
 }
-/*# sourceMappingURL=home.css.map */
+/*# sourceMappingURL=home-main.css.map */

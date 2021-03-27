@@ -6,6 +6,7 @@ import './search-result.css';
 
 /**
  *  @return : Element, returns search result grid element, if search query was empty it will show branches
+ *  @includes : homepage search reslt
  */
 function SearchResult(props) {
 
