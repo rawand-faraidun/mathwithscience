@@ -25,15 +25,13 @@ function PopularCalculators() {
         { name: 'Time', description: 'lorem ipsum dolor sit amet consectetur adi occurence lorem ipsum dolor sit amet consectetur adip occurence', visited: 0 }
     ]
 
-    return (
 
+    return (
         <div className="popular-calculators">
 
             <h2 className="popular-calculators-title">Most Popular Calculators</h2>
 
-            {/* includes homepage animation background, searchbar and branches */}
             <div className="popular-calculators-grid">
-
                 {calculators.map((calculator, i) => {
                     return (
                         <a href="/" className="calculator" key={i}>
