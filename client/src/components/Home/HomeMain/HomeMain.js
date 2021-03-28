@@ -27,7 +27,7 @@ function HomeMain() {
 
         <>
 
-            {/* includes homepage animation background, searchbar and branches */}
+            {/* includes homepage animation background, searchbar and search results */}
             <div className="home-main">
 
 
