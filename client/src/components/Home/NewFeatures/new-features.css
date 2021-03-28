@@ -1,0 +1,32 @@
+/************************
+***popular calculators***
+************************/
+.new-features {
+  margin-top: 7rem;
+  padding: var(--padding-sides);
+}
+
+.new-features .new-features-title {
+  font-family: var(--body-font-family);
+  font-size: var(--xx-large-font-size);
+  color: var(--head-text-color);
+  text-align: center;
+}
+
+.new-features .new-features-list {
+  margin: auto;
+  margin-top: 2rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: left;
+  list-style: unset;
+}
+
+.new-features .new-features-list .new-features-item {
+  margin-top: 1rem;
+  font-family: var(--head-font-family);
+  font-size: var(--large-font-size);
+  color: var(--body-text-color);
+}
+/*# sourceMappingURL=new-features.css.map */

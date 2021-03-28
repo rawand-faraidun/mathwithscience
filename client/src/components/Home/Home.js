@@ -1,8 +1,9 @@
 import React from 'react';
 
-// importing Branchs
+// importing components
 import HomeMain from './HomeMain/HomeMain';
 import PopularCalculators from './PopularCalculators/PopularCalculators';
+import NewFeatures from './NewFeatures/NewFeatures';
 
 /**
  *  @return : Element, returns Home Elements
@@ -19,6 +20,9 @@ function Home() {
 
             {/* the most popular calculators part */}
             <PopularCalculators />
+
+            {/* adding new features */}
+            <NewFeatures />
 
         </div>
     );
