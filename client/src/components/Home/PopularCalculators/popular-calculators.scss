@@ -6,12 +6,20 @@
 .popular-calculators {
     margin-top: 7rem;
     padding: var(--padding-sides);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #008b58;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    // background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+    // background-size: 15rem;
 
     .popular-calculators-title {
         font-family: var(--body-font-family);
         font-size: var(--xx-large-font-size);
         color: var(--head-text-color);
         text-align: center;
+
+        color: var(--white-color);
     }
 
     .popular-calculators-grid {
@@ -103,14 +111,14 @@
             row-gap: 1.5rem;
 
             .calculator {
-                display: none; // hidding all calculators except the first to 6th one
+                display: none; // hidding all calculators except the first to 5th one
 
+                // showing only the first 5
                 &:first-child,
                 &:nth-child(2),
                 &:nth-child(3),
                 &:nth-child(4),
-                &:nth-child(5),
-                &:nth-child(6) {
+                &:nth-child(5) {
                     display: block;
                 }
             }

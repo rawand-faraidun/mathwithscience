@@ -36,7 +36,7 @@ function PopularCalculators() {
 
                 {calculators.map((calculator, i) => {
                     return (
-                        <a href="/" className="calculator">
+                        <a href="/" className="calculator" key={i}>
                             <h2 className="calculator-name">{calculator.name}</h2>
                             <p className="calculator-description">{`${calculator.description.substring(0, 100)}...`}</p>
                         </a>

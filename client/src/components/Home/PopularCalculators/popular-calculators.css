@@ -4,6 +4,10 @@
 .popular-calculators {
   margin-top: 7rem;
   padding: var(--padding-sides);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #008b58;
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
 }
 
 .popular-calculators .popular-calculators-title {
@@ -11,6 +15,7 @@
   font-size: var(--xx-large-font-size);
   color: var(--head-text-color);
   text-align: center;
+  color: var(--white-color);
 }
 
 .popular-calculators .popular-calculators-grid {
@@ -98,7 +103,7 @@
   .popular-calculators .popular-calculators-grid .calculator {
     display: none;
   }
-  .popular-calculators .popular-calculators-grid .calculator:first-child, .popular-calculators .popular-calculators-grid .calculator:nth-child(2), .popular-calculators .popular-calculators-grid .calculator:nth-child(3), .popular-calculators .popular-calculators-grid .calculator:nth-child(4), .popular-calculators .popular-calculators-grid .calculator:nth-child(5), .popular-calculators .popular-calculators-grid .calculator:nth-child(6) {
+  .popular-calculators .popular-calculators-grid .calculator:first-child, .popular-calculators .popular-calculators-grid .calculator:nth-child(2), .popular-calculators .popular-calculators-grid .calculator:nth-child(3), .popular-calculators .popular-calculators-grid .calculator:nth-child(4), .popular-calculators .popular-calculators-grid .calculator:nth-child(5) {
     display: block;
   }
 }
