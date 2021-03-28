@@ -25,7 +25,7 @@ function HomeMain() {
     
     return (
 
-        <div>
+        <>
 
             {/* includes homepage animation background, searchbar and branches */}
             <div className="home-main">
@@ -85,7 +85,7 @@ function HomeMain() {
 
             </div>
 
-        </div>
+        </>
     );
 
 }

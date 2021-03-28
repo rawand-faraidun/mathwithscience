@@ -4,7 +4,6 @@ import React from 'react';
 import HomeMain from './HomeMain/HomeMain';
 import PopularCalculators from './PopularCalculators/PopularCalculators';
 
-
 /**
  *  @return : Element, returns Home Elements
  *  @includes : Homepage components
