@@ -13,6 +13,7 @@
     // background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
     // background-size: 15rem;
 
+    // title of the popular calculators
     .popular-calculators-title {
         font-family: var(--body-font-family);
         font-size: var(--xx-large-font-size);
@@ -22,6 +23,7 @@
         color: var(--white-color);
     }
 
+    // the grid of popular calculators
     .popular-calculators-grid {
         margin-top: 3rem;
         display: grid;
@@ -29,7 +31,7 @@
         column-gap: 3rem;
         row-gap: 2rem;
 
-        // designing each branch card
+        // designing each calculator card
         .calculator {
             padding: 2rem 1rem;
             text-align: center;
