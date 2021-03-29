@@ -16,6 +16,7 @@ import brandBlack from './math-with-science-brand-black.svg';
  *      @whiteOnly : Boolean, this determines if the brand must always be white or not
  * 
  *  @return : Element, returns a brand that can be a link or not
+ *  @includes : brand
  */
 function Brand(props) {
 
