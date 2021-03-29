@@ -6,7 +6,7 @@
 .new-features {
     margin-top: 7rem;
     padding: var(--padding-sides);
-    
+
     // title of new features
     .new-features-title {
         font-family: var(--body-font-family);
@@ -18,10 +18,11 @@
     // list of the new features
     .new-features-list {
         margin: auto;
-        margin-top: 2rem;
+        margin-top: 3rem;
         width: fit-content;
         text-align: left;
         list-style: unset;
+        list-style-position: inside;
 
         // new features list item
         .new-features-item {

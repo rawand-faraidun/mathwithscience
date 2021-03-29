@@ -15,12 +15,13 @@
 
 .new-features .new-features-list {
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 3rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   list-style: unset;
+  list-style-position: inside;
 }
 
 .new-features .new-features-list .new-features-item {
