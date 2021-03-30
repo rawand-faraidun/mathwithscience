@@ -26,7 +26,7 @@ function NewFeatures() {
 
             <ul className="new-features-list">
 
-                {features.map(feature => <li className="new-features-item">{feature}</li>)}
+                {features.map((feature, i) => <li className="new-features-item" key={i}>{feature}</li>)}
 
             </ul>
 
