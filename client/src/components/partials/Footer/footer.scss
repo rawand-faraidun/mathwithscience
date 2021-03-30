@@ -1,0 +1,86 @@
+/***********
+***Footer***
+***********/
+
+// designing the footer
+.footer {
+    margin-top: 7rem;
+    padding-bottom: 0.3rem;
+
+    // the footer line
+    .footer-line {
+        margin: auto;
+        width: var(--width);
+        height: 2px;
+        background-color: var(--body-text-color);
+        border: none;
+    }
+
+    // the holder of the footer
+    .footer-holder {
+        padding: var(--padding-sides);
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        display: flex;
+
+        // the left side of the footer
+        .footer-left {
+            flex: 1;
+        }
+
+        // the right side of the footer
+        .footer-right {
+            margin-top: var(--brand-image-size);
+            flex: 1;
+            display: flex;
+
+            // each list in the rightside
+            .footer-list {
+                flex: 1;
+
+                // each link in the list
+                .link {
+                    margin-top: 1rem;
+                    font-family: var(--body-font-family);
+                    font-size: var(--medium-font-size);
+                    color: var(--body-text-color);
+
+                    // the hyperlinks
+                    a {
+                        color: var(--body-text-color);
+                    }
+
+                    // social media links
+                    &.socials {
+                        font-size: var(--x-large-font-size);
+
+                        // each link
+                        a {
+                            margin: 1rem;
+
+                            // instagram link
+                            .instagram {
+                                color: #f32f6f;
+                            }
+
+                            // facebook link
+                            .facebook {
+                                color: #4167b2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // copyright in the footer
+    .footer-copyright {
+        padding: var(--padding-sides);
+        font-family: var(--body-font-family);
+        font-size: calc(var(--x-small-font-size) - 1px);
+        font-weight: 100;
+        text-align: center;
+        color: var(--body-text-color);
+    }
+}

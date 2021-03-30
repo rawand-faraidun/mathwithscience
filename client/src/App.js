@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 
 // importing components
 import Header from './components/partials/Header/Header';
+import Footer from './components/partials/Footer/Footer'
 import Home from './components/Home/Home';
 
 
@@ -36,10 +37,17 @@ function App() {
         </Switch>
 
 
+        {/* adding footer of the page */}
+        <Footer />
+
+
+
+
+
         {/* this is a test element to make the page scroolable */}
-        <div className="test" id="test" style={{ position: 'absolute', top: 5000, backgroundColor: 'red', width: '100%' }}>
+        {/* <div className="test" id="test" style={{ position: 'absolute', top: 5000, backgroundColor: 'red', width: '100%' }}>
           aajv
-            </div>
+            </div> */}
 
 
       </Router>
