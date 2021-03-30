@@ -5,6 +5,8 @@
 // designing the header
 .header {
     position: fixed;
+    top: 0;
+    left: 0;
     display: flex; // using flex display to position elements easily
     width: 100%;
     height: var(--header-height-size);
