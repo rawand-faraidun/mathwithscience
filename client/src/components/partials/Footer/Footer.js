@@ -22,6 +22,17 @@ function Footer() {
                 <div className="footer-left">
                     {/* adding brand */}
                     <Brand />
+
+                    {/* the language choosing select */}
+                    <div className="footer-language-select">
+                        <label className="language-selector-label" htmlFor="language">Language: </label>
+
+                        {/* the language selector */}
+                        <select name="language" id="language" className="language-selector">
+                            <option value="en">English</option>
+                            <option value="kr">کوردی</option>
+                        </select>
+                    </div>
                 </div>
 
                 {/* the right side of the footer */}
