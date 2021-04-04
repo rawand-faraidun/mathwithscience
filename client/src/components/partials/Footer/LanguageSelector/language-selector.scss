@@ -1,0 +1,31 @@
+/**********************
+***Language Selector***
+**********************/
+
+// language selector in footer
+.language-select {
+    margin-top: auto;
+
+    .language-selector-label {
+        font-family: var(--body-font-family);
+        font-size: var(--medium-font-size);
+        color: var(--head-text-color);
+    }
+
+    .language-selector {
+        padding-top: 0.3rem;
+        font-family: var(--head-font-family);
+        font-size: var(--small-font-size);
+        color: var(--body-text-color);
+        background-color: var(--body-color);
+    }
+}
+
+////////////////
+
+// changing the header to header and navigation drawe in small screens
+@media screen and (max-width: 768px) {
+    .language-select {
+        margin-top: 2rem;
+    }
+}

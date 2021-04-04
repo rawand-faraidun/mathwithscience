@@ -5,6 +5,7 @@ import './footer.css';
 
 // impirting Components
 import Brand from '../Brand/Brand';
+import LanguageSelector from './LanguageSelector/LanguageSelector';
 
 /**
  *  @return : Element, returns all the frontend
@@ -20,19 +21,12 @@ function Footer() {
 
                 {/* the left side of the footer */}
                 <div className="footer-left">
+
                     {/* adding brand */}
                     <Brand />
 
-                    {/* the language choosing select */}
-                    <div className="footer-language-select">
-                        <label className="language-selector-label" htmlFor="language">Language: </label>
-
-                        {/* the language selector */}
-                        <select name="language" id="language" className="language-selector">
-                            <option value="en">English</option>
-                            <option value="kr">کوردی</option>
-                        </select>
-                    </div>
+                    {/* adding language selector */}
+                    <LanguageSelector />
                 </div>
 
                 {/* the right side of the footer */}
@@ -52,10 +46,10 @@ function Footer() {
                         <li className="link">Social Medias</li>
                         <li className="link socials">
                             <a href="/" title="Math with Science on Instagram">
-                                <i class="fab fa-instagram instagram"></i>
+                                <i className="fab fa-instagram instagram"></i>
                             </a>
                             <a href="/" title="Math with Science on Facebook">
-                                <i class="fab fa-facebook-square facebook"></i>
+                                <i className="fab fa-facebook-square facebook"></i>
                             </a>
                         </li>
                     </ul>
