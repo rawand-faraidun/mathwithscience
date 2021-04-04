@@ -12,6 +12,10 @@ import Home from './components/Home/Home';
  */
 function App() {
 
+  // making the choosen language if the websie has no cookie for it
+  var language = localStorage.getItem('language') != null ? localStorage.getItem('language') : 'en';
+
+  
   // removing the preload class from the body when the page is ready
   // preload class prevent anything to animate before the whole page is ready
   useEffect(() => {
@@ -30,7 +34,7 @@ function App() {
         <Switch>
 
           {/* Adding Home */}
-          <Redirect from="/" to="/en" exact />
+          <Redirect from="/" to={language} exact />
           <Route path={['/en', '/kr']} component={Home} exact />
 
 
