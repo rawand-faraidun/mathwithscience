@@ -12,32 +12,41 @@ import './language-selector.css';
  */
 function LanguageSelector() {
 
-
     // getting the current path of the website
     const thisPath = useLocation().pathname;
 
-    // checking if the path is a valied language
-    if (thisPath.substring(1, 3) === 'en' || thisPath.substring(1, 3) === 'kr') {
 
-        // chekig if the language in the current URL was not the same as the cookie one, then changing the cookie to the url one
-        // the language in url is from second to forth letter, that is why substring used
-        if (thisPath.substring(1, 3) !== localStorage.getItem('language')) {
-            localStorage.setItem('language', thisPath.substring(1, 3));
+    // checking if there is a vailed cookie for language
+    if (localStorage.getItem('language') === 'en' || localStorage.getItem('language') === 'kr') {
+
+        // checking if the path is a valied language
+        if (thisPath.substring(1, 3) === 'en' || thisPath.substring(1, 3) === 'kr') {
+
+            // chekig if the language in the current URL was not the same as the cookie one, then changing the cookie to the url one
+            // the language in url is from second to forth letter, that is why substring used
+            if (thisPath.substring(1, 3) !== localStorage.getItem('language')) {
+                localStorage.setItem('language', thisPath.substring(1, 3));
+            }
+        }
+        // if the language is not valied
+        else {
+            ////////////////////////////////
+            ////////////////////////////////
+            ////////////////////////////////
+            ////////////////////////////////
+            /* this will be changed to 404 later */
+            ////////////////////////////////
+            ////////////////////////////////
+            ////////////////////////////////
+            ////////////////////////////////
+            window.location = `/${localStorage.getItem('language')}`;
         }
     }
-    // if the language is not valied
+    // if there was no cookie, rerouting the user to english
     else {
-        ////////////////////////////////
-        ////////////////////////////////
-        ////////////////////////////////
-        ////////////////////////////////
-        /* this will be changed to 404 later */
-        ////////////////////////////////
-        ////////////////////////////////
-        ////////////////////////////////
-        ////////////////////////////////
         window.location = `/en`;
     }
+
 
     // handeling language change
     function changeLanguage(event) {
@@ -47,6 +56,7 @@ function LanguageSelector() {
         window.location = `/${localStorage.getItem('language')}`;
     }
 
+    
     return (
         <>
             {/* the language choosing select */}
