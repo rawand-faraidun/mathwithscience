@@ -8,12 +8,12 @@ import languageHelper from '../../languageHelper';
 import './language-selector.css';
 
 
+
 // page content all languages
 const pageContent = {
     en: 'language',
     kr: 'زمان'
 }
-
 
 
 /**
