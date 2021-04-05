@@ -2,6 +2,17 @@
 class languageHelper {
 
 
+
+    // initiating cookie check
+    constructor() {
+
+        // checking if the website has a valid language cookie, if not it will create one
+        if (!languageHelper.vailedLanguageCookie()) {
+            localStorage.setItem('language', 'en')
+        }
+    }
+
+
     // checking if the website has a valid language cookie or not
     /**
      * @return {boolean} true if the website has a valid language cookie, false otherwise
