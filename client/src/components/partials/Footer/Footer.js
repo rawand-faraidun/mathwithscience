@@ -57,8 +57,10 @@ function Footer() {
 
             </div>
 
-            <div className="footer-copyright">
-                <span>©2020 - {new Date().getFullYear()} Math with Science</span>
+            <div className="footer-details">
+                <p>©2020 - {new Date().getFullYear()} Math with Science</p>
+                <p className="footer-details-divider"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+                <p className="privacy-policy"><a href="/">Privacy policy & cookies</a></p>
             </div>
 
         </footer>

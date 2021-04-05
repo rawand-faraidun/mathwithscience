@@ -5,7 +5,7 @@
 // designing the footer
 .footer {
     margin-top: 7rem;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.4rem;
 
     // the footer line
     .footer-line {
@@ -76,14 +76,28 @@
         }
     }
 
-    // copyright in the footer
-    .footer-copyright {
+    // details in the footer
+    .footer-details {
+        margin: auto;
         padding: var(--padding-sides);
         font-family: var(--body-font-family);
         font-size: calc(var(--x-small-font-size) - 1px);
         font-weight: 100;
         text-align: center;
         color: var(--body-text-color);
+
+        // making all paragraphs inline with each other
+        p {
+            display: inline;
+        }
+
+        // privacy policy in footer
+        .privacy-policy {
+            text-decoration: underline;
+            a {
+                color: inherit;
+            }
+        }
     }
 }
 
@@ -96,6 +110,16 @@
             flex-direction: column;
             .footer-right {
                 margin-top: 2rem;
+            }
+        }
+        .footer-details {
+            line-height: calc(var(--x-small-font-size) * 1.5);
+            // hidding the divider
+            .footer-details-divider {
+                display: none;
+            }
+            p {
+                display: block;
             }
         }
     }
