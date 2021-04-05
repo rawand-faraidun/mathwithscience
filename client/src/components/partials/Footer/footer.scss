@@ -42,6 +42,8 @@
 
                 // each link in the list
                 .link {
+                    display: inline-block;
+                    width: 50%;
                     margin-top: 1rem;
                     font-family: var(--body-font-family);
                     font-size: var(--medium-font-size);
@@ -54,20 +56,22 @@
 
                     // social media links
                     &.socials {
-                        font-size: var(--x-large-font-size);
+                        font-size: var(--large-font-size);
 
                         // each link
                         a {
                             margin: 1rem;
 
-                            // instagram link
-                            .instagram {
+                            // instagram link hover
+                            .instagram:hover {
+                                transition: color 0.3s ease;
                                 color: #f32f6f;
                             }
-
-                            // facebook link
-                            .facebook {
+                            
+                            // facebook link hover
+                            .facebook:hover {
                                 color: #4167b2;
+                                transition: color 0.3s ease;
                             }
                         }
                     }
