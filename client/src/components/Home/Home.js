@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 
 // importing components
 import HomeMain from './HomeMain/HomeMain';
@@ -14,6 +15,12 @@ function Home() {
     return (
 
         <div>
+            {/* overriding page head */}
+            <Helmet>
+                <title>Math with Science | free helping website with math and science problems</title>
+                <meta name="description" content="Math with Science is a website to help anyone with theit math problems" />
+            </Helmet>
+
 
             {/* the main part of homepage */}
             <HomeMain />
