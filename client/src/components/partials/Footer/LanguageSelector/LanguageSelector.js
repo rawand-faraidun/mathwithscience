@@ -1,8 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
+// importing components
+import languageHelper from '../../languageHelper';
+
 // importing styling
 import './language-selector.css';
+
+
+// page content all languages
+const pageContent = {
+    en: 'language',
+    kr: 'زمان'
+}
 
 
 
@@ -12,34 +22,20 @@ import './language-selector.css';
  */
 function LanguageSelector() {
 
+
     // getting the current path of the website
     const thisPath = useLocation().pathname;
 
-
     // checking if there is a vailed cookie for language
-    if (localStorage.getItem('language') === 'en' || localStorage.getItem('language') === 'kr') {
+    if (languageHelper.vailedLanguageCookie()) {
 
         // checking if the path is a valied language
-        if (thisPath.substring(1, 3) === 'en' || thisPath.substring(1, 3) === 'kr') {
+        if (languageHelper.vailedLanguageSymbol(thisPath.substring(1, 3))) {
 
             // chekig if the language in the current URL was not the same as the cookie one, then changing the cookie to the url one
-            // the language in url is from second to forth letter, that is why substring used
             if (thisPath.substring(1, 3) !== localStorage.getItem('language')) {
                 localStorage.setItem('language', thisPath.substring(1, 3));
             }
-        }
-        // if the language is not valied
-        else {
-            ////////////////////////////////
-            ////////////////////////////////
-            ////////////////////////////////
-            ////////////////////////////////
-            /* this will be changed to 404 later */
-            ////////////////////////////////
-            ////////////////////////////////
-            ////////////////////////////////
-            ////////////////////////////////
-            window.location = `/${localStorage.getItem('language')}`;
         }
     }
     // if there was no cookie, rerouting the user to english
@@ -48,28 +44,35 @@ function LanguageSelector() {
     }
 
 
+
     // handeling language change
     function changeLanguage(event) {
         // setting the language change as a cookie variable
         localStorage.setItem('language', event.target.value);
         // rerouting the user to the same page but in the choosen language
-        window.location = `/${localStorage.getItem('language')}`;
+        window.location = `/${localStorage.getItem('language')}/${thisPath.substring(4)}`;
     }
 
-    
     return (
         <>
-            {/* the language choosing select */}
-            <div className="language-select">
-                <label className="language-selector-label" htmlFor="language">Language: </label>
+            {/* changing the direction if the page was kurdish */}
+            <div className="language-select" dir={`${languageHelper.getDirection()}`}>
 
+                {/* adding kurdish class in kurdish page */}
+                <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
+
+                    {/* showing page content based on page klanguage */}
+                    {pageContent[languageHelper.getLanguageSymbol()]}
+                : </label>
+
+                &nbsp;
                 {/* the language selector */}
                 <select
                     name="language"
                     id="language"
                     className="language-selector"
                     onChange={changeLanguage}
-                    defaultValue={localStorage.getItem('language')} // making default value as the choosen language before
+                    defaultValue={languageHelper.getLanguageSymbol()} // making default value as the choosen language
                 >
                     <option value="en">English</option>
                     <option value="kr">کوردی</option>
