@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // importing components
+import languageHelper from './components/partials/languageHelper';
 import Header from './components/partials/Header/Header';
-import Footer from './components/partials/Footer/Footer'
+import Footer from './components/partials/Footer/Footer';
 import Home from './components/Home/Home';
+
+
+
+// initiating language helper cookie check constructor
+new languageHelper();
+
 
 
 /**
@@ -12,10 +19,6 @@ import Home from './components/Home/Home';
  */
 function App() {
 
-  // making the choosen language if the websie has no cookie for it
-  var language = localStorage.getItem('language') != null ? localStorage.getItem('language') : 'en';
-
-  
   // removing the preload class from the body when the page is ready
   // preload class prevent anything to animate before the whole page is ready
   useEffect(() => {
@@ -34,8 +37,7 @@ function App() {
         <Switch>
 
           {/* Adding Home */}
-          <Redirect from="/" to={language} exact />
-          <Route path={['/en', '/kr']} component={Home} exact />
+          <Route path="/" component={Home} exact />
 
 
         </Switch>
