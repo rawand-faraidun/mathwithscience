@@ -10,7 +10,7 @@ import './themeSwitcher.css';
 *  @return : Element, the theme switch element
 *  @includes : navigation theme switcher
 */
-function Searchbar() {
+function ThemeSwitcher() {
 
     // using state to handle theme change, the initial value is based on the user chossen theme color before
     const [themeState, setThemeState] = useState(localStorage.getItem('theme-color'));
@@ -51,4 +51,4 @@ function Searchbar() {
     )
 }
 
-export default Searchbar;
+export default ThemeSwitcher;
