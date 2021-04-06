@@ -23,7 +23,7 @@
 }
 
 .home-main .search .search-title {
-  font-family: var(--body-font-family);
+  font-family: var(--head-font-family);
   font-size: var(--xx-large-font-size);
   color: var(--white-color);
   text-align: center;

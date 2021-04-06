@@ -3,6 +3,66 @@ import React from 'react';
 // importing stylings
 import './search-result.css';
 
+// importing Components
+import languageHelper from '../../../partials/languageHelper';
+
+
+
+// component content all languages
+const componentContent = {
+    branches: [
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'جەبر', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        },
+        {
+            urlName: 'algebra',
+            en: { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
+            kr: { name: 'تێست', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
+            , visited: 0
+        }
+    ]
+}
+
+
 
 /**
  *  @return : Element, returns search result grid element, if search query was empty it will show branches
@@ -10,20 +70,10 @@ import './search-result.css';
  */
 function SearchResult(props) {
 
-    // list of test branches
-    var branches = [
-        { name: 'Algebra', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'geometry', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'Unit Conversion', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'Health', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'Miscellaneous', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'Matrices', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence', visited: 0 },
-        { name: 'Finance', description: 'lorem ipsum dolor sit amet consectetur adi occurence lorem ipsum dolor sit amet consectetur adip occurence', visited: 0 }
-    ]
-
     // filtering the array by search query
-    var filtered = branches.filter(result =>
-        result.name.toLowerCase().includes(props.searchquery.toLowerCase()) || result.description.toLowerCase().includes(props.searchquery.toLowerCase())
+    var filtered = componentContent.branches.filter(result =>
+        result['en'].name.toLowerCase().includes(props.searchquery.toLowerCase()) || result['en'].description.toLowerCase().includes(props.searchquery.toLowerCase())
+        || result['kr'].name.toLowerCase().includes(props.searchquery.toLowerCase()) || result['kr'].description.toLowerCase().includes(props.searchquery.toLowerCase())
     );
 
 
@@ -36,7 +86,7 @@ function SearchResult(props) {
         }
         // if visit count was equal, then sorting it by alphabetic of name
         else if (a.visited === b.visited) {
-            if (a.name < b.name) {
+            if (a.urlName < b.urlName) {
                 return -1;
             }
             else {
@@ -51,13 +101,17 @@ function SearchResult(props) {
 
 
     return (
-        <div className="search-result">
+        <div className="search-result" dir={languageHelper.getDirection()}>
             {
                 filtered.map((branch, i) => {
                     return (
-                        <a href={branch.name} className="result" key={i}>
-                            <h2 className="result-name">{branch.name}</h2>
-                            <p className="result-description">{`${branch.description.substring(0, 100)}...`}</p>
+                        <a href={`/calculators/${branch.urlName}`} className="result" key={i}>
+                            <h2 className={`result-name ${languageHelper.getClass()}`}>
+                                {branch[languageHelper.getLanguageSymbol()].name}
+                            </h2>
+                            <p className={`result-description ${languageHelper.getClass()}`}>
+                                {`${branch[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
+                            </p>
                         </a>
                     )
                 })

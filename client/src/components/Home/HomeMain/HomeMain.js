@@ -5,7 +5,23 @@ import './home-main.css';
 
 // importing Components
 import Particles from 'react-particles-js';
+import languageHelper from '../../partials/languageHelper';
 import SearchResult from './SearchResult/SearchResult';
+
+
+
+// component content all languages
+const componentContent = {
+    title: {
+        en: 'Search a calculator for your problem',
+        kr: 'گەڕان بکە بۆ ژمێرەری تایبەت بە کارەکەت',
+    },
+    searchBarPlaceholder: {
+        en: 'Search',
+        kr: 'گەڕان'
+    }
+}
+
 
 
 /**
@@ -22,7 +38,7 @@ function HomeMain() {
         setSearchText(e.target.value);
     }
 
-    
+
     return (
 
         <>
@@ -63,15 +79,16 @@ function HomeMain() {
                 <div className="search">
 
                     {/* homepage search heading text */}
-                    <h1 className="search-title">
-                        Search a calculator for your problem
+                    <h1 className={`search-title ${languageHelper.getClass()}`}>
+                        {componentContent.title[languageHelper.getLanguageSymbol()]}
                     </h1>
 
                     {/* homepage search input */}
                     <input
                         type="text"
-                        className="searchbar"
-                        placeholder="Search..."
+                        className={`searchbar ${languageHelper.getClass()}`}
+                        dir={languageHelper.getDirection()}
+                        placeholder={`${componentContent.searchBarPlaceholder[languageHelper.getLanguageSymbol()]}...`}
                         value={searchText}
                         onChange={handleSearch}
                         autoComplete="off"
