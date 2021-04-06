@@ -1,8 +1,8 @@
 //added API fonts
 @import url("https://fonts.googleapis.com/css?family=Manjari:400,700|Nunito:300,400,700|Open+Sans+Condensed:300|Satisfy&display=swap");
 @font-face {
-    src: url(fonts/adobe-arabic-regular.otf);
-    font-family: adobe-arabic-regular;
+    src: url(fonts/ibm-plex-arabic.ttf);
+    font-family: "ibm-plex-arabic";
 }
 
 /****************
@@ -11,7 +11,7 @@
 :root {
     --head-font-family: "Manjari", sans-serif; //mostly used for the header of the content
     --body-font-family: "Nunito", sans-serif; //mostly used for body of the content and links
-    --kurdish-font-family: adobe-arabic-regular; // the kurdish font family
+    --kurdish-font-family: "ibm-plex-arabic", sans-serif; // the kurdish font family
     --calculator-font-family: "Open Sans Condensed", sans-serif; //used for the calculators
     --brand-font-family: "Satisfy", cursive; //used for the brand logo font
 }
@@ -303,6 +303,5 @@ body {
 // kurdish class on any element makes the texts insite kurdish
 .kurdish {
     font-family: var(--kurdish-font-family) !important;
-    letter-spacing: 2px !important;
-    line-height: 140% !important;
+    line-height: 160% !important;
 }
