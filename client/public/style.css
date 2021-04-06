@@ -176,5 +176,6 @@ body.preload * {
 .kurdish {
   font-family: var(--kurdish-font-family) !important;
   letter-spacing: 2px !important;
+  line-height: 140% !important;
 }
 /*# sourceMappingURL=style.css.map */
