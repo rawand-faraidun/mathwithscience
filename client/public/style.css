@@ -173,7 +173,8 @@ body.preload * {
   transition: none !important;
 }
 
-body .kurdish {
+.kurdish {
   font-family: var(--kurdish-font-family) !important;
+  letter-spacing: 2px !important;
 }
 /*# sourceMappingURL=style.css.map */

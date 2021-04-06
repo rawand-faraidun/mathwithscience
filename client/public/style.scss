@@ -298,9 +298,10 @@ body {
             transition: none !important;
         }
     }
+}
 
-    // kurdish class on any element makes the texts insite kurdish
-    .kurdish {
-        font-family: var(--kurdish-font-family) !important;
-    }
+// kurdish class on any element makes the texts insite kurdish
+.kurdish {
+    font-family: var(--kurdish-font-family) !important;
+    letter-spacing: 2px !important;
 }
