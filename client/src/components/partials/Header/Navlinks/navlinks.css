@@ -35,14 +35,6 @@
   font-weight: 700;
 }
 
-.nav-links .link:first-child {
-  margin-left: 0;
-}
-
-.nav-links .link:last-child {
-  margin-right: 0;
-}
-
 .nav-links .link::before {
   content: "";
   position: absolute;
@@ -62,6 +54,14 @@
 
 .nav-links .link:hover::before {
   width: 100%;
+}
+
+.nav-links .link.white a {
+  color: var(--white-color);
+}
+
+.nav-links .link.white::before {
+  background-color: var(--white-color);
 }
 
 @media screen and (max-width: 1024px) {

@@ -19,7 +19,7 @@
         position: relative; // using relative positioningto  make ::BEFORE work perfectly
         letter-spacing: 2px;
         width: fit-content;
-
+        
         // each link is <li> andd this the url <a> inside designing
         a {
             font-family: var(--body-font-family);
@@ -30,15 +30,6 @@
         // active link design, defines which page in the navigation the user is in
         &.active {
             font-weight: 700;
-        }
-
-        // removing margin left for the first link because there is no other links there
-        &:first-child {
-            margin-left: 0;
-        }
-        // removing margin right for the last link because there is no other links there
-        &:last-child {
-            margin-right: 0;
         }
 
         // making a line on each link, showed by hovering
@@ -63,6 +54,16 @@
             // changing before size to fit with the link
             &::before {
                 width: 100%;
+            }
+        }
+
+        // white navigation Links
+        &.white {
+            a {
+                color: var(--white-color);
+            }
+            &::before {
+                background-color: var(--white-color);
             }
         }
     }
