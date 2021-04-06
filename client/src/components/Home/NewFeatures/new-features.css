@@ -19,13 +19,13 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  text-align: left;
   list-style: unset;
   list-style-position: inside;
 }
 
 .new-features .new-features-list .new-features-item {
   margin-top: 1rem;
+  line-height: 140%;
   font-family: var(--head-font-family);
   font-size: var(--large-font-size);
   color: var(--body-text-color);
