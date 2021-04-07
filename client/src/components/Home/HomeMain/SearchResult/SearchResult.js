@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
 
 // importing stylings
@@ -16,30 +16,49 @@ import languageHelper from '../../../partials/languageHelper';
  */
 function SearchResult(props) {
 
+
+    // saving the branches and not letting it rerun
+    const [branches, setBranches] = useState([]);
+    useMemo(async () => {
+        var datas = await axios.get('/api/branches');
+        setBranches(datas.data);
+    }, []);
+    
+
     // stores the search result
     const [searchResult, setSearchResult] = useState([]);
 
     // getting the results of the search
     useEffect(() => {
-
-        // requesting for results from the server
-        axios(
-            {
-                url: '/api/search',
-                method: 'POST',
-                data: {
-                    searchText: props.searchtext
+        if (props.searchtext === '') {
+            setSearchResult(branches);
+        }
+        else {
+            // requesting results from the server
+            axios(
+                {
+                    url: '/api/search',
+                    method: 'POST',
+                    data: {
+                        searchText: props.searchtext
+                    }
                 }
-            }
-        ).then((response) => {
-            setSearchResult(response.data);
-        }).catch(error => {
-            console.log(error);
-        });
+            ).then((response) => {
+                setSearchResult(response.data);
+            }).catch(error => {
+                console.log(error);
+            });
+        }
 
-    }, [props.searchtext]);
+    }, [props.searchtext, branches]);
 
-    console.log(searchResult);
+    // this is to pass the time to the server responding to search and the search is empty, if that happened showing branches again
+    setTimeout(() => {
+        if (props.searchtext === '') {
+            setSearchResult(branches);
+        }
+    }, 0);
+
 
 
     return (
