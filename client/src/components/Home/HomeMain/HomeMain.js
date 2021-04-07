@@ -95,7 +95,7 @@ function HomeMain() {
 
 
                 {/* result of search, if search input is empty it will show the branches */}
-                <SearchResult searchquery={searchText} />
+                <SearchResult searchtext={searchText} />
 
             </div>
         </>
