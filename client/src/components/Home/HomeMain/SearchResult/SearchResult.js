@@ -65,8 +65,7 @@ const componentContent = {
 
 
 /**
- *  @return : Element, returns search result grid element, if search query was empty it will show branches
- *  @includes : homepage search reslt
+ *  @return {Element} : search result grid element, if search was empty it will show branches
  */
 function SearchResult(props) {
 
@@ -101,24 +100,28 @@ function SearchResult(props) {
 
 
     return (
-        <div className="search-result" dir={languageHelper.getDirection()}>
-            {
-                filtered.map((branch, i) => {
-                    return (
-                        <a href={`/calculators/${branch.urlName}`} className="result" key={i}>
-                            <h2 className={`result-name ${languageHelper.getClass()}`}>
-                                {branch[languageHelper.getLanguageSymbol()].name}
-                            </h2>
-                            <p className={`result-description ${languageHelper.getClass()}`}>
-                                {`${branch[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
-                            </p>
-                        </a>
-                    )
-                })
-            }
-        </div>
-    );
+        <>
+            {/* search results grid */}
+            <div className="search-result" dir={languageHelper.getDirection()}>
 
+                {/* each result */}
+                {filtered.map((result, i) =>
+                    <a href={`/calculators/${result.urlName}`} className="result" key={i}>
+
+                        {/* result title */}
+                        <h2 className={`result-name ${languageHelper.getClass()}`}>
+                            {result[languageHelper.getLanguageSymbol()].name}
+                        </h2>
+
+                        {/* result description */}
+                        <p className={`result-description ${languageHelper.getClass()}`}>
+                            {`${result[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
+                        </p>
+                    </a>
+                )}
+            </div>
+        </>
+    );
 }
 
 export default SearchResult;

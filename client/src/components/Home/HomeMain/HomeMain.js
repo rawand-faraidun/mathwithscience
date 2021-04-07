@@ -25,8 +25,7 @@ const componentContent = {
 
 
 /**
- *  @return : Element, returns Home Main Elements
- *  @includes : Homepage animation background, searchbar and search result
+ *  @return {Element} : home main section
  */
 function HomeMain() {
 
@@ -40,10 +39,8 @@ function HomeMain() {
 
 
     return (
-
         <>
-
-            {/* includes homepage animation background, searchbar and search results */}
+            {/* home main */}
             <div className="home-main">
 
 
@@ -101,7 +98,6 @@ function HomeMain() {
                 <SearchResult searchquery={searchText} />
 
             </div>
-
         </>
     );
 

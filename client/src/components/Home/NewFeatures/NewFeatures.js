@@ -25,25 +25,32 @@ const componentContent = {
 
 
 /**
- *  @return : Element, returns Home page new fueatures
- *  @includes : Homepage new features
+ *  @return {Element} : new fueatures section
  */
 function NewFeatures() {
 
     return (
-        <div className="new-features" dir={languageHelper.getDirection()}>
+        <>
+            {/* new features */}
+            <div className="new-features" dir={languageHelper.getDirection()}>
 
-            <h2 className={`new-features-title ${languageHelper.getClass()}`}>{componentContent.title[languageHelper.getLanguageSymbol()]}</h2>
+                {/* new features title */}
+                <h2 className={`new-features-title ${languageHelper.getClass()}`}>{componentContent.title[languageHelper.getLanguageSymbol()]}</h2>
 
-            <ul className="new-features-list">
+                {/* new features list */}
+                <ul className="new-features-list">
 
-                {componentContent.features.map((feature, i) =>
-                    <li className={`new-features-item ${languageHelper.getClass()}`} key={i}>{feature[languageHelper.getLanguageSymbol()]}</li>
-                )}
+                    {/* each feature */}
+                    {componentContent.features.map((feature, i) =>
+                        <li className={`new-features-item ${languageHelper.getClass()}`} key={i}>
+                            {feature[languageHelper.getLanguageSymbol()]}
+                        </li>
+                    )}
 
-            </ul>
+                </ul>
 
-        </div>
+            </div>
+        </>
     );
 
 }

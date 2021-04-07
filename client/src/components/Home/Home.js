@@ -7,31 +7,33 @@ import PopularCalculators from './PopularCalculators/PopularCalculators';
 import NewFeatures from './NewFeatures/NewFeatures';
 
 /**
- *  @return : Element, returns Home Elements
- *  @includes : Homepage components
+ *  @return {Element} : Home Elements
  */
 function Home() {
 
     return (
+        <>
+            {/* homepage */}
+            <div>
 
-        <div>
-            {/* overriding page head */}
-            <Helmet>
-                <title>Math with Science | free helping website with math and science problems</title>
-                <meta name="description" content="Math with Science is a website to help anyone with theit math problems" />
-            </Helmet>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>Math with Science | free helping website with math and science problems</title>
+                    <meta name="description" content="Math with Science is a website to help anyone with theit math problems" />
+                </Helmet>
 
 
-            {/* the main part of homepage */}
-            <HomeMain />
+                {/* the main part of homepage */}
+                <HomeMain />
 
-            {/* the most popular calculators part */}
-            <PopularCalculators />
+                {/* the most popular calculators part */}
+                <PopularCalculators />
 
-            {/* adding new features */}
-            <NewFeatures />
+                {/* adding new features */}
+                <NewFeatures />
 
-        </div>
+            </div>
+        </>
     );
 
 }

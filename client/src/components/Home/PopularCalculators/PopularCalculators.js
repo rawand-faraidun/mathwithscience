@@ -63,30 +63,38 @@ const componentContent = {
 
 
 /**
- *  @return : Element, returns popular calculators grid
- *  @includes : Homepage most popular calculators
+ *  @return {Element} : popular calculators section
  */
 function PopularCalculators() {
 
     return (
-        <div className="popular-calculators" dir={languageHelper.getDirection()}>
+        <>
+            {/* popular calclators */}
+            <div className="popular-calculators" dir={languageHelper.getDirection()}>
 
-            <h2 className={`popular-calculators-title ${languageHelper.getClass()}`}>{componentContent.title[languageHelper.getLanguageSymbol()]}</h2>
+                {/* popular calculators title */}
+                <h2 className={`popular-calculators-title ${languageHelper.getClass()}`}>{componentContent.title[languageHelper.getLanguageSymbol()]}</h2>
 
-            <div className="popular-calculators-grid">
-                {componentContent.calculators.map((calculator, i) => {
-                    return (
+                {/* popular calculators grid */}
+                <div className="popular-calculators-grid">
+
+                    {/* each calculator */}
+                    {componentContent.calculators.map((calculator, i) =>
                         <a href={`/all-calculators/${calculator.urlName}`} className="calculator" key={i}>
+
+                            {/* calculator title */}
                             <h2 className={`calculator-name ${languageHelper.getClass()}`}>{calculator[languageHelper.getLanguageSymbol()].name}</h2>
+
+                            {/* calculator description */}
                             <p className={`calculator-description ${languageHelper.getClass()}`}>
                                 {`${calculator[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
                             </p>
                         </a>
-                    );
-                })}
-            </div>
+                    )}
+                </div>
 
-        </div>
+            </div>
+        </>
     );
 
 }
