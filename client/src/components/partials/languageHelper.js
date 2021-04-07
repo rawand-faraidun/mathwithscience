@@ -1,7 +1,9 @@
 // this file contains 2 functions that help any element to have properties
+
+/**
+ * @return {Class} : contains functions to help with website language
+ */
 class languageHelper {
-
-
 
     // initiating cookie check
     constructor() {
