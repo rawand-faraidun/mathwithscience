@@ -64,7 +64,7 @@ function Header() {
             <div className="nav-main">
 
                 {/* adding brand */}
-                <Brand isLink="true" whiteOnly={!pageScrolled && !navState} />
+                <Brand isLink="true" whiteOnly={!pageScrolled && !navState && thisPath === '/'} />
 
                 {/* this will take the space between bravd and burger in small screens header */}
                 <div className="nav-main-space"></div>
@@ -73,7 +73,7 @@ function Header() {
                 <Burger
                     navState={navState}
                     navToggleHandler={navToggleHandler}
-                    whiteOnly={!pageScrolled && !navState}
+                    whiteOnly={!pageScrolled && !navState && thisPath === '/'}
                 />
 
             </div>
@@ -86,7 +86,7 @@ function Header() {
                 <Searchbar />
 
                 {/* adding navigation lins */}
-                <Navlinks navState={navState} whiteOnly={!pageScrolled && !navState} />
+                <Navlinks navState={navState} whiteOnly={!pageScrolled && !navState && thisPath === '/'} />
 
                 {/* adding the theme switch */}
                 <ThemeSwitcher />
