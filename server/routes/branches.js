@@ -18,18 +18,19 @@ const router = express.Router();
  */
 router.get("/", async (req, res) => {
 
-    // getting branches
-    Branches.find({}, { _id: false, __v: false }, (error, branches) => {
-        if (error) {
-            console.log('GET:  /api/branches  - error');
-            console.log(error);
-            res.status(404).send(error);
-        }
-        else {
-            // sending response
-            res.status(200).send(branches);
-        }
-    });
+    try {
+        // getting branches
+        var branches = await Branches.find({}, { _id: false, __v: false });
+
+        res.status(200).send(branches);
+
+    }
+    catch (err) {
+        console.log('GET:  /api/branches  - error');
+        console.log(err);
+        res.status(404).send(err);
+    }
+
 
 });
 
