@@ -13,7 +13,7 @@ const app = express();
 
 //connectiong to database
 mongoose.connect(
-    'mongodb://localhost:27017/MathwithScience',
+    'mongodb://localhost:27017/MathWithScience',
     { useNewUrlParser: true, useUnifiedTopology: true }
 )
     .then(console.log("!!DB CONEECTED!!"))
@@ -26,6 +26,19 @@ mongoose.set("useCreateIndex", true);
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
+
+
+
+
+// requesting search routes
+const search = require('./routes/search');
+app.use("/api/search", search);
+
+// requesting branch routes
+const branches = require('./routes/branches');
+app.use("/api/branches", branches);
+
+
 
 
 // setting port
