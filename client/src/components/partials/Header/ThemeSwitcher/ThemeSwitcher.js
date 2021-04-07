@@ -7,9 +7,8 @@ import './themeSwitcher.css';
 
 
 /**
-*  @return : Element, the theme switch element
-*  @includes : navigation theme switcher
-*/
+ *  @return {Element} : returns the theme switcher
+ */
 function ThemeSwitcher() {
 
     // using state to handle theme change, the initial value is based on the user chossen theme color before
@@ -26,7 +25,7 @@ function ThemeSwitcher() {
     function changeTheme(event) {
 
         // if the check box is checked, turn the page to darkmode
-        if (event.target.checked === true) {
+        if (event.target.checked) {
             setThemeState('dark');
         }
         // if the check box is not checked, turn the page to lightmode
@@ -35,19 +34,29 @@ function ThemeSwitcher() {
         }
     }
 
+
     return (
-        <div className="theme-switch-holder">
-            <label className="switch-label" htmlFor="theme-switch">
-                <input
-                    type="checkbox"
-                    className="theme-switch"
-                    id="theme-switch"
-                    defaultChecked={themeState === 'dark' ? true : false} // true is darkmode, false is lightmode
-                    onChange={changeTheme} // handles the change theme
-                />
-                <div className="theme-toogler" />
-            </label>
-        </div>
+        <>
+            {/* theme switcher */}
+            <div className="theme-switch-holder">
+
+                {/* this label is the switch, using label to make the whole switch responsive to click events */}
+                <label className="switch-label" htmlFor="theme-switch">
+
+                    {/* the theme check box, not visible */}
+                    <input
+                        type="checkbox"
+                        className="theme-switch"
+                        id="theme-switch"
+                        defaultChecked={themeState === 'dark' ? true : false} // true is darkmode, false is lightmode
+                        onChange={changeTheme} // handles the change theme
+                    />
+
+                    {/* the theme switcher toogler */}
+                    <div className="theme-toogler" />
+                </label>
+            </div>
+        </>
     )
 }
 
