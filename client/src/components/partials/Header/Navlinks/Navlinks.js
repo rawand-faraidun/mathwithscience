@@ -47,7 +47,7 @@ function Navlinks(props) {
 
                     {/* adding each link */}
                     {componentContent.links.map((link, i) =>
-                        <li className={`link 
+                        <li key={i} className={`link 
                             ${thisPath.startsWith(`/${link.urlName}`) ? "active" : ''} 
                             ${props.whiteOnly ? "white" : ''}`}
                         >
