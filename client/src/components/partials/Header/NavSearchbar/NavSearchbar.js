@@ -7,17 +7,12 @@ import './nav-searchbar.css';
 
 
 /**
- *  @return : Element, returns the search bar in navigation
- *  @includes : navigation searchbar
+ * @return {Element} : header searchbar
  */
 function Searchbar() {
 
-
-    // getting the current path of the website
-    // used in chossing if the header searchbar is active or not
     // if this path was pointing to homepage the header background will be transparent
     const thisPath = useLocation().pathname;
-
 
     // this used to control search bar input text
     const [searchText, setSearchText] = useState('');
@@ -28,22 +23,26 @@ function Searchbar() {
     }
 
     return (
-        <div
-            className="nav-search-holder"
-            style={{ display: thisPath === '/' || thisPath === '/en' || thisPath === '/kr' ? 'none' : '' }} // the navigation search bar is not shown in homepage
-        >
-            <input
-                type="text"
-                className="nav-searchbar"
-                placeholder="Search..."
-                value={searchText}
-                onChange={search}
-                autoComplete="off"
-            />
-            <div className="nav-search-icon">
-                <i className="fas fa-search"></i>
+        <>
+            {/* header searchbar */}
+            <div className="nav-search-holder" style={{ display: thisPath === '/' ? 'none' : '' }}>
+
+                {/* header searchbar input */}
+                <input
+                    type="text"
+                    className="nav-searchbar"
+                    placeholder="Search..."
+                    value={searchText}
+                    onChange={search}
+                    autoComplete="off"
+                />
+
+                {/* header searchbar search icon */}
+                <div className="nav-search-icon">
+                    <i className="fas fa-search"></i>
+                </div>
             </div>
-        </div >
+        </>
     )
 }
 
