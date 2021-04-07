@@ -17,8 +17,7 @@ const componentsContent = {
 
 
 /**
- * @props :
- *   @return : Element, returns language selector
+ *  @return {Element} : returns the language selector
  */
 function LanguageSelector() {
 
@@ -28,12 +27,17 @@ function LanguageSelector() {
 
     // handeling language change
     function changeLanguage(event) {
+
         // setting the language change as a cookie variable
         localStorage.setItem('language', event.target.value);
+
         // rerouting the user to the same page but in the choosen language
         window.location = thisPath;
+
+        // not using reload function because i want the website to go to top after the language selection, but reload starts from the current Y offset
+        // window.location.reload();
     }
-    
+
 
     return (
         <>
@@ -44,10 +48,9 @@ function LanguageSelector() {
                 <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
 
                     {/* showing label content based on page language */}
-                    {componentsContent[languageHelper.getLanguageSymbol()]}
-                : </label>
+                    {componentsContent[languageHelper.getLanguageSymbol()]} : &nbsp;
+                </label>
 
-                &nbsp;
                 {/* the language selector */}
                 <select
                     name="language"

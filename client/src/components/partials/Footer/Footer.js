@@ -27,8 +27,7 @@ const componentContent = {
 
 
 /**
- *  @return : Element, returns all the frontend
- *  @includes : page footer
+ *  @return {Element} : returns the footer
  */
 function Footer() {
     return (
@@ -36,14 +35,17 @@ function Footer() {
             {/* changing the direction if the page was kurdish */}
             <footer className="footer" dir={languageHelper.getDirection()}>
 
+                {/* the line above the footer */}
                 <hr className="footer-line" />
+                
 
+                {/* contains the footer top part */}
                 <div className="footer-holder">
 
                     {/* the left side of the footer */}
                     <div className="footer-left">
 
-                        {/* adding brand */}
+                        {/* brand name and logo */}
                         <Brand />
 
                         {/* adding language selector */}
@@ -57,7 +59,7 @@ function Footer() {
                         <ul className="footer-list">
 
 
-                            {/* showing footer links content based on page language */}
+                            {/* showing footer links content */}
                             {componentContent.links.map((link, i) => {
                                 return (
                                     <li className={`link ${languageHelper.getClass()}`} key={i}>
@@ -67,6 +69,8 @@ function Footer() {
                                     </li>
                                 )
                             })}
+
+                            {/* the social links after the links */}
                             <li className="link socials">
                                 <a href="/" title="Math with Science on Instagram">
                                     <i className="fab fa-instagram instagram"></i>
@@ -80,12 +84,21 @@ function Footer() {
 
                 </div>
 
+
+                {/* the last details in the footer */}
                 <div className="footer-details" dir="ltr">
+
+                    {/* copyright text */}
                     <p>©2020 - {new Date().getFullYear()} Math with Science</p>
-                    <p className="footer-details-divider"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+                    {/* the divider between details */}
+                    <p className="footer-details-divider">|</p>
+
+                    {/* privacy policy link */}
                     <p className={`privacy-policy ${languageHelper.getClass()}`}>
                         <a href="/privacy-policy">{componentContent.privacyPolicy[languageHelper.getLanguageSymbol()]}</a>
                     </p>
+
                 </div>
 
             </footer>

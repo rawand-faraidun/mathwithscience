@@ -99,6 +99,10 @@
   display: inline;
 }
 
+.footer .footer-details .footer-details-divider {
+  margin: 0 1.5rem;
+}
+
 .footer .footer-details .privacy-policy {
   text-decoration: underline;
 }

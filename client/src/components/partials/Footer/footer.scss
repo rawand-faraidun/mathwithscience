@@ -67,7 +67,7 @@
                                 transition: color 0.3s ease;
                                 color: #f32f6f;
                             }
-                            
+
                             // facebook link hover
                             .facebook:hover {
                                 color: #4167b2;
@@ -93,6 +93,11 @@
         // making all paragraphs inline with each other
         p {
             display: inline;
+        }
+
+        // the divider in footer
+        .footer-details-divider {
+            margin: 0 1.5rem;
         }
 
         // privacy policy in footer
