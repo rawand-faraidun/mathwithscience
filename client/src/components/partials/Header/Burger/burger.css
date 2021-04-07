@@ -34,6 +34,10 @@
   bottom: 0;
 }
 
+.nav-burger .burger-line.burger-line-white {
+  background-color: var(--white-color);
+}
+
 .nav-burger.nav-bar-opened .burger-line:first-child {
   left: 50%;
   top: 50%;

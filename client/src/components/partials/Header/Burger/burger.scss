@@ -33,6 +33,10 @@
         &:last-child {
             bottom: 0;
         }
+
+        &.burger-line-white {
+            background-color: var(--white-color);
+        }
     }
 
     // when the navigation bar pressed and the nav is opened
