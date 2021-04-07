@@ -54,6 +54,12 @@
   display: none;
 }
 
+.header.transparent-header {
+  background-color: transparent;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
 @media screen and (max-width: 1024px) {
   .header {
     padding: 0;

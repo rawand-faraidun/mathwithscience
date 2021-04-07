@@ -15,8 +15,7 @@ import HeaderAnimation from './HeaderAnimation/HeaderAnimation';
 
 
 /**
- *  @return : Element, returns the Header element
- *  @includes : nav-main (Brand and Burger), nav-holder(Searchbar, Navlinks, ThemeSwitcher, HeaderAnimation) and nav-drawer-closer
+ * @return {Element} : Header element
  */
 function Header() {
 
@@ -35,21 +34,14 @@ function Header() {
     }
 
 
-
     // if this path was pointing to homepage the header background will be transparent
     const thisPath = useLocation().pathname;
 
     // knowing if the page is scrolled, only updates in homepage
     const [pageScrolled, setPageScrolled] = useState(false);
 
-    /* these 2 dont need to be stated, the page scroll state will updte them to */
-    // this will be the transparent ackground and transition
-    const headerHomeStyle = {};
-    // the white only property for homepage header navigation links and brand
-    let whiteOnly = false;
-
     // checking if the user is in homepage
-    if (thisPath === '/' || thisPath === '/en' || thisPath === '/kr') {
+    if (thisPath === '/') {
 
         // updating pageScrolled
         window.onscroll = () => {
@@ -60,35 +52,32 @@ function Header() {
                 setPageScrolled(false);
             }
         }
-
-        // making the background transparent if the location was homepage and the page has not been scrolled and navigation was not open
-        if (!pageScrolled && !navState) {
-            headerHomeStyle.backgroundColor = 'transparent';
-            headerHomeStyle.transition = 'background 0.3s ease';
-            whiteOnly = true;
-        }
     }
-
 
 
     return (
         // header of the website
-        <header className="header" style={headerHomeStyle}>
+        <header className={`header ${!pageScrolled && !navState ? "transparent-header" : ''}`}>
 
 
             {/* the main part of header, this will be the header of small screens */}
             <div className="nav-main">
 
                 {/* adding brand */}
-                {/* the link Property is used to determine if this brand is link to homepage or not */}
-                <Brand isLink="true" whiteOnly={whiteOnly} />
+                <Brand isLink="true" whiteOnly={!pageScrolled && !navState} />
 
                 {/* this will take the space between bravd and burger in small screens header */}
                 <div className="nav-main-space"></div>
 
                 {/* the burger, shows in small screens header */}
-                <Burger navState={navState} navToggleHandler={navToggleHandler} whiteOnly={whiteOnly} />
+                <Burger
+                    navState={navState}
+                    navToggleHandler={navToggleHandler}
+                    whiteOnly={!pageScrolled && !navState}
+                />
+
             </div>
+
 
             {/* this will be the drawer of small screen views */}
             <div className={`nav-holder ${navState ? 'nav-holder-opened' : ''}`}>
@@ -97,7 +86,7 @@ function Header() {
                 <Searchbar />
 
                 {/* adding navigation lins */}
-                <Navlinks navState={navState} whiteOnly={whiteOnly} />
+                <Navlinks navState={navState} whiteOnly={!pageScrolled && !navState} />
 
                 {/* adding the theme switch */}
                 <ThemeSwitcher />
@@ -105,8 +94,8 @@ function Header() {
                 {/* the animation in small screens background, MeMo keeps it from rerendering */}
                 {useMemo(() => { return <HeaderAnimation /> }, [])}
 
-
             </div>
+
 
             {/* this is to make a black layer over the body and when the user pressed outside the drawer cause to close it */}
             <div className={`nav-drawer-closer ${navState ? "nav-drawer-closer-display" : ""}`} onClick={closeNavDrawer}></div>

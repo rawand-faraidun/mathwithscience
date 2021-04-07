@@ -40,8 +40,15 @@
         z-index: 11; // childs z index is 2 to make the gradiant layer qork perfectly if displayed
     }
 
+    // the navigation closer
     .nav-drawer-closer {
         display: none;
+    }
+
+    // transparent header class
+    &.transparent-header {
+        background-color: transparent;
+        transition: background 0.3s ease;
     }
 }
 
