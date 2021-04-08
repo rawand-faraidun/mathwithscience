@@ -18,12 +18,14 @@ function SearchResult(props) {
 
 
     // saving the branches and not letting it rerun
+    // if the search was empty it shows this
     const [branches, setBranches] = useState([]);
     useMemo(async () => {
-        var datas = await axios.get('/api/branches');
+        var datas = await axios.get(`/api/branches`);
         setBranches(datas.data);
     }, []);
-    
+
+
 
     // stores the search result
     const [searchResult, setSearchResult] = useState([]);
@@ -40,13 +42,15 @@ function SearchResult(props) {
                     url: '/api/search',
                     method: 'POST',
                     data: {
-                        searchText: props.searchtext
+                        searchText: props.searchtext,
+                        otherLanguage: languageHelper.getOtherLanguageSymbol() // this sends symbol of the other language not contain its details from the result
+                        // language: languageHelper.getLanguageSymboly() // this sends symbol of the language to only get this language details back
                     }
                 }
-            ).then((response) => {
-                setSearchResult(response.data);
-            }).catch(error => {
-                console.log(error);
+            ).then((results) => {
+                setSearchResult(results.data);
+            }).catch(err => {
+                console.log(err);
             });
         }
 

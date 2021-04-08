@@ -3,6 +3,9 @@
 //setting requirments
 const express = require("express");
 
+// getting model
+const Branches = require('../models/Branches');
+
 // setting router
 const router = express.Router();
 
@@ -14,14 +17,35 @@ const router = express.Router();
  * @param {req.body} : 
  *      { searchText } is the search key
  *      { limit } sets limit of how many result come back
+ *      { language } determines to return which language
  * 
  * @param {res} : responds with array of branch and calculators
  */
-router.post("/", (req, res) => {
-    console.log(req.body);
+router.post("/", async (req, res) => {
 
-    res.status(200).send([]);
-    res.end();
+    try {
+        // finding branches
+        // the search is based on Title, Description or keywords include the search text
+        var branches = await Branches.find({
+            $or: [
+                { 'en.name': new RegExp(req.body.searchText) },
+                { 'en.description': new RegExp(req.body.searchText) },
+                { 'kr.name': new RegExp(req.body.searchText) },
+                { 'kr.description': new RegExp(req.body.searchText) },
+                { keywords: { $in: new RegExp(req.body.searchText) } }
+            ]
+        }, { _id: false, __v: false, [req.body.otherLanguage]: false }).sort({ visitCount: 1, 'en.name': 1 }).lean();
+
+        // sending the search result
+        res.status(200).send(branches);
+
+    }
+    catch (err) {
+        console.log('POST:  /api/search  - error');
+        console.log(err);
+        res.status(404).send(err);
+    }
+
 });
 
 

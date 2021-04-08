@@ -42,6 +42,15 @@ class languageHelper {
     }
 
 
+    // getting other language symbol from cookie
+    /**
+     * @return {String} other language symbol from cookie
+     */
+    static getOtherLanguageSymbol() {
+        return localStorage.getItem('language') === 'en' ? 'kr' : 'en';
+    }
+
+
     // detecting if the element wants kurdish class name or not
     /**
      * @return {String} 'kurdish' or an empty string
