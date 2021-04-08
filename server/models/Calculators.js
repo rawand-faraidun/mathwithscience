@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 
 /**
- * @Schema : Branches Schema
+ * @Schema : Calculators Schema
  * 
  * 
  * @branchID : id of the branch this calculator belongs to
