@@ -54,7 +54,7 @@ class languageHelper {
     // detecting if the element wants kurdish class name or not
     /**
      * @return {String} 'kurdish' or an empty string
-     */
+     */ 
     static getClass() {
         return localStorage.getItem('language') === 'kr' ? 'kurdish' : '';
     }
