@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // importing stylings
 import './popular-calculators.css';
@@ -13,51 +14,7 @@ const componentContent = {
     title: {
         en: 'Most Popular Calculators',
         kr: 'ژمێرەرە زۆر بەکارهاتوەکان',
-    },
-    calculators: [
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 1', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 1', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 2', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 2', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 3', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 3', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 4', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 4', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 5', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 5', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 6', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 6', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        },
-        {
-            urlName: 'proportion-ratio',
-            en: { name: 'Proportion Ratio 7', description: 'lorem ipsum dolor sit amet consectetur adip game occurence lorem ipsum dolor sit amet consectetur adip game occurence' },
-            kr: { name: 'ڕێژەی تێکڕا 7', description: 'لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور لۆرێم ئیپسوم دۆلۆر سیت ئامێت کۆنسێکتێتور' }
-            , visited: 0
-        }
-    ]
+    }
 }
 
 
@@ -66,6 +23,21 @@ const componentContent = {
  *  @return {Element} : popular calculators section
  */
 function PopularCalculators() {
+
+    // saving the branches and not letting it rerun
+    const [calculators, setCalculators] = useState([]);
+    // getting the results of the search
+    useEffect(() => {
+        axios.get(`/api/calculators/all/${languageHelper.getLanguageSymbol()}`)
+            .then((results) => {
+                setCalculators(results.data);
+            }).catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+    console.log(calculators);
+
 
     return (
         <>
@@ -79,8 +51,8 @@ function PopularCalculators() {
                 <div className="popular-calculators-grid">
 
                     {/* each calculator */}
-                    {componentContent.calculators.map((calculator, i) =>
-                        <a href={`/all-calculators/${calculator.urlName}`} className="calculator" key={i}>
+                    {calculators.map((calculator, i) =>
+                        <a href={`/calculators/${calculator.urlName}`} className="calculator" key={i}>
 
                             {/* calculator title */}
                             <h2 className={`calculator-name ${languageHelper.getClass()}`}>{calculator[languageHelper.getLanguageSymbol()].name}</h2>

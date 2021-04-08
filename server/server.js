@@ -30,13 +30,17 @@ app.use(express.json());
 
 
 
-// requesting search routes
-const search = require('./routes/search');
-app.use("/api/search", search);
-
 // requesting branch routes
 const branches = require('./routes/branches');
 app.use("/api/branches", branches);
+
+// requesting branch routes
+const calculators = require('./routes/calculators');
+app.use("/api/calculators", calculators);
+
+// requesting search routes
+const search = require('./routes/search');
+app.use("/api/search", search);
 
 
 
