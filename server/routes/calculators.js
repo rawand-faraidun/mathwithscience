@@ -16,22 +16,29 @@ const router = express.Router();
 /**
  * @param {req.params} : 
  *      { language } determines to return details in which language
+ *      { limit } OPTIONAL sets limit to retuning calculators
  * 
  * @param {res} : responds with array of calculators
  */
-router.get("/all/:language", async (req, res) => {
+router.get("/all/:language/:limit?", async (req, res) => {
 
     try {
         // getting all calculators
         // it will get { urlName, specified language details } of all calculators and sort them by visitCount (DESC: big to small) then by their name (ASC)
-        var calculator = await Calculators.find({}, { _id: false, urlName: true, [req.params.language]: true }).sort({ visitCount: -1, 'en.name': 1 }).lean();
+        var calculator = await Calculators.find(
+            {},
+            { _id: false, urlName: true, [req.params.language]: true }
+        )
+            .sort({ visitCount: -1, 'en.name': 1 })
+            .limit(req.params.limit ? +req.params.limit : '') // if limit parameter excists, then adding limit to returning calculators
+            .lean();
 
         res.status(200).send(calculator);
 
     }
     catch (err) {
         console.log('GET:  /api/calculators/all/:language  - error');
-        console.log(err);
+        console.log(err.message);
         res.status(404).send(err);
     }
 

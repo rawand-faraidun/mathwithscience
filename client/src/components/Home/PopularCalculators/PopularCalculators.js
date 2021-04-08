@@ -24,15 +24,18 @@ const componentContent = {
  */
 function PopularCalculators() {
 
-    // saving the branches and not letting it rerun
+    // saving the calculators
     const [calculators, setCalculators] = useState([]);
-    // getting the results of the search
+
+    // getting the calculators
     useEffect(() => {
-        axios.get(`/api/calculators/all/${languageHelper.getLanguageSymbol()}`)
+        //   /api/calculators/all/{LANGUAGE}/{LIMIT}
+        axios.get(`/api/calculators/all/${languageHelper.getLanguageSymbol()}/12`)
             .then((results) => {
                 setCalculators(results.data);
-            }).catch(err => {
-                console.log(err);
+            })
+            .catch(err => {
+                console.log(err.message);
             });
     }, []);
 
