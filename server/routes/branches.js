@@ -12,8 +12,10 @@ const router = express.Router();
 
 
 
-
 /**
+ * @param {req.params} : 
+ *      { language } determines to return details in which language
+ * 
  * @param {res} : responds with array of branches
  */
 router.get("/:language", async (req, res) => {
