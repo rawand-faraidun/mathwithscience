@@ -17,7 +17,7 @@ const mongoose = require("mongoose");
  * 
  * @keywords {Array} : includes keywords for this branch
  * 
- * @urlName {String} : branch as url string
+ * @urlName {String} : branch as url string, it is unique for each branch
  * 
  * @visitCount {Number} : number of the visits to this branch
  */
@@ -31,7 +31,10 @@ const branchesSchema = mongoose.Schema({
         description: String
     },
     keywords: [String],
-    urlName: String,
+    urlName: {
+        type: String,
+        unique: true
+    },
     visitCount: {
         type: Number,
         min: 0,
