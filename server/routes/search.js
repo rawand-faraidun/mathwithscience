@@ -26,6 +26,7 @@ router.post("/", async (req, res) => {
     try {
         // finding branches
         // the search is based on Title, Description or keywords include the search text
+        // it will get { urlName, specified language details } of all branches and sort them by visitCount (DESC: big to small) then by their name (ASC)
         var branches = await Branches.find({
             $or: [
                 { 'en.name': new RegExp(req.body.searchText) },
