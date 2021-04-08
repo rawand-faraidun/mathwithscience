@@ -7,17 +7,19 @@ const mongoose = require("mongoose");
  * @Schema : Branches Schema
  * 
  * 
- * @en : 
- *      name: english name of the branch
- *      description: english description of the branch
+ * @en : {Object}
+ *      name {String} : english name of the branch
+ *      description {String} : english description of the branch
  * 
- * @kr :
- *      name: kurdish name of the branch
- *      description: kurdish description of the branch
+ * @kr : {Object}
+ *      name {String} : kurdish name of the branch
+ *      description {String} : kurdish description of the branch
  * 
- * @urlName : branch as url string
+ * @keywords {Array} : includes keywords for this branch
  * 
- * @visitCount : number of the visits to this branch
+ * @urlName {String} : branch as url string
+ * 
+ * @visitCount {Number} : number of the visits to this branch
  */
 const branchesSchema = mongoose.Schema({
     en: {
@@ -28,6 +30,7 @@ const branchesSchema = mongoose.Schema({
         name: String,
         description: String
     },
+    keywords: [String],
     urlName: String,
     visitCount: {
         type: Number,
