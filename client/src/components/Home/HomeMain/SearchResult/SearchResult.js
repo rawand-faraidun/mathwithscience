@@ -21,7 +21,8 @@ function SearchResult(props) {
     // if the search was empty it shows this
     const [branches, setBranches] = useState([]);
     useMemo(async () => {
-        var datas = await axios.get(`/api/branches`);
+        // only getting needed language details back from branches
+        var datas = await axios.get(`/api/branches/${languageHelper.getLanguageSymbol()}`);
         setBranches(datas.data);
     }, []);
 
@@ -39,12 +40,11 @@ function SearchResult(props) {
             // requesting results from the server
             axios(
                 {
-                    url: '/api/search',
+                    url: '/api/search/',
                     method: 'POST',
                     data: {
                         searchText: props.searchtext,
-                        otherLanguage: languageHelper.getOtherLanguageSymbol() // this sends symbol of the other language not contain its details from the result
-                        // language: languageHelper.getLanguageSymboly() // this sends symbol of the language to only get this language details back
+                        language: languageHelper.getLanguageSymbol() // this sends symbol of the language to only get this language details back
                     }
                 }
             ).then((results) => {
