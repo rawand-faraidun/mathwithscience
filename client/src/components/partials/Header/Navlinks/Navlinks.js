@@ -15,12 +15,12 @@ const componentContent = {
         {
             en: 'Branches',
             kr: 'لقەکان',
-            urlName: 'calculators'
+            urlName: 'branches'
         },
         {
             en: 'All Calculators',
             kr: 'هەموو ژمێرەرەکان',
-            urlName: 'all-calculators'
+            urlName: 'calculators'
         }
     ]
 }
