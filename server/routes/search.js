@@ -34,8 +34,7 @@ router.post("/", async (req, res) => {
                 { 'kr.description': new RegExp(req.body.searchText) },
                 { keywords: { $in: new RegExp(req.body.searchText) } }
             ]
-        }, { _id: false, __v: false, [req.body.otherLanguage]: false }).sort({ visitCount: 1, 'en.name': 1 }).lean();
-
+        }, { _id: false, urlName: true, [req.body.language]: true }).sort({ visitCount: -1, 'en.name': 1 }).lean();
 
         /** 
          * @TODO : add parts to search also
