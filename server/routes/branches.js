@@ -16,11 +16,12 @@ const router = express.Router();
 /**
  * @param {res} : responds with array of branches
  */
-router.get("/", async (req, res) => {
+router.get("/:language", async (req, res) => {
 
     try {
-        // getting branches
-        var branches = await Branches.find({}, { _id: false, __v: false });
+        // getting all branches
+        // it will get { urlName, specified language details } of all branches and sort them by visitCount (DESC: big to small) then by their name (ASC)
+        var branches = await Branches.find({}, { _id: false, urlName: true, [req.params.language]: true }).sort({ visitCount: -1, 'en.name': 1 }).lean();
 
         res.status(200).send(branches);
 
