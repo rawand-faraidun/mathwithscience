@@ -14,9 +14,9 @@ import LanguageSelector from './LanguageSelector/LanguageSelector';
 const componentContent = {
     links: [
         { en: 'About', kr: 'دەربارە', url: 'about' },
-        { en: 'Branches', kr: 'لقەکان', url: 'calculators' },
+        { en: 'Branches', kr: 'لقەکان', url: 'branches' },
         { en: 'Contact', kr: 'پەیوەندی', url: 'contact' },
-        { en: 'All Calculators', kr: 'هەموو ژمێرەرەکان', url: 'all-calculators' },
+        { en: 'All Calculators', kr: 'هەموو ژمێرەرەکان', url: 'calculators' },
         { en: 'Contribute', kr: 'بەشداریکردن', url: 'contribute' }
     ],
     privacyPolicy: {
@@ -37,7 +37,7 @@ function Footer() {
 
                 {/* the line above the footer */}
                 <hr className="footer-line" />
-                
+
 
                 {/* contains the footer top part */}
                 <div className="footer-holder">
@@ -72,10 +72,10 @@ function Footer() {
 
                             {/* the social links after the links */}
                             <li className="link socials">
-                                <a href="/" title="Math with Science on Instagram">
+                                <a href="/" target="_blank" title="Math with Science on Instagram">
                                     <i className="fab fa-instagram instagram"></i>
                                 </a>
-                                <a href="/" title="Math with Science on Facebook">
+                                <a href="/" target="_blank" title="Math with Science on Facebook">
                                     <i className="fab fa-facebook-square facebook"></i>
                                 </a>
                             </li>
