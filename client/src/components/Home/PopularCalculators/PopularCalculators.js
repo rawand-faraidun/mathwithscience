@@ -39,8 +39,6 @@ function PopularCalculators() {
             });
     }, []);
 
-    console.log(calculators);
-
 
     return (
         <>
