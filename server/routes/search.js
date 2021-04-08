@@ -36,6 +36,11 @@ router.post("/", async (req, res) => {
             ]
         }, { _id: false, __v: false, [req.body.otherLanguage]: false }).sort({ visitCount: 1, 'en.name': 1 }).lean();
 
+
+        /** 
+         * @TODO : add parts to search also
+        */
+
         // sending the search result
         res.status(200).send(branches);
 
