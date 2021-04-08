@@ -18,7 +18,7 @@ const router = express.Router();
  * 
  * @param {res} : responds with array of branches
  */
-router.get("/:language", async (req, res) => {
+router.get("/all/:language", async (req, res) => {
 
     try {
         // getting all branches

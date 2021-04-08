@@ -22,7 +22,7 @@ function SearchResult(props) {
     const [branches, setBranches] = useState([]);
     useMemo(async () => {
         // only getting needed language details back from branches
-        var datas = await axios.get(`/api/branches/${languageHelper.getLanguageSymbol()}`);
+        var datas = await axios.get(`/api/branches/all/${languageHelper.getLanguageSymbol()}`);
         setBranches(datas.data);
     }, []);
 
