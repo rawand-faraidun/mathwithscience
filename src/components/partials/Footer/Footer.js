@@ -14,7 +14,7 @@ import LanguageSelector from './LanguageSelector/LanguageSelector';
 const componentContent = {
     links: [
         { en: 'About', kr: 'دەربارە', url: 'about' },
-        { en: 'Branches', kr: 'لقەکان', url: 'branches' },
+        { en: 'Collections', kr: 'لقەکان', url: 'collections' },
         { en: 'Contact', kr: 'پەیوەندی', url: 'contact' },
         { en: 'All Calculators', kr: 'هەموو ژمێرەرەکان', url: 'calculators' },
         { en: 'Contribute', kr: 'بەشداریکردن', url: 'contribute' }

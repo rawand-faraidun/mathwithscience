@@ -13,9 +13,9 @@ import languageHelper from '../../languageHelper';
 const componentContent = {
     links: [
         {
-            en: 'Branches',
+            en: 'Collections',
             kr: 'لقەکان',
-            urlName: 'branches'
+            urlName: 'collections'
         },
         {
             en: 'All Calculators',

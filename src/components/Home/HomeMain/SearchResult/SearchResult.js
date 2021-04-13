@@ -12,18 +12,18 @@ import languageHelper from '../../../partials/languageHelper';
  * @props :
  *      @searchtext : {String}, the search text the usear searched for
  * 
- *  @return {Element} : search result grid element, if search was empty it will show branches
+ *  @return {Element} : search result grid element, if search was empty it will show collections
  */
 function SearchResult(props) {
 
 
-    // saving the branches and not letting it rerun
+    // saving the collections and not letting it rerun
     // if the search was empty it shows this
-    const [branches, setBranches] = useState([]);
+    const [collections, setCollections] = useState([]);
     useMemo(async () => {
-        // only getting needed language details back from branches
-        var datas = await axios.get(`/api/branches/all/${languageHelper.getLanguageSymbol()}`);
-        setBranches(datas.data);
+        // only getting needed language details back from collections
+        var datas = await axios.get(`/api/collections/all/${languageHelper.getLanguageSymbol()}`);
+        setCollections(datas.data);
     }, []);
 
 
@@ -34,7 +34,7 @@ function SearchResult(props) {
     // getting the results of the search
     useEffect(() => {
         if (props.searchtext === '') {
-            setSearchResult(branches);
+            setSearchResult(collections);
         }
         else {
             // requesting results from the server
@@ -54,12 +54,12 @@ function SearchResult(props) {
             });
         }
 
-    }, [props.searchtext, branches]);
+    }, [props.searchtext, collections]);
 
-    // this is to pass the time to the server responding to search and the search is empty, if that happened showing branches again
+    // this is to pass the time to the server responding to search and the search is empty, if that happened showing collections again
     setTimeout(() => {
         if (props.searchtext === '') {
-            setSearchResult(branches);
+            setSearchResult(collections);
         }
     }, 0);
 
