@@ -6,6 +6,19 @@ import './search-result.css';
 // importing Components
 import languageHelper from '../../../partials/languageHelper';
 const Collections = require('../../../DATA/Collections');
+const Calculators = require('../../../DATA/Calculators');
+
+
+// this is used to change Url of objects
+function changeUrl(arrayOfObjects, beforeUrlText) {
+
+    arrayOfObjects.map(object => {
+        object.urlName = `${beforeUrlText}/${object.urlName}`;
+        return object;
+    });
+
+    return arrayOfObjects;
+}
 
 
 /**
@@ -18,7 +31,10 @@ function SearchResult(props) {
 
 
     // getting all collections, saving it to prevent reruning
-    const collections = useMemo(() => Collections.find({ language: true }), []);
+    const collections = useMemo(() => {
+        // getting all collections
+        return changeUrl(Collections.find(), 'collections');
+    }, []);
 
     // search results
     var searchResult = [];
@@ -29,8 +45,14 @@ function SearchResult(props) {
     }
     // if it was not empty, it will search for collections and calculators based on searchText
     else {
-        var searchCollectionResult = Collections.find({ searchQuery: props.searchtext });
-        searchResult = searchCollectionResult;
+        // getting collections based on search text
+        var searchCollectionResult = changeUrl(Collections.find({ searchQuery: props.searchtext }), 'collections');
+
+        // getting calculators based on search text
+        var searchCalculatorsResult = changeUrl(Calculators.find({ searchQuery: props.searchtext }), 'collections');
+
+        // setting both results as searchResult
+        searchResult = [...searchCollectionResult, ...searchCalculatorsResult];
     }
 
 
@@ -41,7 +63,7 @@ function SearchResult(props) {
 
                 {/* each result */}
                 {searchResult.map((result, i) =>
-                    <a href={`/collections/${result.urlName}`} className="result" key={i}>
+                    <a href={`/${result.urlName}`} className="result" key={i}>
 
                         {/* result title */}
                         <h2 className={`result-name ${languageHelper.getClass()}`}>
