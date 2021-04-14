@@ -1,3 +1,6 @@
+// importing languageHelper
+import languageHelper from '../partials/languageHelper'
+
 // importing cloneDeep from lodash
 import cloneDeep from 'lodash/cloneDeep'
 
@@ -35,7 +38,28 @@ function find(conditions) {
         });
     }
 
-    console.log(Collections());
+
+    // checking for language
+    // it will make the result to only return details of one language
+    if (conditions?.language) {
+        result.forEach(collection => {
+            // removing other language details from the object
+            delete collection[languageHelper.getOtherLanguageSymbol()];
+            return collection
+        });
+    }
+
+
+    // checking for changingUrl
+    // it will add the choosen text before url of each collection
+    if (conditions?.changeUrl) {
+        result.forEach(collection => {
+            // adding the text before the url
+            collection.urlName = `${conditions.changeUrl}/${collection.urlName}`;
+            return collection
+        });
+    }
+
 
     return result;
 }
