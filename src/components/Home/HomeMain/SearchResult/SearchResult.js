@@ -5,20 +5,11 @@ import './search-result.css';
 
 // importing Components
 import languageHelper from '../../../partials/languageHelper';
+
+// importing datas
 const Collections = require('../../../DATA/Collections');
 const Calculators = require('../../../DATA/Calculators');
 
-
-// this is used to change Url of objects
-function changeUrl(arrayOfObjects, beforeUrlText) {
-
-    arrayOfObjects.map(object => {
-        object.urlName = `${beforeUrlText}/${object.urlName}`;
-        return object;
-    });
-
-    return arrayOfObjects;
-}
 
 
 /**
@@ -29,12 +20,12 @@ function changeUrl(arrayOfObjects, beforeUrlText) {
  */
 function SearchResult(props) {
 
-
     // getting all collections, saving it to prevent reruning
     const collections = useMemo(() => {
         // getting all collections
-        return changeUrl(Collections.find(), 'collections');
+        return Collections.find({ language: true, changeUrl: 'collections' });
     }, []);
+
 
     // search results
     var searchResult = [];
@@ -46,10 +37,10 @@ function SearchResult(props) {
     // if it was not empty, it will search for collections and calculators based on searchText
     else {
         // getting collections based on search text
-        var searchCollectionResult = changeUrl(Collections.find({ searchQuery: props.searchtext }), 'collections');
+        var searchCollectionResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
 
         // getting calculators based on search text
-        var searchCalculatorsResult = changeUrl(Calculators.find({ searchQuery: props.searchtext }), 'collections');
+        var searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
 
         // setting both results as searchResult
         searchResult = [...searchCollectionResult, ...searchCalculatorsResult];
