@@ -14,6 +14,8 @@ import Collections from './Collections-Data';
  * @parameters :
  *      @conditions : {Object}, adding conditions to modify returning array
  *          @searchQuery : {String}, the search text that used to search for collections
+ *          @language : {Boolean}, determines if only returning results in one language or all languages
+ *          @changeUrl : {String}, determines if adding a text before urlName or not
  * 
  *  @return {Array} : search result grid element, if search was empty it will show collections
  */
