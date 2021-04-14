@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import axios from 'axios';
+import React, { useMemo } from 'react';
 
 // importing stylings
 import './search-result.css';
 
 // importing Components
 import languageHelper from '../../../partials/languageHelper';
+const Collections = require('../../../DATA/Collections');
 
 
 /**
@@ -17,52 +17,21 @@ import languageHelper from '../../../partials/languageHelper';
 function SearchResult(props) {
 
 
-    // saving the collections and not letting it rerun
-    // if the search was empty it shows this
-    const [collections, setCollections] = useState([]);
-    useMemo(async () => {
-        // only getting needed language details back from collections
-        var datas = await axios.get(`/api/collections/all/${languageHelper.getLanguageSymbol()}`);
-        setCollections(datas.data);
-    }, []);
+    // getting all collections, saving it to prevent reruning
+    const collections = useMemo(() => Collections.find({ language: true }), []);
 
+    // search results
+    var searchResult = [];
 
-
-    // stores the search result
-    const [searchResult, setSearchResult] = useState([]);
-
-    // getting the results of the search
-    useEffect(() => {
-        if (props.searchtext === '') {
-            setSearchResult(collections);
-        }
-        else {
-            // requesting results from the server
-            axios(
-                {
-                    url: '/api/search/',
-                    method: 'POST',
-                    data: {
-                        searchText: props.searchtext,
-                        language: languageHelper.getLanguageSymbol() // this sends symbol of the language to only get this language details back
-                    }
-                }
-            ).then((results) => {
-                setSearchResult(results.data);
-            }).catch(err => {
-                console.log(err);
-            });
-        }
-
-    }, [props.searchtext, collections]);
-
-    // this is to pass the time to the server responding to search and the search is empty, if that happened showing collections again
-    setTimeout(() => {
-        if (props.searchtext === '') {
-            setSearchResult(collections);
-        }
-    }, 0);
-
+    // if the search result was empty, searchResult will be collections
+    if (props.searchtext.length === 0) {
+        searchResult = collections;
+    }
+    // if it was not empty, it will search for collections and calculators based on searchText
+    else {
+        var searchCollectionResult = Collections.find({ searchQuery: props.searchtext });
+        searchResult = searchCollectionResult;
+    }
 
 
     return (
@@ -72,7 +41,7 @@ function SearchResult(props) {
 
                 {/* each result */}
                 {searchResult.map((result, i) =>
-                    <a href={`/calculators/${result.urlName}`} className="result" key={i}>
+                    <a href={`/collections/${result.urlName}`} className="result" key={i}>
 
                         {/* result title */}
                         <h2 className={`result-name ${languageHelper.getClass()}`}>
