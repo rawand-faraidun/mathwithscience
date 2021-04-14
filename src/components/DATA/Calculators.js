@@ -1,28 +1,8 @@
 // importing cloneDeep from lodash
 import cloneDeep from 'lodash/cloneDeep'
 
-/**
- *  @Calculators : array of calculators
- */
-const Calculators = [
-    {
-        en: {
-            "name": "Proportion Ratio",
-            "description": "Proportion Ratio states that two fractions on each side of an equation are equal."
-        },
-        kr: {
-            "name": "ڕێژەی تێکڕا",
-            "description": "ڕێژەی تێکڕا پشت ڕاست دەکاتەوە کە دوو کەرت لە هەردوولای هاوکێشەیەک یەکسانن"
-        },
-        branchUrl: "algebra",
-        urlName: "proportion-ratio",
-        keywords: [
-            "proportion ratio"
-        ]
-    }
-];
-
-
+// importing Collections
+import Calculators from './Calculators-Data';
 
 
 
@@ -37,7 +17,7 @@ const Calculators = [
 function find(conditions) {
 
     // cloning the collections array
-    var result = cloneDeep(Calculators);
+    var result = cloneDeep(Calculators());
 
     // checking for search query
     // it will make result to only return collections that include searchQuery in one of their properties
