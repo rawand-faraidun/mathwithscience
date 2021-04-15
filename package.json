@@ -2,6 +2,17 @@
   "name": "math-with-science",
   "version": "0.1.0",
   "private": false,
+  "description": "Math with Science is an open source project contains math and science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
+  "author": "Rawand-Faraidun <201.rawand@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rawand-Faraidun/math-with-science.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rawand-Faraidun/math-with-science/issues"
+  },
+  "homepage": "https://github.com/Rawand-Faraidun/math-with-science#readme",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
