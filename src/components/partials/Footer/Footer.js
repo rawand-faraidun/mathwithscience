@@ -76,7 +76,7 @@ function Footer() {
                                     <i className="fab fa-instagram"></i>
                                 </a>
                                 <a href="https://github.com/Rawand-Faraidun/math-with-science" target="_blank" rel="noreferrer" title="Math with Science on Github">
-                                    <i class="fab fa-github"></i>
+                                    <i className="fab fa-github"></i>
                                 </a>
                             </li>
                         </ul>
