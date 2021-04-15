@@ -44,7 +44,7 @@ function App() {
                     {/* Cyyollections route */}
                     <Route path="/collections" exact>
                         <h1 style={{ marginTop: 'calc(var(--header-height-size) * 2)' }}>Collections</h1>
-                    </Route>
+                    </Route> 
 
                 </Switch>
 
