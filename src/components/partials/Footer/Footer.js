@@ -72,11 +72,11 @@ function Footer() {
 
                             {/* the social links after the links */}
                             <li className="link socials">
-                                <a href="/" target="_blank" title="Math with Science on Instagram">
-                                    <i className="fab fa-instagram instagram"></i>
+                                <a href="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
+                                    <i className="fab fa-instagram"></i>
                                 </a>
-                                <a href="/" target="_blank" title="Math with Science on Facebook">
-                                    <i className="fab fa-facebook-square facebook"></i>
+                                <a href="https://github.com/Rawand-Faraidun/math-with-science" target="_blank" rel="noreferrer" title="Math with Science on Github">
+                                    <i class="fab fa-github"></i>
                                 </a>
                             </li>
                         </ul>

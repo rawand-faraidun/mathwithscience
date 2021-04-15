@@ -73,18 +73,6 @@
   margin: 1rem;
 }
 
-.footer .footer-holder .footer-right .footer-list .link.socials a .instagram:hover {
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-  color: #f32f6f;
-}
-
-.footer .footer-holder .footer-right .footer-list .link.socials a .facebook:hover {
-  color: #4167b2;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-
 .footer .footer-details {
   margin: auto;
   padding: var(--padding-sides);
