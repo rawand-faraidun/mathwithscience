@@ -18,6 +18,7 @@ import Calculators from './Calculators-Data';
  *          @searchQuery : {String}, the search text that used to search for calculators
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @changeUrl : {String}, determines if adding a text before urlName or not
+ *          @limit : {Number}, determines if setting limit to returning results
  * 
  *  @return {Array} : search result grid element, if search was empty it will show calculators
  */
@@ -25,6 +26,13 @@ function find(conditions) {
 
     // cloning the calculators array
     var result = cloneDeep(Calculators());
+
+
+    // checking for limit
+    // it will limit the results
+    if (conditions?.limit) {
+        result = result.slice(0, conditions.limit);
+    }
 
 
     // checking for search query

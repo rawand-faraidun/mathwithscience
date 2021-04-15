@@ -18,6 +18,7 @@ import Collections from './Collections-Data';
  *          @searchQuery : {String}, the search text that used to search for collections
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @changeUrl : {String}, determines if adding a text before urlName or not
+ *          @limit : {Number}, determines if setting limit to returning results
  * 
  *  @return {Array} : search result grid element, if search was empty it will show collections
  */
@@ -25,6 +26,13 @@ function find(conditions) {
 
     // cloning the collections array
     var result = cloneDeep(Collections());
+
+
+    // checking for limit
+    // it will limit the results
+    if (conditions?.limit) {
+        result = result.slice(0, conditions.limit);
+    }
 
 
     // checking for search query
