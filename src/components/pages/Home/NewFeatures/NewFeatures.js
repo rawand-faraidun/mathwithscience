@@ -4,7 +4,7 @@ import React from 'react';
 import './new-features.css';
 
 // importing components
-import languageHelper from '../../partials/languageHelper';
+import languageHelper from '../../../partials/languageHelper';
 
 
 

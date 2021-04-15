@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import languageHelper from './components/partials/languageHelper';
 import Header from './components/partials/Header/Header';
 import Footer from './components/partials/Footer/Footer';
-import Home from './components/Home/Home';
+import Home from './components/pages/Home/Home';
 
 
 
@@ -44,7 +44,7 @@ function App() {
                     {/* Collections route */}
                     <Route path="/collections" exact>
                         <h1 style={{ marginTop: 'calc(var(--header-height-size) * 2)' }}>Collections</h1>
-                    </Route> 
+                    </Route>
 
                 </Switch>
 
@@ -56,7 +56,7 @@ function App() {
                 <Footer />
 
 
-            </Router> 
+            </Router>
         </>
     );
 }

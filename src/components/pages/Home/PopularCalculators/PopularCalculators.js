@@ -4,10 +4,10 @@ import React from 'react';
 import './popular-calculators.css';
 
 // importing components
-import languageHelper from '../../partials/languageHelper';
+import languageHelper from '../../../partials/languageHelper';
 
 // importing datas
-const Calculators = require('../../DATA/Calculators');
+const Calculators = require('../../../DATA/Calculators');
 
 
 

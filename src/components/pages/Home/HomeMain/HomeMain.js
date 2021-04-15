@@ -5,7 +5,7 @@ import './home-main.css';
 
 // importing Components
 import Particles from 'react-particles-js';
-import languageHelper from '../../partials/languageHelper';
+import languageHelper from '../../../partials/languageHelper';
 import SearchResult from './SearchResult/SearchResult';
 
 

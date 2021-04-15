@@ -4,11 +4,11 @@ import React, { useMemo } from 'react';
 import './search-result.css';
 
 // importing Components
-import languageHelper from '../../../partials/languageHelper';
+import languageHelper from '../../../../partials/languageHelper';
 
 // importing datas
-const Collections = require('../../../DATA/Collections');
-const Calculators = require('../../../DATA/Calculators');
+const Collections = require('../../../../DATA/Collections');
+const Calculators = require('../../../../DATA/Calculators');
 
 
 
