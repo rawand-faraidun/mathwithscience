@@ -34,37 +34,37 @@ function Header() {
     }
 
 
-    // if this path was pointing to homepage the header background will be transparent
-    const thisPath = useLocation().pathname;
+    // checking if the user is in home page or not
+    const homePage = useLocation().pathname === '/' ? true : false;
 
     // knowing if the page is scrolled, only updates in homepage
-    const [pageScrolled, setPageScrolled] = useState(false);
+    const [homePageScrolled, setHomePageScrolled] = useState(false);
 
-    // checking if the user is in homepage
-    if (thisPath === '/') {
-
+    // if the user was in homepage, then watching page onscroll to check if making transparent header or not
+    if (homePage) {
         // updating pageScrolled
         window.onscroll = () => {
             if (window.pageYOffset > 100) {
-                setPageScrolled(true);
+                setHomePageScrolled(true);
             }
             else {
-                setPageScrolled(false);
+                setHomePageScrolled(false);
             }
         }
     }
+    
 
 
     return (
         // header of the website
-        <header className={`header ${!pageScrolled && !navState ? "transparent-header" : ''}`}>
+        <header className={`header ${homePage && !homePageScrolled && !navState ? "transparent-header" : ''}`}>
 
 
             {/* the main part of header, this will be the header of small screens */}
             <div className="nav-main">
 
                 {/* adding brand */}
-                <Brand isLink="true" whiteOnly={!pageScrolled && !navState && thisPath === '/'} />
+                <Brand isLink="true" whiteOnly={homePage && !homePageScrolled && !navState} />
 
                 {/* this will take the space between bravd and burger in small screens header */}
                 <div className="nav-main-space"></div>
@@ -73,7 +73,7 @@ function Header() {
                 <Burger
                     navState={navState}
                     navToggleHandler={navToggleHandler}
-                    whiteOnly={!pageScrolled && !navState && thisPath === '/'}
+                    whiteOnly={homePage && !homePageScrolled && !navState}
                 />
 
             </div>
@@ -86,7 +86,7 @@ function Header() {
                 <Searchbar />
 
                 {/* adding navigation lins */}
-                <Navlinks navState={navState} whiteOnly={!pageScrolled && !navState && thisPath === '/'} />
+                <Navlinks navState={navState} whiteOnly={homePage && !homePageScrolled && !navState} />
 
                 {/* adding the theme switch */}
                 <ThemeSwitcher />
