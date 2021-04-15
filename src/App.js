@@ -41,7 +41,7 @@ function App() {
                     <Route path="/" component={Home} exact />
 
 
-                    {/* Cyyollections route */}
+                    {/* Collections route */}
                     <Route path="/collections" exact>
                         <h1 style={{ marginTop: 'calc(var(--header-height-size) * 2)' }}>Collections</h1>
                     </Route> 
