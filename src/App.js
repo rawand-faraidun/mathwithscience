@@ -19,46 +19,46 @@ new languageHelper();
  */
 function App() {
 
-  // removing the preload class from the body when the page is ready
-  // preload class prevent anything to animate before the whole page is ready
-  useEffect(() => {
-    document.getElementsByTagName('body')[0].removeAttribute('class');
-  }, []);
+    // removing the preload class from the body when the page is ready
+    // preload class prevent anything to animate before the whole page is ready
+    useEffect(() => {
+        document.getElementsByTagName('body')[0].removeAttribute('class');
+    }, []);
 
 
-  return (
-    <>
+    return (
+        <>
+            <Router>
 
-      <Router>
-
-        {/* Adding header of the page */}
-        <Header />
-
-        <Switch>
-
-          {/* Adding Home */}
-          <Route path="/" component={Home} exact />
+                {/* Adding header of the page */}
+                <Header />
 
 
-        </Switch>
+                {/* routes switch */}
+                <Switch>
+
+                    {/* Home route */}
+                    <Route path="/" component={Home} exact />
 
 
-        {/* adding footer of the page */}
-        <Footer />
+                    {/* Cyyollections route */}
+                    <Route path="/collections" exact>
+                        <h1 style={{ marginTop: 'calc(var(--header-height-size) * 2)' }}>Collections</h1>
+                    </Route>
+
+                </Switch>
 
 
+                {/* <div style={{ position: 'absolute', top: '2000px', height: '40px', width: '100%' }}>aaa</div> */}
 
 
-
-        {/* this is a test element to make the page scroolable */}
-        {/* <div className="test" id="test" style={{ position: 'absolute', top: 5000, backgroundColor: 'red', width: '100%' }}>
-          aajv
-            </div> */}
+                {/* adding footer of the page */}
+                <Footer />
 
 
-      </Router>
-    </>
-  );
+            </Router>
+        </>
+    );
 }
 
 export default App;
