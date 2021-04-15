@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 
 // importing stylings
 import './popular-calculators.css';
 
 // importing components
 import languageHelper from '../../partials/languageHelper';
+
+// importing datas
+const Calculators = require('../../DATA/Calculators');
 
 
 
@@ -24,20 +26,8 @@ const componentContent = {
  */
 function PopularCalculators() {
 
-    // saving the calculators
-    const [calculators, setCalculators] = useState([]);
-
     // getting the calculators
-    useEffect(() => {
-        //   /api/calculators/all/{LANGUAGE}/{LIMIT}
-        axios.get(`/api/calculators/all/${languageHelper.getLanguageSymbol()}/12`)
-            .then((results) => {
-                setCalculators(results.data);
-            })
-            .catch(err => {
-                console.log(err.message);
-            });
-    }, []);
+    const calculators = Calculators.find({ language: true, limit: 12 });
 
 
     return (
@@ -46,7 +36,9 @@ function PopularCalculators() {
             <div className="popular-calculators" dir={languageHelper.getDirection()}>
 
                 {/* popular calculators title */}
-                <h2 className={`popular-calculators-title ${languageHelper.getClass()}`}>{componentContent.title[languageHelper.getLanguageSymbol()]}</h2>
+                <h2 className={`popular-calculators-title ${languageHelper.getClass()}`}>
+                    {componentContent.title[languageHelper.getLanguageSymbol()]}
+                </h2>
 
                 {/* popular calculators grid */}
                 <div className="popular-calculators-grid">
@@ -56,7 +48,9 @@ function PopularCalculators() {
                         <a href={`/calculators/${calculator.urlName}`} className="calculator" key={i}>
 
                             {/* calculator title */}
-                            <h2 className={`calculator-name ${languageHelper.getClass()}`}>{calculator[languageHelper.getLanguageSymbol()].name}</h2>
+                            <h3 className={`calculator-name ${languageHelper.getClass()}`}>
+                                {calculator[languageHelper.getLanguageSymbol()].name}
+                            </h3>
 
                             {/* calculator description */}
                             <p className={`calculator-description ${languageHelper.getClass()}`}>
