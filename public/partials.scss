@@ -109,6 +109,7 @@
 
     // header
     --header-height-size: 5rem; // the height of the header
+    --first-element-margin-top: calc(var(--header-height-size) * 2);
     --nav-link-font-size: 1.125rem; // font size of the navigation links == 18px
 
     // general font sizes
