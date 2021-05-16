@@ -11,7 +11,6 @@ const Calculators = [
             "name": "ڕێژەی تێکڕا",
             "description": "ڕێژەی تێکڕا پشت ڕاست دەکاتەوە کە دوو کەرت لە هەردوولای هاوکێشەیەک یەکسانن"
         },
-        branchUrl: "algebra",
         urlName: "proportion-ratio",
         keywords: [
             "proportion ratio"

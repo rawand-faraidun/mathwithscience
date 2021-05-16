@@ -14,6 +14,9 @@ const Collections = [
         urlName: "algebra",
         keywords: [
             "algebra"
+        ],
+        calculatorsUrlName: [
+            "proportion-ratio"
         ]
     },
     {
@@ -28,6 +31,8 @@ const Collections = [
         urlName: "geometry",
         keywords: [
             "geometry"
+        ],
+        calculatorsUrlName: [
         ]
     },
     {
@@ -42,6 +47,8 @@ const Collections = [
         urlName: "unit-conversion",
         keywords: [
             "unit conversion"
+        ],
+        calculatorsUrlName: [
         ]
     }
 ];
