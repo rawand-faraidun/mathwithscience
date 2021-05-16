@@ -58,6 +58,10 @@
   margin-left: 2.5rem;
 }
 
+.list-view .list-view-grid .grid-item .grid-item-name a:hover + .grid-item-name-arrow.rtl {
+  margin-right: 2.5rem;
+}
+
 .list-view .list-view-grid .grid-item .grid-item-name .grid-item-name-arrow {
   margin-left: 1rem;
   font-size: 0.7em;
@@ -66,15 +70,22 @@
   transition: margin 0.25s ease-in-out;
 }
 
+.list-view .list-view-grid .grid-item .grid-item-name .grid-item-name-arrow.rtl {
+  margin-right: 1rem;
+}
+
+.list-view .list-view-grid .grid-item .grid-item-name .grid-item-name-arrow.rtl .fa-arrow-circle-right {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .list-view .list-view-grid .grid-item .grid-item-name:after {
-  position: absolute;
-  top: calc(1em + 8px);
-  left: 0;
   content: "";
-  height: 2px;
-  width: 100%;
-  border-radius: 3px;
+  display: block;
+  height: 3px;
   background-color: var(--body-text-color);
+  border-radius: 2px;
+  width: 100%;
 }
 
 .list-view .list-view-grid .grid-item .grid-item-description {

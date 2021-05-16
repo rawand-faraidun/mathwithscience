@@ -4,7 +4,6 @@
 
 // list view section
 .list-view {
-
     // header of the list view
     .list-view-header {
         margin-bottom: 3.5rem;
@@ -39,7 +38,10 @@
     // list view grid
     .list-view-grid {
         display: grid;
-        grid-template-columns: repeat(3, calc((100% - 10rem) / 3)); // these numbers are based on width and padding of the grid section
+        grid-template-columns: repeat(
+            3,
+            calc((100% - 10rem) / 3)
+        ); // these numbers are based on width and padding of the grid section
         column-gap: 5rem;
         row-gap: 3rem;
 
@@ -61,6 +63,10 @@
                     &:hover + .grid-item-name-arrow {
                         margin-left: 2.5rem;
                     }
+                    //  right to left arrow hover, used in kurdish
+                    &:hover + .grid-item-name-arrow.rtl {
+                        margin-right: 2.5rem;
+                    }
                 }
 
                 // arrow in grid item name
@@ -69,18 +75,24 @@
                     font-size: 0.7em;
                     color: var(--head-text-color);
                     transition: margin 0.25s ease-in-out;
+                    
+                    // right to left arrow, used in kurdish
+                    &.rtl {
+                        margin-right: 1rem;
+                        .fa-arrow-circle-right {
+                            transform: rotate(180deg);
+                        }
+                    }
                 }
 
                 // underline on grid item name
                 &:after {
-                    position: absolute;
-                    top: calc(1em + 8px);
-                    left: 0;
                     content: "";
-                    height: 2px;
-                    width: 100%;
-                    border-radius: 3px;
+                    display: block;
+                    height: 3px;
                     background-color: var(--body-text-color);
+                    border-radius: 2px;
+                    width: 100%;
                 }
             }
 

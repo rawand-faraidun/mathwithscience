@@ -30,10 +30,10 @@ function listView(props) {
                     <div className="list-view-header">
 
                         {/* list view title */}
-                        <h1 className="list-view-title">{props.header.title}</h1>
+                        <h1 className={`list-view-title ${languageHelper.getClass()}`}>{props.header.title}</h1>
 
                         {/* list view title */}
-                        <p className="list-view-description">{props.header.description}</p>
+                        <p className={`list-view-description ${languageHelper.getClass()}`}>{props.header.description}</p>
                     </div>
                 ) : ''}
 
@@ -46,13 +46,13 @@ function listView(props) {
                         <div className="grid-item" key={i}>
 
                             {/* item name */}
-                            <h2 className="grid-item-name">
+                            <h2 className={`grid-item-name ${languageHelper.getClass()}`}>
                                 <a href={item.urlName}>{item[languageHelper.getLanguageSymbol()].name}</a>
-                                <span className="grid-item-name-arrow"><i class="fas fa-arrow-circle-right"></i></span>
+                                <span className={`grid-item-name-arrow ${languageHelper.getDirection()}`}><i className="fas fa-arrow-circle-right"></i></span>
                             </h2>
 
                             {/* item description */}
-                            <p className="grid-item-description">
+                            <p className={`grid-item-description ${languageHelper.getClass()}`}>
                                 {item[languageHelper.getLanguageSymbol()].description.substring(0, 150)}...
                             </p>
                         </div>
