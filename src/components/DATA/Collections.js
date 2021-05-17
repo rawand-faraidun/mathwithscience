@@ -55,6 +55,7 @@ function find(conditions) {
     // it will make the result to only return details of one language
     if (conditions?.language) {
         result.forEach(collection => {
+
             // removing other language details from the object
             delete collection[languageHelper.getOtherLanguageSymbol()];
             return collection
@@ -66,7 +67,6 @@ function find(conditions) {
     // it will add the choosen text before url of each collection
     if (conditions?.changeUrl) {
         result.forEach(collection => {
-            // adding the text before the url
             collection.urlName = `${conditions.changeUrl}/${collection.urlName}`;
             return collection
         });
@@ -78,7 +78,59 @@ function find(conditions) {
 
 
 
+// getting collections
+/**
+ * @parameters :
+ *      @conditions : {Object}, adding conditions to find returning object
+ *          @urlName : {String}, searches for the object based on urlName property
+ * 
+ *  @return {Array} : search result grid element, if search was empty it will show collections
+ */
+function findOne(conditions) {
+
+    // cloning the collections array
+    var list = cloneDeep(Collections());
+
+    // this will store the object that matches the condition
+    var foundOne;
+
+
+    // checking for limit
+    // it will limit the results
+    if (conditions?.urlName) {
+        foundOne = list.find(collection => collection.urlName === conditions.urlName)
+    }
+
+
+    // checking if there is a found one
+    // it will return undefined if there is no object found
+    if (!foundOne) {
+        return undefined;
+    }
+
+
+    // checking for language
+    // it will make the found one to only return details of one language
+    if (conditions?.language) {
+
+        // removing other language details from the object
+        delete foundOne[languageHelper.getOtherLanguageSymbol()];
+    }
+
+
+    // checking for changingUrl
+    // it will add the choosen text before url of the object
+    if (conditions?.changeUrl) {
+        foundOne.urlName = `${conditions.changeUrl}/${foundOne.urlName}`;
+    }
+
+
+    return foundOne;
+}
+
+
+
 
 
 // exporting module
-export { find };
+export { find, findOne };

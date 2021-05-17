@@ -78,7 +78,59 @@ function find(conditions) {
 
 
 
+// getting calculators
+/**
+ * @parameters :
+ *      @conditions : {Object}, adding conditions to find returning object
+ *          @urlName : {String}, searches for the object based on urlName property
+ * 
+ *  @return {Array} : search result grid element, if search was empty it will show calculators
+ */
+function findOne(conditions) {
+
+    // cloning the calculators array
+    var list = cloneDeep(Calculators());
+
+    // this will store the object that matches the condition
+    var foundOne;
+
+
+    // checking for limit
+    // it will limit the results
+    if (conditions?.urlName) {
+        foundOne = list.find(calculator => calculator.urlName === conditions.urlName)
+    }
+
+
+    // checking if there is a found one
+    // it will return undefined if there is no object found
+    if (!foundOne) {
+        return undefined;
+    }
+
+
+    // checking for language
+    // it will make the found one to only return details of one language
+    if (conditions?.language) {
+
+        // removing other language details from the object
+        delete foundOne[languageHelper.getOtherLanguageSymbol()];
+    }
+
+
+    // checking for changingUrl
+    // it will add the choosen text before url of the object
+    if (conditions?.changeUrl) {
+        foundOne.urlName = `${conditions.changeUrl}/${foundOne.urlName}`;
+    }
+
+
+    return foundOne;
+}
+
+
+
 
 
 // exporting module
-export { find };
+export { find, findOne };
