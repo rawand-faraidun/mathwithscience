@@ -83,6 +83,8 @@ function find(conditions) {
  * @parameters :
  *      @conditions : {Object}, adding conditions to find returning object
  *          @urlName : {String}, searches for the object based on urlName property
+ *          @language : {Boolean}, determines if the returning collection to be in one language or all languages
+ *          @changeUrl : {String}, determines if adding a text before urlName
  * 
  *  @return {Array} : search result grid element, if search was empty it will show collections
  */
