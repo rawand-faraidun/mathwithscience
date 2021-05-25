@@ -10,7 +10,7 @@ import Footer from './components/partials/Footer/Footer';
 
 // pages components
 import Home from './components/pages/Home/Home';
-import Collections from './components/pages/Collections/Collections';
+import CollectionsRoute from './components/pages/Collections/Collections';
 
 
 
@@ -52,11 +52,11 @@ function App() {
                             "/collections",
                             "/collections/:collectionUrlName",
                             "/collections/:collectionUrlName/:calculatorUrlName"
-                        ]}
+                        ]} 
                         exact
                     >
 
-                        <Collections />
+                        <CollectionsRoute />
                     </Route>
 
                 </Switch>
