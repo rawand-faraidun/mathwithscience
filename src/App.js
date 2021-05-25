@@ -10,7 +10,8 @@ import Footer from './components/partials/Footer/Footer';
 
 // pages components
 import Home from './components/pages/Home/Home';
-import CollectionsRoute from './components/pages/Collections/Collections';
+import CollectionsRoutes from './components/pages/Collections/Collections';
+import CalculatorsRoutes from './components/pages/Calculators/Calculators';
 
 
 
@@ -42,7 +43,9 @@ function App() {
                 <Switch>
 
                     {/* Home route */}
-                    <Route path="/" component={Home} exact />
+                    <Route path="/" exact >
+                        <Home />
+                    </Route>
 
 
                     {/* Collections route */}
@@ -52,11 +55,23 @@ function App() {
                             "/collections",
                             "/collections/:collectionUrlName",
                             "/collections/:collectionUrlName/:calculatorUrlName"
-                        ]} 
+                        ]}
                         exact
                     >
+                        <CollectionsRoutes />
+                    </Route>
 
-                        <CollectionsRoute />
+
+                    {/* Collections route */}
+                    <Route
+                        path=
+                        {[
+                            "/calculators",
+                            "/calculators/:calculatorUrlName"
+                        ]}
+                        exact
+                    >
+                        <CalculatorsRoutes />
                     </Route>
 
                 </Switch>
