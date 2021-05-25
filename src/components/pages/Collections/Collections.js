@@ -57,7 +57,11 @@ function CollectionsRoutes() {
                             title: componentContent[languageHelper.getLanguageSymbol()].title,
                             description: componentContent[languageHelper.getLanguageSymbol()].description
                         }}
-                        list={Collections.find({ language: true, changeUrl: 'collections' })}
+                        list={Collections.find({
+                            language: true,
+                            changeUrl: 'collections',
+                            sort: 1
+                        })}
                     />
 
                 </div>
