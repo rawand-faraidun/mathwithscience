@@ -15,6 +15,9 @@ import Collections from './Collections-Data';
 /**
  * @parameters :
  *      @conditions : {Object}, adding conditions to modify returning array
+ *          @Sort : {Object} : 
+ *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
+ *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
  *          @searchQuery : {String}, the search text that used to search for collections
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @changeUrl : {String}, determines if adding a text before urlName or not
@@ -26,6 +29,20 @@ function find(conditions) {
 
     // cloning the collections array
     var result = cloneDeep(Collections());
+
+
+    // sorting the array by name
+    // it will sort the array based on their name
+    if (conditions?.sort) {
+
+        // checking if wanted to sort by a specific language name
+        result.sort((a, b) => (
+            a[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name > // checking if sorting language is defined, if not use english
+            b[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name) ?
+            (conditions.sort.sortingType ? conditions.sort.sortingType : 1) : // checking if the sorting tyoe is defined, if not using ASC
+            (conditions.sort.sortingType ? -conditions.sort.sortingType : -1)
+        );
+    }
 
 
     // checking for limit
