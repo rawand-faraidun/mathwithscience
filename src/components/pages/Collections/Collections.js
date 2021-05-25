@@ -34,7 +34,7 @@ const componentContent = {
  *  @return {Element} : Collections
  */
 // *** using CollectionsRoute name instead of Collections because of the name of DATA Collections variable
-function CollectionsRoute() {
+function CollectionsRoutes() {
 
     // getting params of the route
     var route = useParams();
@@ -129,8 +129,10 @@ function CollectionsRoute() {
 
                     {/* list grid */}
                     <ListView
-                        title={`${route.collectionUrlName} - ${route.calculatorUrlName}`}
-                        description={`list of all ${route.collectionUrlName} - ${route.calculatorUrlName}`}
+                        header={{
+                            title: 'NAME',
+                            description: 'DESCRIPTION'
+                        }}
                         list={[]}
                     />
 
@@ -141,4 +143,4 @@ function CollectionsRoute() {
 
 }
 
-export default CollectionsRoute;
+export default CollectionsRoutes;
