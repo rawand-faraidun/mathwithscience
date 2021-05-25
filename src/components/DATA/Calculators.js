@@ -20,7 +20,7 @@ import Calculators from './Calculators-Data';
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  *          @limit : {Number}, determines if setting limit to returning results
  * 
- *  @return {Array} : search result grid element, if search was empty it will show calculators
+ *  @return {Array} : an array of Calculators that meets the conditions
  */
 function find(conditions) {
 
@@ -86,7 +86,7 @@ function find(conditions) {
  *          @language : {Boolean}, determines if the returning calculator to be in one language or all languages
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  * 
- *  @return {Array} : search result grid element, if search was empty it will show calculators
+ *  @return {Object} : an object of the Calculator that meets the conditions
  */
 function findOne(conditions) {
 
@@ -140,7 +140,7 @@ function findOne(conditions) {
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  * 
- *  @return {Array} : search result grid element, if search was empty it will show calculators
+ *  @return {Array} : an array of the Calculator that are in conditions list
  */
 function findIn(conditions) {
 
