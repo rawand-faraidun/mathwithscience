@@ -3,15 +3,19 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 // importing components
 import languageHelper from './components/partials/languageHelper';
+
+// partial components
 import Header from './components/partials/Header/Header';
 import Footer from './components/partials/Footer/Footer';
+
+// pages components
 import Home from './components/pages/Home/Home';
+import Collections from './components/pages/Collections/Collections';
 
 
 
 // initiating language helper cookie check constructor
 new languageHelper();
-
 
 
 /**
@@ -42,8 +46,17 @@ function App() {
 
 
                     {/* Collections route */}
-                    <Route path="/collections" exact>
-                        <h1 style={{ marginTop: 'calc(var(--header-height-size) * 2)' }}>Collections</h1>
+                    <Route
+                        path=
+                        {[
+                            "/collections",
+                            "/collections/:collectionUrlName",
+                            "/collections/:collectionUrlName/:calculatorUrlName"
+                        ]}
+                        exact
+                    >
+
+                        <Collections />
                     </Route>
 
                 </Switch>
