@@ -34,7 +34,6 @@ function find(conditions) {
     // sorting the array by name
     // it will sort the array based on their name
     if (conditions?.sort) {
-
         // checking if wanted to sort by a specific language name
         result.sort((a, b) => (
             a[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name > // checking if sorting language is defined, if not use english
