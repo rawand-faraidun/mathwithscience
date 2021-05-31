@@ -11,8 +11,10 @@ import './language-selector.css';
 
 // page content all languages
 const componentsContent = {
-    en: 'language',
-    kr: 'زمان'
+    languageSelectLabel: {
+        en: 'Language',
+        kr: 'زمان'
+    }
 }
 
 
@@ -48,7 +50,7 @@ function LanguageSelector() {
                 <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
 
                     {/* showing label content based on page language */}
-                    {componentsContent[languageHelper.getLanguageSymbol()]} : &nbsp;
+                    {componentsContent.languageSelectLabel[languageHelper.getLanguageSymbol()]} : &nbsp;
                 </label>
 
                 {/* the language selector */}
