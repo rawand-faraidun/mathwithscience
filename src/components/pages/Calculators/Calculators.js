@@ -37,7 +37,7 @@ const componentContent = {
 function CalculatorsRoutes() {
 
     // getting params of the route
-    var route = useParams();
+    const route = useParams();
     console.log(route);
 
 
@@ -65,7 +65,7 @@ function CalculatorsRoutes() {
                             title: componentContent[languageHelper.getLanguageSymbol()].title,
                             description: componentContent[languageHelper.getLanguageSymbol()].description
                         }}
-                        list={Calculators.find({ language: true, changeUrl: 'calculators', sort: 1 })}
+                        list={Calculators.find({ language: true, removeComponent: true, changeUrl: 'calculators', sort: 1 })}
                     />
 
                 </div>
