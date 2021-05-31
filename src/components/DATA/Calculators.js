@@ -19,10 +19,10 @@ import Calculators from './Calculators-Data';
  *          @Sort : {Object} : 
  *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
  *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
+ *          @limit : {Number}, determines if setting limit to returning results
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @removeComponent : {Boolean}, determines if removing component function or not
  *          @changeUrl : {String}, determines if adding a text before urlName or not
- *          @limit : {Number}, determines if setting limit to returning results
  * 
  *  @return {Array} : an array of Calculators that meets the conditions
  */
@@ -46,7 +46,7 @@ function find(conditions) {
             )
         });
     }
- 
+
 
     // sorting the array by name
     // it will sort the array based on their name
@@ -188,6 +188,10 @@ function findOne(conditions) {
  * @parameters :
  *      @conditions : {Object}, adding conditions to find returning object
  *          @list : {Array}, Array of urlNames to search in for calculators
+ *          @Sort : {Object} : 
+ *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
+ *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
+ *          @limit : {Number}, determines if setting limit to returning results
  *          @language : {Boolean}, determines if only returning results in one language or all languages
  *          @removeComponent : {Boolean}, determines if removing component function or not
  *          @changeUrl : {String}, determines if adding a text before urlName or not
@@ -204,6 +208,25 @@ function findIn(conditions) {
     // it will limit the results
     if (conditions?.list) {
         result = result.filter(calculator => conditions.list.includes(calculator.urlName))
+    }
+
+
+    // sorting the array by name
+    // it will sort the array based on their name
+    if (conditions?.sort) {
+        result.sort((a, b) => (
+            a[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name > // checking if sorting language is defined, if not use english
+            b[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name) ?
+            (conditions.sort.sortingType ? conditions.sort.sortingType : 1) : // checking if the sorting tyoe is defined, if not using ASC
+            (conditions.sort.sortingType ? -conditions.sort.sortingType : -1)
+        );
+    }
+
+
+    // checking for limit
+    // it will limit the results
+    if (conditions?.limit) {
+        result = result.slice(0, conditions.limit);
     }
 
 
