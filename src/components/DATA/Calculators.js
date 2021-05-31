@@ -15,11 +15,12 @@ import Calculators from './Calculators-Data';
 /**
  * @parameters :
  *      @conditions : {Object}, adding conditions to modify returning array
+ *          @searchQuery : {String}, the search text that used to search for calculators
  *          @Sort : {Object} : 
  *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
  *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
- *          @searchQuery : {String}, the search text that used to search for calculators
  *          @language : {Boolean}, determines if only returning results in one language or all languages
+ *          @removeComponent : {Boolean}, determines if removing component function or not
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  *          @limit : {Number}, determines if setting limit to returning results
  * 
@@ -28,7 +29,23 @@ import Calculators from './Calculators-Data';
 function find(conditions) {
 
     // cloning the calculators array
-    var result = cloneDeep(Calculators());
+    let result = cloneDeep(Calculators());
+
+
+    // checking for search query
+    // it will make result to only return calculators that include searchQuery in one of their properties
+    if (conditions?.searchQuery) {
+        result = result.filter(calculator => {
+
+            // returning the ones that english or kurdish name or description includes the search text
+            return (
+                calculator.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase())
+            )
+        });
+    }
 
 
     // sorting the array by name
@@ -50,28 +67,23 @@ function find(conditions) {
     }
 
 
-    // checking for search query
-    // it will make result to only return calculators that include searchQuery in one of their properties
-    if (conditions?.searchQuery) {
-        result = result.filter(calculator => {
-
-            // returning the ones that english or kurdish name or description includes the search text
-            return (
-                calculator.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase())
-            )
-        });
-    }
-
-
     // checking for language
     // it will make the result to only return details of one language
     if (conditions?.language) {
         result.forEach(calculator => {
             // removing other language details from the object
             delete calculator[languageHelper.getOtherLanguageSymbol()];
+            return calculator
+        });
+    }
+
+
+    // checking for removeComponent
+    // it will make remove component fuction property
+    if (conditions?.removeComponent) {
+        result.forEach(calculator => {
+            // removing component fuction from the object
+            delete calculator.component;
             return calculator
         });
     }
@@ -93,12 +105,20 @@ function find(conditions) {
 
 
 
+
+
+
+
+
+
+
 // getting one calculator
 /**
  * @parameters :
  *      @conditions : {Object}, adding conditions to find returning object
  *          @urlName : {String}, searches for the object based on urlName property
  *          @language : {Boolean}, determines if the returning calculator to be in one language or all languages
+ *          @removeComponent : {Boolean}, determines if removing component function or not
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  * 
  *  @return {Object} : an object of the Calculator that meets the conditions
@@ -106,10 +126,10 @@ function find(conditions) {
 function findOne(conditions) {
 
     // cloning the calculators array
-    var list = cloneDeep(Calculators());
+    let list = cloneDeep(Calculators());
 
     // this will store the object that matches the condition
-    var foundOne;
+    let foundOne;
 
 
     // checking for limit
@@ -135,6 +155,15 @@ function findOne(conditions) {
     }
 
 
+    // checking for removeComponent
+    // it will make remove component fuction property
+    if (conditions?.removeComponent) {
+
+        // removing component fuction from the object
+        delete foundOne.component;
+    }
+
+
     // checking for changingUrl
     // it will add the choosen text before url of the object
     if (conditions?.changeUrl) {
@@ -147,12 +176,20 @@ function findOne(conditions) {
 
 
 
+
+
+
+
+
+
+
 // getting calculators
 /**
  * @parameters :
  *      @conditions : {Object}, adding conditions to find returning object
  *          @list : {Array}, Array of urlNames to search in for calculators
  *          @language : {Boolean}, determines if only returning results in one language or all languages
+ *          @removeComponent : {Boolean}, determines if removing component function or not
  *          @changeUrl : {String}, determines if adding a text before urlName or not
  * 
  *  @return {Array} : an array of the Calculator that are in conditions list
@@ -160,7 +197,7 @@ function findOne(conditions) {
 function findIn(conditions) {
 
     // cloning the calculators array
-    var result = cloneDeep(Calculators());
+    let result = cloneDeep(Calculators());
 
 
     // checking for limit
@@ -176,6 +213,17 @@ function findIn(conditions) {
         result.forEach(calculator => {
             // removing other language details from the object
             delete calculator[languageHelper.getOtherLanguageSymbol()];
+            return calculator
+        });
+    }
+
+
+    // checking for removeComponent
+    // it will make remove component fuction property
+    if (conditions?.removeComponent) {
+        result.forEach(calculator => {
+            // removing component fuction from the object
+            delete calculator.component;
             return calculator
         });
     }

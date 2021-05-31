@@ -1,3 +1,6 @@
+// importing calculators components
+import ProportionRatio from './calculators-pages/Proportion-Ratio/Proportion-Ratio';
+
 /**
  *  @Calculators : array of calculators
  */
@@ -14,7 +17,8 @@ const Calculators = [
         urlName: "proportion-ratio",
         keywords: [
             "proportion ratio"
-        ]
+        ],
+        component: <ProportionRatio />
     }
 ];
 
