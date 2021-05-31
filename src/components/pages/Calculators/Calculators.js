@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 // importing styling
 import './calculators.css';
@@ -46,6 +47,13 @@ function CalculatorsRoutes() {
     if (!route.calculatorUrlName) {
         return (
             <>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>Calculators | Math with Science</title>
+                    <meta name="description" content="list of all calculators provieded by Math with Science" />
+                </Helmet>
+
+
                 {/* collections */}
                 <div className="calculators" dir={languageHelper.getDirection()}>
 
@@ -71,6 +79,13 @@ function CalculatorsRoutes() {
         */
         return (
             <>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>TITLE | Math with Science</title>
+                    <meta name="description" content="DESCRIPTION" />
+                </Helmet>
+
+
                 <div className="calculators">
 
                     {/* list grid */}

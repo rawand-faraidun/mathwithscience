@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 // importing styling
 import './collections.css';
@@ -46,6 +47,13 @@ function CollectionsRoutes() {
     if (!route.collectionUrlName && !route.calculatorUrlName) {
         return (
             <>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>Collections | Math with Science</title>
+                    <meta name="description" content="List of all collections provieded by Math with Science" />
+                </Helmet>
+
+
                 {/* collections */}
                 <div className="collections" dir={languageHelper.getDirection()}>
 
@@ -100,6 +108,13 @@ function CollectionsRoutes() {
 
         return (
             <>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>{collection.en.name} | Math with Science</title>
+                    <meta name="description" content={collection[languageHelper.getLanguageSymbol()].name} />
+                </Helmet>
+
+
                 {/* collections */}
                 <div className="collections" dir={languageHelper.getDirection()}>
 
@@ -129,6 +144,13 @@ function CollectionsRoutes() {
         */
         return (
             <>
+                {/* overriding page head */}
+                <Helmet>
+                    <title>TITLE | Math with Science</title>
+                    <meta name="description" content="DESCRIPTION" />
+                </Helmet>
+
+
                 <div className="collections">
 
                     {/* list grid */}
