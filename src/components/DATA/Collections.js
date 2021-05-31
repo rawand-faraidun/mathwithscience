@@ -28,7 +28,7 @@ import Collections from './Collections-Data';
 function find(conditions) {
 
     // cloning the collections array
-    var result = cloneDeep(Collections());
+    let result = cloneDeep(Collections());
 
 
     // sorting the array by name
@@ -107,10 +107,10 @@ function find(conditions) {
 function findOne(conditions) {
 
     // cloning the collections array
-    var list = cloneDeep(Collections());
+    let list = cloneDeep(Collections());
 
     // this will store the object that matches the condition
-    var foundOne;
+    let foundOne;
 
 
     // checking for limit
