@@ -11,6 +11,9 @@ import ListView from '../ListView/ListView';
 // importing Components
 import languageHelper from '../../partials/languageHelper';
 
+// importing proportion Ratio
+import ShowCalculator from '../calculators-pages/ShowCalculator/ShowCalculator';
+
 // importing datas
 const Collections = require('../../DATA/Collections');
 const Calculators = require('../../DATA/Calculators');
@@ -144,23 +147,10 @@ function CollectionsRoutes() {
         */
         return (
             <>
-                {/* overriding page head */}
-                <Helmet>
-                    <title>TITLE | Math with Science</title>
-                    <meta name="description" content="DESCRIPTION" />
-                </Helmet>
-
-
                 <div className="collections">
 
-                    {/* list grid */}
-                    <ListView
-                        header={{
-                            title: 'NAME',
-                            description: 'DESCRIPTION'
-                        }}
-                        list={[]}
-                    />
+                    {/* Getting wanted calculator */}
+                    <ShowCalculator urlName={route.calculatorUrlName} haveHeader={true} useHelmet={true} />
 
                 </div>
             </>
