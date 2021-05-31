@@ -1,0 +1,39 @@
+/********************
+***Show Calculators***
+********************/
+
+// calculator page section
+.calculator-page {
+    width: 100%;
+    
+    // header of the calculator page
+    .calculator-page-header {
+        margin-bottom: 3.5rem;
+
+        // title of the calculator page
+        .calculator-page-title {
+            position: relative;
+            display: inline-block;
+            font-family: var(--head-font-family);
+            font-size: var(--xxx-large-font-size);
+            color: var(--head-text-color);
+
+            &:after {
+                content: "";
+                display: block;
+                height: 3px;
+                background-color: var(--main-green-color);
+                border-radius: 2px;
+                width: 100%;
+            }
+        }
+
+        // description of the calculator page
+        .calculator-page-description {
+            margin-top: 1.5rem;
+            font-family: var(--head-font-family);
+            font-size: var(--small-font-size);
+            color: var(--body-text-color);
+        }
+    }
+}
