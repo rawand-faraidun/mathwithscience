@@ -13,10 +13,9 @@ const Calculators = require('../../../DATA/Calculators');
 
 // page content all languages
 const componentContent = {
-    title: {
-        en: 'Most Popular Calculators',
-        kr: 'ژمێرەرە زۆر بەکارهاتوەکان',
-    }
+    en: 'Popular Calculators',
+    kr: 'ژمێرەرە بەکارهاتوەکان',
+
 }
 
 
@@ -37,7 +36,7 @@ function PopularCalculators() {
 
                 {/* popular calculators title */}
                 <h2 className={`popular-calculators-title ${languageHelper.getClass()}`}>
-                    {componentContent.title[languageHelper.getLanguageSymbol()]}
+                    {componentContent[languageHelper.getLanguageSymbol()]}
                 </h2>
 
                 {/* popular calculators grid */}
