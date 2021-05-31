@@ -12,7 +12,7 @@ import ListView from '../ListView/ListView';
 import languageHelper from '../../partials/languageHelper';
 
 // importing proportion Ratio
-import ShowCalculator from '../calculators-pages/ShowCalculator/ShowCalculator';
+import ShowCalculator from '../ShowCalculator/ShowCalculator';
 
 // importing datas
 const Collections = require('../../DATA/Collections');
@@ -22,13 +22,15 @@ const Calculators = require('../../DATA/Calculators');
 
 // component content all languages
 const componentContent = {
-    en: {
-        title: 'Collections',
-        description: 'list of all Collections'
-    },
-    kr: {
-        title: 'لقەکان',
-        description: 'لیستی لقەکان'
+    collectionsList: {
+        en: {
+            title: 'Collections',
+            description: 'list of all Collections'
+        },
+        kr: {
+            title: 'لقەکان',
+            description: 'لیستی لقەکان'
+        }
     }
 }
 
@@ -41,7 +43,7 @@ const componentContent = {
 function CollectionsRoutes() {
 
     // getting params of the route
-    var route = useParams();
+    const route = useParams();
 
 
 
@@ -65,8 +67,8 @@ function CollectionsRoutes() {
                     {/* collections list */}
                     <ListView
                         header={{
-                            title: componentContent[languageHelper.getLanguageSymbol()].title,
-                            description: componentContent[languageHelper.getLanguageSymbol()].description
+                            title: componentContent.collectionsList[languageHelper.getLanguageSymbol()].title,
+                            description: componentContent.collectionsList[languageHelper.getLanguageSymbol()].description
                         }}
                         list={Collections.find({
                             language: true,
@@ -87,7 +89,7 @@ function CollectionsRoutes() {
     if (route.collectionUrlName && !route.calculatorUrlName) {
 
         // getting the collection choosen in the url
-        var collection = Collections.findOne({ urlName: route.collectionUrlName, language: true });
+        const collection = Collections.findOne({ urlName: route.collectionUrlName });
 
         // checking if the collection was vailed
         if (collection === undefined) {
@@ -106,7 +108,7 @@ function CollectionsRoutes() {
         }
 
         // getting the collections calculators
-        var calculators = Calculators.findIn({ list: collection.calculatorsUrlName, language: true, changeUrl: `collections/${collection.urlName}` });
+        const calculators = Calculators.findIn({ list: collection.calculatorsUrlName, language: true, removeComponent: true, changeUrl: `collections/${collection.urlName}` });
 
 
         return (
@@ -142,6 +144,25 @@ function CollectionsRoutes() {
 
     // if there both params, so it a calculator in a collection
     if (route.collectionUrlName && route.calculatorUrlName) {
+
+        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName });
+
+        // checking if the collection was vailed
+        if (calculator === undefined) {
+            /**
+             * @todo add 404 not found here
+             */
+
+            console.log('undefined collection');
+            return (
+                <>
+                    <div className="undefined" style={{ marginTop: 'var(--first-element-margin-top)' }}>
+                        <h1>undefined collection</h1>
+                    </div>
+                </>
+            );
+        }
+
         /**
         * @todo make this check for the calculator in the collection
         */
@@ -150,7 +171,7 @@ function CollectionsRoutes() {
                 <div className="collections">
 
                     {/* Getting wanted calculator */}
-                    <ShowCalculator urlName={route.calculatorUrlName} haveHeader={true} useHelmet={true} />
+                    <ShowCalculator calculatorData={calculator} haveHeader={true} useHelmet={true} />
 
                 </div>
             </>
