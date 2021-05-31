@@ -1,6 +1,10 @@
 /********************
 ***Show Calculators***
 ********************/
+.calculator-page {
+  width: 100%;
+}
+
 .calculator-page .calculator-page-header {
   margin-bottom: 3.5rem;
 }
