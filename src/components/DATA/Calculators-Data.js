@@ -1,5 +1,5 @@
 // importing calculators components
-import ProportionRatio from './calculators-pages/Proportion-Ratio/Proportion-Ratio';
+import ProportionRatio from './calculators-components/Proportion-Ratio/Proportion-Ratio';
 
 /**
  *  @Calculators : array of calculators
