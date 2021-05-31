@@ -17,8 +17,6 @@ import languageHelper from '../../partials/languageHelper';
  */
 function showCalculator(props) {
 
-    console.log(props.calculatorDataData);
-
 
     return (
         <>
