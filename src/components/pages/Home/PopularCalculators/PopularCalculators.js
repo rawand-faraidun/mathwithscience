@@ -26,7 +26,7 @@ const componentContent = {
 function PopularCalculators() {
 
     // getting the calculators
-    const calculators = Calculators.find({ language: true, limit: 12 });
+    const calculators = Calculators.find({ language: true, removeComponent: true, limit: 12 });
 
 
     return (

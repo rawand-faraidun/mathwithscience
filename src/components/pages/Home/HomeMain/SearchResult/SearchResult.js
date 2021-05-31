@@ -28,7 +28,7 @@ function SearchResult(props) {
 
 
     // search results
-    var searchResult = [];
+    let searchResult = [];
 
     // if the search result was empty, searchResult will be collections
     if (props.searchtext.length === 0) {
@@ -37,10 +37,10 @@ function SearchResult(props) {
     // if it was not empty, it will search for collections and calculators based on searchText
     else {
         // getting collections based on search text
-        var searchCollectionResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
+        const searchCollectionResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
 
         // getting calculators based on search text
-        var searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
+        const searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, removeComponent: true, language: true, changeUrl: 'collections' });
 
         // setting both results as searchResult
         searchResult = [...searchCollectionResult, ...searchCalculatorsResult];
