@@ -12,12 +12,10 @@
 }
 
 .language-select .language-selector {
-  padding: 0.1rem;
+  padding: 0.2rem;
   padding-top: 0.4rem;
   font-family: var(--head-font-family);
   font-size: var(--small-font-size);
-  color: var(--body-text-color);
-  background-color: var(--body-color);
 }
 
 @media screen and (max-width: 768px) {
