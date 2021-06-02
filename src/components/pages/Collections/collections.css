@@ -6,4 +6,10 @@
   padding: var(--padding-sides);
   min-height: 64vh;
 }
+
+@media screen and (max-width: 500px) {
+  .collections {
+    min-height: 53vh;
+  }
+}
 /*# sourceMappingURL=collections.css.map */

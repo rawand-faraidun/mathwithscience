@@ -8,3 +8,10 @@
     padding: var(--padding-sides);
     min-height: 64vh;
 }
+
+// changing search result grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .calculators {
+        min-height: 53vh;
+    }
+}
