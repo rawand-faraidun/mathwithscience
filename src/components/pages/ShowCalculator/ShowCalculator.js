@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 
 // importing styling
 import './show-calculator.css';
+import './calculator-defaults.css';
 
 // importing Components
 import languageHelper from '../../partials/languageHelper';

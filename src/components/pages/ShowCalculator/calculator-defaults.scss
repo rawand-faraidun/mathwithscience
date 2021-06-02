@@ -1,0 +1,106 @@
+/*******((***************
+***Calculator Defaults***
+************************/
+
+// input fields
+.input-field {
+    padding-top: 0.25rem;
+    padding-left: 0.4rem;
+    width: 100%;
+    font-size: var(--medium-font-size);
+    color: var(--head-text-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px var(--main-green-color);
+
+    // input field placeholder
+    &::placeholder {
+        color: var(--body-text-color);
+    }
+
+    // answerfields
+    &.answer-field {
+        border-color: var(--main-blue-color);
+    }
+
+    // error on answer field
+    &.error {
+        color: var(--main-red-color);
+        border-color: var(--main-red-color);
+        animation: shake 0.2s ease-in-out 0s 2;
+
+        //shake for wrong input
+        @keyframes shake {
+            0% {
+                transform: none;
+            }
+            25% {
+                transform: translateX(-0.5rem);
+            }
+            75% {
+                transform: translateX(0.5rem);
+            }
+            100% {
+                transform: none;
+            }
+        }
+    }
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .input-field {
+        font-size: var(--small-font-size);
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// input labels
+.label {
+    color: var(--head-text-color);
+    font-family: var(--body-font-family);
+    font-size: var(--large-font-size);
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .label {
+        font-size: var(--medium-font-size);
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// input labels
+.dropdown {
+    margin-left: -0.25rem;
+    padding: 0.25rem;
+    font-family: var(--body-font-family);
+    font-size: var(--medium-font-size);
+
+    //options of the dropdown
+    option {
+        font-size: var(--small-font-size);
+    }
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .dropdown {
+        font-size: var(--small-font-size);
+
+        //options of the dropdown
+        option {
+            font-size: var(--x-small-font-size);
+        }
+    }
+}
