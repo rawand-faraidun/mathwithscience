@@ -185,6 +185,9 @@
 
 // setting general color varialbles, works for both mode
 :root {
+    // background colors
+    --element-background-color: var(--mobile-nav-main-bg-color);
+
     // //text and most used colors
     --white-color: #fff;
     --black-color: #000;
@@ -305,4 +308,29 @@ body {
 .kurdish {
     font-family: var(--kurdish-font-family) !important;
     line-height: 160% !important;
+}
+
+// removing outline for inputs
+input {
+    outline: none;
+}
+
+// adding default values for dropdowns
+select {
+    color: var(--head-text-color);
+    background-color: var(--element-background-color);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+// removing number arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }

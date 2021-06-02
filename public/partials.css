@@ -105,6 +105,7 @@
 ***used colors***
 ****************/
 :root {
+  --element-background-color: var(--mobile-nav-main-bg-color);
   --white-color: #fff;
   --black-color: #000;
   --main-green-color: #00cc80;
@@ -177,5 +178,28 @@ body.preload * {
 .kurdish {
   font-family: var(--kurdish-font-family) !important;
   line-height: 160% !important;
+}
+
+input {
+  outline: none;
+}
+
+select {
+  color: var(--head-text-color);
+  background-color: var(--element-background-color);
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 /*# sourceMappingURL=partials.css.map */
