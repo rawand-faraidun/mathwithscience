@@ -1,0 +1,51 @@
+/**********************
+***Propportion Ratio***
+**********************/
+
+// proportion ratio component
+.proportion-ratio {
+    position: relative;
+    width: 20rem;
+    margin: auto;
+
+    // proportion ratio controls
+    .controls {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        // the space between the label and the dropdown
+        .space {
+            margin: 0 1rem;
+        }
+    }
+
+    // calculator part
+    .calculator {
+        margin-top: 2rem;
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        .equals {
+            margin: 1rem 1rem 0;
+        }
+
+        .left,
+        .right {
+            width: 40%;
+        }
+
+        .input2,
+        .answer {
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+// changing search result grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .proportion-ratio {
+        width: 100%;
+    }
+}

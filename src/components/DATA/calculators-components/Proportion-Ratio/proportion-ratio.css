@@ -1,1 +1,54 @@
-/* No CSS *//*# sourceMappingURL=proportion-ratio.css.map */
+/**********************
+***Propportion Ratio***
+**********************/
+.proportion-ratio {
+  position: relative;
+  width: 20rem;
+  margin: auto;
+}
+
+.proportion-ratio .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.proportion-ratio .controls .space {
+  margin: 0 1rem;
+}
+
+.proportion-ratio .calculator {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.proportion-ratio .calculator .equals {
+  margin: 1rem 1rem 0;
+}
+
+.proportion-ratio .calculator .left,
+.proportion-ratio .calculator .right {
+  width: 40%;
+}
+
+.proportion-ratio .calculator .input2,
+.proportion-ratio .calculator .answer {
+  margin-top: 1.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .proportion-ratio {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=proportion-ratio.css.map */
