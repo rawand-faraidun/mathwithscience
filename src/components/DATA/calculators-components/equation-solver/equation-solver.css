@@ -1,0 +1,102 @@
+/********************
+***Equation Solver***
+********************/
+.equation-solver {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.equation-solver .equation {
+  text-align: center;
+}
+
+.equation-solver .equation .equation-label {
+  text-align: center;
+}
+
+.equation-solver .equation .equation-input {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.equation-solver .equation-answers {
+  margin-top: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.equation-solver .equation-answers .answers {
+  margin-right: 2.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.equation-solver .equation-answers .answers.rtl {
+  margin-left: 2.5rem;
+  margin-right: 0;
+}
+
+.equation-solver .equation-answers .answers .answers-inputs {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.equation-solver .equation-answers .answers .answers-inputs .answer {
+  margin-top: 1rem;
+}
+
+.equation-solver .equation-answers .answers .answers-inputs .answer:first-child {
+  margin-top: 0;
+}
+
+.equation-solver .equation-answers .answers .answers-warning {
+  font-size: var(--x-small-font-size);
+}
+
+.equation-solver .equation-answers .equation-graph {
+  margin-left: 2.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.equation-solver .equation-answers .equation-graph.rtl {
+  margin-left: 0;
+  margin-right: 2.5rem;
+}
+
+.equation-solver .equation-answers .equation-graph .graph {
+  width: 100%;
+  height: 30rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .equation-solver {
+    width: 100%;
+  }
+  .equation-solver .equation-answers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .equation-solver .equation-answers .answers,
+  .equation-solver .equation-answers .equation-graph {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .equation-solver .equation-answers .equation-graph {
+    margin-top: 3rem;
+  }
+  .equation-solver .equation-answers .equation-graph .graph {
+    height: 50vh;
+  }
+}
+/*# sourceMappingURL=equation-solver.css.map */

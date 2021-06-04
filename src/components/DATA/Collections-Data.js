@@ -16,7 +16,7 @@ const Collections = [
             "algebra"
         ],
         calculatorsUrlName: [
-            "proportion-ratio"
+            "proportion-ratio", "equation-solver"
         ]
     },
     {
