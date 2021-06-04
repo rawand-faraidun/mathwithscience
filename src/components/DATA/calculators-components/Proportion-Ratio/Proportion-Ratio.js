@@ -33,7 +33,7 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Collections
+ *  @return {Element} : Proportion Ratio
  */
 // *** Proportion Ratio component
 function ProportionRatio() {
