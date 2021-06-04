@@ -102,12 +102,18 @@ function ProportionRatio() {
 
                         {/* input 1 */}
                         <div className="input1">
-                            <input type="number" id="number1" className="input-field" placeholder="2" autoComplete="off" value={values.number1} onChange={calculate} />
+                            <input type="number" id="number1" className="input-field" placeholder="4" autoComplete="off"
+                                value={values.number1}
+                                onChange={calculate}
+                            />
                         </div>
 
                         {/* input 2 */}
                         <div className="input2">
-                            <input type="number" id="number2" className="input-field" placeholder="8" autoComplete="off" value={values.number2} onChange={calculate} />
+                            <input type="number" id="number2" className="input-field" placeholder="8" autoComplete="off"
+                                value={values.number2}
+                                onChange={calculate}
+                            />
                         </div>
                     </div>
 
@@ -116,12 +122,19 @@ function ProportionRatio() {
 
                         {/* input 3 */}
                         <div className="input3">
-                            <input type="number" id="number3" className="input-field" placeholder="1" autoComplete="off" value={values.number3} onChange={calculate} />
+                            <input type="number" id="number3" className="input-field" placeholder="2" autoComplete="off"
+                                value={values.number3}
+                                onChange={calculate}
+                            />
                         </div>
 
                         {/* answer */}
                         <div className="answer">
-                            <input type="number" id="answer" className="input-field answer-field" placeholder="4" autoComplete="off" value={values.answer} readOnly={true} />
+                            <input type="number" id="answer" className="input-field answer-field" autoComplete="off"
+                                placeholder={values.method === 'directly' ? '4' : values.method === 'indirectly' ? '16' : ''} readOnly={true}
+                                value={values.answer}
+                                onClick={(e) => { e.target.select() }}
+                            />
                         </div>
                     </div>
                 </div>
