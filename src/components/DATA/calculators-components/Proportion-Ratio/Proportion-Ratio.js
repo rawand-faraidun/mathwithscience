@@ -35,7 +35,7 @@ const componentContent = {
 /**
  *  @return {Element} : Collections
  */
-// *** using CollectionsRoute name instead of Collections because of the name of DATA Collections variable
+// *** Proportion Ratio component
 function ProportionRatio() {
 
     // storing values
