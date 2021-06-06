@@ -52,36 +52,34 @@ function ProportionRatio() {
     });
 
 
-
-    // shwoing an empty graph on start
+    // auto updating graph on state change
     useEffect(() => {
+        // generation the graph
         document.getElementById('graph').innerHTML = '';
+
+        // creating desmos element
         var calculator = Desmos.GraphingCalculator(document.getElementById('graph'), {
             expressions: false,
             keypad: false,
             settingsMenu: false
         });
-        calculator.setExpression({ id: 'graph1', latex: `y` });
-    }, []);
+
+        // setting or updating graph
+        calculator.setExpression({ id: 'graph1', latex: `y=${values.equation}` });
+    }, [values]);
 
 
     // calculation function
     function calculate(e) {
 
-        // getting the answers
+        // preventing input of invailed characters
+        if (!/^[A-Za-z0-9.^*+/()-]*$/.test(e.target.value)) return;
+
+        // answers array
         var sol = [];
 
         // trying to sove them
         try {
-            // generation the graph
-            document.getElementById('graph').innerHTML = '';
-            var calculator = Desmos.GraphingCalculator(document.getElementById('graph'), {
-                expressions: false,
-                keypad: false,
-                settingsMenu: false
-            });
-            calculator.setExpression({ id: 'graph1', latex: `y=${e.target.value.toLowerCase()}` });
-
             // getting x intercepts
             sol = nerdamer.solveEquations(e.target.value.toLowerCase()).map(solution => parseFloat(nerdamer(solution).evaluate().text()));
         }
@@ -114,7 +112,7 @@ function ProportionRatio() {
 
                     {/* equation input */}
                     <input type="text" id="equation" className="input-field equation-input" placeholder="ax^3-bx^2-cx-d" autoComplete="off"
-                        value={values.number1}
+                        value={values.equation}
                         onChange={calculate}
                     />
 
