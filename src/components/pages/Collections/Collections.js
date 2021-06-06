@@ -73,7 +73,7 @@ function CollectionsRoutes() {
                         list={Collections.find({
                             language: true,
                             changeUrl: 'collections',
-                            sort: 1
+                            sort: { sortingLanguage: languageHelper.getLanguageSymbol() }
                         })}
                     />
 
@@ -108,7 +108,13 @@ function CollectionsRoutes() {
         }
 
         // getting the collections calculators
-        const calculators = Calculators.findIn({ list: collection.calculatorsUrlName, language: true, removeComponent: true, changeUrl: `collections/${collection.urlName}` });
+        const calculators = Calculators.findIn({
+            list: collection.calculatorsUrlName,
+            language: true,
+            removeComponent: true,
+            changeUrl: `collections/${collection.urlName}`,
+            sort: { sortingLanguage: languageHelper.getLanguageSymbol() }
+        });
 
 
         return (

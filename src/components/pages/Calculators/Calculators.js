@@ -65,7 +65,7 @@ function CalculatorsRoutes() {
                             title: componentContent[languageHelper.getLanguageSymbol()].title,
                             description: componentContent[languageHelper.getLanguageSymbol()].description
                         }}
-                        list={Calculators.find({ language: true, removeComponent: true, changeUrl: 'calculators', sort: 1 })}
+                        list={Calculators.find({ language: true, removeComponent: true, changeUrl: 'calculators', sort: { sortingLanguage: languageHelper.getLanguageSymbol() } })}
                     />
 
                 </div>
