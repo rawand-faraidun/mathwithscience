@@ -9,7 +9,7 @@ const Calculators = [
     {
         en: {
             "name": "Proportion Ratio",
-            "description": "Proportion Ratio states that two fractions on each side of an equation are equal."
+            "description": "Proportion Ratio states that two fractions on each side of an equation are equal"
         },
         kr: {
             "name": "ڕێژەی تێکڕا",
@@ -24,15 +24,30 @@ const Calculators = [
     {
         en: {
             "name": "Equation Solver",
-            "description": "Consisting generally of two expressions related by an equals sign. When seeking a solution, one or more variables are designated as unknowns."
+            "description": "Consisting generally of two expressions related by an equals sign. When seeking a solution, one or more variables are designated as unknowns"
         },
         kr: {
             "name": "شیکارکەری هاوکێشە",
-            "description": "بە گشتی پێک دێ لە دوو دەربڕین کە پەیوەندی یەکسان هەیە لە نێوانیان. کاتێک بۆ ئەنجام ئەگەڕێن گۆڕدراوێک یان زیاتر بە نەنزانراو دیاریئەکرێن"
+            "description": "بە گشتی پێک دێ لە دوو دەربڕین کە پەیوەندی یەکسان لە نێوانیان هەیە. کاتێک بۆ ئەنجام ئەگەڕێن گۆڕدراوێک یان زیاتر بە نەنزانراو دیاریئەکرێن"
         },
         urlName: "equation-solver",
         keywords: [
             "equation solver",
+        ],
+        component: <EquationSolver />
+    },
+    {
+        en: {
+            "name": "Prime Checker",
+            "description": "A place to test if a number is prime or not"
+        },
+        kr: {
+            "name": "پشکنەری ژمارەی خۆبەش",
+            "description": "شوێنێک بۆ تاقیکردنەوەی ئایا ژمارەیەک خۆبەشە یاخود نا"
+        },
+        urlName: "prime-checker",
+        keywords: [
+            "prime checker",
         ],
         component: <EquationSolver />
     }

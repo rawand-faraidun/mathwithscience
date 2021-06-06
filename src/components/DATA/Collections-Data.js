@@ -5,7 +5,7 @@ const Collections = [
     {
         en: {
             name: "Algebra",
-            description: "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols. In elementary algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables."
+            description: "Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols. In elementary algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables"
         },
         kr: {
             name: "زانستی جەبر",
@@ -16,13 +16,13 @@ const Collections = [
             "algebra"
         ],
         calculatorsUrlName: [
-            "proportion-ratio", "equation-solver"
+            "proportion-ratio", "equation-solver", "prime-checker"
         ]
     },
     {
         en: {
             name: "Geometry",
-            description: "Geometry is a branch of mathematics that studies the size, shape, position, angle, dimension and any other geometry properties of things."
+            description: "Geometry is a branch of mathematics that studies the size, shape, position, angle, dimension and any other geometry properties of things"
         },
         kr: {
             name: "ئەندازەگەری",
@@ -38,7 +38,7 @@ const Collections = [
     {
         en: {
             name: "Unit Conversion",
-            description: "Conversion of Units is a multi-step process that converts units of measurement for the same quantity."
+            description: "Conversion of Units is a multi-step process that converts units of measurement for the same quantity"
         },
         kr: {
             name: "گۆڕانکاری یەکەکان",
