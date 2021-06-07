@@ -37,9 +37,9 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Equation Solver
+ *  @return {Element} : Prime Checker
  */
-// *** Equation Solver Component
+// ***Prime Checker Component
 function ProportionRatio() {
 
 
