@@ -2,6 +2,7 @@
 import ProportionRatio from './calculators-components/Proportion-Ratio/Proportion-Ratio';
 import EquationSolver from './calculators-components/equation-solver/Equation-Solver';
 import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker';
+import Weight from './calculators-components/Weight/Weight';
 
 /**
  *  @Calculators : array of calculators
@@ -43,7 +44,7 @@ const Calculators = [
             "description": "A place to test if a number is prime or not"
         },
         kr: {
-            "name": "پشکنەری ژمارەی خۆبەش", 
+            "name": "پشکنەری ژمارەی خۆبەش",
             "description": "شوێنێک بۆ تاقیکردنەوەی ئایا ژمارەیەک خۆبەشە یاخود نا"
         },
         urlName: "prime-checker",
@@ -51,6 +52,21 @@ const Calculators = [
             "prime checker",
         ],
         component: <PrimeChecker />
+    },
+    {
+        en: {
+            "name": "Weight",
+            "description": "Convert weight from any unit to other ones"
+        },
+        kr: {
+            "name": "كێش",
+            "description": "کێش لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر"
+        },
+        urlName: "weight",
+        keywords: [
+            "weight",
+        ],
+        component: <Weight />
     }
 ];
 
