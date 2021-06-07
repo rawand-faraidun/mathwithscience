@@ -111,3 +111,35 @@
         }
     }
 }
+
+////////////////
+
+////////////////
+
+////////////////
+
+// component-grid
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        3,
+        calc((100% - 10rem) / 3)
+    ); // these numbers are based on width and padding of the grid section
+    column-gap: 5rem;
+    row-gap: 3rem;
+}
+
+// changing component-grid grid to 2 columns in small screens
+@media screen and (max-width: 1024px) {
+    .component-grid {
+        grid-template-columns: repeat(2, calc((100% - 5rem) / 2));
+    }
+}
+
+// changing component-grid grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .component-grid {
+        grid-template-columns: repeat(1, 100%);
+        column-gap: unset;
+    }
+}

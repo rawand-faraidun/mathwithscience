@@ -122,4 +122,30 @@
     font-size: var(--x-small-font-size);
   }
 }
+
+.component-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc((100% - 10rem) / 3))[3];
+      grid-template-columns: repeat(3, calc((100% - 10rem) / 3));
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .component-grid {
+    -ms-grid-columns: (calc((100% - 5rem) / 2))[2];
+        grid-template-columns: repeat(2, calc((100% - 5rem) / 2));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .component-grid {
+    -ms-grid-columns: (100%)[1];
+        grid-template-columns: repeat(1, 100%);
+    -webkit-column-gap: unset;
+            column-gap: unset;
+  }
+}
 /*# sourceMappingURL=calculator-defaults.css.map */
