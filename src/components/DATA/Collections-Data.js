@@ -24,7 +24,7 @@ const Collections = [
             name: "Geometry",
             description: "Geometry is a branch of mathematics that studies the size, shape, position, angle, dimension and any other geometry properties of things"
         },
-        kr: {
+        kr: { 
             name: "ئەندازەگەری",
             description: "ئەندازەگەری بەشێکە لە بیرکاری کە دەکۆڵێتەوە لە قەبارە، شێوە، شوێن، گۆشە، دووری و هەر تایبەتمەندیەکی تری ئەندازیاری شتەکان"
         },

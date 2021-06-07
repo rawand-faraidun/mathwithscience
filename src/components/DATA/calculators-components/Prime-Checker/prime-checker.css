@@ -1,0 +1,48 @@
+/******************
+***Prime Checker***
+******************/
+.prime-checker {
+  position: relative;
+  margin: auto;
+  width: 20rem;
+}
+
+.prime-checker .answers {
+  margin-top: 3rem;
+}
+
+.prime-checker .answers .status {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.prime-checker .answers .status .status-label {
+  font-size: var(--large-font-size);
+  text-decoration: underline;
+  -webkit-transition: -webkit-text-decoration-color 0.3s ease;
+  transition: -webkit-text-decoration-color 0.3s ease;
+  transition: text-decoration-color 0.3s ease;
+  transition: text-decoration-color 0.3s ease, -webkit-text-decoration-color 0.3s ease;
+}
+
+.prime-checker .answers .status .status-label.true {
+  -webkit-text-decoration-color: var(--main-green-color);
+          text-decoration-color: var(--main-green-color);
+}
+
+.prime-checker .answers .status .status-label.false {
+  -webkit-text-decoration-color: var(--main-red-color);
+          text-decoration-color: var(--main-red-color);
+}
+
+.prime-checker .answers .previous-prime,
+.prime-checker .answers .next-prime {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .prime-checker {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=prime-checker.css.map */
