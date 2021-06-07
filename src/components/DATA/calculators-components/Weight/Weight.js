@@ -24,6 +24,14 @@ const componentContent = [
     },
     {
         name: {
+            en: 'Killogram',
+            kr: 'کیلۆگرام'
+        },
+        unit: 'kg',
+        equation: 'kg=g/1000'
+    },
+    {
+        name: {
             en: 'Milligram',
             kr: 'میلیگرام'
         },
@@ -32,11 +40,19 @@ const componentContent = [
     },
     {
         name: {
-            en: 'Killogram',
-            kr: 'کیلۆگرام'
+            en: 'Nanogram',
+            kr: 'نانۆگرام'
         },
-        unit: 'kg',
-        equation: 'kg=g/1000'
+        unit: 'ng',
+        equation: 'ng=g*1000000000'
+    },
+    {
+        name: {
+            en: 'Microgram',
+            kr: 'مایکرۆگرام'
+        },
+        unit: 'μg',
+        equation: 'μg=g*1000000'
     },
     {
         name: {
@@ -92,7 +108,7 @@ const componentContent = [
 
 
 /**
- *  @return {Element} : Weight
+ *  @return {Element} : Weight element
  */
 // *** Weight element
 function Weight() {
