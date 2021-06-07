@@ -137,10 +137,10 @@ function Weight() {
                 e.target.value : // if the user input gram value, new values gram property will be the user input
                 // if it was another unit, calculating value of gram based on this unit
                 nerdamer(
-                    nerdamer(e.target.getAttribute('equation'),
-                        { [e.target.getAttribute('unit')]: e.target.value }
-                    ).solveFor('g').toString()
-                ).evaluate().text()
+                    nerdamer(e.target.getAttribute('equation'), // getting equation of the changed unit
+                        { [e.target.getAttribute('unit')]: e.target.value } // replacing the variable unit with it's value
+                    ).solveFor('g').toString() // solving the equation for g (gram)
+                ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1] // this will remove trailing zeroes
             // example of the object
             /* 
             nerdamer(
@@ -154,12 +154,12 @@ function Weight() {
         // calculating value for all units
         for (const i of componentContent) {
             if (i.name.en.toLowerCase() === 'gram') continue; // skiping gram
-            if (i.unit === e.target.id) continue; // skiping changed unit, because it equals to the user input
+            if (i.unit === e.target.getAttribute('unit')) continue; // skiping changed unit, because it equals to the user input
 
             // calculating value for each unit
             newValues[i.name.en.toLowerCase()] = nerdamer(
                 nerdamer(i.equation, { g: newValues.gram }).solveFor(i.unit).toString()
-            ).evaluate().text();
+            ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1];
         }
 
         setValues(newValues);
