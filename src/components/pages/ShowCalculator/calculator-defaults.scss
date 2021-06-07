@@ -22,6 +22,14 @@
         border-color: var(--main-blue-color);
     }
 
+    // input focus, used when wanted to change input boarder to blue when focused
+    &.input-focus {
+        transition: border-color 0.3s ease;
+        &:focus {
+            border-color: var(--main-blue-color);
+        }
+    }
+
     // error on answer field
     &.error {
         color: var(--main-red-color);

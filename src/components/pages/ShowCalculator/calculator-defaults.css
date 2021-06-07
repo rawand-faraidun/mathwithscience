@@ -31,6 +31,15 @@
   border-color: var(--main-blue-color);
 }
 
+.input-field.input-focus {
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+.input-field.input-focus:focus {
+  border-color: var(--main-blue-color);
+}
+
 .input-field.error {
   color: var(--main-red-color);
   border-color: var(--main-red-color);
