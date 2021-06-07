@@ -140,7 +140,7 @@ function ProportionRatio() {
                     </label>
 
                     {/* input field */}
-                    <input type="number" id="value" className="input-field value-input" placeholder="" autoComplete="off"
+                    <input type="number" id="value" className="input-field value-input" autoComplete="off"
                         value={values.value}
                         onChange={calculate}
                     />
@@ -151,7 +151,7 @@ function ProportionRatio() {
 
                     {/* prime check status */}
                     <div className="status">
-                        <label className={`label status-label ${values.primeStatus}`}>
+                        <label className={`label status-label ${languageHelper.getClass()} ${values.primeStatus}`}>
                             {typeof values.primeStatus === 'boolean' ?
                                 componentContent.primeStatus[String(values.primeStatus)][languageHelper.getLanguageSymbol()] : ''
                             }
@@ -167,7 +167,7 @@ function ProportionRatio() {
                         </label>
 
                         {/* previous prime field */}
-                        <input type="number" id="previous-prime" className="input-field answer-field previous-input" placeholder="" autoComplete="off"
+                        <input type="number" id="previous-prime" className="input-field answer-field previous-input" autoComplete="off"
                             value={values.previous}
                             readOnly={true}
                             onClick={(e) => { e.target.select() }}
@@ -183,7 +183,7 @@ function ProportionRatio() {
                         </label>
 
                         {/* next prime field */}
-                        <input type="number" id="next-prime" className="input-field answer-field next-input" placeholder="" autoComplete="off"
+                        <input type="number" id="next-prime" className="input-field answer-field next-input" autoComplete="off"
                             value={values.next}
                             readOnly={true}
                             onClick={(e) => { e.target.select() }}
