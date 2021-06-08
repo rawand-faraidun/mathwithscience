@@ -21,22 +21,6 @@ const Collections = [
     },
     {
         en: {
-            name: 'Geometry',
-            description: 'Geometry is a branch of mathematics that studies the size, shape, position, angle, dimension and any other geometry properties of things'
-        },
-        kr: {
-            name: 'ئەندازەگەری',
-            description: 'ئەندازەگەری بەشێکە لە بیرکاری کە دەکۆڵێتەوە لە قەبارە، شێوە، شوێن، گۆشە، دووری و هەر تایبەتمەندیەکی تری ئەندازیاری شتەکان'
-        },
-        urlName: 'geometry',
-        keywords: [
-            'geometry'
-        ],
-        calculatorsUrlName: [
-        ]
-    },
-    {
-        en: {
             name: 'Unit Conversion',
             description: 'Conversion of Units is a multi-step process that converts units of measurement for the same quantity'
         },
