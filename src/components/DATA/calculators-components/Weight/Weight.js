@@ -19,14 +19,16 @@ const componentContent = [
             en: 'Gram',
             kr: 'گرام'
         },
+        id: 'gram',
         unit: 'g',
         equation: 'g'
     },
     {
         name: {
-            en: 'Killogram',
+            en: 'Kilogram',
             kr: 'کیلۆگرام'
         },
+        id: 'kilogram',
         unit: 'kg',
         equation: 'kg=g/1000'
     },
@@ -35,6 +37,7 @@ const componentContent = [
             en: 'Milligram',
             kr: 'میلیگرام'
         },
+        id: 'milligram',
         unit: 'mg',
         equation: 'mg=g*1000'
     },
@@ -43,6 +46,7 @@ const componentContent = [
             en: 'Nanogram',
             kr: 'نانۆگرام'
         },
+        id: 'nanogram',
         unit: 'ng',
         equation: 'ng=g*1000000000'
     },
@@ -51,6 +55,7 @@ const componentContent = [
             en: 'Microgram',
             kr: 'مایکرۆگرام'
         },
+        id: 'microgram',
         unit: 'μg',
         equation: 'μg=g*1000000'
     },
@@ -59,6 +64,7 @@ const componentContent = [
             en: 'Centigram',
             kr: 'سەنتیگرام'
         },
+        id: 'centigram',
         unit: 'cg',
         equation: 'cg=g*100'
     },
@@ -67,6 +73,7 @@ const componentContent = [
             en: 'Decigram',
             kr: 'دەسیگرام'
         },
+        id: 'decigram',
         unit: 'dg',
         equation: 'dg=g*10'
     },
@@ -75,6 +82,7 @@ const componentContent = [
             en: 'Hectogram',
             kr: 'هێکتۆگرام'
         },
+        id: 'hectogram',
         unit: 'hg',
         equation: 'hg=g/10'
     },
@@ -83,6 +91,7 @@ const componentContent = [
             en: 'Ton',
             kr: 'تەن'
         },
+        id: 'ton',
         unit: 't',
         equation: 't=g/100000'
     },
@@ -91,6 +100,7 @@ const componentContent = [
             en: 'Pound',
             kr: 'پاوەند'
         },
+        id: 'pound',
         unit: 'lbs',
         equation: 'lbs=g/454'
     },
@@ -99,6 +109,7 @@ const componentContent = [
             en: 'Ounce',
             kr: 'ئۆنج'
         },
+        id: 'ounce',
         unit: 'oz',
         equation: 'oz=g/28.35'
     },
@@ -118,7 +129,7 @@ function Weight() {
     let units = {};
     // creating a propoerty in units for each unit in componentContent
     for (const i of componentContent) {
-        units[i.name.en.toLowerCase()] = '';
+        units[i.id] = '';
     }
 
     // stroring values for all units
@@ -136,7 +147,7 @@ function Weight() {
 
             // if the current unit was the changed one, parse its value to it's property
             if (i.unit === e.target.getAttribute('unit')) {
-                newValues[i.name.en.toLowerCase()] = e.target.value
+                newValues[i.id] = e.target.value
                 continue;
             };
 
@@ -144,7 +155,7 @@ function Weight() {
             if (i.unit === componentContent[0].unit) {
 
                 // solving main unit value
-                newValues[i.name.en.toLowerCase()] =
+                newValues[i.id] =
                     nerdamer(
                         nerdamer(e.target.getAttribute('equation'), // getting equation of the changed unit
                             { [e.target.getAttribute('unit')]: e.target.value } // replacing the variable unit with the changed unit value
@@ -155,9 +166,9 @@ function Weight() {
             }
 
             // calculating value for each other unit
-            newValues[i.name.en.toLowerCase()] = nerdamer(
+            newValues[i.id] = nerdamer(
                 nerdamer(i.equation, // getting current unit equation
-                    { [componentContent[0].unit]: newValues[componentContent[0].name.en.toLowerCase()] } // replacing main unit variable with its value
+                    { [componentContent[0].unit]: newValues[componentContent[0].id] } // replacing main unit variable with its value
                 ).solveFor(i.unit).toString() // solving for current unit
             ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1]; // this will remove trailing zeroes
         }
@@ -178,16 +189,16 @@ function Weight() {
                         <div key={i} className="calculator">
 
                             {/* unit label */}
-                            <label htmlFor={unit.name.en.toLowerCase()} className={`label ${languageHelper.getClass()}`}>
+                            <label htmlFor={unit.id} className={`label ${languageHelper.getClass()}`}>
                                 {unit.name[languageHelper.getLanguageSymbol()]}
                             </label>
 
                             {/* unit input */}
-                            <input type="number" id={unit.name.en.toLowerCase()} className="input-field input-focus" autoComplete="off"
+                            <input type="number" id={unit.id} className="input-field input-focus" autoComplete="off"
                                 unit={unit.unit}
                                 equation={unit.equation}
                                 placeholder={unit.unit}
-                                value={values[unit.name.en.toLowerCase()]}
+                                value={values[unit.id]}
                                 onChange={calculate}
                                 onClick={(e) => { e.target.select() }}
                             />
