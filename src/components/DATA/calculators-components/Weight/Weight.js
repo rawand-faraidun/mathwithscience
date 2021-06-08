@@ -128,38 +128,38 @@ function Weight() {
     // calculation function
     function calculate(e) {
 
-        // creating values object
-        let newValues = {
-            ...values, // coping the old values
-            [e.target.id]: e.target.value, // changing user input unit value
-
-            gram: e.target.id === 'gram' ?
-                e.target.value : // if the user input gram value, new values gram property will be the user input
-                // if it was another unit, calculating value of gram based on this unit
-                nerdamer(
-                    nerdamer(e.target.getAttribute('equation'), // getting equation of the changed unit
-                        { [e.target.getAttribute('unit')]: e.target.value } // replacing the variable unit with it's value
-                    ).solveFor('g').toString() // solving the equation for g (gram)
-                ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1] // this will remove trailing zeroes
-            // example of the object
-            /* 
-            nerdamer(
-                'mg=g*1000',
-                    { mg: e.target.value }
-                ).solveFor('g').toString()
-            ).evaluate().text()
-            */
-        };
+        // copping o;d values
+        let newValues = { ...values };
 
         // calculating value for all units
         for (const i of componentContent) {
-            if (i.name.en.toLowerCase() === 'gram') continue; // skiping gram
-            if (i.unit === e.target.getAttribute('unit')) continue; // skiping changed unit, because it equals to the user input
 
-            // calculating value for each unit
+            // if the current unit was the changed one, parse its value to it's property
+            if (i.unit === e.target.getAttribute('unit')) {
+                newValues[i.name.en.toLowerCase()] = e.target.value
+                continue;
+            };
+
+            // main unit
+            if (i.unit === componentContent[0].unit) {
+
+                // solving main unit value
+                newValues[i.name.en.toLowerCase()] =
+                    nerdamer(
+                        nerdamer(e.target.getAttribute('equation'), // getting equation of the changed unit
+                            { [e.target.getAttribute('unit')]: e.target.value } // replacing the variable unit with the changed unit value
+                        ).solveFor(i.unit).toString() // solving for main unit
+                    ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1] // this will remove trailing zeroes
+
+                continue;
+            }
+
+            // calculating value for each other unit
             newValues[i.name.en.toLowerCase()] = nerdamer(
-                nerdamer(i.equation, { g: newValues.gram }).solveFor(i.unit).toString()
-            ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1];
+                nerdamer(i.equation, // getting current unit equation
+                    { [componentContent[0].unit]: newValues[componentContent[0].name.en.toLowerCase()] } // replacing main unit variable with its value
+                ).solveFor(i.unit).toString() // solving for current unit
+            ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1]; // this will remove trailing zeroes
         }
 
         setValues(newValues);
