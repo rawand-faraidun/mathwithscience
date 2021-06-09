@@ -4,6 +4,7 @@ import EquationSolver from './calculators-components/equation-solver/Equation-So
 import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker';
 import Weight from './calculators-components/Weight/Weight';
 import Volume from './calculators-components/Volume/Volume';
+import Power from './calculators-components/Power/Power';
 
 /**
  *  @Calculators : array of calculators
@@ -83,6 +84,21 @@ const Calculators = [
             'volume',
         ],
         component: <Volume />
+    },
+    {
+        en: {
+            name: 'Power',
+            description: 'Convert power from any unit to other ones'
+        },
+        kr: {
+            name: 'توانا',
+            description: 'توانا لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'power',
+        keywords: [
+            'power',
+        ],
+        component: <Power />
     }
 ];
 
