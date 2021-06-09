@@ -65,10 +65,10 @@ const componentContent = [
 
 
 /**
- *  @return {Element} : Weight element
+ *  @return {Element} : Power element
  */
-// *** Weight element
-function Weight() {
+// *** Power element
+function Power() {
 
 
     // this will store the value of all units based on componentContent object
@@ -126,8 +126,8 @@ function Weight() {
 
     return (
         <>
-            {/* weight calculator */}
-            <div className="weight component-grid">
+            {/* power calculator */}
+            <div className="power component-grid">
 
                 {/* each unit calculator */}
                 {componentContent.map((unit, i) => {
@@ -156,4 +156,4 @@ function Weight() {
     )
 }
 
-export default Weight;
+export default Power;
