@@ -48,7 +48,7 @@ const componentContent = [
         },
         id: 'nanogram',
         unit: 'ng',
-        equation: 'ng=g*1000000000'
+        equation: 'ng=g*10^9'
     },
     {
         name: {
@@ -57,7 +57,7 @@ const componentContent = [
         },
         id: 'microgram',
         unit: 'μg',
-        equation: 'μg=g*1000000'
+        equation: 'μg=g*10^6'
     },
     {
         name: {
