@@ -43,10 +43,10 @@ const componentContent = [
     },
     {
         name: {
-            en: 'miliwatt',
+            en: 'Milliwatt',
             kr: 'میلیوات'
         },
-        id: 'miliwatt',
+        id: 'milliwatt',
         unit: 'mW',
         equation: 'mW=W*1000'
     },
