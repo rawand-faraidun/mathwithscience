@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // importing styling
 import './list-view.css';
@@ -47,7 +48,7 @@ function listView(props) {
 
                             {/* item name */}
                             <h2 className={`grid-item-name ${languageHelper.getClass()}`}>
-                                <a href={item.urlName}>{item[languageHelper.getLanguageSymbol()].name}</a>
+                                <Link to={item.urlName}>{item[languageHelper.getLanguageSymbol()].name}</Link>
                                 <span className={`grid-item-name-arrow ${languageHelper.getDirection()}`}><i className="fas fa-arrow-circle-right"></i></span>
                             </h2>
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // importing stylings
 import './popular-calculators.css';
@@ -44,7 +45,7 @@ function PopularCalculators() {
 
                     {/* each calculator */}
                     {calculators.map((calculator, i) =>
-                        <a href={`/calculators/${calculator.urlName}`} className="calculator" key={i}>
+                        <Link to={`/calculators/${calculator.urlName}`} className="calculator" key={i}>
 
                             {/* calculator title */}
                             <h3 className={`calculator-name ${languageHelper.getClass()}`}>
@@ -55,7 +56,7 @@ function PopularCalculators() {
                             <p className={`calculator-description ${languageHelper.getClass()}`}>
                                 {`${calculator[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
                             </p>
-                        </a>
+                        </Link>
                     )}
                 </div>
 

@@ -1,4 +1,6 @@
 import React, { useMemo } from 'react';
+import { Link } from 'react-router-dom';
+
 
 // importing stylings
 import './search-result.css';
@@ -54,7 +56,7 @@ function SearchResult(props) {
 
                 {/* each result */}
                 {searchResult.map((result, i) =>
-                    <a href={`/${result.urlName}`} className="result" key={i}>
+                    <Link to={`/${result.urlName}`} className="result" key={i}>
 
                         {/* result title */}
                         <h2 className={`result-name ${languageHelper.getClass()}`}>
@@ -65,7 +67,7 @@ function SearchResult(props) {
                         <p className={`result-description ${languageHelper.getClass()}`}>
                             {`${result[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
                         </p>
-                    </a>
+                    </Link>
                 )}
             </div>
         </>

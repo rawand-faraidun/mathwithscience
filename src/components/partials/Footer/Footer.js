@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // importing styling
 import './footer.css';
@@ -63,21 +64,21 @@ function Footer() {
                             {componentContent.links.map((link, i) => {
                                 return (
                                     <li className={`link ${languageHelper.getClass()}`} key={i}>
-                                        <a href={`/${link.url}`}>
+                                        <Link to={`/${link.url}`}>
                                             {link[[languageHelper.getLanguageSymbol()]]}
-                                        </a>
+                                        </Link>
                                     </li>
                                 )
                             })}
 
                             {/* the social links after the links */}
                             <li className="link socials">
-                                <a href="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
+                                <Link to="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
                                     <i className="fab fa-instagram"></i>
-                                </a>
-                                <a href="https://github.com/Rawand-Faraidun/math-with-science#readme" target="_blank" rel="noreferrer" title="Math with Science on Github">
+                                </Link>
+                                <Link to="https://github.com/Rawand-Faraidun/math-with-science#readme" target="_blank" rel="noreferrer" title="Math with Science on Github">
                                     <i className="fab fa-github"></i>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -96,7 +97,7 @@ function Footer() {
 
                     {/* privacy policy link */}
                     <p className={`privacy-policy ${languageHelper.getClass()}`}>
-                        <a href="/privacy-policy">{componentContent.privacyPolicy[languageHelper.getLanguageSymbol()]}</a>
+                        <Link to="/privacy-policy">{componentContent.privacyPolicy[languageHelper.getLanguageSymbol()]}</Link>
                     </p>
 
                 </div>

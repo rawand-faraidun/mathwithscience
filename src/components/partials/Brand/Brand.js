@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // importing styling
 import './brand.css';
@@ -19,16 +19,13 @@ import brandBlack from './math-with-science-brand-black.svg';
  */
 function Brand(props) {
 
-    // if this path was pointing to homepage the brand will not be a link even if isLink is true
-    const thisPath = useLocation().pathname;
-
     return (
         <>
             {/* the brand name and logo */}
             <div className="brand">
 
-                {/* adding href property conditionally based on if the brand be link or not */}
-                <a {...thisPath !== '/' && props.isLink ? { href: '/' } : {}}>
+                {/* adding to property conditionally based on if the brand be link or not */}
+                <Link to='/'>
 
                     {/* white brand */}
                     <img
@@ -44,7 +41,7 @@ function Brand(props) {
                         className="brand-black"
                         style={{ display: props.whiteOnly ? 'none' : '' }} // if whiteOnltyy was active, then it hide black brand in light and dark mode
                     />
-                </a>
+                </Link>
             </div>
         </>
     )
