@@ -93,7 +93,7 @@ const componentContent = [
         },
         id: 'ton',
         unit: 't',
-        equation: 't=g/100000'
+        equation: 't=g/(1e+5)'
     },
     {
         name: {
