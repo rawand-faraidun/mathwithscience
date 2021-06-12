@@ -5,6 +5,7 @@ import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker';
 import Weight from './calculators-components/Weight/Weight';
 import Volume from './calculators-components/Volume/Volume';
 import Power from './calculators-components/Power/Power';
+import Area from './calculators-components/Area/Area';
 
 /**
  *  @Calculators : array of calculators
@@ -99,6 +100,21 @@ const Calculators = [
             'power',
         ],
         component: <Power />
+    },
+    {
+        en: {
+            name: 'Area',
+            description: 'Convert area from any unit to other ones'
+        },
+        kr: {
+            name: 'ڕووبەر',
+            description: 'ڕووبەر لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'area',
+        keywords: [
+            'area',
+        ],
+        component: <Area />
     }
 ];
 
