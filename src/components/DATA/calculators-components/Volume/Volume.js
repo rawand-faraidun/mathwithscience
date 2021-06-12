@@ -31,7 +31,7 @@ const componentContent = [
         },
         id: 'kilometer',
         unit: 'km',
-        equation: 'km=m/10^9'
+        equation: 'km=m/(1e+9)'
     },
     {
         name: {
@@ -49,7 +49,7 @@ const componentContent = [
         },
         id: 'milliliter',
         unit: 'mm',
-        equation: 'mm=m*10^9'
+        equation: 'mm=m*(1e+9)'
     },
     {
         name: {
@@ -58,7 +58,7 @@ const componentContent = [
         },
         id: 'millimeter',
         unit: 'mm',
-        equation: 'mm=m*10^9'
+        equation: 'mm=m*(1e+9)'
     },
     {
         name: {
@@ -67,7 +67,7 @@ const componentContent = [
         },
         id: 'centimeter',
         unit: 'cm',
-        equation: 'cm=m*10^6'
+        equation: 'cm=m*(1e+6)'
     },
     {
         name: {
@@ -85,7 +85,7 @@ const componentContent = [
         },
         id: 'hectometer',
         unit: 'hm',
-        equation: 'hm=m/10^6'
+        equation: 'hm=m/(1e+6)'
     },
     {
         name: {
@@ -112,7 +112,7 @@ const componentContent = [
         },
         id: 'mile',
         unit: 'mi',
-        equation: 'mi=m/(4.168*10^9)'
+        equation: 'mi=m/(4.168e+5)'
     },
 ]
 
