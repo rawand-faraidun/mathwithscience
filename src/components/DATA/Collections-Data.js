@@ -33,7 +33,7 @@ const Collections = [
             'unit conversion'
         ],
         calculatorsUrlName: [
-            'weight', 'volume', 'power', 'area'
+            'weight', 'volume', 'power', 'area', 'length'
         ]
     }
 ];

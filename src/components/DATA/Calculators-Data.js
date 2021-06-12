@@ -6,6 +6,7 @@ import Weight from './calculators-components/Weight/Weight';
 import Volume from './calculators-components/Volume/Volume';
 import Power from './calculators-components/Power/Power';
 import Area from './calculators-components/Area/Area';
+import Length from './calculators-components/Length/Length';
 
 /**
  *  @Calculators : array of calculators
@@ -115,6 +116,21 @@ const Calculators = [
             'area',
         ],
         component: <Area />
+    },
+    {
+        en: {
+            name: 'Length',
+            description: 'Convert length from any unit to other ones'
+        },
+        kr: {
+            name: 'درێژی',
+            description: 'درێژی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'length',
+        keywords: [
+            'length',
+        ],
+        component: <Length />
     }
 ];
 
