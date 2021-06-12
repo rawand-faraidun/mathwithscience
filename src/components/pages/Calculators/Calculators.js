@@ -38,8 +38,6 @@ function CalculatorsRoutes() {
 
     // getting params of the route
     const route = useParams();
-    console.log(route);
-
 
 
 
