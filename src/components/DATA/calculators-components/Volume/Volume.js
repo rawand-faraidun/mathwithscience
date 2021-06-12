@@ -112,7 +112,7 @@ const componentContent = [
         },
         id: 'mile',
         unit: 'mi',
-        equation: 'mi=m*4.168*10^9'
+        equation: 'mi=m/(4.168*10^9)'
     },
 ]
 
