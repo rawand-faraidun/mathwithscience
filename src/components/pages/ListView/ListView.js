@@ -48,7 +48,7 @@ function listView(props) {
 
                             {/* item name */}
                             <h2 className={`grid-item-name ${languageHelper.getClass()}`}>
-                                <Link to={item.urlName}>{item[languageHelper.getLanguageSymbol()].name}</Link>
+                                <Link to={`/${item.urlName}`}>{item[languageHelper.getLanguageSymbol()].name}</Link>
                                 <span className={`grid-item-name-arrow ${languageHelper.getDirection()}`}><i className="fas fa-arrow-circle-right"></i></span>
                             </h2>
 
