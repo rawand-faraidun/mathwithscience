@@ -39,7 +39,7 @@ const componentContent = [
         },
         id: 'megawatt',
         unit: 'MW',
-        equation: 'MW=W/10^6'
+        equation: 'MW=W/(1e+6)'
     },
     {
         name: {
