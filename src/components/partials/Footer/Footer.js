@@ -76,7 +76,7 @@ function Footer() {
                                 <Link to="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
                                     <i className="fab fa-instagram"></i>
                                 </Link>
-                                <Link to="https://github.com/Rawand-Faraidun/math-with-science#readme" target="_blank" rel="noreferrer" title="Math with Science on Github">
+                                <Link to="https://github.com/rawand-faraidun/math-with-science#readme" target="_blank" rel="noreferrer" title="Math with Science on Github">
                                     <i className="fab fa-github"></i>
                                 </Link>
                             </li>
