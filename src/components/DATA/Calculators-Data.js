@@ -7,6 +7,7 @@ import Volume from './calculators-components/Volume/Volume';
 import Power from './calculators-components/Power/Power';
 import Area from './calculators-components/Area/Area';
 import Length from './calculators-components/Length/Length';
+import Force from './calculators-components/Force/Force';
 
 /**
  *  @Calculators : array of calculators
@@ -131,7 +132,22 @@ const Calculators = [
             'length',
         ],
         component: <Length />
-    }
+    },
+    {
+        en: {
+            name: 'Force',
+            description: 'Convert force from any unit to other ones'
+        },
+        kr: {
+            name: 'هێز',
+            description: 'هێز لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'force',
+        keywords: [
+            'force',
+        ],
+        component: <Force />
+    },
 ];
 
 
