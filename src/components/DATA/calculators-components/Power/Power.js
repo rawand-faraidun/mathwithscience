@@ -52,7 +52,7 @@ const componentContent = [
     },
     {
         name: {
-            en: 'Hourse Power',
+            en: 'Horse Power',
             kr: 'وزەی ئەسپ'
         },
         id: 'hoursepower',
