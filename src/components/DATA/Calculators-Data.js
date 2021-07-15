@@ -1,6 +1,6 @@
 // importing calculators components
 import ProportionRatio from './calculators-components/Proportion-Ratio/Proportion-Ratio';
-import EquationSolver from './calculators-components/equation-solver/Equation-Solver';
+import EquationSolver from './calculators-components/Equation-Solver/Equation-Solver';
 import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker';
 import Weight from './calculators-components/Weight/Weight';
 import Volume from './calculators-components/Volume/Volume';

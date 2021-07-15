@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 
 // importing Components
 import languageHelper from '../../../partials/languageHelper';
-
-// requiring nerdamer
-let nerdamer = require('nerdamer');
-require('nerdamer/Algebra.js');
-require('nerdamer/Calculus.js');
-require('nerdamer/Solve.js');
+import { nerdamerCalculate, makeInitialState } from '../calculators-helpers/unit-conversion'
 
 
 
@@ -143,56 +138,15 @@ const componentContent = [
 // *** Length element
 function Length() {
 
-
-    // this will store the value of all units based on componentContent object
-    let units = {};
-    // creating a propoerty in units for each unit in componentContent
-    for (const i of componentContent) {
-        units[i.id] = '';
-    }
-
     // stroring values for all units
-    const [values, setValues] = useState(units);
+    const [values, setValues] = useState(makeInitialState(componentContent));
 
 
     // calculation function
     function calculate(e) {
-
-        // copping o;d values
-        let newValues = { ...values };
-
-        // calculating value for all units
-        for (const i of componentContent) {
-
-            // if the current unit was the changed one, parse its value to it's property
-            if (i.unit === e.target.getAttribute('unit')) {
-                newValues[i.id] = e.target.value
-                continue;
-            };
-
-            // main unit
-            if (i.unit === componentContent[0].unit) {
-
-                // solving main unit value
-                newValues[i.id] =
-                    nerdamer(
-                        nerdamer(e.target.getAttribute('equation'), // getting equation of the changed unit
-                            { [e.target.getAttribute('unit')]: e.target.value } // replacing the variable unit with the changed unit value
-                        ).solveFor(i.unit).toString() // solving for main unit
-                    ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1] // this will remove trailing zeroes
-
-                continue;
-            }
-
-            // calculating value for each other unit
-            newValues[i.id] = nerdamer(
-                nerdamer(i.equation, { [componentContent[0].unit]: newValues[componentContent[0].id] }).solveFor(i.unit).toString()
-            ).evaluate().text().match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[1];
-        }
-
-        setValues(newValues);
+        // setting the new values
+        setValues(nerdamerCalculate(e.target, componentContent, values));
     }
-
 
 
     return (
