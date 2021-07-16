@@ -12,7 +12,7 @@ import ListView from '../ListView/ListView';
 import languageHelper from '../../partials/languageHelper';
 
 // importing proportion Ratio
-import ShowCalculator from '../ShowCalculator/ShowCalculator';
+import CalculatorPage from '../CalculatorPage/CalculatorPage';
 
 // importing datas
 const Collections = require('../../DATA/Collections');
@@ -177,7 +177,7 @@ function CollectionsRoutes() {
                 <div className="collections">
 
                     {/* Getting wanted calculator */}
-                    <ShowCalculator calculatorData={calculator} haveHeader={true} useHelmet={true} />
+                    <CalculatorPage calculatorData={calculator} haveHeader={true} useHelmet={true} />
 
                 </div>
             </>

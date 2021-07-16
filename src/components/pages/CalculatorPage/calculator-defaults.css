@@ -1,0 +1,151 @@
+/*******((***************
+***Calculator Defaults***
+************************/
+.input-field {
+  padding: 0.25rem 0.4rem 0.1rem;
+  width: 100%;
+  font-size: var(--medium-font-size);
+  color: var(--head-text-color);
+  background-color: transparent;
+  border: none;
+  border-bottom: solid 2px var(--main-green-color);
+}
+
+.input-field::-webkit-input-placeholder {
+  color: var(--body-text-color);
+}
+
+.input-field:-ms-input-placeholder {
+  color: var(--body-text-color);
+}
+
+.input-field::-ms-input-placeholder {
+  color: var(--body-text-color);
+}
+
+.input-field::placeholder {
+  color: var(--body-text-color);
+}
+
+.input-field.answer-field {
+  border-color: var(--main-blue-color);
+}
+
+.input-field.input-focus {
+  -webkit-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+.input-field.input-focus:focus {
+  border-color: var(--main-blue-color);
+}
+
+.input-field.error {
+  color: var(--main-red-color);
+  border-color: var(--main-red-color);
+  -webkit-animation: shake 0.2s ease-in-out 0s 2;
+          animation: shake 0.2s ease-in-out 0s 2;
+}
+
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  25% {
+    -webkit-transform: translateX(-0.5rem);
+            transform: translateX(-0.5rem);
+  }
+  75% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes shake {
+  0% {
+    -webkit-transform: none;
+            transform: none;
+  }
+  25% {
+    -webkit-transform: translateX(-0.5rem);
+            transform: translateX(-0.5rem);
+  }
+  75% {
+    -webkit-transform: translateX(0.5rem);
+            transform: translateX(0.5rem);
+  }
+  100% {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .input-field {
+    font-size: var(--small-font-size);
+  }
+}
+
+.label {
+  color: var(--head-text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--large-font-size);
+}
+
+@media screen and (max-width: 1600px) {
+  .label {
+    font-size: var(--medium-font-size);
+  }
+}
+
+.dropdown {
+  margin-left: -0.25rem;
+  padding: 0.25rem;
+  font-family: var(--body-font-family);
+  font-size: var(--medium-font-size);
+}
+
+.dropdown option {
+  font-size: var(--small-font-size);
+}
+
+@media screen and (max-width: 1600px) {
+  .dropdown {
+    font-size: var(--small-font-size);
+  }
+  .dropdown option {
+    font-size: var(--x-small-font-size);
+  }
+}
+
+.component-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (calc((100% - 10rem) / 3))[3];
+      grid-template-columns: repeat(3, calc((100% - 10rem) / 3));
+  -webkit-column-gap: 5rem;
+          column-gap: 5rem;
+  row-gap: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .component-grid {
+    -ms-grid-columns: (calc((100% - 5rem) / 2))[2];
+        grid-template-columns: repeat(2, calc((100% - 5rem) / 2));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .component-grid {
+    -ms-grid-columns: (100%)[1];
+        grid-template-columns: repeat(1, 100%);
+    -webkit-column-gap: unset;
+            column-gap: unset;
+  }
+}
+/*# sourceMappingURL=calculator-defaults.css.map */
