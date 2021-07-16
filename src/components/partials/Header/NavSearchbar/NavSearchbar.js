@@ -3,6 +3,9 @@ import { useLocation } from 'react-router-dom';
 
 // importing styling
 import './nav-searchbar.css';
+// components
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -39,7 +42,7 @@ function Searchbar() {
 
                 {/* header searchbar search icon */}
                 <div className="nav-search-icon">
-                    <i className="fas fa-search"></i>
+                    <FontAwesomeIcon icon={faSearch} />
                 </div>
             </div>
         </>
