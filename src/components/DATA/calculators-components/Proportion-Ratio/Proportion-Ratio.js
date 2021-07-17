@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-// importing styling
-import './proportion-ratio.css';
-
-// importing Components
-import languageHelper from '../../../partials/languageHelper';
+import './proportion-ratio.css'
+import languageHelper from '../../../partials/languageHelper'
 
 
 
-// component content all languages
+// component content
 const componentContent = {
     method: {
         en: 'Method',
@@ -33,10 +30,10 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Proportion Ratio
+ *  @return {Element} : Proportion Ratio element
  */
 // *** Proportion Ratio component
-function ProportionRatio() {
+export default function ProportionRatio() {
 
     // storing values
     let [values, setValues] = useState({
@@ -45,7 +42,7 @@ function ProportionRatio() {
         number2: '',
         number3: '',
         answer: ''
-    });
+    })
 
 
     // calculation function
@@ -142,7 +139,5 @@ function ProportionRatio() {
 
             </div>
         </>
-    );
+    )
 }
-
-export default ProportionRatio;

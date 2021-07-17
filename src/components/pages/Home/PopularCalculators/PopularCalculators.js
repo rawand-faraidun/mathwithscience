@@ -1,18 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-// importing stylings
-import './popular-calculators.css';
-
-// importing components
-import languageHelper from '../../../partials/languageHelper';
-
-// importing datas
-const Calculators = require('../../../DATA/Calculators');
+import './popular-calculators.css'
+import languageHelper from '../../../partials/languageHelper'
+const Calculators = require('../../../DATA/Calculators')
 
 
 
-// page content all languages
+// component content
 const componentContent = {
     en: 'Popular Calculators',
     kr: 'ژمێرەرە بەکارهاتوەکان',
@@ -22,12 +17,12 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : popular calculators section
+ *  @return {Element} : popular calculators element
  */
-function PopularCalculators() {
+export default function PopularCalculators() {
 
     // getting the calculators
-    const calculators = Calculators.find({ language: true, removeComponent: true, limit: 12 });
+    const calculators = Calculators.find({ language: true, removeComponent: true, limit: 12 })
 
 
     return (
@@ -62,8 +57,6 @@ function PopularCalculators() {
 
             </div>
         </>
-    );
+    )
 
 }
-
-export default PopularCalculators;

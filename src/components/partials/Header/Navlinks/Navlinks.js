@@ -1,15 +1,12 @@
-import React from "react";
-import { useLocation, Link } from 'react-router-dom';
+import React from 'react'
+import { useLocation, Link } from 'react-router-dom'
 
-// importing styling
-import './navlinks.css';
-
-// importing components
-import languageHelper from '../../languageHelper';
+import './navlinks.css'
+import languageHelper from '../../languageHelper'
 
 
 
-// page content all languages
+// component content
 const componentContent = {
     links: [
         {
@@ -26,16 +23,18 @@ const componentContent = {
 }
 
 
-/**
- * @props :
- *      @whiteOnly {Boolean}, this determines if the links must always be white or not
- * 
- * @return {Element} : Header element
- */
-function Navlinks(props) {
 
-    // used in chossing which link is gets the active class
-    const thisPath = useLocation().pathname;
+/**
+ * @param {Object} props :
+ *      @whiteOnly {Boolean} : this determines if the links must always be white or not
+ * 
+ * @return {Element} : navigation links element
+ */
+export default function Navlinks(props) {
+
+    // used in chossing which link is active
+    const thisPath = useLocation().pathname
+
 
     return (
         <>
@@ -62,5 +61,3 @@ function Navlinks(props) {
         </>
     )
 }
-
-export default Navlinks;

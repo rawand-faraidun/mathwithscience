@@ -1,34 +1,32 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-// importing components
-import languageHelper from './components/partials/languageHelper';
-
-// partial components
-import Header from './components/partials/Header/Header';
-import Footer from './components/partials/Footer/Footer';
-
-// pages components
-import Home from './components/pages/Home/Home';
-import CollectionsRoutes from './components/pages/Collections/Collections';
-import CalculatorsRoutes from './components/pages/Calculators/Calculators';
+import languageHelper from './components/partials/languageHelper'
+// partial component
+import Header from './components/partials/Header/Header'
+import Footer from './components/partials/Footer/Footer'
+// pages component
+import Home from './components/pages/Home/Home'
+import CollectionsRoutes from './components/pages/Collections/Collections'
+import CalculatorsRoutes from './components/pages/Calculators/Calculators'
 
 
 
 // initiating language helper cookie check constructor
-new languageHelper();
+new languageHelper()
+
 
 
 /**
- *  @return : Element, returns all the frontend
+ *  @return {Element} : app frontend
  */
-function App() {
+export default function App() {
 
     // removing the preload class from the body when the page is ready
     // preload class prevent anything to animate before the whole page is ready
     useEffect(() => {
-        document.getElementsByTagName('body')[0].removeAttribute('class');
-    }, []);
+        document.getElementsByTagName('body')[0].removeAttribute('class')
+    }, [])
 
 
     return (
@@ -62,7 +60,7 @@ function App() {
                     </Route>
 
 
-                    {/* Collections route */}
+                    {/* Calculators route */}
                     <Route
                         path=
                         {[
@@ -83,10 +81,7 @@ function App() {
                 {/* adding footer of the page */}
                 <Footer />
 
-
             </Router>
         </>
-    );
+    )
 }
-
-export default App;

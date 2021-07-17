@@ -1,7 +1,9 @@
 /****************
 ***Collections***
 ****************/
-.collections {
+.collections,
+.collection-calculators,
+.collection-calculator {
   margin-top: var(--first-element-margin-top);
   padding: var(--padding-sides);
   min-height: 64vh;

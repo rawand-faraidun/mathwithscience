@@ -1,13 +1,15 @@
-// importing calculators components
-import ProportionRatio from './calculators-components/Proportion-Ratio/Proportion-Ratio';
-import EquationSolver from './calculators-components/Equation-Solver/Equation-Solver';
-import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker';
-import Weight from './calculators-components/Weight/Weight';
-import Volume from './calculators-components/Volume/Volume';
-import Power from './calculators-components/Power/Power';
-import Area from './calculators-components/Area/Area';
-import Length from './calculators-components/Length/Length';
-import Force from './calculators-components/Force/Force';
+// calculators components
+import ProportionRatio from './calculators-components/Proportion-Ratio/Proportion-Ratio'
+import EquationSolver from './calculators-components/Equation-Solver/Equation-Solver'
+import PrimeChecker from './calculators-components/Prime-Checker/Prime-Checker'
+import Weight from './calculators-components/Weight/Weight'
+import Volume from './calculators-components/Volume/Volume'
+import Power from './calculators-components/Power/Power'
+import Area from './calculators-components/Area/Area'
+import Length from './calculators-components/Length/Length'
+import Force from './calculators-components/Force/Force'
+
+
 
 /**
  *  @Calculators : array of calculators
@@ -148,14 +150,20 @@ const Calculators = [
         ],
         component: <Force />
     },
-];
+]
 
 
 
-// getting all collections
+
+
+/**
+ * getting all calculators
+ * 
+ * @returns {Array} : all calculators
+ */
 function getAllCalculators() {
-    return [...Calculators];
+    return [...Calculators]
 }
 
 
-export default getAllCalculators;
+export default getAllCalculators

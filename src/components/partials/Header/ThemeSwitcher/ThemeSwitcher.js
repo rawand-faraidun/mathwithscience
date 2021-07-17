@@ -1,36 +1,34 @@
-import React, { useState } from "react";
-// import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react'
 
-// importing styling
-import './themeSwitcher.css';
+import './themeSwitcher.css'
 
 
 
 /**
- *  @return {Element} : returns the theme switcher
+ *  @return {Element} : theme switcher element
  */
-function ThemeSwitcher() {
+export default function ThemeSwitcher() {
 
-    // using state to handle theme change, the initial value is based on the user chossen theme color before
-    const [themeState, setThemeState] = useState(localStorage.getItem('theme-color'));
+    // theme state value is based on the user chossen theme color before
+    const [themeState, setThemeState] = useState(localStorage.getItem('theme-color'))
 
-    // using the state to update the theme color dynamically
-    document.documentElement.setAttribute('theme-color', themeState);
+    // adding theme color property to the HTML
+    document.documentElement.setAttribute('theme-color', themeState)
 
-    // saving the user theme change dynamically
-    localStorage.setItem('theme-color', themeState);
+    // saving the user theme changes
+    localStorage.setItem('theme-color', themeState)
 
 
     // handeling the theme change
     function changeTheme(event) {
 
-        // if the check box is checked, turn the page to darkmode
+        // if the check box is checked, turns the page to darkmode
         if (event.target.checked) {
-            setThemeState('dark');
+            setThemeState('dark')
         }
-        // if the check box is not checked, turn the page to lightmode
+        // otherwise turns the page to lightmode
         else {
-            setThemeState('light');
+            setThemeState('light')
         }
     }
 
@@ -59,5 +57,3 @@ function ThemeSwitcher() {
         </>
     )
 }
-
-export default ThemeSwitcher;

@@ -1,28 +1,26 @@
-import React, { useState } from "react";
-import { useLocation } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
-// importing styling
-import './nav-searchbar.css';
-// components
+import './nav-searchbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 
 /**
- * @return {Element} : header searchbar
+ * @return {Element} : header searchbar element
  */
-function Searchbar() {
+export default function NavSearchbar() {
 
-    // if this path was pointing to homepage the header background will be transparent
-    const thisPath = useLocation().pathname;
+    // checking if the user is in home page, this element is not shown in homepage header
+    const thisPath = useLocation().pathname
 
-    // this used to control search bar input text
-    const [searchText, setSearchText] = useState('');
+    // search bar text
+    const [searchText, setSearchText] = useState('')
 
-    // this handles the input on search bar
+    // handling the inputs in search bar
     function search(event) {
-        setSearchText(event.target.value);
+        setSearchText(event.target.value)
     }
 
     return (
@@ -30,7 +28,7 @@ function Searchbar() {
             {/* header searchbar */}
             <div className="nav-search-holder" style={{ display: thisPath === '/' ? 'none' : '' }}>
 
-                {/* header searchbar input */}
+                {/* searchbar input */}
                 <input
                     type="text"
                     className="nav-searchbar"
@@ -40,7 +38,7 @@ function Searchbar() {
                     autoComplete="off"
                 />
 
-                {/* header searchbar search icon */}
+                {/* searchbar search icon */}
                 <div className="nav-search-icon">
                     <FontAwesomeIcon icon={faSearch} />
                 </div>
@@ -48,5 +46,3 @@ function Searchbar() {
         </>
     )
 }
-
-export default Searchbar;

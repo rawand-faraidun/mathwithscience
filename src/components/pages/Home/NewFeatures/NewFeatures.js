@@ -1,14 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-// importing styling
-import './new-features.css';
-
-// importing components
-import languageHelper from '../../../partials/languageHelper';
+import './new-features.css'
+import languageHelper from '../../../partials/languageHelper'
 
 
 
-// page content all languages
+// component content
 const componentContent = {
     title: {
         en: 'New Features',
@@ -25,9 +22,9 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : new fueatures section
+ *  @return {Element} : new fueatures element
  */
-function NewFeatures() {
+export default function NewFeatures() {
 
     return (
         <>
@@ -51,8 +48,5 @@ function NewFeatures() {
 
             </div>
         </>
-    );
-
+    )
 }
-
-export default NewFeatures;

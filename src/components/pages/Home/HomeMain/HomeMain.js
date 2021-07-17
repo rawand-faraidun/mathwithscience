@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-// importing stylings
-import './home-main.css';
-
-// importing Components
-import Particles from 'react-particles-js';
-import languageHelper from '../../../partials/languageHelper';
-import SearchResult from './SearchResult/SearchResult';
+import './home-main.css'
+import Particles from 'react-particles-js'
+import languageHelper from '../../../partials/languageHelper'
+import SearchResult from './SearchResult/SearchResult'
 
 
 
-// component content all languages
+// component content
 const componentContent = {
     title: {
         en: 'Search a calculator for your problem',
@@ -25,16 +22,16 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : home main section
+ *  @return {Element} : home main element
  */
-function HomeMain() {
+ export default function HomeMain() {
 
-    // this controls the search text
-    const [searchText, setSearchText] = useState('');
+    // search text
+    const [searchText, setSearchText] = useState('')
 
-    // this handels the search functionality
+    // handling the inputs in search bar
     function handleSearch(e) {
-        setSearchText(e.target.value);
+        setSearchText(e.target.value)
     }
 
 
@@ -44,7 +41,7 @@ function HomeMain() {
             <div className="home-main">
 
 
-                {/* the animation background */}
+                {/* animation background */}
                 <Particles
                     className="home-animation"
                     params={{
@@ -99,8 +96,5 @@ function HomeMain() {
 
             </div>
         </>
-    );
-
+    )
 }
-
-export default HomeMain;

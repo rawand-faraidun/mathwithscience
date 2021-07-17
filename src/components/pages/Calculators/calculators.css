@@ -1,7 +1,8 @@
 /********************
 ***All Calculators***
 ********************/
-.calculators {
+.calculators,
+.calculator-component {
   margin-top: var(--first-element-margin-top);
   padding: var(--padding-sides);
   min-height: 64vh;

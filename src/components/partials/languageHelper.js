@@ -1,6 +1,6 @@
-// this file contains 2 functions that help any element to have properties
-
 /**
+ * includes all methods for the app language
+ * 
  * @return {Class} : contains functions to help with website language
  */
 class languageHelper {
@@ -15,59 +15,67 @@ class languageHelper {
     }
 
 
-    // checking if the website has a valid language cookie or not
     /**
-     * @return {boolean} true if the website has a valid language cookie, false otherwise
-     */
-    static vailedLanguageCookie() {
-        return localStorage.getItem('language') === 'en' || localStorage.getItem('language') === 'kr';
-    }
-
-
-    // cheking if a symbol is used in the website as language symbol or not
-    /**
-     * @return {boolean} true if the parameter symbol was a language symbol, false otherwise
-     */
-    static vailedLanguageSymbol(symbol) {
-        return symbol === 'en' || symbol === 'kr';
-    }
-
-
-    // getting cookie language symbol
-    /**
+     * getting cookie language symbol
+     * 
      * @return {String} cookie language symbol
      */
     static getLanguageSymbol() {
-        return localStorage.getItem('language');
+        return localStorage.getItem('language')
     }
 
 
-    // getting other language symbol from cookie
     /**
+     * checking if the website has a valid language cookie or not
+     * 
+     * @return {boolean} true if the website has a valid language cookie, false otherwise
+     */
+    static vailedLanguageCookie() {
+        return this.getLanguageSymbol() === 'en' || this.getLanguageSymbol() === 'kr'
+    }
+
+
+    /**
+     * cheking if a symbol is used in the website as language symbol or not
+     * 
+     * @param {string} symbol : the symbol that needs to be checked
+     * @return {boolean} true if the parameter symbol was a language symbol, false otherwise
+     */
+    static vailedLanguageSymbol(symbol) {
+        return symbol === 'en' || symbol === 'kr'
+    }
+
+
+    /**
+     * getting other language symbol from cookie
+     * 
      * @return {String} other language symbol from cookie
      */
     static getOtherLanguageSymbol() {
-        return localStorage.getItem('language') === 'en' ? 'kr' : 'en';
+        return this.getLanguageSymbol() === 'en' ? 'kr' : 'en'
     }
 
 
-    // detecting if the element wants kurdish class name or not
     /**
+     * detecting if the element wants kurdish class name or not
+     * 
      * @return {String} 'kurdish' or an empty string
      */ 
     static getClass() {
-        return localStorage.getItem('language') === 'kr' ? 'kurdish' : '';
+        return this.getLanguageSymbol() === 'kr' ? 'kurdish' : ''
     }
 
 
-    // detecting if the element wants rtl direction or not
     /**
+     * detecting if the element wants rtl direction or not
+     * 
      * @return {String} 'rtl' or an empty string
      */
     static getDirection() {
-        return localStorage.getItem('language') === 'kr' ? 'rtl' : '';
+        return this.getLanguageSymbol() === 'kr' ? 'rtl' : ''
     }
 }
 
 
-export default languageHelper;
+
+export default languageHelper

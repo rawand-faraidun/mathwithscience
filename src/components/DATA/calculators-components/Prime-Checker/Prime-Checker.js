@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-// importing styling
-import './prime-checker.css';
+import './prime-checker.css'
 
-// importing Components
-import languageHelper from '../../../partials/languageHelper';
+import languageHelper from '../../../partials/languageHelper'
 
 
 
-// component content all languages
+// component content
 const componentContent = {
     input: {
         en: 'Number',
@@ -40,7 +38,7 @@ const componentContent = {
  *  @return {Element} : Prime Checker
  */
 // ***Prime Checker Component
-function ProportionRatio() {
+export default function ProportionRatio() {
 
 
     const [values, setValues] = useState({
@@ -48,7 +46,7 @@ function ProportionRatio() {
         primeStatus: '',
         next: '',
         previous: ''
-    });
+    })
 
 
     function calculate(e) {
@@ -57,7 +55,7 @@ function ProportionRatio() {
             primeStatus: isPrime(e.target.value),
             next: nextPrime(e.target.value),
             previous: previousPrime(e.target.value)
-        });
+        })
     }
 
     //check if the number is prime or not
@@ -65,23 +63,23 @@ function ProportionRatio() {
 
         // stop on negative numbers
         if (number < 1) {
-            return false;
+            return false
         }
 
         // even numbers
         if (number % 2 === 0 && number > 2) {
-            return false;
+            return false
         }
 
         // store the square to loop faster
         // start from 3, stop at the square
         for (let i = 3, s = Math.sqrt(number); i <= s; i++) {
             if (number % i === 0) {
-                return false;
+                return false
             }
         }
 
-        return true;
+        return true
     }
 
     //finding the next prime
@@ -89,7 +87,7 @@ function ProportionRatio() {
 
         // stop on negative numbers
         if (number < 1) {
-            return false;
+            return false
         }
 
         // starting from the number, then increasing untill findig the nearest prime one
@@ -97,12 +95,12 @@ function ProportionRatio() {
 
             // stop on negative numbers
             if (i < 1) {
-                return false;
+                return false
             }
 
             // checking if the current nunber is prime or not
             if (isPrime(i) === true) {
-                return i;
+                return i
             }
         }
     }
@@ -115,12 +113,12 @@ function ProportionRatio() {
 
             // stop on negative numbers
             if (i < 1) {
-                return false;
+                return false
             }
 
             // checking if the current nunber is prime or not
             if (isPrime(i) === true) {
-                return i;
+                return i
             }
         }
     }
@@ -195,5 +193,3 @@ function ProportionRatio() {
         </>
     )
 }
-
-export default ProportionRatio;

@@ -1,35 +1,30 @@
-// importing languageHelper
 import languageHelper from '../partials/languageHelper'
-
-// importing cloneDeep from lodash
 import cloneDeep from 'lodash/cloneDeep'
-
-// importing Calculators
-import Calculators from './Calculators-Data';
+import Calculators from './Calculators-Data'
 
 
 
 
 
-// getting calculators
 /**
- * @parameters :
- *      @conditions : {Object}, adding conditions to modify returning array
- *          @searchQuery : {String}, the search text that used to search for calculators
- *          @Sort : {Object} : 
- *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
- *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
- *          @limit : {Number}, determines if setting limit to returning results
- *          @language : {Boolean}, determines if only returning results in one language or all languages
- *          @removeComponent : {Boolean}, determines if removing component function or not
- *          @changeUrl : {String}, determines if adding a text before urlName or not
+ * quering calculators based on conditions
+ * 
+ * @param {Object} conditions :
+ *      @searchQuery {String} : the search text that used to search for calculators
+ *      @Sort {Object} : 
+ *          @sortingLanguage {String} : determines if the sorting be based on language, if not use english
+ *          @sortingType {Number: 1 || -1} : determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
+ *      @limit {Number} : determines if setting limit to returning results
+ *      @language {Boolean} : determines if only returning results in one language or all languages
+ *      @removeComponent {Boolean} : determines if removing component function or not
+ *      @changeUrl {String} : determines if adding a text before urlName or not
  * 
  *  @return {Array} : an array of Calculators that meets the conditions
  */
 function find(conditions) {
 
     // cloning the calculators array
-    let result = cloneDeep(Calculators());
+    let result = cloneDeep(Calculators())
 
 
     // checking for search query
@@ -44,7 +39,7 @@ function find(conditions) {
                 calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase())
             )
-        });
+        })
     }
 
 
@@ -56,14 +51,14 @@ function find(conditions) {
             b[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name) ?
             (conditions.sort.sortingType ? conditions.sort.sortingType : 1) : // checking if the sorting tyoe is defined, if not using ASC
             (conditions.sort.sortingType ? -conditions.sort.sortingType : -1)
-        );
+        )
     }
 
 
     // checking for limit
     // it will limit the results
     if (conditions?.limit) {
-        result = result.slice(0, conditions.limit);
+        result = result.slice(0, conditions.limit)
     }
 
 
@@ -72,9 +67,9 @@ function find(conditions) {
     if (conditions?.language) {
         result.forEach(calculator => {
             // removing other language details from the object
-            delete calculator[languageHelper.getOtherLanguageSymbol()];
+            delete calculator[languageHelper.getOtherLanguageSymbol()]
             return calculator
-        });
+        })
     }
 
 
@@ -83,9 +78,9 @@ function find(conditions) {
     if (conditions?.removeComponent) {
         result.forEach(calculator => {
             // removing component fuction from the object
-            delete calculator.component;
+            delete calculator.component
             return calculator
-        });
+        })
     }
 
 
@@ -94,13 +89,13 @@ function find(conditions) {
     if (conditions?.changeUrl) {
         result.forEach(calculator => {
             // adding the text before the url
-            calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`;
+            calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`
             return calculator
-        });
+        })
     }
 
 
-    return result;
+    return result
 }
 
 
@@ -112,24 +107,24 @@ function find(conditions) {
 
 
 
-// getting one calculator
 /**
- * @parameters :
- *      @conditions : {Object}, adding conditions to find returning object
- *          @urlName : {String}, searches for the object based on urlName property
- *          @language : {Boolean}, determines if the returning calculator to be in one language or all languages
- *          @removeComponent : {Boolean}, determines if removing component function or not
- *          @changeUrl : {String}, determines if adding a text before urlName or not
+ * quering calculators based on conditions to find a specific one
+ * 
+ * @param {Object} conditions :
+ *      @urlName : {String}, searches for the object based on urlName property
+ *      @language : {Boolean}, determines if the returning calculator to be in one language or all languages
+ *      @removeComponent : {Boolean}, determines if removing component function or not
+ *      @changeUrl : {String}, determines if adding a text before urlName or not
  * 
  *  @return {Object} : an object of the Calculator that meets the conditions
  */
 function findOne(conditions) {
 
     // cloning the calculators array
-    let list = cloneDeep(Calculators());
+    let list = cloneDeep(Calculators())
 
     // this will store the object that matches the condition
-    let foundOne;
+    let foundOne
 
 
     // checking for limit
@@ -142,7 +137,7 @@ function findOne(conditions) {
     // checking if there is a found one
     // it will return undefined if there is no object found
     if (!foundOne) {
-        return undefined;
+        return undefined
     }
 
 
@@ -151,7 +146,7 @@ function findOne(conditions) {
     if (conditions?.language) {
 
         // removing other language details from the object
-        delete foundOne[languageHelper.getOtherLanguageSymbol()];
+        delete foundOne[languageHelper.getOtherLanguageSymbol()]
     }
 
 
@@ -160,18 +155,18 @@ function findOne(conditions) {
     if (conditions?.removeComponent) {
 
         // removing component fuction from the object
-        delete foundOne.component;
+        delete foundOne.component
     }
 
 
     // checking for changingUrl
     // it will add the choosen text before url of the object
     if (conditions?.changeUrl) {
-        foundOne.urlName = `${conditions.changeUrl}/${foundOne.urlName}`;
+        foundOne.urlName = `${conditions.changeUrl}/${foundOne.urlName}`
     }
 
 
-    return foundOne;
+    return foundOne
 }
 
 
@@ -183,25 +178,25 @@ function findOne(conditions) {
 
 
 
-// getting calculators
 /**
- * @parameters :
- *      @conditions : {Object}, adding conditions to find returning object
- *          @list : {Array}, Array of urlNames to search in for calculators
- *          @Sort : {Object} : 
- *              @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
- *              @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
- *          @limit : {Number}, determines if setting limit to returning results
- *          @language : {Boolean}, determines if only returning results in one language or all languages
- *          @removeComponent : {Boolean}, determines if removing component function or not
- *          @changeUrl : {String}, determines if adding a text before urlName or not
+ * quering calculators based on conditions to find calculators if its urlName is in @List array
  * 
- *  @return {Array} : an array of the Calculator that are in conditions list
+ * @param {Object} conditions :
+ *      @list : {Array}, Array of urlNames to search in for calculators
+ *      @Sort : {Object} : 
+ *          @sortingLanguage : {String}, determines if the sorting be based on language, if not use english
+ *          @sortingType : {Number: 1 || -1}, determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
+ *      @limit : {Number}, determines if setting limit to returning results
+ *      @language : {Boolean}, determines if only returning results in one language or all languages
+ *      @removeComponent : {Boolean}, determines if removing component function or not
+ *      @changeUrl : {String}, determines if adding a text before urlName or not
+ * 
+ *  @return {Array} : an array of Calculators that meets the conditions
  */
 function findIn(conditions) {
 
     // cloning the calculators array
-    let result = cloneDeep(Calculators());
+    let result = cloneDeep(Calculators())
 
 
     // checking for limit
@@ -219,14 +214,14 @@ function findIn(conditions) {
             b[conditions.sort.sortingLanguage ? conditions.sort.sortingLanguage : 'en'].name) ?
             (conditions.sort.sortingType ? conditions.sort.sortingType : 1) : // checking if the sorting tyoe is defined, if not using ASC
             (conditions.sort.sortingType ? -conditions.sort.sortingType : -1)
-        );
+        )
     }
 
 
     // checking for limit
     // it will limit the results
     if (conditions?.limit) {
-        result = result.slice(0, conditions.limit);
+        result = result.slice(0, conditions.limit)
     }
 
 
@@ -235,9 +230,9 @@ function findIn(conditions) {
     if (conditions?.language) {
         result.forEach(calculator => {
             // removing other language details from the object
-            delete calculator[languageHelper.getOtherLanguageSymbol()];
+            delete calculator[languageHelper.getOtherLanguageSymbol()]
             return calculator
-        });
+        })
     }
 
 
@@ -246,9 +241,9 @@ function findIn(conditions) {
     if (conditions?.removeComponent) {
         result.forEach(calculator => {
             // removing component fuction from the object
-            delete calculator.component;
+            delete calculator.component
             return calculator
-        });
+        })
     }
 
 
@@ -257,13 +252,13 @@ function findIn(conditions) {
     if (conditions?.changeUrl) {
         result.forEach(calculator => {
             // adding the text before the url
-            calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`;
+            calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`
             return calculator
-        });
+        })
     }
 
 
-    return result;
+    return result
 }
 
 
@@ -271,4 +266,4 @@ function findIn(conditions) {
 
 
 // exporting module
-export { find, findOne, findIn };
+export { find, findOne, findIn }

@@ -36,14 +36,20 @@ const Collections = [
             'weight', 'volume', 'power', 'area', 'length', 'force'
         ]
     }
-];
+]
 
 
 
-// getting all collections
+
+
+/**
+ * getting all collections
+ * 
+ * @returns {Array} : all collections
+ */
 function getAllCollections() {
-    return [...Collections];
+    return [...Collections]
 }
 
 
-export default getAllCollections;
+export default getAllCollections

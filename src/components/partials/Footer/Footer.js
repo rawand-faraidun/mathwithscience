@@ -1,17 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-// importing styling
-import './footer.css';
-
-// impirting Components
-import Brand from '../Brand/Brand';
-import languageHelper from '../languageHelper';
-import LanguageSelector from './LanguageSelector/LanguageSelector';
+import './footer.css'
+import languageHelper from '../languageHelper'
+import Brand from '../Brand/Brand'
+import LanguageSelector from './LanguageSelector/LanguageSelector'
 
 
 
-// page content all languages
+// component content
 const componentContent = {
     links: [
         { en: 'About', kr: 'دەربارە', url: 'about' },
@@ -27,33 +24,35 @@ const componentContent = {
 }
 
 
+
 /**
- *  @return {Element} : returns the footer
+ *  @return {Element} : footer element
  */
-function Footer() {
+export default function Footer() {
     return (
         <>
-            {/* changing the direction if the page was kurdish */}
+            {/* footer */}
             <footer className="footer" dir={languageHelper.getDirection()}>
 
                 {/* the line above the footer */}
                 <hr className="footer-line" />
 
 
-                {/* contains the footer top part */}
+                {/* footer top part */}
                 <div className="footer-holder">
 
-                    {/* the left side of the footer */}
+                    {/* left side of the footer */}
                     <div className="footer-left">
 
                         {/* brand name and logo */}
                         <Brand />
 
-                        {/* adding language selector */}
+                        {/* language selector */}
                         <LanguageSelector />
                     </div>
 
-                    {/* the right side of the footer */}
+
+                    {/* right side of the footer */}
                     <div className="footer-right">
 
                         {/* left list */}
@@ -106,5 +105,3 @@ function Footer() {
         </>
     )
 }
-
-export default Footer;

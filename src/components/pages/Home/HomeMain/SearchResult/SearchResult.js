@@ -1,57 +1,52 @@
-import React, { useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 
-// importing stylings
-import './search-result.css';
-
-// importing Components
-import languageHelper from '../../../../partials/languageHelper';
-
-// importing datas
-const Collections = require('../../../../DATA/Collections');
-const Calculators = require('../../../../DATA/Calculators');
+import './search-result.css'
+import languageHelper from '../../../../partials/languageHelper'
+const Collections = require('../../../../DATA/Collections')
+const Calculators = require('../../../../DATA/Calculators')
 
 
 
 /**
- * @props :
- *      @searchtext : {String}, the search text the usear searched for
+ * @param {Object} props :
+ *      @searchtext {String} : the search text the usear searched for
  * 
- *  @return {Element} : search result grid element, if search was empty it will show collections
+ *  @return {Element} : homepage search result element, if search was empty it will show collections
  */
 function SearchResult(props) {
 
-    // getting all collections, saving it to prevent reruning
+    // getting all collections, preventing it from reruning
     const collections = useMemo(() => {
         // getting all collections
-        return Collections.find({ language: true, changeUrl: 'collections' });
-    }, []);
+        return Collections.find({ language: true, changeUrl: 'collections' })
+    }, [])
 
 
     // search results
-    let searchResult = [];
+    let searchResult = []
 
     // if the search result was empty, searchResult will be collections
     if (props.searchtext.length === 0) {
-        searchResult = collections;
+        searchResult = collections
     }
-    // if it was not empty, it will search for collections and calculators based on searchText
+    // otherwise, it will be result of search in collections and calculators based on search text
     else {
         // getting collections based on search text
-        const searchCollectionResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' });
+        const searchCollectionsResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' })
 
         // getting calculators based on search text
-        const searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, removeComponent: true, language: true, changeUrl: 'collections' });
+        const searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, removeComponent: true, language: true, changeUrl: 'calculators' })
 
         // setting both results as searchResult
-        searchResult = [...searchCollectionResult, ...searchCalculatorsResult];
+        searchResult = [...searchCollectionsResult, ...searchCalculatorsResult].slice(0, 12)
     }
 
 
     return (
         <>
-            {/* search results grid */}
+            {/* search results */}
             <div className="search-result" dir={languageHelper.getDirection()}>
 
                 {/* each result */}
@@ -71,9 +66,9 @@ function SearchResult(props) {
                 )}
             </div>
         </>
-    );
+    )
 }
 
 
 
-export default SearchResult;
+export default SearchResult

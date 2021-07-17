@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
-// importing Components
-import languageHelper from '../../../partials/languageHelper';
+import languageHelper from '../../../partials/languageHelper'
 import { nerdamerCalculate, makeInitialState } from '../calculators-helpers/unit-conversion'
 
 
@@ -62,17 +61,16 @@ const componentContent = [
 /**
  *  @return {Element} : Force element
  */
-// *** Force element
-function Force() {
+export default function Force() {
 
     // stroring values for all units
-    const [values, setValues] = useState(makeInitialState(componentContent));
+    const [values, setValues] = useState(makeInitialState(componentContent))
 
 
     // calculation function
     function calculate(e) {
         // setting the new values
-        setValues(nerdamerCalculate(e.target, componentContent, values));
+        setValues(nerdamerCalculate(e.target, componentContent, values))
     }
 
 
@@ -107,5 +105,3 @@ function Force() {
         </>
     )
 }
-
-export default Force;

@@ -1,107 +1,97 @@
-import React, { useState, useMemo } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, { useState, useMemo } from 'react'
+import { useLocation } from 'react-router-dom'
 
-// importing styling
-import './header.css';
-
-// importing components
-import Brand from '../Brand/Brand';
-import Burger from './Burger/Burger';
-import Searchbar from './NavSearchbar/NavSearchbar';
-import Navlinks from './Navlinks/Navlinks';
-import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
-import HeaderAnimation from './HeaderAnimation/HeaderAnimation';
+import './header.css'
+import Brand from '../Brand/Brand'
+import Burger from './Burger/Burger'
+import Searchbar from './NavSearchbar/NavSearchbar'
+import Navlinks from './Navlinks/Navlinks'
+import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher'
+import HeaderAnimation from './HeaderAnimation/HeaderAnimation'
 
 
 
 /**
- * @return {Element} : Header element
+ * @return {Element} : header element
  */
-function Header() {
+export default function Header() {
 
+    // determines state of the navigation
+    const [navState, setNavState] = useState(false)
 
-    // this controls navigation state, determines the state of navigation is opened or not
-    const [navState, setNavState] = useState(false);
-
-    // handles if the burger is clicked to open or close
+    // handles closing or opening 
     function navToggleHandler(state) {
-        setNavState(state);
-    }
-
-    // this will close the navigation and set its state to false
-    function closeNavDrawer() {
-        setNavState(false);
+        setNavState(state)
     }
 
 
-    // checking if the user is in home page or not
-    const homePage = useLocation().pathname === '/' ? true : false;
+    // checking if the user is in home page
+    const homePage = useLocation().pathname === '/' ? true : false
 
-    // knowing if the page is scrolled, only updates in homepage
-    const [homePageScrolled, setHomePageScrolled] = useState(false);
+    // determines if the page is scrolled, only updates in homepage
+    const [homePageScrolled, setHomePageScrolled] = useState(false)
 
-    // if the user was in homepage, then watching page onscroll to check if making transparent header or not
+    // checking poge scrool in homepage to make the header transparent
     if (homePage) {
-        // updating pageScrolled
+        // updating home page scrolled state
         window.onscroll = () => {
             if (window.pageYOffset > 100) {
-                setHomePageScrolled(true);
+                setHomePageScrolled(true)
             }
             else {
-                setHomePageScrolled(false);
+                setHomePageScrolled(false)
             }
         }
     }
-    
 
 
     return (
-        // header of the website
-        <header className={`header ${homePage && !homePageScrolled && !navState ? "transparent-header" : ''}`}>
+        <>
+            {/* header */}
+            <header className={`header ${homePage && !homePageScrolled && !navState ? "transparent-header" : ''}`}>
 
 
-            {/* the main part of header, this will be the header of small screens */}
-            <div className="nav-main">
+                {/* the main part of header, this will be the header of small screens */}
+                <div className="nav-main">
 
-                {/* adding brand */}
-                <Brand isLink="true" whiteOnly={homePage && !homePageScrolled && !navState} />
+                    {/* brand logo */}
+                    <Brand whiteOnly={homePage && !homePageScrolled && !navState} />
 
-                {/* this will take the space between bravd and burger in small screens header */}
-                <div className="nav-main-space"></div>
+                    {/* this will take the space between brand and burger in small screens header */}
+                    <div className="nav-main-space"></div>
 
-                {/* the burger, shows in small screens header */}
-                <Burger
-                    navState={navState}
-                    navToggleHandler={navToggleHandler}
-                    whiteOnly={homePage && !homePageScrolled && !navState}
-                />
-
-            </div>
-
-
-            {/* this will be the drawer of small screen views */}
-            <div className={`nav-holder ${navState ? 'nav-holder-opened' : ''}`}>
-
-                {/* adding search bar */}
-                <Searchbar />
-
-                {/* adding navigation lins */}
-                <Navlinks navState={navState} whiteOnly={homePage && !homePageScrolled && !navState} />
-
-                {/* adding the theme switch */}
-                <ThemeSwitcher />
-
-                {/* the animation in small screens background, MeMo keeps it from rerendering */}
-                {useMemo(() => { return <HeaderAnimation /> }, [])}
-
-            </div>
+                    {/* the burger, shows in small screens header */}
+                    <Burger
+                        navState={navState}
+                        navToggleHandler={navToggleHandler}
+                        whiteOnly={homePage && !homePageScrolled && !navState}
+                    />
+                </div>
 
 
-            {/* this is to make a black layer over the body and when the user pressed outside the drawer cause to close it */}
-            <div className={`nav-drawer-closer ${navState ? "nav-drawer-closer-display" : ""}`} onClick={closeNavDrawer}></div>
+                {/* this will be the drawer of small screens */}
+                <div className={`nav-holder ${navState ? 'nav-holder-opened' : ''}`}>
 
-        </header>
+                    {/* search bar */}
+                    <Searchbar />
+
+                    {/* navigation links */}
+                    <Navlinks navState={navState} whiteOnly={homePage && !homePageScrolled && !navState} />
+
+                    {/* theme switcher */}
+                    <ThemeSwitcher />
+
+                    {/* animation in small screens drawer background, preventing it from rerendering */}
+                    {useMemo(() => { return <HeaderAnimation /> }, [])}
+
+                </div>
+
+
+                {/* this will make a black layer over the body when navigation drawer is opened, when the user presses it, it will close the navigation draweer */}
+                <div className={`nav-drawer-closer ${navState ? "nav-drawer-closer-display" : ""}`}
+                    onClick={() => navToggleHandler(false)} />
+
+            </header>
+        </>
     )
 }
-
-export default Header;

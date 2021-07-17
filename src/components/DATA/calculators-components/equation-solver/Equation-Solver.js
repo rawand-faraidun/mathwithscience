@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
+import Desmos from 'desmos'
 
-// importing styling
-import './equation-solver.css';
-
-// importing Components
-import languageHelper from '../../../partials/languageHelper';
-import Desmos from 'desmos';
-
-// requiring mathjax
-
-// requiring nerdamer
-let nerdamer = require('nerdamer');
-require('nerdamer/Algebra.js');
-require('nerdamer/Calculus.js');
-require('nerdamer/Solve.js');
+import './equation-solver.css'
+import languageHelper from '../../../partials/languageHelper'
+let nerdamer = require('nerdamer')
+require('nerdamer/Algebra.js')
+require('nerdamer/Calculus.js')
+require('nerdamer/Solve.js')
 
 
 
-// component content all languages
+// component content
 const componentContent = {
     equation: {
         en: 'Equation',
@@ -40,48 +33,47 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Equation Solver
+ *  @return {Element} : Equation Solver element
  */
-// *** Equation Solver Component
-function ProportionRatio() {
+ export default function ProportionRatio() {
 
     // storing values
     let [values, setValues] = useState({
         equation: '',
         answers: ['']
-    });
+    })
 
 
     // auto updating graph on state change
     useEffect(() => {
         // generation the graph
-        document.getElementById('graph').innerHTML = '';
+        document.getElementById('graph').innerHTML = ''
 
         // creating desmos element
         var calculator = Desmos.GraphingCalculator(document.getElementById('graph'), {
             expressions: false,
             keypad: false,
             settingsMenu: false
-        });
+        })
 
         // setting or updating graph
-        calculator.setExpression({ id: 'graph1', latex: `y=${values.equation}` });
-    }, [values]);
+        calculator.setExpression({ id: 'graph1', latex: `y=${values.equation}` })
+    }, [values])
 
 
     // calculation function
     function calculate(e) {
 
         // preventing input of invailed characters
-        if (!/^[A-Za-z0-9.^*+/()-]*$/.test(e.target.value)) return;
+        if (!/^[A-Za-z0-9.^*+/()-]*$/.test(e.target.value)) return
 
         // answers array
-        var sol = [];
+        var sol = []
 
         // trying to sove them
         try {
             // getting x intercepts
-            sol = nerdamer.solveEquations(e.target.value.toLowerCase()).map(solution => parseFloat(nerdamer(solution).evaluate().text()));
+            sol = nerdamer.solveEquations(e.target.value.toLowerCase()).map(solution => parseFloat(nerdamer(solution).evaluate().text()))
         }
         // catching any errors, mostly the errors are saying that the input equation is not valid
         catch {
@@ -92,7 +84,7 @@ function ProportionRatio() {
         setValues({
             equation: e.target.value.toLowerCase(),
             answers: sol
-        });
+        })
 
     }
 
@@ -137,7 +129,7 @@ function ProportionRatio() {
                             {/* each answer */}
                             {values.answers.map((answer, i) => {
                                 if (isNaN(answer)) {
-                                    return '';
+                                    return ''
                                 }
 
                                 return <input key={i} type="number" id="answer" className="answer input-field answer-field" placeholder="" autoComplete="off"
@@ -171,7 +163,5 @@ function ProportionRatio() {
 
             </div>
         </>
-    );
+    )
 }
-
-export default ProportionRatio;

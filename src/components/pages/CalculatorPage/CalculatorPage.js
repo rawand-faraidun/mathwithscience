@@ -1,10 +1,8 @@
 import React from 'react'
 import { Helmet } from "react-helmet"
 
-// stylings
 import './calculator-defaults.css'
 import './calculator-page.css'
-// components
 import languageHelper from '../../partials/languageHelper'
 
 
@@ -14,13 +12,13 @@ import languageHelper from '../../partials/languageHelper'
  *      @haveHeader {Boolean} : determines if content have details header
  *      @calculatorData {Object} : data of the calculator
  * 
- *  @return {Element} : calculator show page
+ *  @return {Element} : calculator show page element
  */
 export default function CalculatorPage(props) {
 
     return (
         <>
-            {/* overriding page head */}
+            {/* overriding document head */}
             {/* it will only happen if useHelmet property excists and true */}
             {props.useHelmet ? (
                 <Helmet>
@@ -47,7 +45,7 @@ export default function CalculatorPage(props) {
                 ) : ''}
 
 
-                {/* showing calculator page */}
+                {/* calculator component */}
                 {props.calculatorData.component}
 
             </div>

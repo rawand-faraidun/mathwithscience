@@ -1,28 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-// importing styling
-import './list-view.css';
-
-// importing Components
-import languageHelper from '../../partials/languageHelper';
+import './list-view.css'
+import languageHelper from '../../partials/languageHelper'
 
 
 /**
- * @props :
- *      @header : {Object}, object of headers details (OPTIONAL) :
- *          @title : {String}, title of the list
- *          @description : {String}, description of the list
+ * @param {Object} props :
+ *      @header {Object} : headers details:
+ *          @title {String} : title of the list
+ *          @description {String} : description of the list
  *      @list : {Array}, array of the list
  *      
  * 
- *  @return {Element} : List grid view
+ *  @return {Element} : List grid view element
  */
-function listView(props) {
+export default function listView(props) {
 
     return (
         <>
-            {/* list grid */}
+            {/* list view */}
             <div className="list-view">
 
                 {/* list view headers */}
@@ -39,7 +36,7 @@ function listView(props) {
                 ) : ''}
 
 
-                {/* list view grid of datas */}
+                {/* list view grid */}
                 <div className="list-view-grid">
 
                     {/* each item */}
@@ -65,8 +62,5 @@ function listView(props) {
 
             </div>
         </>
-    );
-
+    )
 }
-
-export default listView;

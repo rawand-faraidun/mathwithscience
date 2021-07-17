@@ -1,63 +1,61 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
+import React from 'react'
+import { useLocation } from 'react-router-dom'
 
-// importing components
-import languageHelper from '../../languageHelper';
-
-// importing styling
-import './language-selector.css';
+import './language-selector.css'
+import languageHelper from '../../languageHelper'
 
 
 
-// page content all languages
+// component content
 const componentsContent = {
     en: 'Language',
     kr: 'زمان'
 }
 
 
+
 /**
- *  @return {Element} : returns the language selector
+ *  @return {Element} : language selector
  */
-function LanguageSelector() {
+export default function LanguageSelector() {
 
 
     // getting the current path of the website
-    const thisPath = useLocation().pathname;
+    const thisPath = useLocation().pathname
 
     // handeling language change
     function changeLanguage(event) {
 
         // setting the language change as a cookie variable
-        localStorage.setItem('language', event.target.value);
+        localStorage.setItem('language', event.target.value)
 
         // rerouting the user to the same page but in the choosen language
-        window.location = thisPath;
+        window.location = thisPath
 
         // not using reload function because i want the website to go to top after the language selection, but reload starts from the current Y offset
-        // window.location.reload();
+        // window.location.reload()
     }
 
 
     return (
         <>
-            {/* changing the direction if the page was kurdish */}
+            {/* language selector */}
             <div className="language-select" dir={`${languageHelper.getDirection()}`}>
 
-                {/* adding kurdish class in kurdish page */}
+                {/* language selector label */}
                 <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
 
                     {/* showing label content based on page language */}
-                    {componentsContent[languageHelper.getLanguageSymbol()]} : &nbsp;
+                    {componentsContent[languageHelper.getLanguageSymbol()]} : &nbsp
                 </label>
 
-                {/* the language selector */}
+                {/* language selector select */}
                 <select
                     name="language"
                     id="language"
                     className="language-selector"
                     onChange={changeLanguage}
-                    defaultValue={languageHelper.getLanguageSymbol()} // making default value as the choosen language
+                    defaultValue={languageHelper.getLanguageSymbol()}
                 >
                     <option value="en">English</option>
                     <option value="kr">کوردی</option>
@@ -66,5 +64,3 @@ function LanguageSelector() {
         </>
     )
 }
-
-export default LanguageSelector;
