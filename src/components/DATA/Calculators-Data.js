@@ -8,6 +8,7 @@ import Power from './calculators-components/Power/Power'
 import Area from './calculators-components/Area/Area'
 import Length from './calculators-components/Length/Length'
 import Force from './calculators-components/Force/Force'
+import Time from './calculators-components/Time/Time'
 
 
 
@@ -149,6 +150,21 @@ const Calculators = [
             'force',
         ],
         component: <Force />
+    },
+    {
+        en: {
+            name: 'Time',
+            description: 'Convert time from any unit to other ones'
+        },
+        kr: {
+            name: 'کات',
+            description: 'کات لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'time',
+        keywords: [
+            'time',
+        ],
+        component: <Time />
     },
 ]
 
