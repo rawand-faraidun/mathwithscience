@@ -93,11 +93,10 @@ const componentContent = [
 
 
 
-
 /**
  *  @return {Element} : Area element
  */
-function Area() {
+ export default function Area() {
 
     // stroring values for all units
     const [values, setValues] = useState(makeInitialState(componentContent))
@@ -141,5 +140,3 @@ function Area() {
         </>
     )
 }
-
-export default Area
