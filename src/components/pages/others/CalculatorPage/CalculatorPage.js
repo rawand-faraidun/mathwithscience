@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 
 import './calculator-defaults.css'
 import './calculator-page.css'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../../partials/languageHelper'
 
 
 /**
