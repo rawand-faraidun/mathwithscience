@@ -46,7 +46,7 @@ export default function LanguageSelector() {
                 <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
 
                     {/* showing label content based on page language */}
-                    {componentsContent[languageHelper.getLanguageSymbol()]} : &nbsp
+                    {componentsContent[languageHelper.getLanguageSymbol()]} : 
                 </label>
 
                 {/* language selector select */}
