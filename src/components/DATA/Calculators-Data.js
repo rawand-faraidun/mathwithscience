@@ -10,6 +10,7 @@ import Length from './calculators-components/Length/Length'
 import Force from './calculators-components/Force/Force'
 import Time from './calculators-components/Time/Time'
 import Speed from './calculators-components/Speed/Speed'
+import Angle from './calculators-components/Angle/Angle'
 
 
 
@@ -181,6 +182,21 @@ const Calculators = [
             'speed',
         ],
         component: <Speed />
+    },
+    {
+        en: {
+            name: 'Angle',
+            description: 'Convert angle from any unit to other ones'
+        },
+        kr: {
+            name: 'گۆشە',
+            description: 'گۆشە لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'angle',
+        keywords: [
+            'angle',
+        ],
+        component: <Angle />
     },
 ]
 
