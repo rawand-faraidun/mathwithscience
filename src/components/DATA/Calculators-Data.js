@@ -9,6 +9,7 @@ import Area from './calculators-components/Area/Area'
 import Length from './calculators-components/Length/Length'
 import Force from './calculators-components/Force/Force'
 import Time from './calculators-components/Time/Time'
+import Speed from './calculators-components/Speed/Speed'
 
 
 
@@ -165,6 +166,21 @@ const Calculators = [
             'time',
         ],
         component: <Time />
+    },
+    {
+        en: {
+            name: 'Speed',
+            description: 'Convert speed from any unit to other ones'
+        },
+        kr: {
+            name: 'خێرایی',
+            description: 'خێرایی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'speed',
+        keywords: [
+            'speed',
+        ],
+        component: <Speed />
     },
 ]
 
