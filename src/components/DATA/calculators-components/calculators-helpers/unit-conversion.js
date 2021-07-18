@@ -14,7 +14,7 @@ require('nerdamer/Solve.js')
  * @param {Array} components : calculator components 
  * @returns {Object} an object with each component id as key with empty value
  */
-function makeInitialState(components) {
+export default function makeInitialState(components) {
 
     // this will store the value of all units based on componentContent object
     let units = {}
@@ -55,26 +55,32 @@ function nerdamerCalculate(element, components, values) {
             continue
         }
 
-        // main unit
+        // if the current unit was main unit
         if (i.unit === components[0].unit) {
 
-            // solving main unit value
+            // calculating main unit value
             newValues[i.id] =
                 nerdamer(
                     nerdamer(element.getAttribute('equation'), // getting equation of the changed unit
                         { [element.getAttribute('unit')]: element.value } // replacing the variable unit with the changed unit value
                     ).solveFor(i.unit).toString() // solving for main unit
-                ).evaluate().text().replace(/^0+(\d)|(\d)0+$/gm, '$1$2') // this will remove trailing zeroes
-
-            continue
+                ).evaluate().text()
         }
 
-        // calculating value for each other unit
-        newValues[i.id] = nerdamer(
-            nerdamer(i.equation, // getting current unit equation
-                { [components[0].unit]: newValues[components[0].id] } // replacing main unit variable with its value
-            ).solveFor(i.unit).toString() // solving for current unit
-        ).evaluate().text().replace(/^0+(\d)|(\d)0+$/gm, '$1$2') // this will remove trailing zeroes
+        else {
+
+            // calculating value for other units
+            newValues[i.id] = nerdamer(
+                nerdamer(i.equation, // getting current unit equation
+                    { [components[0].unit]: newValues[components[0].id] } // replacing main unit variable with its value
+                ).solveFor(i.unit).toString() // solving for current unit
+            ).evaluate().text()
+        }
+
+        // cutting trailing zeroes
+        if (/\.[0-9]*[0]+$/.test(newValues[i.id])) {
+            newValues[i.id] = newValues[i.id].match(/^0*(\d+(?:\.(?:(?!0+$)\d)+)?)/)[0]
+        }
     }
 
     // returning the calculated values
@@ -85,5 +91,4 @@ function nerdamerCalculate(element, components, values) {
 
 
 
-export default nerdamerCalculate
 export { makeInitialState, nerdamerCalculate }
