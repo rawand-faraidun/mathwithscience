@@ -12,6 +12,7 @@ import Time from './calculators-components/Time/Time'
 import Speed from './calculators-components/Speed/Speed'
 import Angle from './calculators-components/Angle/Angle'
 import Tempreature from './calculators-components/Tempreature/Tempreature'
+import DigitalStorage from './calculators-components/Digital-Storage/Digital-Storage'
 
 
 
@@ -213,6 +214,21 @@ const Calculators = [
             'tempreature',
         ],
         component: <Tempreature />
+    },
+    {
+        en: {
+            name: 'Digital Storage',
+            description: 'Convert digital storage from any unit to other ones'
+        },
+        kr: {
+            name: 'عەمباری دیجیتاڵی',
+            description: 'عەمباری دیجیتاڵی (قەبارەی هەڵگرتنی دەیتا) لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'digital-storage',
+        keywords: [
+            'digital storage',
+        ],
+        component: <DigitalStorage />
     },
 ]
 
