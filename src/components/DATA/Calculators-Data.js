@@ -11,6 +11,7 @@ import Force from './calculators-components/Force/Force'
 import Time from './calculators-components/Time/Time'
 import Speed from './calculators-components/Speed/Speed'
 import Angle from './calculators-components/Angle/Angle'
+import Tempreature from './calculators-components/Tempreature/Tempreature'
 
 
 
@@ -197,6 +198,21 @@ const Calculators = [
             'angle',
         ],
         component: <Angle />
+    },
+    {
+        en: {
+            name: 'Tempreature',
+            description: 'Convert tempreature from any unit to other ones'
+        },
+        kr: {
+            name: 'پلەی گەرمی',
+            description: 'پلەی گەرمی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+        },
+        urlName: 'tempreature',
+        keywords: [
+            'tempreature',
+        ],
+        component: <Tempreature />
     },
 ]
 
