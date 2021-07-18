@@ -4,8 +4,8 @@ import { Helmet } from "react-helmet"
 
 import './collections.css'
 import languageHelper from '../../partials/languageHelper'
-import ListView from '../ListView/ListView'
-import CalculatorPage from '../CalculatorPage/CalculatorPage'
+import ListView from '../others/ListView/ListView'
+import CalculatorPage from '../others/CalculatorPage/CalculatorPage'
 const Collections = require('../../DATA/Collections')
 const Calculators = require('../../DATA/Calculators')
 
@@ -39,7 +39,7 @@ export default function CollectionsRoutes() {
 
     // if there was no params from the route, it is root calculations list view
     if (!route.collectionUrlName && !route.calculatorUrlName) {
-        
+
         return (
             <>
                 {/* overriding document head */}
