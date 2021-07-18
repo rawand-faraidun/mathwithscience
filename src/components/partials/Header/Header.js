@@ -76,7 +76,7 @@ export default function Header() {
                     <Searchbar />
 
                     {/* navigation links */}
-                    <Navlinks navState={navState} whiteOnly={homePage && !homePageScrolled && !navState} />
+                    <Navlinks navState={navState} whiteOnly={homePage && !homePageScrolled && !navState} navToggleHandler={navToggleHandler} />
 
                     {/* theme switcher */}
                     <ThemeSwitcher />

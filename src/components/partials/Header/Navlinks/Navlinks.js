@@ -26,6 +26,8 @@ const componentContent = {
 
 /**
  * @param {Object} props :
+ *      @navState {Boolean} : determines if the navigation is opened or not, controlled in Header
+ *      @navToggleHandler {Function} : handels the navigation drawer toggling, controlled in header
  *      @whiteOnly {Boolean} : this determines if the links must always be white or not
  * 
  * @return {Element} : navigation links element
@@ -34,6 +36,11 @@ export default function Navlinks(props) {
 
     // used in chossing which link is active
     const thisPath = useLocation().pathname
+
+    // closes navigation when a link clicked
+    function closeNavigation() {
+        props.navToggleHandler(false)
+    }
 
 
     return (
@@ -49,6 +56,7 @@ export default function Navlinks(props) {
                         <li key={i} className={`link 
                             ${thisPath.startsWith(`/${link.urlName}`) ? "active" : ''} 
                             ${props.whiteOnly ? "white" : ''}`}
+                            onClick={closeNavigation}
                         >
                             <Link to={`/${link.urlName}`} className={languageHelper.getClass()}>
                                 {link[languageHelper.getLanguageSymbol()]}
