@@ -50,7 +50,7 @@ export default function CollectionsRoutes() {
 
 
                 {/* collections */}
-                <div className="collections" dir={languageHelper.getDirection()}>
+                <div className="collections long-element" dir={languageHelper.getDirection()}>
 
                     {/* wecan make a header title and description for collections, but it is easier to be with the ListView when we use it in different places */}
 
@@ -122,7 +122,7 @@ export default function CollectionsRoutes() {
 
 
                 {/* calculators */}
-                <div className="collection-calculators" dir={languageHelper.getDirection()}>
+                <div className="collection-calculators long-element" dir={languageHelper.getDirection()}>
 
                     {/* wecan make a header title and description for the collection, but it is easier to be with the ListView when we use it in different places */}
 
@@ -173,7 +173,7 @@ export default function CollectionsRoutes() {
         */
         return (
             <>
-                <div className="collection-calculator">
+                <div className="collection-calculator long-element">
 
                     {/* Getting wanted calculator */}
                     <CalculatorPage calculatorData={calculator} haveHeader={true} useHelmet={true} />

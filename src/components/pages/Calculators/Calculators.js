@@ -49,7 +49,7 @@ function CalculatorsRoutes() {
 
 
                 {/* claculators */}
-                <div className="calculators" dir={languageHelper.getDirection()}>
+                <div className="calculators long-element" dir={languageHelper.getDirection()}>
 
                     {/* wecan make a header title and description for calculators, but it is easier to be with the ListView when we use it in different places */}
 

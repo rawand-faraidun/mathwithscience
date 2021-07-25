@@ -311,6 +311,17 @@ body {
     letter-spacing: 0 !important;
 }
 
+// long elements
+.long-element {
+    min-height: 64vh;
+}
+// changing search result grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .long-element {
+        min-height: 53vh;
+    }
+}
+
 // removing outline for inputs
 input {
     outline: none;
