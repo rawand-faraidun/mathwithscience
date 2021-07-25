@@ -35,6 +35,22 @@ const Collections = [
         calculatorsUrlName: [
             'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle', 'tempreature', 'digital-storage'
         ]
+    },
+    {
+        en: {
+            name: 'Geometry',
+            description: 'Geometry is a branch of mathematics that deals with the measurement, properties, and relationships of points, lines, angles, surfaces, and solids.'
+        },
+        kr: {
+            name: 'ئەندازەگەری',
+            description: 'ئەندازە گەری لقێکە لە بیرکاری کە  کاردەکات لەگەڵ پێوانەکردن، تایبەتمەندیەکان، وە پەیوەندی نێوان خاڵەکان، هێڵەکان، گۆشەکان، ڕووەکان، و مادە رەقەکان.'
+        },
+        urlName: 'geometry',
+        keywords: [
+            'geometry'
+        ],
+        calculatorsUrlName: [
+        ]
     }
 ]
 
