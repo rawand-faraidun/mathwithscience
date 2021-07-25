@@ -63,7 +63,8 @@ export default function CollectionsRoutes() {
                         list={Collections.find({
                             language: true,
                             changeUrl: 'collections',
-                            sort: { sortingLanguage: languageHelper.getLanguageSymbol() }
+                            sort: { sortingLanguage: languageHelper.getLanguageSymbol() },
+                            briefDescription: 150
                         })}
                     />
 
@@ -106,7 +107,8 @@ export default function CollectionsRoutes() {
             language: true,
             removeComponent: true,
             changeUrl: `collections/${collection.urlName}`,
-            sort: { sortingLanguage: languageHelper.getLanguageSymbol() }
+            sort: { sortingLanguage: languageHelper.getLanguageSymbol() },
+            briefDescription: 150
         })
 
 
@@ -146,7 +148,7 @@ export default function CollectionsRoutes() {
     if (route.collectionUrlName && route.calculatorUrlName) {
 
         // getting the calculator choosen in the url
-        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName })
+        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
 
 
         // checking if the collection was vailed

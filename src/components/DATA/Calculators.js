@@ -18,6 +18,7 @@ import Calculators from './Calculators-Data'
  *      @language {Boolean} : determines if only returning results in one language or all languages
  *      @removeComponent {Boolean} : determines if removing component function or not
  *      @changeUrl {String} : determines if adding a text before urlName or not
+ *      @briefDescription {Number} : determines if cutting descriptions to a specific length and adding 3 dots if it was cut.
  * 
  *  @return {Array} : an array of Calculators that meets the conditions
  */
@@ -91,6 +92,23 @@ function find(conditions) {
             // adding the text before the url
             calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`
             return calculator
+        })
+    }
+
+    // checking for briefDescription
+    // it will cut description to a specific length if it was longer and adds 3 dots after wars
+    if (conditions?.briefDescription) {
+        result.forEach(collection => {
+
+            // this collections description
+            let description = collection[languageHelper.getLanguageSymbol()].description
+
+            // cutting the collection description if it was longer
+            collection[languageHelper.getLanguageSymbol()].description =
+                description.length > conditions.briefDescription ?
+                    `${description.substring(0, conditions.briefDescription)}...` : description
+
+            return collection
         })
     }
 
@@ -190,6 +208,7 @@ function findOne(conditions) {
  *      @language : {Boolean}, determines if only returning results in one language or all languages
  *      @removeComponent : {Boolean}, determines if removing component function or not
  *      @changeUrl : {String}, determines if adding a text before urlName or not
+ *      @briefDescription {Number} : determines if cutting descriptions to a specific length and adding 3 dots if it was cut.
  * 
  *  @return {Array} : an array of Calculators that meets the conditions
  */
@@ -254,6 +273,23 @@ function findIn(conditions) {
             // adding the text before the url
             calculator.urlName = `${conditions.changeUrl}/${calculator.urlName}`
             return calculator
+        })
+    }
+
+    // checking for briefDescription
+    // it will cut description to a specific length if it was longer and adds 3 dots after wars
+    if (conditions?.briefDescription) {
+        result.forEach(collection => {
+
+            // this collections description
+            let description = collection[languageHelper.getLanguageSymbol()].description
+
+            // cutting the collection description if it was longer
+            collection[languageHelper.getLanguageSymbol()].description =
+                description.length > conditions.briefDescription ?
+                    `${description.substring(0, conditions.briefDescription)}...` : description
+
+            return collection
         })
     }
 

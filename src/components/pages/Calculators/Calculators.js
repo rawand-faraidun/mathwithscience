@@ -31,7 +31,7 @@ function CalculatorsRoutes() {
 
     // getting params of the route
     const route = useParams()
-    
+
 
 
 
@@ -59,7 +59,13 @@ function CalculatorsRoutes() {
                             title: componentContent[languageHelper.getLanguageSymbol()].title,
                             description: componentContent[languageHelper.getLanguageSymbol()].description
                         }}
-                        list={Calculators.find({ language: true, removeComponent: true, changeUrl: 'calculators', sort: { sortingLanguage: languageHelper.getLanguageSymbol() } })}
+                        list={Calculators.find({
+                            language: true,
+                            removeComponent: true,
+                            changeUrl: 'calculators',
+                            sort: { sortingLanguage: languageHelper.getLanguageSymbol() },
+                            briefDescription: 150
+                        })}
                     />
 
                 </div>
@@ -73,7 +79,7 @@ function CalculatorsRoutes() {
 
     // if there was calculatorUrlName, then it is a calculator page
     if (route.calculatorUrlName) {
-        
+
         /**
         * @todo make this check for the calculator and show it's page
         */

@@ -13,10 +13,11 @@ import Collections from './Collections-Data'
  *      @Sort {Object} : 
  *          @sortingLanguage {String} : determines if the sorting be based on language, if not use english
  *          @sortingType {Number: 1 || -1} : determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
+ *      @limit {Number} : determines if setting limit to returning results
  *      @searchQuery {String} : the search text that used to search for collections
  *      @language {Boolean} : determines if only returning results in one language or all languages
  *      @changeUrl {String} : determines if adding a text before urlName or not
- *      @limit {Number} : determines if setting limit to returning results
+ *      @briefDescription {Number} : determines if cutting descriptions to a specific length and adding 3 dots if it was cut.
  * 
  *  @return {Array} : found collections
  */
@@ -75,10 +76,27 @@ function find(conditions) {
 
 
     // checking for changingUrl
-    // it will add the choosen text before url of each collection
+    // it will add the choosen text before url
     if (conditions?.changeUrl) {
         result.forEach(collection => {
             collection.urlName = `${conditions.changeUrl}/${collection.urlName}`
+            return collection
+        })
+    }
+
+    // checking for briefDescription
+    // it will cut description to a specific length if it was longer and adds 3 dots after wars
+    if (conditions?.briefDescription) {
+        result.forEach(collection => {
+
+            // this collections description
+            let description = collection[languageHelper.getLanguageSymbol()].description
+
+            // cutting the collection description if it was longer
+            collection[languageHelper.getLanguageSymbol()].description =
+                description.length > conditions.briefDescription ?
+                    `${description.substring(0, conditions.briefDescription)}...` : description
+
             return collection
         })
     }

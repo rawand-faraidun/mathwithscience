@@ -22,7 +22,7 @@ const componentContent = {
 export default function PopularCalculators() {
 
     // getting the calculators
-    const calculators = Calculators.find({ language: true, removeComponent: true, limit: 12 })
+    const calculators = Calculators.find({ language: true, removeComponent: true, limit: 12, briefDescription: 100 })
 
 
     return (
@@ -49,7 +49,7 @@ export default function PopularCalculators() {
 
                             {/* calculator description */}
                             <p className={`calculator-description ${languageHelper.getClass()}`}>
-                                {`${calculator[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
+                                {calculator[languageHelper.getLanguageSymbol()].description}
                             </p>
                         </Link>
                     )}

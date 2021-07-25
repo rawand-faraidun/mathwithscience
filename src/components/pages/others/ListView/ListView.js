@@ -51,10 +51,7 @@ export default function listView(props) {
 
                             {/* item description */}
                             <p className={`grid-item-description ${languageHelper.getClass()}`}>
-                                {item[languageHelper.getLanguageSymbol()].description.length > 150 ? // if the description was longer than 150 characters, shorterning it
-                                    `${item[languageHelper.getLanguageSymbol()].description.substring(0, 150)}...` :
-                                    `${item[languageHelper.getLanguageSymbol()].description}.`
-                                }
+                                {item[languageHelper.getLanguageSymbol()].description}
                             </p>
                         </div>
                     )}

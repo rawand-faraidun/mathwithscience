@@ -20,7 +20,7 @@ function SearchResult(props) {
     // getting all collections, preventing it from reruning
     const collections = useMemo(() => {
         // getting all collections
-        return Collections.find({ language: true, changeUrl: 'collections' })
+        return Collections.find({ language: true, changeUrl: 'collections', sort: { sortingLanguage: languageHelper.getLanguageSymbol() }, briefDescription: 100 })
     }, [])
 
 
@@ -34,10 +34,23 @@ function SearchResult(props) {
     // otherwise, it will be result of search in collections and calculators based on search text
     else {
         // getting collections based on search text
-        const searchCollectionsResult = Collections.find({ searchQuery: props.searchtext, language: true, changeUrl: 'collections' })
+        const searchCollectionsResult = Collections.find({
+            searchQuery: props.searchtext,
+            language: true,
+            changeUrl: 'collections',
+            sort: { sortingLanguage: languageHelper.getLanguageSymbol() },
+            briefDescription: 100
+        })
 
         // getting calculators based on search text
-        const searchCalculatorsResult = Calculators.find({ searchQuery: props.searchtext, removeComponent: true, language: true, changeUrl: 'calculators' })
+        const searchCalculatorsResult = Calculators.find({
+            searchQuery: props.searchtext,
+            removeComponent: true,
+            language: true,
+            changeUrl: 'calculators',
+            sort: { sortingLanguage: languageHelper.getLanguageSymbol() },
+            briefDescription: 100
+        })
 
         // setting both results as searchResult
         searchResult = [...searchCollectionsResult, ...searchCalculatorsResult].slice(0, 12)
@@ -60,7 +73,7 @@ function SearchResult(props) {
 
                         {/* result description */}
                         <p className={`result-description ${languageHelper.getClass()}`}>
-                            {`${result[languageHelper.getLanguageSymbol()].description.substring(0, 100)}...`}
+                            {result[languageHelper.getLanguageSymbol()].description}
                         </p>
                     </Link>
                 )}
