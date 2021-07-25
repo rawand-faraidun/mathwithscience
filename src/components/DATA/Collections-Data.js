@@ -5,11 +5,11 @@ const Collections = [
     {
         en: {
             name: 'Algebra',
-            description: 'Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols. In elementary algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables'
+            description: 'Algebra is a branch of mathematics dealing with symbols and the rules for manipulating those symbols. In elementary algebra, those symbols (today written as Latin and Greek letters) represent quantities without fixed values, known as variables.'
         },
         kr: {
             name: 'زانستی جەبر',
-            description: 'زانستی جەبر لقێکە لە بیرکاری کە کاردەکات لەگەڵ هێماکان و یاساکانی چارەسەرکردنی ئەو هێمایانە. لە زانستی جەبری سەرەتایی، ئەو هێمایانە (لەئێستایا بە پیتی یۆنانی ئەنوسرێن) گوزارشت لە بڕی بەها ناجێگیر ئەکەن، کە ناسراون بە گۆڕدراو'
+            description: 'زانستی جەبر لقێکە لە بیرکاری کە کاردەکات لەگەڵ هێماکان و یاساکانی چارەسەرکردنی ئەو هێمایانە. لە زانستی جەبری سەرەتایی، ئەو هێمایانە (لەئێستایا بە پیتی یۆنانی ئەنوسرێن) گوزارشت لە بڕی بەها ناجێگیر ئەکەن، کە ناسراون بە گۆڕدراو.'
         },
         urlName: 'algebra',
         keywords: [
@@ -22,11 +22,11 @@ const Collections = [
     {
         en: {
             name: 'Unit Conversion',
-            description: 'Conversion of Units is a multi-step process that converts units of measurement for the same quantity'
+            description: 'Conversion of Units is a multi-step process that converts units of measurement for the same quantity.'
         },
         kr: {
             name: 'گۆڕانکاری یەکەکان',
-            description: 'گۆڕانکاری یەکەکان پڕۆسەیەکی چەند هەنگاویە کە یەکەکان ئەگۆڕێت بۆ هەمان بڕ'
+            description: 'گۆڕانکاری یەکەکان پڕۆسەیەکی چەند هەنگاویە کە یەکەکان ئەگۆڕێت بۆ هەمان بڕ.'
         },
         urlName: 'unit-conversion',
         keywords: [
