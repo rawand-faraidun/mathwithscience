@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import languageHelper from './components/partials/languageHelper'
+import ScrollToTop from './components/partials/ScrollToTop'
 // partial component
 import Header from './components/partials/Header/Header'
 import Footer from './components/partials/Footer/Footer'
@@ -32,6 +33,10 @@ export default function App() {
     return (
         <>
             <Router>
+
+                {/* scrolling to top of page when the route url changes */}
+                <ScrollToTop />
+                
 
                 {/* Adding header of the page */}
                 <Header />
