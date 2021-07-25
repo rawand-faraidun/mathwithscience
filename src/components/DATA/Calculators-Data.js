@@ -23,11 +23,11 @@ const Calculators = [
     {
         en: {
             name: 'Proportion Ratio',
-            description: 'Proportion Ratio states that two fractions on each side of an equation are equal'
+            description: 'Proportion Ratio states that two fractions on each side of an equation are equal.'
         },
         kr: {
             name: 'ڕێژەی تێکڕا',
-            description: 'ڕێژەی تێکڕا پشت ڕاست دەکاتەوە کە دوو کەرت لە هەردوولای هاوکێشەیەک یەکسانن'
+            description: 'ڕێژەی تێکڕا پشت ڕاست دەکاتەوە کە دوو کەرت لە هەردوولای هاوکێشەیەک یەکسانن.'
         },
         urlName: 'proportion-ratio',
         keywords: [
@@ -38,11 +38,11 @@ const Calculators = [
     {
         en: {
             name: 'Equation Solver',
-            description: 'Consisting generally of two expressions related by an equals sign. When seeking a solution, one or more variables are designated as unknowns'
+            description: 'Consisting generally of two expressions related by an equals sign. When seeking a solution, one or more variables are designated as unknowns.'
         },
         kr: {
             name: 'شیکارکەری هاوکێشە',
-            description: 'بە گشتی پێک دێ لە دوو دەربڕین کە پەیوەندی یەکسان لە نێوانیان هەیە. کاتێک بۆ ئەنجام ئەگەڕێن گۆڕدراوێک یان زیاتر بە نەنزانراو دیاریئەکرێن'
+            description: 'بە گشتی پێک دێ لە دوو دەربڕین کە پەیوەندی یەکسان لە نێوانیان هەیە. کاتێک بۆ ئەنجام ئەگەڕێن گۆڕدراوێک یان زیاتر بە نەنزانراو دیاریئەکرێن.'
         },
         urlName: 'equation-solver',
         keywords: [
@@ -53,11 +53,11 @@ const Calculators = [
     {
         en: {
             name: 'Prime Checker',
-            description: 'A place to test if a number is prime or not'
+            description: 'A place to test if a number is prime or not.'
         },
         kr: {
             name: 'پشکنەری ژمارەی خۆبەش',
-            description: 'شوێنێک بۆ تاقیکردنەوەی ئایا ژمارەیەک خۆبەشە یاخود نا'
+            description: 'شوێنێک بۆ تاقیکردنەوەی ئایا ژمارەیەک خۆبەشە یاخود نا.'
         },
         urlName: 'prime-checker',
         keywords: [
@@ -68,11 +68,11 @@ const Calculators = [
     {
         en: {
             name: 'Weight',
-            description: 'Convert weight from any unit to other ones'
+            description: 'Convert weight from any unit to other ones.'
         },
         kr: {
             name: 'كێش',
-            description: 'کێش لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'کێش لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'weight',
         keywords: [
@@ -83,11 +83,11 @@ const Calculators = [
     {
         en: {
             name: 'Volume',
-            description: 'Convert volume from any unit to other ones'
+            description: 'Convert volume from any unit to other ones.'
         },
         kr: {
             name: 'قەبارە',
-            description: 'قەبارە لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'قەبارە لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'volume',
         keywords: [
@@ -98,11 +98,11 @@ const Calculators = [
     {
         en: {
             name: 'Power',
-            description: 'Convert power from any unit to other ones'
+            description: 'Convert power from any unit to other ones.'
         },
         kr: {
             name: 'توانا',
-            description: 'توانا لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'توانا لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'power',
         keywords: [
@@ -113,11 +113,11 @@ const Calculators = [
     {
         en: {
             name: 'Area',
-            description: 'Convert area from any unit to other ones'
+            description: 'Convert area from any unit to other ones.'
         },
         kr: {
             name: 'ڕووبەر',
-            description: 'ڕووبەر لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'ڕووبەر لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'area',
         keywords: [
@@ -128,11 +128,11 @@ const Calculators = [
     {
         en: {
             name: 'Length',
-            description: 'Convert length from any unit to other ones'
+            description: 'Convert length from any unit to other ones.'
         },
         kr: {
             name: 'درێژی',
-            description: 'درێژی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'درێژی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'length',
         keywords: [
@@ -143,11 +143,11 @@ const Calculators = [
     {
         en: {
             name: 'Force',
-            description: 'Convert force from any unit to other ones'
+            description: 'Convert force from any unit to other ones.'
         },
         kr: {
             name: 'هێز',
-            description: 'هێز لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'هێز لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'force',
         keywords: [
@@ -158,11 +158,11 @@ const Calculators = [
     {
         en: {
             name: 'Time',
-            description: 'Convert time from any unit to other ones'
+            description: 'Convert time from any unit to other ones.'
         },
         kr: {
             name: 'کات',
-            description: 'کات لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'کات لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'time',
         keywords: [
@@ -173,11 +173,11 @@ const Calculators = [
     {
         en: {
             name: 'Speed',
-            description: 'Convert speed from any unit to other ones'
+            description: 'Convert speed from any unit to other ones.'
         },
         kr: {
             name: 'خێرایی',
-            description: 'خێرایی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'خێرایی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'speed',
         keywords: [
@@ -188,11 +188,11 @@ const Calculators = [
     {
         en: {
             name: 'Angle',
-            description: 'Convert angle from any unit to other ones'
+            description: 'Convert angle from any unit to other ones.'
         },
         kr: {
             name: 'گۆشە',
-            description: 'گۆشە لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'گۆشە لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'angle',
         keywords: [
@@ -203,11 +203,11 @@ const Calculators = [
     {
         en: {
             name: 'Tempreature',
-            description: 'Convert tempreature from any unit to other ones'
+            description: 'Convert tempreature from any unit to other ones.'
         },
         kr: {
             name: 'پلەی گەرمی',
-            description: 'پلەی گەرمی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'پلەی گەرمی لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'tempreature',
         keywords: [
@@ -218,11 +218,11 @@ const Calculators = [
     {
         en: {
             name: 'Digital Storage',
-            description: 'Convert digital storage from any unit to other ones'
+            description: 'Convert digital storage from any unit to other ones.'
         },
         kr: {
             name: 'عەمباری دیجیتاڵی',
-            description: 'عەمباری دیجیتاڵی (قەبارەی هەڵگرتنی دەیتا) لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر'
+            description: 'عەمباری دیجیتاڵی (قەبارەی هەڵگرتنی دەیتا) لە یەکەیەکەوە بگۆڕە بۆ هەریەکەیەکی تر.'
         },
         urlName: 'digital-storage',
         keywords: [
