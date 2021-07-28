@@ -6,6 +6,7 @@ import './collections.css'
 import languageHelper from '../../partials/languageHelper'
 import ListView from '../others/ListView/ListView'
 import CalculatorPage from '../others/CalculatorPage/CalculatorPage'
+import NotFound404 from '../others/NotFound404/NotFound404'
 const Collections = require('../../DATA/Collections')
 const Calculators = require('../../DATA/Calculators')
 
@@ -83,21 +84,10 @@ export default function CollectionsRoutes() {
         // getting the collection choosen in the url
         const collection = Collections.findOne({ urlName: route.collectionUrlName })
 
-
         // checking if the collection was vailed
         if (collection === undefined) {
-            /**
-             * @todo add 404 not found here
-             */
-
-            console.log('undefined collection')
-            return (
-                <>
-                    <div className="undefined" style={{ marginTop: 'var(--first-element-margin-top)' }}>
-                        <h1>undefined collection</h1>
-                    </div>
-                </>
-            )
+            return <NotFound404 invailedUrl={`collections/${route.collectionUrlName}`}
+                customButton={{ name: 'Collections', url: '/collections' }} />
         }
 
 
@@ -147,30 +137,26 @@ export default function CollectionsRoutes() {
     // if there both params, so it a calculator in a collection
     if (route.collectionUrlName && route.calculatorUrlName) {
 
-        // getting the calculator choosen in the url
-        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
+        // getting the collection choosen in the url
+        const collection = Collections.findOne({ urlName: route.collectionUrlName, language: true })
 
+        // checking if the collection was vailed
+        if (collection === undefined) {
+            return <NotFound404 invailedUrl={`collections/${route.collectionUrlName}/${route.calculatorUrlName}`}
+                customButton={{ name: 'Collections', url: '/collections' }} />
+        }
+        
+
+        // getting the collection choosen in the url
+        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
 
         // checking if the collection was vailed
         if (calculator === undefined) {
-            /**
-             * @todo add 404 not found here
-             */
-
-            console.log('undefined collection')
-            return (
-                <>
-                    <div className="undefined" style={{ marginTop: 'var(--first-element-margin-top)' }}>
-                        <h1>undefined collection</h1>
-                    </div>
-                </>
-            )
+            return <NotFound404 invailedUrl={`collections/${route.collectionUrlName}/${route.calculatorUrlName}`}
+                customButton={{ name: collection[languageHelper.getLanguageSymbol()].name, url: `/collections/${collection.urlName}` }} />
         }
 
 
-        /**
-        * @todo make this check for the calculator in the collection
-        */
         return (
             <>
                 <div className="collection-calculator long-element">
