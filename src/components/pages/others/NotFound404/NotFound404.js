@@ -34,12 +34,12 @@ export default function NotFound404(props) {
                     {/* if there was custom button property */}
                     {
                         props.customButton !== undefined ?
-                            <Link to="/" className="button" style={{ backgroundColor: 'var(--main-blue-color)' }}>Home Page</Link> :
-                            ''
+                            <Link to={props.customButton.url} className="button" style={{ backgroundColor: 'var(--main-green-color)' }}>{props.customButton.name}</Link>
+                            : ''
                     }
 
                     {/* home button */}
-                    <Link to={props.customButton.url} className="button" style={{ backgroundColor: 'var(--main-green-color)' }}>{props.customButton.name}</Link>
+                    <Link to="/" className="button" style={{ backgroundColor: 'var(--main-blue-color)' }}>Home Page</Link>
                 </div>
             </div>
         </>
