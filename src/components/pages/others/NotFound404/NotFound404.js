@@ -7,6 +7,10 @@ import './not-found-404.css'
 
 /**
  * @param {Object} props :
+ *      @invailedUrl {String} : the invailed url to be shown
+ *      @customButton {Object} :
+ *          @url {String} : url of the custom button
+ *          @name {String} : name of the custom button
  * 
  *  @return {Element} : 404 not found element
  */
@@ -22,7 +26,7 @@ export default function NotFound404(props) {
                 </div>
 
                 {/* 404 not found text */}
-                <h4 className="text-404">can not find "<code className="url-404">{props.url}</code>" page</h4>
+                <h4 className="text-404">can not find "<code className="url-404">{props.invailedUrl}</code>" page</h4>
 
                 {/* routes buttons */}
                 <div className="buttons-404">
