@@ -145,7 +145,7 @@ export default function CollectionsRoutes() {
             return <NotFound404 invailedUrl={`collections/${route.collectionUrlName}/${route.calculatorUrlName}`}
                 customButton={{ name: 'Collections', url: '/collections' }} />
         }
-        
+
 
         // getting the collection choosen in the url
         const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
@@ -162,7 +162,7 @@ export default function CollectionsRoutes() {
                 <div className="collection-calculator long-element">
 
                     {/* Getting wanted calculator */}
-                    <CalculatorPage calculatorData={calculator} haveHeader={true} useHelmet={true} />
+                    <CalculatorPage calculatorData={calculator} haveHeader useHelmet />
 
                 </div>
             </>
