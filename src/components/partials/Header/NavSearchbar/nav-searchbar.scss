@@ -44,8 +44,9 @@
         border-radius: 50%;
     }
 
-    // when the searchbar is hovered, it will expand
-    &:hover {
+    // when the searchbar is hovered or focused, it will expand
+    &:hover,
+    &:focus-within {
         width: 200px;
     }
 }
