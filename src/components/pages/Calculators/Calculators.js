@@ -5,6 +5,8 @@ import { Helmet } from "react-helmet"
 import './calculators.css'
 import ListView from '../others/ListView/ListView'
 import languageHelper from '../../partials/languageHelper'
+import NotFound404 from '../others/NotFound404/NotFound404'
+import CalculatorPage from '../others/CalculatorPage/CalculatorPage'
 const Calculators = require('../../DATA/Calculators')
 
 
@@ -79,31 +81,25 @@ function CalculatorsRoutes() {
 
     // if there was calculatorUrlName, then it is a calculator page
     if (route.calculatorUrlName) {
+        
+        // getting the collection choosen in the url
+        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
 
-        /**
-        * @todo make this check for the calculator and show it's page
-        */
+        // checking if the collection was vailed
+        if (calculator === undefined) {
+            return <NotFound404 invailedUrl={`calculators/${route.calculatorUrlName}`}
+                customButton={{ name: 'calculators', url: '/calculators' }} />
+        }
+
+        
         return (
             <>
-                {/* overriding document head */}
-                <Helmet>
-                    <title>TITLE | Math with Science</title>
-                    <meta name="description" content="DESCRIPTION" />
-                </Helmet>
+            <div className="collection-calculator long-element">
 
+                {/* Getting wanted calculator */}
+                <CalculatorPage calculatorData={calculator} haveHeader={true} useHelmet={true} />
 
-                <div className="calculator-component">
-
-                    {/* list grid */}
-                    <ListView
-                        header={{
-                            title: 'NAME',
-                            description: 'DESCRIPTION'
-                        }}
-                        list={[]}
-                    />
-
-                </div>
+            </div>
             </>
         )
     }
