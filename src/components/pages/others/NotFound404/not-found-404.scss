@@ -1,0 +1,74 @@
+/******************
+***Not Found 404***
+******************/
+
+// Not Found 404
+.not-found-404 {
+    margin: auto;
+    margin-top: var(--first-element-margin-top);
+    width: var(--width);
+    text-align: center;
+
+    // 404 number container
+    // using container to position in center, cant be done with the text itself because of the background
+    .number-404-container {
+        margin: auto;
+        width: fit-content;
+
+        // 404 number
+        .number-404 {
+            font-family: var(--body-font-family);
+            // font-size: 300px;
+            font-size: clamp(150px, 35vw, 300px);
+            color: transparent;
+            width: fit-content;
+            background: linear-gradient(236deg, #00cc80, #00c2ff);
+            background-size: 400% 400%;
+            background-clip: text;
+            animation: GradientBackground 6s ease infinite;
+
+            // 404 number animation keyframe
+            @keyframes GradientBackground {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        }
+    }
+
+    // 404 text
+    .text-404 {
+        // margin-top: -3rem;
+        font-family: var(--body-font-family);
+        font-size: var(--large-font-size);
+        color: var(--body-text-color);
+
+        // the url in 404 page
+        .url-404 {
+            font-family: monospace;
+        }
+    }
+
+    // routes buttons
+    .buttons-404 {
+        margin: auto;
+        margin-top: 2rem;
+
+        // each button
+        .button {
+            margin: 0.5rem;
+            padding: 0.6rem;
+            font-family: var(--body-font-family);
+            font-size: var(--medium-font-size);
+            font-weight: 700;
+            color: var(--white-color);
+            border-radius: 0.3rem;
+        }
+    }
+}
