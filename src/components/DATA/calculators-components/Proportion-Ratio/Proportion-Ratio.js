@@ -70,7 +70,7 @@ export default function ProportionRatio() {
             <div className="proportion-ratio">
 
                 {/* controls */}
-                <div className="controls">
+                <div className="dropdown-controls">
 
                     {/* control label */}
                     <label htmlFor="method" className={`label control-label ${languageHelper.getClass()}`}>

@@ -8,18 +8,6 @@
     width: 20rem;
     margin: auto;
 
-    // proportion ratio controls
-    .controls {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-
-        // the space between the label and the dropdown
-        .space {
-            margin: 0 1rem;
-        }
-    }
-
     // calculator part
     .calculator {
         margin-top: 2rem;
