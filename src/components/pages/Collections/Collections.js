@@ -148,7 +148,7 @@ export default function CollectionsRoutes() {
 
 
         // getting the collection choosen in the url
-        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName, language: true })
+        const calculator = Calculators.findOne({ urlName: route.calculatorUrlName })
 
         // checking if the collection was vailed
         if (calculator === undefined) {
