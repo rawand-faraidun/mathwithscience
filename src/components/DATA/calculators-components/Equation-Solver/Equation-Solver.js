@@ -133,7 +133,7 @@ const componentContent = {
                                 }
 
                                 return <input key={i} type="number" id="answer" className="answer input-field answer-field" placeholder="" autoComplete="off"
-                                    readOnly={true}
+                                    readOnly
                                     dir="ltr"
                                     value={answer}
                                     onClick={(e) => { e.target.select() }}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 import './calculators.css'
 import ListView from '../others/ListView/ListView'
@@ -94,10 +94,10 @@ function CalculatorsRoutes() {
         
         return (
             <>
-            <div className="collection-calculator long-element">
+            <div className="calculators long-element">
 
                 {/* Getting wanted calculator */}
-                <CalculatorPage calculatorData={calculator} haveHeader={true} useHelmet={true} />
+                <CalculatorPage calculatorData={calculator} haveHeader useHelmet />
 
             </div>
             </>

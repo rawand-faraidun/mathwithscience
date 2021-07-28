@@ -12,7 +12,6 @@ import languageHelper from '../../../partials/languageHelper'
  *          @description {String} : description of the list
  *      @list : {Array}, array of the list
  *      
- * 
  *  @return {Element} : List grid view element
  */
 export default function listView(props) {

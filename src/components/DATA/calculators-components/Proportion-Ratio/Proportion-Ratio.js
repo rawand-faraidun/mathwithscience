@@ -128,7 +128,7 @@ export default function ProportionRatio() {
                         {/* answer */}
                         <div className="answer">
                             <input type="number" id="answer" className="input-field answer-field" autoComplete="off"
-                                placeholder={values.method === 'directly' ? '4' : values.method === 'indirectly' ? '16' : ''} readOnly={true}
+                                placeholder={values.method === 'directly' ? '4' : values.method === 'indirectly' ? '16' : ''} readOnly
                                 value={values.answer}
                                 onClick={(e) => { e.target.select() }}
                             />

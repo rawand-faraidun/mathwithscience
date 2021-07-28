@@ -167,7 +167,7 @@ export default function ProportionRatio() {
                         {/* previous prime field */}
                         <input type="number" id="previous-prime" className="input-field answer-field previous-input" autoComplete="off"
                             value={values.previous}
-                            readOnly={true}
+                            readOnly
                             onClick={(e) => { e.target.select() }}
                         />
                     </div>
@@ -183,7 +183,7 @@ export default function ProportionRatio() {
                         {/* next prime field */}
                         <input type="number" id="next-prime" className="input-field answer-field next-input" autoComplete="off"
                             value={values.next}
-                            readOnly={true}
+                            readOnly
                             onClick={(e) => { e.target.select() }}
                         />
                     </div>
