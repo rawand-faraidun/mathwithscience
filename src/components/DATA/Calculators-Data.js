@@ -13,6 +13,7 @@ import Speed from './calculators-components/Speed/Speed'
 import Angle from './calculators-components/Angle/Angle'
 import Tempreature from './calculators-components/Tempreature/Tempreature'
 import DigitalStorage from './calculators-components/Digital-Storage/Digital-Storage'
+import Circle from './calculators-components/Circle/Circle'
 
 
 
@@ -229,6 +230,21 @@ const Calculators = [
             'digital storage',
         ],
         component: <DigitalStorage />
+    },
+    {
+        en: {
+            name: 'Circle',
+            description: 'Calculate any property of circle.'
+        },
+        kr: {
+            name: 'بازنە',
+            description: 'هەژماری هەر تایبەتمەندیەکی بازنە بکە.'
+        },
+        urlName: 'circle',
+        keywords: [
+            'circle',
+        ],
+        component: <Circle />
     },
 ]
 
