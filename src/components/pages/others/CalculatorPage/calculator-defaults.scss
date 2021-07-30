@@ -87,7 +87,19 @@
 
 ////////////////
 
-// input labels
+// proportion ratio controls
+.dropdown-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    // the space between the label and the dropdown
+    .space {
+        margin: 0 1rem;
+    }
+}
+
+// dropdowns
 .dropdown {
     margin-left: -0.25rem;
     padding: 0.25rem;
@@ -142,4 +154,40 @@
         grid-template-columns: repeat(1, 100%);
         column-gap: unset;
     }
+}
+
+// component-oneline
+.component-oneline {
+    display: grid;
+    grid-template-columns: 1 100%;
+    row-gap: 3rem;
+}
+
+// component-oneline but with max width of 20rem
+.component-small {
+    margin: auto;
+    width: clamp(0px, 100%, 20rem);
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// calculators spacing
+
+// calculators margin-top 4 rem
+.calculators-margin-top-4 {
+    margin-top: 4rem !important;
+}
+
+// calculators margin-top 3 rem
+.calculators-margin-top-3 {
+    margin-top: 3rem !important;
+}
+
+// calculators margin-top 2 rem
+.calculators-margin-top-2 {
+    margin-top: 2rem !important;
 }
