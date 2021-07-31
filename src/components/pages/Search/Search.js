@@ -34,8 +34,8 @@ export default function CalculatorsRoutes() {
     const route = useParams()
 
     // getting the collections and calculators choosen in the url
-    const collections = Collections.find({ searchQuery: route.searchText })
-    const calculators = Calculators.find({ searchQuery: route.searchText })
+    const collections = Collections.find({ searchQuery: route.searchText, changeUrl: 'collections' })
+    const calculators = Calculators.find({ searchQuery: route.searchText, changeUrl: 'calculators' })
 
     return (
         <>
