@@ -70,7 +70,7 @@ const componentContent = {
 
 
                 {/* homepage searchbar */}
-                <div className="search">
+                <div className="home-search">
 
                     {/* homepage search heading text */}
                     <h1 className={`search-title ${languageHelper.getClass()}`}>
