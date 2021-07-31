@@ -10,11 +10,11 @@ import Collections from './Collections-Data'
  * quering collections based on conditions
  * 
  * @param {Object} conditions : quering conditions
+ *      @searchQuery {String} : the search text that used to search for collections
  *      @Sort {Object} : 
  *          @sortingLanguage {String} : determines if the sorting be based on language, if not use english
  *          @sortingType {Number: 1 || -1} : determines the sorting way, 1 for ASC and -1 for DESC, if not specified use ASC
  *      @limit {Number} : determines if setting limit to returning results
- *      @searchQuery {String} : the search text that used to search for collections
  *      @language {Boolean} : determines if only returning results in one language or all languages
  *      @changeUrl {String} : determines if adding a text before urlName or not
  *      @briefDescription {Number} : determines if cutting descriptions to a specific length and adding 3 dots if it was cut.
