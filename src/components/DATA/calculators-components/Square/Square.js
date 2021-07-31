@@ -102,7 +102,7 @@ function SquareSvg(props) {
                         stroke: props.diameter ? props.diameter : 'var(--main-background-color)',
                         strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                     }} />
-                <g id="square-2" data-name="square">
+                <g id="square-frame" data-name="square">
                     <line id="right" x1="102.5" y1="102.5" x2="102.5" y2="2.5"
                         style={{
                             fill: 'none',
