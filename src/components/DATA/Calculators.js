@@ -33,13 +33,13 @@ function find(conditions) {
     if (conditions?.searchQuery) {
         result = result.filter(calculator => {
 
-            // returning the ones that english or kurdish name or description includes the search text
+            // returning the ones that english or kurdish name or description or keywords includes the search text
             return (
                 calculator.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.keywords.includes(conditions.searchQuery.toLowerCase())
+                calculator.keywords.filter(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
             )
         })
     }

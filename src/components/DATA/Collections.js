@@ -32,13 +32,13 @@ function find(conditions) {
     if (conditions?.searchQuery) {
         result = result.filter(collection => {
 
-            // returning the ones that english or kurdish name or description includes the search text
+            // returning the ones that english or kurdish name or description or keywords includes the search text
             return (
                 collection.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 collection.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 collection.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 collection.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                collection.keywords.includes(conditions.searchQuery.toLowerCase())
+                collection.keywords.filter(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
             )
         })
     }
