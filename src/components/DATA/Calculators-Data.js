@@ -15,6 +15,7 @@ import Tempreature from './calculators-components/Tempreature/Tempreature'
 import DigitalStorage from './calculators-components/Digital-Storage/Digital-Storage'
 import Circle from './calculators-components/Circle/Circle'
 import Square from './calculators-components/Square/Square'
+import Rectangle from './calculators-components/Rectangle/Rectangle'
 
 
 
@@ -261,6 +262,21 @@ const Calculators = [
             'square',
         ],
         component: <Square />
+    },
+    {
+        en: {
+            name: 'Rectangle',
+            description: 'Calculate any property of rectangle.'
+        },
+        kr: {
+            name: 'لاکێشە',
+            description: 'هەژماری هەر تایبەتمەندیەکی لاکێشە بکە.'
+        },
+        urlName: 'rectangle',
+        keywords: [
+            'rectangle',
+        ],
+        component: <Rectangle />
     },
 ]
 
