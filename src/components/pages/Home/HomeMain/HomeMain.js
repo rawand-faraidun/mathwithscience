@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom';
 
 import './home-main.css'
 import Particles from 'react-particles-js'
@@ -24,7 +25,10 @@ const componentContent = {
 /**
  *  @return {Element} : home main element
  */
- export default function HomeMain() {
+export default function HomeMain() {
+
+    // getting history reference
+    const history = useHistory()
 
     // search text
     const [searchText, setSearchText] = useState('')
@@ -32,6 +36,14 @@ const componentContent = {
     // handling the inputs in search bar
     function handleSearch(e) {
         setSearchText(e.target.value)
+    }
+
+    // listening to pressing enter, it will redirect user to search route
+    function acceptSearchOnEnter(e) {
+        if (e.keyCode === 13 && searchText !== '') { // enter keycode
+            history.push(`/search/${searchText}`)
+            setSearchText('')
+        }
     }
 
 
@@ -85,6 +97,7 @@ const componentContent = {
                         placeholder={`${componentContent.searchBarPlaceholder[languageHelper.getLanguageSymbol()]}...`}
                         value={searchText}
                         onChange={handleSearch}
+                        onKeyDown={acceptSearchOnEnter}
                         autoComplete="off"
                     />
 

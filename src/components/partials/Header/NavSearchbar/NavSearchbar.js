@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import './nav-searchbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,8 +12,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
  */
 export default function NavSearchbar() {
 
+    // getting history reference
+    const history = useHistory()
     // checking if the user is in home page, this element is not shown in homepage header
     const thisPath = useLocation().pathname
+
 
     // search bar text
     const [searchText, setSearchText] = useState('')
@@ -21,6 +24,22 @@ export default function NavSearchbar() {
     // handling the inputs in search bar
     function search(event) {
         setSearchText(event.target.value)
+    }
+
+    // listening to pressing enter, it will redirect user to search route
+    function acceptSearchOnEnter(e) {
+        if (e.keyCode === 13 && searchText !== '') { // enter keycode
+            history.push(`/search/${searchText}`)
+            setSearchText('')
+        }
+    }
+
+    // click on search icon redirects to search route
+    function acceptSearchByIcon(e) {
+        if (searchText !== '') {
+            history.push(`/search/${searchText}`)
+            setSearchText('')
+        }
     }
 
     return (
@@ -33,14 +52,15 @@ export default function NavSearchbar() {
                     type="text"
                     className="nav-searchbar"
                     placeholder="Search..."
+                    autoComplete="off"
                     value={searchText}
                     onChange={search}
-                    autoComplete="off"
+                    onKeyDown={acceptSearchOnEnter}
                 />
 
                 {/* searchbar search icon */}
                 <div className="nav-search-icon">
-                    <FontAwesomeIcon icon={faSearch} />
+                    <FontAwesomeIcon icon={faSearch} onClick={acceptSearchByIcon} />
                 </div>
             </div>
         </>
