@@ -101,7 +101,7 @@ export default function MakeGeometryElement(props) {
         let mainProperties = getMainProperties(properties)
 
 
-        // calculating single main property
+        // calculating for single main property
         if (mainProperties.length === 1) {
 
             // getting main property
@@ -128,6 +128,34 @@ export default function MakeGeometryElement(props) {
                     nerdamer(
                         nerdamer(property.calculateSelfEquation, // calculating each property for it self
                             { [mainProperty.unit]: newValues[mainProperty.id] } // replacing the main property unit with its value
+                        ).solveFor(property.unit).toString()
+                    ).evaluate().text()
+            }
+        }
+        
+
+        // calculating for more than one main property
+        // in this situations user can only input main properties
+        if (mainProperties.length > 1) {
+
+            // making unit values for main properties
+            // stop if if any of the main properties
+            let mainPropertiesUnits = {}
+            for (let property of mainProperties) {
+                if (newValues[property.id] === '') return setValues(newValues)
+                mainPropertiesUnits[property.unit] = newValues[property.id]
+            }
+
+            // calculating values for other properties
+            for (let property of properties) {
+
+                // skiping main properties
+                if (mainProperties.includes(property)) continue
+
+                newValues[property.id] =
+                    nerdamer(
+                        nerdamer(property.calculateSelfEquation, // calculating each property for it self
+                            mainPropertiesUnits // replacing the main properties units with their value
                         ).solveFor(property.unit).toString()
                     ).evaluate().text()
             }
