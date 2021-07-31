@@ -46,6 +46,19 @@
     }
 }
 
+// the link to search route
+.link-to-search-route {
+    margin-top: 3rem;
+    text-align: center;
+
+    a {
+        font-family: var(--head-font-family);
+        font-size: var(--large-font-size);
+        color: var(--body-text-color);
+        text-decoration: underline;
+    }
+}
+
 ////////////////
 
 // changing search result grid to 2 columns in small screens

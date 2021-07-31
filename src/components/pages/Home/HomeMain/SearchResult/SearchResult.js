@@ -9,6 +9,16 @@ const Calculators = require('../../../../DATA/Calculators')
 
 
 
+// component content
+const componentContent = {
+    goToSearchRoute: {
+        en: 'go to search page for more results ->',
+        kr: '<- بڕۆ بۆ پەڕەی گەڕان بۆ ئەنجامی زیاتر',
+    }
+}
+
+
+
 /**
  * @param {Object} props :
  *      @searchtext {String} : the search text the usear searched for
@@ -78,6 +88,16 @@ function SearchResult(props) {
                     </Link>
                 )}
             </div>
+
+            {/* adding a link to search route if search result was more than 12 */}
+            {searchResult.length === 12 ?
+                <div className="link-to-search-route" >
+                    <Link to={`/search/${props.searchtext}`} className={`${languageHelper.getClass()}`}>
+                        {componentContent.goToSearchRoute[languageHelper.getLanguageSymbol()]}
+                    </Link>
+                </div>
+                : ''
+            }
         </>
     )
 }
