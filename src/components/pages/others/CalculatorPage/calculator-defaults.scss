@@ -141,6 +141,25 @@
     row-gap: 3rem;
 }
 
+// component-oneline
+.component-oneline {
+    display: grid;
+    grid-template-columns: 1 100%;
+    row-gap: 3rem;
+}
+
+// component-small makes max width 500px
+.component-small {
+    margin: auto;
+    width: clamp(0px, 100%, 500px);
+}
+
+// component-smaller makes max width 20rem
+.component-smaller {
+    margin: auto;
+    width: clamp(0px, 100%, 20rem);
+}
+
 // changing component-grid grid to 2 columns in small screens
 @media screen and (max-width: 1024px) {
     .component-grid {
@@ -154,19 +173,11 @@
         grid-template-columns: repeat(1, 100%);
         column-gap: unset;
     }
-}
 
-// component-oneline
-.component-oneline {
-    display: grid;
-    grid-template-columns: 1 100%;
-    row-gap: 3rem;
-}
-
-// component-oneline but with max width of 20rem
-.component-small {
-    margin: auto;
-    width: clamp(0px, 100%, 500px);
+    .component-smaller {
+        margin: auto;
+        width: 100%;
+    }
 }
 
 ////////////////
