@@ -67,13 +67,13 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Circle element
+ *  @return {Element} : Square element
  */
-export default function Circle() {
+export default function Square() {
 
     return (
         <>
-            <MakeGeometryElement componentContent={componentContent} ShapeSvgElement={CircleSvg} />
+            <MakeGeometryElement componentContent={componentContent} ShapeSvgElement={SquareSvg} />
         </>
     )
 }
@@ -83,14 +83,14 @@ export default function Circle() {
 
 /**
  * @param {Object} props :
- *      @radius {Boolean} : radius of the circle
- *      @diameter {Boolean} : diameter of the circle
- *      @area {Boolean} : area of the circle
- *      @circumference {Boolean} : circumference of the circle
+ *      @side {Boolean} : radius of the square
+ *      @diameter {Boolean} : diameter of the square
+ *      @area {Boolean} : area of the square
+ *      @perimeter {Boolean} : perimeter of the square
  * 
- *  @return {Element} : circle svg shape element
+ *  @return {Element} : square svg shape element
  */
-function CircleSvg(props) {
+function SquareSvg(props) {
     return (
         <div style={{ margin: 'auto', width: '10rem' }}>
             <svg id="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105">
@@ -106,25 +106,25 @@ function CircleSvg(props) {
                     <line id="right" x1="102.5" y1="102.5" x2="102.5" y2="2.5"
                         style={{
                             fill: 'none',
-                            stroke: props.circumference ? props.circumference : 'var(--main-background-color)',
+                            stroke: props.perimeter ? props.perimeter : 'var(--main-background-color)',
                             strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                         }} />
                     <line id="bottom" x1="2.5" y1="102.5" x2="102.5" y2="102.5"
                         style={{
                             fill: 'none',
-                            stroke: props.circumference ? props.circumference : 'var(--main-background-color)',
+                            stroke: props.perimeter ? props.perimeter : 'var(--main-background-color)',
                             strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                         }} />
                     <line id="top" x1="102.5" y1="2.5" x2="2.5" y2="2.5"
                         style={{
                             fill: 'none',
-                            stroke: props.circumference ? props.circumference : 'var(--main-background-color)',
+                            stroke: props.perimeter ? props.perimeter : 'var(--main-background-color)',
                             strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                         }} />
                     <line id="left" x1="2.5" y1="2.5" x2="2.5" y2="102.5"
                         style={{
                             fill: 'none',
-                            stroke: props.side || props.circumference ? props.side || props.circumference : 'var(--main-background-color)',
+                            stroke: props.side || props.perimeter ? props.side || props.perimeter : 'var(--main-background-color)',
                             strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                         }} />
                 </g>
