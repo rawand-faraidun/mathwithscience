@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import languageHelper from './components/partials/languageHelper'
 import ScrollToTop from './components/partials/ScrollToTop'
@@ -10,6 +10,7 @@ import Footer from './components/partials/Footer/Footer'
 import Home from './components/pages/Home/Home'
 import CollectionsRoutes from './components/pages/Collections/Collections'
 import CalculatorsRoutes from './components/pages/Calculators/Calculators'
+import Search from './components/pages/Search/Search'
 
 
 
@@ -36,7 +37,7 @@ export default function App() {
 
                 {/* scrolling to top of page when the route url changes */}
                 <ScrollToTop />
-                
+
 
                 {/* Adding header of the page */}
                 <Header />
@@ -75,6 +76,13 @@ export default function App() {
                         exact
                     >
                         <CalculatorsRoutes />
+                    </Route>
+
+
+                    {/* search route */}
+                    <Redirect from="/search" to="/" exact />
+                    <Route path="/search/:searchText" exact >
+                        <Search />
                     </Route>
 
                 </Switch>
