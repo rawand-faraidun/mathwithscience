@@ -38,7 +38,7 @@ function find(conditions) {
                 collection.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 collection.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 collection.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                collection.keywords.filter(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
+                collection.keywords.some(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
             )
         })
     }

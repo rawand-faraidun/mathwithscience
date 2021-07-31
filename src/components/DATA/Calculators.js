@@ -39,7 +39,7 @@ function find(conditions) {
                 calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.keywords.filter(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
+                calculator.keywords.some(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
             )
         })
     }
