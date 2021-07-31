@@ -27,6 +27,23 @@ function find(conditions) {
     let result = cloneDeep(Collections())
 
 
+    // checking for search query
+    // it will make result to only return collections that include searchQuery in one of their properties
+    if (conditions?.searchQuery) {
+        result = result.filter(collection => {
+
+            // returning the ones that english or kurdish name or description includes the search text
+            return (
+                collection.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                collection.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                collection.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                collection.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                collection.keywords.includes(conditions.searchQuery.toLowerCase())
+            )
+        })
+    }
+
+
     // sorting the array by name
     // it will sort the array based on their name
     if (conditions?.sort) {
@@ -44,22 +61,6 @@ function find(conditions) {
     // it will limit the results
     if (conditions?.limit) {
         result = result.slice(0, conditions.limit)
-    }
-
-
-    // checking for search query
-    // it will make result to only return collections that include searchQuery in one of their properties
-    if (conditions?.searchQuery) {
-        result = result.filter(collection => {
-
-            // returning the ones that english or kurdish name or description includes the search text
-            return (
-                collection.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                collection.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                collection.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                collection.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase())
-            )
-        })
     }
 
 

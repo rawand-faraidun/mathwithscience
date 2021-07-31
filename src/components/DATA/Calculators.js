@@ -38,7 +38,8 @@ function find(conditions) {
                 calculator.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase())
+                calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                calculator.keywords.includes(conditions.searchQuery.toLowerCase())
             )
         })
     }
