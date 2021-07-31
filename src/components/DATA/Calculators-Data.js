@@ -14,6 +14,7 @@ import Angle from './calculators-components/Angle/Angle'
 import Tempreature from './calculators-components/Tempreature/Tempreature'
 import DigitalStorage from './calculators-components/Digital-Storage/Digital-Storage'
 import Circle from './calculators-components/Circle/Circle'
+import Square from './calculators-components/Square/Square'
 
 
 
@@ -245,6 +246,21 @@ const Calculators = [
             'circle',
         ],
         component: <Circle />
+    },
+    {
+        en: {
+            name: 'Square',
+            description: 'Calculate any property of square.'
+        },
+        kr: {
+            name: 'چوارگۆشە',
+            description: 'هەژماری هەر تایبەتمەندیەکی چوارگۆشە بکە.'
+        },
+        urlName: 'square',
+        keywords: [
+            'square',
+        ],
+        component: <Square />
     },
 ]
 

@@ -50,7 +50,7 @@ const Collections = [
             'geometry'
         ],
         calculatorsUrlName: [
-            'circle'
+            'circle', 'square'
         ]
     }
 ]

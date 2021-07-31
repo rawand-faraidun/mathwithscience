@@ -30,7 +30,7 @@ export default function listView(props) {
                         <h1 className={`list-view-title ${languageHelper.getClass()}`}>{props.header.title}</h1>
 
                         {/* list view title */}
-                        <p className={`list-view-description ${languageHelper.getClass()}`}>{props.header.description}.</p>
+                        <p className={`list-view-description ${languageHelper.getClass()}`}>{props.header.description}</p>
                     </div>
                 ) : ''}
 
