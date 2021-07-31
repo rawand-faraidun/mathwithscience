@@ -149,7 +149,7 @@ export default function MakeGeometryElement(props) {
 
 
                 {/* controls, showing it only in one main property calculators */}
-                {getMainProperties(properties).length <= 1 ? <div className="dropdown-controls component-small calculators-margin-top-4">
+                {getMainProperties(properties).length <= 1 ? <div className="dropdown-controls component-smaller calculators-margin-top-4">
 
                     {/* control label */}
                     <label htmlFor="inputs-select" className={`label control-label ${languageHelper.getClass()}`}>
