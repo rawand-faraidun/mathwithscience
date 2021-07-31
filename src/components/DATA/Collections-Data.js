@@ -13,7 +13,8 @@ const Collections = [
         },
         urlName: 'algebra',
         keywords: [
-            'algebra'
+            'algebra', 'proportion ratio', 'equation solver', 'prime checker', 'factor', 'operation', 'simplify', 'constants',
+            'جەبر', 'زانستی جەبر', 'ڕێژەی تێکڕا', 'شیکارکەری هاوکێشە', 'پشکنەری ژمارەی خۆبەش', 'هۆکار', 'ئاسانکاری',
         ],
         calculatorsUrlName: [
             'proportion-ratio', 'equation-solver', 'prime-checker'
@@ -30,7 +31,8 @@ const Collections = [
         },
         urlName: 'unit-conversion',
         keywords: [
-            'unit conversion'
+            'unit conversion', 'units', 'measurments', 'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle', 'tempreature', 'digital storage',
+            'گۆڕانکاری یەکەکان', 'یەکە', 'پێوانە', 'کێش', 'قەبارە', 'توانا', 'ڕووبەر', 'درێژی', 'هێز', 'کات', 'خێرایی', 'گۆشە', 'پلەی گەرمی', 'کۆگای دیجیتاڵی'
         ],
         calculatorsUrlName: [
             'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle', 'tempreature', 'digital-storage'
@@ -47,7 +49,8 @@ const Collections = [
         },
         urlName: 'geometry',
         keywords: [
-            'geometry'
+            'geometry', 'shapes', 'engineering', 'circle', 'square', 'rectangle',
+            'ئەندازەگەری', 'شێوەکان', 'ئەندازیاری', 'بازنە', 'چوارگۆشە', 'لاکێشە'
         ],
         calculatorsUrlName: [
             'circle', 'square', 'rectangle'
