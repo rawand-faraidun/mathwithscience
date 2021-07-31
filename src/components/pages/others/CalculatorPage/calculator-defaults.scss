@@ -166,7 +166,7 @@
 // component-oneline but with max width of 20rem
 .component-small {
     margin: auto;
-    width: clamp(0px, 100%, 20rem);
+    width: clamp(0px, 100%, 500px);
 }
 
 ////////////////
