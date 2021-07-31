@@ -201,10 +201,18 @@
 }
 
 // shape sizes
+
+// shape sized by width
 .shape-width {
     width: 10rem;
 }
 
+// shape sized by height
 .shape-height {
+    width: fit-content;
     height: 10rem;
+
+    svg {
+        height: 100%;
+    }
 }
