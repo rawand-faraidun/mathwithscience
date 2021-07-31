@@ -20,7 +20,7 @@ const componentContent = [
     {
         name: {
             en: 'Meter / Second',
-            kr: 'مەتر / سانیە'
+            kr: 'مەتر / چرکە'
         },
         id: 'metersecond',
         unit: 'mps',
@@ -38,7 +38,7 @@ const componentContent = [
     {
         name: {
             en: 'Foot / Second',
-            kr: 'پێ / سانیە'
+            kr: 'پێ / چرکە'
         },
         id: 'footsecond',
         unit: 'ftps',

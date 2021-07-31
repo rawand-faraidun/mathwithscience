@@ -11,7 +11,7 @@ const componentContent = [
     {
         name: {
             en: 'Second',
-            kr: 'سانیە'
+            kr: 'چرکە'
         },
         id: 'second',
         unit: 's',
@@ -20,7 +20,7 @@ const componentContent = [
     {
         name: {
             en: 'Millisecond',
-            kr: 'میلیسانیە'
+            kr: 'میلیچرکە'
         },
         id: 'millisecond',
         unit: 'ms',
