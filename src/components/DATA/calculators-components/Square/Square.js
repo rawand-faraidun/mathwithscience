@@ -32,10 +32,10 @@ const componentContent = {
         },
         {
             name: {
-                en: 'Diameter',
+                en: 'Diagonal',
                 kr: 'تیرە'
             },
-            id: 'diameter',
+            id: 'diagonal',
             unit: 'd',
             calculateSelfEquation: 'd=s*sqrt(2)',
             calculateOtherEquation: 's=sqrt(2)/d'
@@ -84,7 +84,7 @@ export default function Square() {
 /**
  * @param {Object} props :
  *      @side {Boolean} : radius of the square
- *      @diameter {Boolean} : diameter of the square
+ *      @diagonal {Boolean} : diagonal of the square
  *      @area {Boolean} : area of the square
  *      @perimeter {Boolean} : perimeter of the square
  * 
@@ -99,7 +99,7 @@ function SquareSvg(props) {
                 <line id="diameter" x1="2.5" y1="2.5" x2="102.5" y2="102.5"
                     style={{
                         fill: 'none',
-                        stroke: props.diameter ? props.diameter : 'var(--main-background-color)',
+                        stroke: props.diagonal ? props.diagonal : 'var(--main-background-color)',
                         strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                     }} />
                 <g id="square-frame" data-name="square">
