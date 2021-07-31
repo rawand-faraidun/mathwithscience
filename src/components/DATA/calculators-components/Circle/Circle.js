@@ -92,7 +92,7 @@ export default function Circle() {
  */
 function CircleSvg(props) {
     return (
-        <div style={{ margin: 'auto', width: '10rem' }}>
+        <div className="margin-auto shape-width">
             <svg id="shape" data-name="shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105">
                 <circle id="frame" cx="52.5" cy="52.5" r="50"
                     style={{

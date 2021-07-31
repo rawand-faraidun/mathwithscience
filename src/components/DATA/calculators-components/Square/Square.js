@@ -92,7 +92,7 @@ export default function Square() {
  */
 function SquareSvg(props) {
     return (
-        <div style={{ margin: 'auto', width: '10rem' }}>
+        <div className="margin-auto shape-width">
             <svg id="square" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105">
                 <rect id="area" x="2.5" y="2.5" width="100" height="100"
                     style={{ fill: props.area ? props.area : 'none' }} />
