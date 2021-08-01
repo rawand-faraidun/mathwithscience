@@ -36,9 +36,9 @@ function find(conditions) {
             // returning the ones that english or kurdish name or description or keywords includes the search text
             return (
                 calculator.en.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                // calculator.en.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.kr.name.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
-                calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
+                // calculator.kr.description.toLowerCase().includes(conditions.searchQuery.toLowerCase()) ||
                 calculator.keywords.some(keyword => keyword.toLowerCase().includes(conditions.searchQuery.toLowerCase()))
             )
         })
