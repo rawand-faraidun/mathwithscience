@@ -13,8 +13,10 @@ const Collections = [
         },
         urlName: 'algebra',
         keywords: [
-            'algebra', 'proportion ratio', 'equation solver', 'prime checker', 'factor', 'operation', 'simplify', 'constants',
+            'algebra', 'proportion ratio', 'equation solver', 'prime checker', 'factor', 'operation', 'simplify', 'constants', 'symbols',
+            'elementary', 'quantity', 'quantities', 'variables',
             'جەبر', 'زانستی جەبر', 'ڕێژەی تێکڕا', 'شیکارکەری هاوکێشە', 'پشکنەری ژمارەی خۆبەش', 'هۆکار', 'ئاسانکاری',
+            'سەرەتایی', 'چەندێتی', 'گۆڕاوەکان',
         ],
         calculatorsUrlName: [
             'proportion-ratio', 'equation-solver', 'prime-checker'
@@ -31,8 +33,10 @@ const Collections = [
         },
         urlName: 'unit-conversion',
         keywords: [
-            'unit conversion', 'units', 'measurments', 'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle', 'tempreature', 'digital storage',
-            'گۆڕانکاری یەکەکان', 'یەکە', 'پێوانە', 'کێش', 'قەبارە', 'توانا', 'ڕووبەر', 'درێژی', 'هێز', 'کات', 'خێرایی', 'گۆشە', 'پلەی گەرمی', 'کۆگای دیجیتاڵی'
+            'unit conversion', 'convertor', 'units', 'measurments', 'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle',
+            'tempreature', 'digital storage', 'quantity', 'quantities',
+            'گۆڕانکاری یەکەکان', 'یەکە', 'پێوانە', 'کێش', 'قەبارە', 'توانا', 'ڕووبەر', 'درێژی', 'هێز', 'کات', 'خێرایی', 'گۆشە',
+            'پلەی گەرمی', 'کۆگای دیجیتاڵی', 'چەندێتی',
         ],
         calculatorsUrlName: [
             'weight', 'volume', 'power', 'area', 'length', 'force', 'time', 'speed', 'angle', 'tempreature', 'digital-storage'
@@ -49,8 +53,8 @@ const Collections = [
         },
         urlName: 'geometry',
         keywords: [
-            'geometry', 'shapes', 'engineering', 'circle', 'square', 'rectangle',
-            'ئەندازەگەری', 'شێوەکان', 'ئەندازیاری', 'بازنە', 'چوارگۆشە', 'لاکێشە'
+            'geometry', 'shapes', 'measurment', 'properties', 'points', 'lines', 'engineering', 'circle', 'square', 'rectangle',
+            'ئەندازەگەری', 'شێوەکان', 'تایبەتمەندیەکان', 'خاڵەکان', 'هێڵەکان', 'ئەندازیاری', 'بازنە', 'چوارگۆشە', 'لاکێشە'
         ],
         calculatorsUrlName: [
             'circle', 'square', 'rectangle'

@@ -34,8 +34,9 @@ const Calculators = [
         },
         urlName: 'proportion-ratio',
         keywords: [
-            'algebra', 'proportion ratio', 'equality', 'direct proportion', 'indirect proportion',
-            'زانستی جەبر', 'دوولاودوونێوان', 'دوولا و دوونێوان', 'ڕێژەی تێکڕا', 'یەکسانی', 'ڕێژەی ڕاستەوخۆ', 'ڕێژەی ناڕاستەوخۆ'
+            'algebra', 'proportion ratio', 'equality', 'fractions', 'equations', 'direct proportion', 'indirect proportion',
+            'زانستی جەبر', 'دوولاودوونێوان', 'دوولا و دوونێوان', 'ڕێژەی تێکڕا', 'یەکسانی', 'دابەشکاری', 'هاوکێشەکان'
+            , 'ڕێژەی ڕاستەوخۆ', 'ڕێژەی ناڕاستەوخۆ'
         ],
         component: <ProportionRatio />
     },
@@ -50,8 +51,8 @@ const Calculators = [
         },
         urlName: 'equation-solver',
         keywords: [
-            'algebra', 'equation solver', 'unknowns', 'variable', 'term', 'constants', 'linear', 'quadratic', 'power',
-            'زانستی جەبر', 'شیکارکەری هاوکێشە', 'نادیارەکان', 'گۆڕاوەکان', 'زاراوەکان', 'نەگۆڕەکان', 'هێڵی', 'چواری', 'توان'
+            'algebra', 'equation solver', 'solutions', 'unknowns', 'variable', 'term', 'constants', 'linear', 'quadratic', 'power',
+            'زانستی جەبر', 'شیکارکەری هاوکێشە', 'وەڵامەکان', 'نادیارەکان', 'گۆڕاوەکان', 'زاراوەکان', 'نەگۆڕەکان', 'هێڵی', 'چواری', 'توان'
         ],
         component: <EquationSolver />
     },
@@ -82,7 +83,7 @@ const Calculators = [
         },
         urlName: 'weight',
         keywords: [
-            'unit conversion', 'weight', 'gram', 'kilogram', 'milligram', 'nanogram', 'microgram', 'centigram', 'decigram', 'hectometer', 'ton',
+            'unit conversion', 'convertor', 'weight', 'gram', 'kilogram', 'milligram', 'nanogram', 'microgram', 'centigram', 'decigram', 'hectometer', 'ton',
             'pound', 'ounce',
             'گۆڕانکاری یەکەکان', 'کێش', 'گرام', 'کیلۆگرام', 'میلیگرام', 'نانۆگرام', 'مایکرۆگرام', 'سانتیگرام', 'دەسیگرام', 'هێکتۆگرام', 'تەن',
             'پاوەند', 'ئۆنج',
@@ -118,7 +119,7 @@ const Calculators = [
         },
         urlName: 'power',
         keywords: [
-            'unit conversion', 'power', 'watt', 'kilowatt', 'megawatt', 'milliwatt', 'horse power',
+            'unit conversion', 'convertor', 'power', 'watt', 'kilowatt', 'megawatt', 'milliwatt', 'horse power',
             'گۆڕانکاری یەکەکان', 'هێز', 'وات', 'کیلۆوات', 'مێگاوات', 'میلیوات', 'هێزی ئەسپ'
         ],
         component: <Power />
@@ -134,7 +135,7 @@ const Calculators = [
         },
         urlName: 'area',
         keywords: [
-            'unit conversion', 'area', 'meter', 'kilometer', 'millimeter', 'centimeter', 'decimeter', 'hectometer', 'inch', 'foot', 'mile',
+            'unit conversion', 'convertor', 'area', 'meter', 'kilometer', 'millimeter', 'centimeter', 'decimeter', 'hectometer', 'inch', 'foot', 'mile',
             'گۆڕانکاری یەکەکان', 'ڕووبەر', 'مەتر', 'کیلۆمەتر', 'میلی مەتر', 'سانتیمەتر', 'دەسیمەتر', 'هیچتۆمەتر', 'ئینچ', 'پێ', 'میل',
         ],
         component: <Area />
@@ -150,7 +151,7 @@ const Calculators = [
         },
         urlName: 'length',
         keywords: [
-            'unit conversion', 'length', 'meter', 'kilometer', 'millimeter', 'nanometer', 'micrometer', 'centimeter', 'decimeter', 'decameter',
+            'unit conversion', 'convertor', 'length', 'meter', 'kilometer', 'millimeter', 'nanometer', 'micrometer', 'centimeter', 'decimeter', 'decameter',
             'hectometer', 'inch', 'foot', 'mile',
             'گۆڕانکاری یەکەکان', 'درێژی', 'مەتر', 'کیلۆمەتر', 'میلیمەتر', 'نانۆمەتر', 'میکرۆمەتر', 'سانتیمەتر', 'دەسیمەتر', 'دێکامەتر',
             'هێتۆمەتر', 'ئینچ', 'پێ', 'میل',
@@ -168,7 +169,7 @@ const Calculators = [
         },
         urlName: 'force',
         keywords: [
-            'unit conversion', 'force', 'newton', 'kilogram force', 'gram force', 'dyne', 'pound force',
+            'unit conversion', 'convertor', 'force', 'newton', 'kilogram force', 'gram force', 'dyne', 'pound force',
             'گۆڕانکاری یەکەکان', 'هێز', 'نیوتن', 'هێزی کیلۆگرام', 'هێزی گرام', 'داین', 'هێزی پاوەند'
         ],
         component: <Force />
@@ -184,7 +185,7 @@ const Calculators = [
         },
         urlName: 'time',
         keywords: [
-            'unit conversion', 'time', 'second', 'millisecond', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century',
+            'unit conversion', 'convertor', 'time', 'second', 'millisecond', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade', 'century',
             'گۆڕانکاری یەکەکان', 'کات', 'چرکە', 'میلی چرکە', 'خولەک', 'کاتژمێر', 'ڕۆژ', 'هەفتە', 'مانگ', 'ساڵ', 'دەیە', 'سەدە',
         ],
         component: <Time />
@@ -200,7 +201,7 @@ const Calculators = [
         },
         urlName: 'speed',
         keywords: [
-            'unit conversion', 'speed', 'kilometer / hour', 'meter / second', 'mile / hour', 'foot / second', 'lightspeed', 'knot',
+            'unit conversion', 'convertor', 'speed', 'kilometer / hour', 'meter / second', 'mile / hour', 'foot / second', 'lightspeed', 'knot',
             'گۆڕانکاری یەکەکان', 'خێرایی', 'کیلۆمەتر / کاتژمێر', 'مەتر / چرکە', 'میل / کاتژمێر', 'پێ / چرکە', 'خێرایی ڕوناکی', 'نۆت'
         ],
         component: <Speed />
@@ -216,7 +217,7 @@ const Calculators = [
         },
         urlName: 'angle',
         keywords: [
-            'unit conversion', 'angle', 'digree', 'radiant', 'turn', 'sextant', 'quadrant',
+            'unit conversion', 'convertor', 'angle', 'digree', 'radiant', 'turn', 'sextant', 'quadrant',
             'گۆڕانکاری یەکەکان', 'گۆشە', 'پلە', 'ڕادیەنت', 'خول', 'شەشبەش', 'چواربەش',
         ],
         component: <Angle />
@@ -232,7 +233,7 @@ const Calculators = [
         },
         urlName: 'tempreature',
         keywords: [
-            'unit conversion', 'tempreature', 'celcuis', 'fahrenheit', 'kelvin', 'rankine', 'newton',
+            'unit conversion', 'convertor', 'tempreature', 'celcuis', 'fahrenheit', 'kelvin', 'rankine', 'newton',
             'گۆڕانکاری یەکەکان', 'پلەی گەرمی', 'سیلیزی', 'فەهرەنهایت', 'کلڤن', 'ڕانکین', 'نیوتن',
         ],
         component: <Tempreature />
@@ -248,7 +249,7 @@ const Calculators = [
         },
         urlName: 'digital-storage',
         keywords: [
-            'unit conversion', 'digital storage', 'bit', 'kilobit', 'megabit', 'gigabit', 'terabit', 'petabit', 'byte', 'kilobyte', 'megabyte',
+            'unit conversion', 'convertor', 'digital storage', 'bit', 'kilobit', 'megabit', 'gigabit', 'terabit', 'petabit', 'byte', 'kilobyte', 'megabyte',
             'gigabyte', 'terabyte', 'petabyte',
             'گۆڕانکاری یەکەکان', 'کۆگای دیجیتاڵ', 'بیت', 'کیلۆبیت', 'مگابیت', 'گیگابیت', 'تێرابیت', 'پێتابیت', 'بایت', 'کیلۆبایت', 'مێگابایت',
             'گێگابایت', 'تێرابایت', 'پێتابایت',
