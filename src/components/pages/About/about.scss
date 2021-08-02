@@ -71,11 +71,14 @@
         // developers list
         .developers {
             margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 100%;
+            column-gap: 3rem;
+            row-gap: 3rem;
 
             // each developer
             .developer {
                 margin: auto;
-                margin-top: 2rem;
                 position: relative;
                 border-radius: var(--small-font-size);
                 overflow: hidden;
@@ -197,6 +200,35 @@
                 to {
                     transform: rotate(360deg);
                 }
+            }
+        }
+    }
+}
+
+// for screens smaller than 1024px
+@media screen and (max-width: 1024px) {
+    .about {
+        .about-grid {
+            grid-template-columns: 100%;
+        }
+        .about-developers {
+            margin-top: 5rem;
+            .developers {
+                grid-template-columns: repeat(2, calc(50% - 3rem / 2));
+            }
+        }
+    }
+}
+
+// for screens smaller than 500px
+@media screen and (max-width: 500px) {
+    .about {
+        .about-developers {
+            .developers {
+                margin: auto;
+                margin-top: 2rem;
+                width: 70%;
+                grid-template-columns: 100%;
             }
         }
     }
