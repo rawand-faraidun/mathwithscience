@@ -105,8 +105,7 @@ export default function About() {
                 <div className="made-with-love">
                     made with {<FontAwesomeIcon icon={faHeart} className="heart" />} and {<FontAwesomeIcon icon={faMusic} className="music" />}, just for you
                 </div>
-
-
+                
             </div>
         </>
     )
