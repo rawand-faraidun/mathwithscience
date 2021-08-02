@@ -1,0 +1,203 @@
+/**********
+***About***
+**********/
+
+// about page
+.about {
+    margin-top: var(--first-element-margin-top);
+    padding: var(--padding-sides);
+
+    // about section grid
+    .about-grid {
+        display: grid;
+        grid-template-columns: auto 13rem;
+        column-gap: 5rem;
+    }
+
+    // articles section
+    .about-articles {
+        width: 100%;
+
+        // each article
+        .article {
+            margin-top: 4rem;
+
+            // removing margin top for the forst article
+            &:first-child {
+                margin-top: 0;
+            }
+
+            // article heading
+            .article-heading {
+                font-family: var(--head-font-family);
+                font-size: var(--xx-large-font-size);
+                font-weight: 700;
+                color: var(--head-text-color);
+            }
+
+            // article quote
+            .article-quote {
+                margin: 1.25rem 2rem 1.5rem;
+                font-family: var(--body-font-family);
+                font-size: var(--medium-font-size);
+                font-weight: 700;
+                color: var(--head-text-color);
+            }
+
+            .writing {
+                margin: 0.75rem 0;
+                font-family: var(--body-font-family);
+                font-size: var(--small-font-size);
+                font-weight: 400;
+                color: var(--body-text-color);
+                line-height: calc(var(--small-font-size) + 0.6rem);
+            }
+        }
+    }
+
+    // about page developers
+    .about-developers {
+        width: 100%;
+        text-align: center;
+
+        // developers section title
+        .developers-title {
+            font-family: var(--head-font-family);
+            font-size: var(--large-font-size);
+            font-weight: 700;
+            color: var(--head-text-color);
+        }
+
+        // developers list
+        .developers {
+            margin-top: 2rem;
+
+            // each developer
+            .developer {
+                margin: auto;
+                margin-top: 2rem;
+                position: relative;
+                border-radius: var(--small-font-size);
+                overflow: hidden;
+                width: 80%;
+                transition: width 0.4s ease;
+
+                // developer image
+                .developer-image {
+                    width: 100%;
+                    transition: filter 0.4s ease;
+                }
+
+                // the small image shows on hover
+                .developer-image-small {
+                    position: absolute;
+                    bottom: 0;
+                    width: 0;
+                    border-radius: 50%;
+                }
+
+                // developer details
+                .developer-details {
+                    position: absolute;
+                    bottom: 5px;
+                    width: 100%;
+                    transition: bottom 0.4s linear;
+                    overflow: hidden;
+
+                    // developer name
+                    .developer-name {
+                        margin-bottom: 0.2rem;
+                        font-family: var(--head-font-family);
+                        font-size: var(--small-font-size);
+                        font-weight: 400;
+                        color: var(--white-color);
+                        transition: font-size 0.4s ease;
+                        text-shadow: 1px 1px 0px var(--black-color);
+                    }
+
+                    // developer work and links
+                    .developer-work,
+                    .developer-links {
+                        margin-top: 0.1rem;
+                        font-family: var(--body-font-family);
+                        font-size: 0;
+                        font-weight: 400;
+                        color: var(--white-color);
+                        transition: font-size 0.4s ease;
+                        text-shadow: 1px 1px 0px var(--black-color);
+
+                        a {
+                            color: var(--white-color);
+                            margin: 0 1rem;
+                        }
+                    }
+                }
+
+                // hover effect
+                &:hover {
+                    width: 100%;
+                    .developer-name {
+                        font-size: var(--medium-font-size);
+                    }
+                    .developer-work,
+                    .developer-links {
+                        font-size: var(--x-small-font-size);
+                    }
+                }
+            }
+        }
+    }
+
+    // made with heart and love
+    .made-with-love {
+        margin-top: 5rem;
+        text-align: center;
+        font-family: var(--body-font-family);
+        font-size: var(--large-font-size);
+        font-weight: 400;
+        color: var(--body-text-color);
+
+        // heart sign
+        .heart {
+            transform-origin: center;
+            transition: margin 0.4s ease;
+
+            // hear beat with hover
+            &:hover {
+                margin: 0 0.3rem;
+                animation: beat 0.25s infinite alternate;
+                color: var(--main-red-color);
+            }
+
+            // heart beat
+            @keyframes beat {
+                to {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        // music sign
+        .music {
+            transform-origin: center;
+            transition: margin 0.4s ease;
+
+            // music rotation with hover
+            &:hover {
+                margin: 0 0.3rem;
+                animation: slide 1s infinite linear;
+                color: #ce00e1;
+            }
+
+            // music rotation
+            @keyframes slide {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}

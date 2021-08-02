@@ -11,6 +11,7 @@ import Home from './components/pages/Home/Home'
 import CollectionsRoutes from './components/pages/Collections/Collections'
 import CalculatorsRoutes from './components/pages/Calculators/Calculators'
 import Search from './components/pages/Search/Search'
+import About from './components/pages/About/About'
 
 
 
@@ -83,6 +84,12 @@ export default function App() {
                     <Redirect from="/search" to="/" exact />
                     <Route path="/search/:searchText" exact >
                         <Search />
+                    </Route>
+
+
+                    {/* about route */}
+                    <Route path={["/about", "/about-us"]} exact >
+                        <About />
                     </Route>
 
                 </Switch>
