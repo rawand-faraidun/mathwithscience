@@ -13,11 +13,11 @@ import LanguageSelector from './LanguageSelector/LanguageSelector'
 // component content
 const componentContent = {
     links: [
-        { en: 'About', kr: 'دەربارە', url: 'about' },
-        { en: 'Collections', kr: 'لقەکان', url: 'collections' },
-        { en: 'Contact', kr: 'پەیوەندی', url: 'contact' },
-        { en: 'All Calculators', kr: 'هەموو ژمێرەرەکان', url: 'calculators' },
-        { en: 'Contribute', kr: 'بەشداریکردن', url: 'contribute' }
+        { en: 'About', kr: 'دەربارە', url: '/about' },
+        { en: 'Collections', kr: 'لقەکان', url: '/collections' },
+        { en: 'Contact', kr: 'پەیوەندی', url: '/contact' },
+        { en: 'All Calculators', kr: 'هەموو ژمێرەرەکان', url: '/calculators' },
+        { en: 'Contribute', kr: 'بەشداریکردن', url: 'https://github.com/rawand-faraidun/math-with-science#readme', external: true }
     ],
     privacyPolicy: {
         en: 'Privacy policy & cookies',
@@ -64,11 +64,16 @@ export default function Footer() {
                             {/* showing footer links content */}
                             {componentContent.links.map((link, i) => {
                                 return (
-                                    <li className={`link ${languageHelper.getClass()}`} key={i}>
-                                        <Link to={`/${link.url}`}>
+                                    link.external ?
+                                        <a href={link.url} rel="noreferrer" target="_blank" className={`link ${languageHelper.getClass()}`}>
                                             {link[[languageHelper.getLanguageSymbol()]]}
-                                        </Link>
-                                    </li>
+                                        </a>
+                                        :
+                                        <li className={`link ${languageHelper.getClass()}`} key={i}>
+                                            <Link to={link.url}>
+                                                {link[[languageHelper.getLanguageSymbol()]]}
+                                            </Link>
+                                        </li>
                                 )
                             })}
 
@@ -77,7 +82,7 @@ export default function Footer() {
                                 <a href="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
                                     <FontAwesomeIcon icon={faInstagram} />
                                 </a>
-                                <a href="https://github.com/rawand-faraidun/math-with-science#readme" target="_blank" rel="noreferrer" title="Math with Science on Github">
+                                <a href="https://github.com/rawand-faraidun/math-with-science" target="_blank" rel="noreferrer" title="Math with Science on Github">
                                     <FontAwesomeIcon icon={faGithub} />
                                 </a>
                             </li>
