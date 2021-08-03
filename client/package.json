@@ -41,7 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compile-scss": "gulp scss",
-    "heroku-prebuild": "npm install && npm run compile-scss"
+    "prebuild": "npm install && npm run compile-scss"
   },
   "eslintConfig": {
     "extends": [

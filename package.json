@@ -7,7 +7,8 @@
     "test": "nodemon server/server.js",
     "start": "node server/server.js",
     "client": "cd client && npm start",
-    "dev": "concurrently --kill-others-on-fail \"npm test\" \"npm client\""
+    "dev": "npm run test & cd client && npm start",
+    "heroku-prebuild": "cd client && npm run prebuild && npm run build && cd .. && npm run test"
   },
   "repository": {
     "type": "git",
