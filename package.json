@@ -1,64 +1,37 @@
 {
   "name": "math-with-science",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "description": "Math with Science is an open source project contains math and science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently --kill-others-on-fail \"npm test\" \"npm client\""
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rawand-faraidun/math-with-science.git"
+    "url": "git+https://github.com/Rawand-Faraidun/math-with-science.git"
   },
+  "keywords": [
+    "math-with-science",
+    "caalculators",
+    "open-source"
+  ],
   "author": "rawand-faraidun <201.rawand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rawand-faraidun/math-with-science/issues"
+    "url": "https://github.com/Rawand-Faraidun/math-with-science/issues"
   },
+  "homepage": "https://github.com/Rawand-Faraidun/math-with-science#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.6",
-    "@testing-library/user-event": "^12.8.3",
-    "animejs": "^3.2.1",
-    "desmos": "^1.5.4",
-    "gulp": "^4.0.2",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "lodash": "^4.17.21",
-    "nerdamer": "^1.1.11",
-    "node-sass": "^6.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0",
-    "react-particles-js": "^3.4.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "compile-scss": "gulp scss",
-    "heroku-prebuild": "npm install && npm run compile-scss"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.13.5",
+    "path": "^0.12.7"
   }
 }
