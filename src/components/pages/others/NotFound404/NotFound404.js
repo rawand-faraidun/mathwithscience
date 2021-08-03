@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import './not-found-404.css'
 // import languageHelper from '../../../partials/languageHelper'
@@ -15,6 +15,12 @@ import './not-found-404.css'
  *  @return {Element} : 404 not found element
  */
 export default function NotFound404(props) {
+
+    // getting current route path
+    let pathname = useLocation().pathname
+    // if the invailedUrl from props was 'this-path' text, it will be this route path, other wise it will be the props.invailedUrl text
+    let invailedUrl = props.invailedUrl === 'this-path' ? pathname : props.invailedUrl
+
     return (
         <>
             {/* 404 not found */}
@@ -26,7 +32,7 @@ export default function NotFound404(props) {
                 </div>
 
                 {/* 404 not found text */}
-                <h4 className="text-404">can not find "<code className="url-404">{props.invailedUrl}</code>" page</h4>
+                <h4 className="text-404">can not find "<code className="url-404">{invailedUrl}</code>" page</h4>
 
                 {/* routes buttons */}
                 <div className="buttons-404">

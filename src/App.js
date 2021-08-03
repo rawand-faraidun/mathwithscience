@@ -12,6 +12,7 @@ import CollectionsRoutes from './components/pages/Collections/Collections'
 import CalculatorsRoutes from './components/pages/Calculators/Calculators'
 import Search from './components/pages/Search/Search'
 import About from './components/pages/About/About'
+import NotFound404 from './components/pages/others/NotFound404/NotFound404'
 
 
 
@@ -90,6 +91,12 @@ export default function App() {
                     {/* about route */}
                     <Route path={["/about", "/about-us"]} exact >
                         <About />
+                    </Route>
+
+
+                    {/* 404 route, it shows current pathname not match any route */}
+                    <Route>
+                        <NotFound404 invailedUrl={'this-path'} customButton={{ name: 'Calculators', url: '/calculators' }} />
                     </Route>
 
                 </Switch>
