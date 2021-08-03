@@ -8,7 +8,7 @@
     "start": "node server/server.js",
     "client": "cd client && npm start",
     "dev": "npm run test & cd client && npm start",
-    "heroku-prebuild": "npm install && cd client && npm run prebuild && npm run build &&"
+    "heroku-prebuild": "npm install && cd client && npm run prebuild && npm run build"
   },
   "repository": {
     "type": "git",
