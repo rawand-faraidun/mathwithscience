@@ -10,7 +10,7 @@ const app = express()
 
 
 // configuring app
-app.use(express.static(path.resolve(__dirname, '../client/build')));
+app.use(express.static(path.resolve(__dirname, '../client/build')))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
@@ -18,11 +18,28 @@ app.use(cors())
 
 
 
+//connectiong to database
+mongoose.connect(
+    process.env.DATABASE_URL,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
+    .then(console.log("!!DB CONEECTED!!"))
+    .catch(err => { console.log(`!!!DATABASE CONNECTION ERROR: ${err}`) })
+mongoose.set("useCreateIndex", true)
+
+
+
+
+
 // serving app frontend
 app.get('*', (req, res) => {
-    console.log('envcode: ', process.env.OUTSIDE)
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
 });
+
+// setting APIs routes
+const routes = require('./APIs/routes/routes-config')
+app.use('/apis', routes)
+
 
 
 
