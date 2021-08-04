@@ -157,7 +157,7 @@
 // component-smaller makes max width 20rem
 .component-smaller {
     margin: auto;
-    width: clamp(0px, 100%, 20rem);
+    width: clamp(1px, 100%, 20rem);
 }
 
 // changing component-grid grid to 2 columns in small screens
