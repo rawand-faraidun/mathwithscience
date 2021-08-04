@@ -4,11 +4,11 @@
   "description": "Math with Science is an open source project contains math and science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
   "main": "server/server.js",
   "scripts": {
-    "test": "nodemon server/server.js",
-    "start": "node server/server.js",
+    "start": "concurrently \"npm run server\" \"cd ..\" \"npm run client\"",
+    "server": "cd server && npm run start",
     "client": "cd client && npm start",
-    "dev": "concurrently \"npm run test\" \"cd client && npm start\"",
-    "heroku-prebuild": "npm install && cd client && npm run prebuild && npm run build"
+    "dev": "concurrently \"cd server && npm run test\" \"cd client && npm start\"",
+    "heroku-prebuild": "npm install && cd server && npm install && cd .. && cd client && npm run prebuild && npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,13 +26,6 @@
   },
   "homepage": "https://github.com/Rawand-Faraidun/math-with-science#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "concurrently": "^6.2.0",
-    "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "helmet": "^4.6.0",
-    "mongoose": "^5.13.5",
-    "path": "^0.12.7"
+    "concurrently": "^6.2.0"
   }
 }
