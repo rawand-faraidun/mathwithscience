@@ -12,7 +12,7 @@ require('nerdamer/Solve.js')
 
 
 // colors for shapes
-const colors = ['var(--main-blue-color)', 'var(--main-green-color)', '#eb03fc', '#fc9003']
+const colors = ['var(--main-green-color)', 'var(--main-red-color)', '#eb03fc', '#fc9003']
 
 
 
@@ -132,7 +132,7 @@ export default function MakeGeometryElement(props) {
                     ).evaluate().text()
             }
         }
-        
+
 
         // calculating for more than one main property
         // in this situations user can only input main properties
@@ -203,7 +203,7 @@ export default function MakeGeometryElement(props) {
                 {/* input property calculator */}
                 {/* only the ones that are in the values input peoperties */}
                 <div className="geometry component-grid component-grid-center calculators-margin-top-2">
-                    {properties.map((property, i) => {
+                    {properties.map((property, i, j) => {
 
                         // showing the input one
                         return (
@@ -217,6 +217,7 @@ export default function MakeGeometryElement(props) {
 
                                     {/* property input */}
                                     <input type="number" id={property.id} className="input-field" autoComplete="off"
+                                        style={{ borderColor: values.shapeColoredParts[property.id] }} // replacing border color with this piece color of the shape
                                         placeholder={property.unit}
                                         value={values[property.id]}
                                         onChange={calculate}
