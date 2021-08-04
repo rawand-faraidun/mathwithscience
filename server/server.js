@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config({ path: './../.env' })
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
@@ -20,7 +20,8 @@ app.use(cors())
 
 // serving app frontend
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+    res.send(process.env.OUTSIDE)
+    // res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
 });
 
 
