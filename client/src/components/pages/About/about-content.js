@@ -186,6 +186,6 @@ const aboutContent = {
 
 // providing the content
 export default function getAboutContent() {
-    return aboutContent;
+    return aboutContent
 }
 export { getAboutContent }

@@ -13,7 +13,7 @@ import ReactGa from 'react-ga'
 export default function GoogleAnalytics() {
 
     // getting the current route url
-    const { pathname } = useLocation();
+    const { pathname } = useLocation()
 
     // initializing google analytics
     ReactGa.initialize('UA-175651117-3')
@@ -25,5 +25,5 @@ export default function GoogleAnalytics() {
     }, [pathname])
 
 
-    return null;
+    return null
 }

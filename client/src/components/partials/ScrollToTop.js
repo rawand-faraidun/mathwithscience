@@ -12,13 +12,13 @@ import { useLocation } from "react-router-dom"
 export default function ScrollToTop() {
 
     // getting the current route url
-    const { pathname } = useLocation();
+    const { pathname } = useLocation()
 
     // scrolling to top when the path changes
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [pathname]);
+    }, [pathname])
 
 
-    return null;
+    return null
 }
