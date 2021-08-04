@@ -44,7 +44,7 @@ const componentContent = {
 
 
 /**
- *  @return {Element} : Search route
+ *  @return {Element} : privacy policy route
  */
 export default function PrivacyPolicy() {
     return (
