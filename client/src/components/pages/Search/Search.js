@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import './search.css'
-import ListView from '../others/ListView/ListView'
+import ListView from '../others/List-View/List-View'
 import languageHelper from '../../partials/languageHelper'
 const Calculators = require('../../DATA/Calculators')
 const Collections = require('../../DATA/Collections')

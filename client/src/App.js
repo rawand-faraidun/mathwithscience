@@ -12,7 +12,7 @@ import CollectionsRoutes from './components/pages/Collections/Collections'
 import CalculatorsRoutes from './components/pages/Calculators/Calculators'
 import Search from './components/pages/Search/Search'
 import About from './components/pages/About/About'
-import NotFound404 from './components/pages/others/NotFound404/NotFound404'
+import NotFound404 from './components/pages/others/Not-Found-404/Not-Found-404'
 
 
 

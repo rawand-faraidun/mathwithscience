@@ -3,10 +3,10 @@ import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import './calculators.css'
-import ListView from '../others/ListView/ListView'
+import ListView from '../others/List-View/List-View'
 import languageHelper from '../../partials/languageHelper'
-import NotFound404 from '../others/NotFound404/NotFound404'
-import CalculatorPage from '../others/CalculatorPage/CalculatorPage'
+import NotFound404 from '../others/Not-Found-404/Not-Found-404'
+import CalculatorPage from '../others/Calculator-Page/Calculator-Page'
 const Calculators = require('../../DATA/Calculators')
 
 
@@ -53,7 +53,7 @@ function CalculatorsRoutes() {
                 {/* claculators */}
                 <div className="calculators long-element" dir={languageHelper.getDirection()}>
 
-                    {/* wecan make a header title and description for calculators, but it is easier to be with the ListView when we use it in different places */}
+                    {/* wecan make a header title and description for calculators, but it is easier to be with the List-View when we use it in different places */}
 
                     {/* collections list */}
                     <ListView

@@ -4,9 +4,9 @@ import { Helmet } from 'react-helmet'
 
 import './collections.css'
 import languageHelper from '../../partials/languageHelper'
-import ListView from '../others/ListView/ListView'
-import CalculatorPage from '../others/CalculatorPage/CalculatorPage'
-import NotFound404 from '../others/NotFound404/NotFound404'
+import ListView from '../others/List-View/List-View'
+import CalculatorPage from '../others/Calculator-Page/Calculator-Page'
+import NotFound404 from '../others/Not-Found-404/Not-Found-404'
 const Collections = require('../../DATA/Collections')
 const Calculators = require('../../DATA/Calculators')
 
@@ -53,7 +53,7 @@ export default function CollectionsRoutes() {
                 {/* collections */}
                 <div className="collections long-element" dir={languageHelper.getDirection()}>
 
-                    {/* wecan make a header title and description for collections, but it is easier to be with the ListView when we use it in different places */}
+                    {/* wecan make a header title and description for collections, but it is easier to be with the List-View when we use it in different places */}
 
                     {/* collections list */}
                     <ListView
@@ -114,7 +114,7 @@ export default function CollectionsRoutes() {
                 {/* calculators */}
                 <div className="collection-calculators long-element" dir={languageHelper.getDirection()}>
 
-                    {/* wecan make a header title and description for the collection, but it is easier to be with the ListView when we use it in different places */}
+                    {/* wecan make a header title and description for the collection, but it is easier to be with the List-View when we use it in different places */}
 
                     {/* collections list */}
                     <ListView
