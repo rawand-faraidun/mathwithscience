@@ -102,7 +102,7 @@ export default function Footer() {
                     <p className="footer-details-divider">|</p>
 
                     {/* privacy policy link */}
-                    <p className={`privacy-policy ${languageHelper.getClass()}`}>
+                    <p className={`footer-privacy-policy ${languageHelper.getClass()}`}>
                         <Link to="/privacy-policy">{componentContent.privacyPolicy[languageHelper.getLanguageSymbol()]}</Link>
                     </p>
 
