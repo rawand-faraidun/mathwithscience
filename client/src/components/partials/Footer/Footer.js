@@ -65,7 +65,7 @@ export default function Footer() {
                             {componentContent.links.map((link, i) => {
                                 return (
                                     link.external ?
-                                        <a href={link.url} rel="noreferrer" target="_blank" className={`link ${languageHelper.getClass()}`}>
+                                        <a key={i} href={link.url} rel="noreferrer" target="_blank" className={`link ${languageHelper.getClass()}`}>
                                             {link[[languageHelper.getLanguageSymbol()]]}
                                         </a>
                                         :
