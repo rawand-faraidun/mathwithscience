@@ -94,10 +94,10 @@ function CircleSvg(props) {
     return (
         <div className="margin-auto shape-width">
             <svg id="shape" data-name="shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 105">
-                <circle id="frame" cx="52.5" cy="52.5" r="50"
+                <circle id="area" cx="52.5" cy="52.5" r="50"
                     style={{
                         fill: props.area ? props.area : 'none',
-                        stroke: props.circumference ? props.circumference : 'var(--main-background-color)',
+                        stroke: 'none',
                         strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                     }} />
                 <line id="diameter" x1="2.5" y1="52.5" x2="102.5" y2="52.5"
@@ -110,6 +110,12 @@ function CircleSvg(props) {
                     style={{
                         fill: 'none',
                         stroke: props.radius ? props.radius : 'var(--main-background-color)',
+                        strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
+                    }} />
+                <circle id="circumference" cx="52.5" cy="52.5" r="50"
+                    style={{
+                        fill: 'none',
+                        stroke: props.circumference ? props.circumference : 'var(--main-background-color)',
                         strokeLinecap: 'round', strokeMiterlimit: 10, strokeWidth: '5px'
                     }} />
             </svg>
