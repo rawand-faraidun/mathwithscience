@@ -12,6 +12,7 @@ import CollectionsRoutes from './components/pages/Collections/Collections'
 import CalculatorsRoutes from './components/pages/Calculators/Calculators'
 import Search from './components/pages/Search/Search'
 import About from './components/pages/About/About'
+import PrivacyPolicy from './components/pages/Privacy-Policy/Privacy-Policy'
 import NotFound404 from './components/pages/others/Not-Found-404/Not-Found-404'
 
 
@@ -91,6 +92,12 @@ export default function App() {
                     {/* about route */}
                     <Route path={["/about", "/about-us"]} exact >
                         <About />
+                    </Route>
+
+
+                    {/* privacy policy route */}
+                    <Route path="/privacy-policy" exact >
+                        <PrivacyPolicy />
                     </Route>
 
 
