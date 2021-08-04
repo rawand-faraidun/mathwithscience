@@ -19,7 +19,10 @@ app.use(cors())
 
 
 // serving app frontend
-
+app.get('*', (req, res) => {
+    res.send('envcode: ', process.env.OUTSIDE)
+    // res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+});
 
 
 
