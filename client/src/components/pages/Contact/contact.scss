@@ -1,0 +1,125 @@
+/************
+***Contact***
+************/
+
+// contact holder
+.contact-container {
+    margin-top: var(--first-element-margin-top);
+    padding: var(--padding-sides);
+    display: flex;
+
+    // contact element
+    .contact {
+        margin: auto;
+        padding: 1.5rem;
+        width: clamp(1px, 100%, 54rem);
+        border-radius: var(--small-font-size);
+        box-shadow: 0px 0px 42px 1px rgba(0, 0, 0, 0.3);
+
+        // brand logo in contact
+        .contact-logo {
+            margin: auto;
+            width: 4.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        // contact heading text
+        .contact-heading {
+            margin-top: 2rem;
+            font-family: var(--head-font-family);
+            font-size: var(--xxx-large-font-size);
+            font-weight: 700;
+            text-align: center;
+            color: var(--head-text-color);
+
+            // changing margin for kurdish
+            &.kurdish {
+                margin-top: 1.5rem;
+            }
+        }
+
+        // contact form
+        .contact-form {
+            margin-top: 3rem;
+
+            // contact form controls
+            .form-control {
+                margin-top: 1rem;
+                padding: 0.4rem 1rem;
+                width: 100%;
+                border: 1px solid var(--main-background-color);
+                border-radius: calc(var(--small-font-size) / 1.25);
+
+                // form control label
+                .form-label {
+                    font-family: var(--body-font-family);
+                    font-size: var(--small-font-size);
+                    color: var(--head-text-color);
+                }
+
+                // form control input
+                .form-input {
+                    margin-top: 0.2rem;
+                    padding: 0.25rem 0.4rem 0.1rem;
+                    width: 100%;
+                    font-size: var(--medium-font-size);
+                    color: var(--head-text-color);
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                }
+
+                // making description textarea only verticall resizable
+                &.contact-description {
+                    .form-input {
+                        resize: vertical;
+                    }
+                }
+            }
+
+            // submit button
+            .submit-contact {
+                margin-top: 1.3rem;
+                padding: 0.5rem 0;
+                width: 100%;
+                font-family: var(--body-font-family);
+                font-size: var(--large-font-size);
+                font-weight: 700;
+                color: var(--white-color);
+                background-image: linear-gradient(to right, var(--main-blue-color), var(--main-green-color));
+                outline: none;
+                border: none;
+                border-radius: calc(var(--small-font-size) / 2.5);
+                transition: box-shadow 0.3s ease-out;
+                cursor: pointer;
+
+                // hovering submit button
+                &:hover {
+                    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+}
+
+////////////////////////////////
+
+////////////////////////////////
+
+////////////////////////////////
+
+// contact flash message
+.contact-flash {
+    padding: 1rem;
+    position: fixed;
+    bottom: 15px;
+    left: 20px;
+    font-family: var(--body-font-family);
+    font-size: var(--medium-font-size);
+    font-weight: 700;
+    color: var(--white-color);
+    border-radius: calc(var(--small-font-size) / 3);
+}

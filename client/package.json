@@ -20,6 +20,7 @@
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
     "animejs": "^3.2.1",
+    "axios": "^0.21.1",
     "desmos": "^1.5.4",
     "gulp": "^4.0.2",
     "gulp-postcss": "^9.0.0",
@@ -61,5 +62,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:5000/"
 }
