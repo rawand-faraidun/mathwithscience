@@ -8,7 +8,7 @@
     "server": "cd server && npm run start",
     "client": "cd client && npm start",
     "dev": "concurrently \"cd server && npm run test\" \"cd client && npm start\"",
-    "heroku-prebuild": "npm install && cd server && npm install && cd .. && cd client && npm run prebuild && npm run build"
+    "heroku-prebuild": "npm install && cd server && npm install && cd .. && cd client && npm run prebuild && npm run build && cd .."
   },
   "repository": {
     "type": "git",
