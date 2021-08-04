@@ -16,7 +16,7 @@ export default function GoogleAnalytics() {
     const { pathname } = useLocation();
 
     // initializing google analytics
-    ReactGa.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_ID)
+    ReactGa.initialize('UA-175651117-3')
 
     // reporting page view
     useEffect(() => {
