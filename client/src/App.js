@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 
 import languageHelper from './components/partials/languageHelper'
 import ScrollToTop from './components/partials/ScrollToTop'
+import GoogleAnalytics from './components/partials/GoogleAnalytics'
 // partial component
 import Header from './components/partials/Header/Header'
 import Footer from './components/partials/Footer/Footer'
@@ -37,6 +38,9 @@ export default function App() {
     return (
         <>
             <Router>
+
+                {/* google analytics */}
+                <GoogleAnalytics />
 
                 {/* scrolling to top of page when the route url changes */}
                 <ScrollToTop />
