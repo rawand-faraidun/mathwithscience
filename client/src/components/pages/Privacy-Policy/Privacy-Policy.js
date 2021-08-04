@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
 
                     {/* each question */}
                     {componentContent.questions.map((question, i) =>
-                        <div className="privacy-policy-quesion">
+                        <div className="privacy-policy-quesion" key={i}>
                             <h2 className={`question-title ${languageHelper.getClass()}`}>{question.title[languageHelper.getLanguageSymbol()]}</h2>
                             <p className={`question-answer ${languageHelper.getClass()}`}>{question.answer[languageHelper.getLanguageSymbol()]}</p>
                         </div>
