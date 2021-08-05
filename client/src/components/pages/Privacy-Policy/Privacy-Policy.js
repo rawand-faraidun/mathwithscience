@@ -15,11 +15,11 @@ const componentContent = {
     questions: [
         {
             title: {
-                en: 'Does math with science collect any user data?',
+                en: 'Does math with science collect any data from the users?',
                 kr: 'ئایا "Math with Science" داتای بەکارهێنەرانی کۆدەکاتەوە؟'
             },
             answer: {
-                en: `No, this website does not collect any user data even the numbers or searchs user input to the website. and the best evidence is that the
+                en: `No, this website does not collect any user data even the numbers or searchs user puts to the website. and the best evidence is that the
                  website is Open Source software, which means anyone can see the codes behind it and check them for anything suspicious.`,
                 kr: `نەخێر، ئەم وێبسایتە هیچ داتایەکی بەکارهێنەرانی کۆناکاتەوە تەنانەت ژمارە و گەڕانەکانیش. باشترین بەڵگەش بۆ ئەمە ئەوەیە کە
                     وێبسایتەکە سەرچاوە کراوەیە، ئەمەش واتا هەموو کەسێک ئەتوانێت کۆدەکانی کارکردنی وێبسایتەکە ببینێت و پشکنین بکات بۆ هەر شتێکی گوماناوی.`
@@ -28,11 +28,11 @@ const componentContent = {
         {
             title: {
                 en: 'Why does Math with Science uses Cookies & localStorage?',
-                kr: 'بۆچی "Math with Science" کووکی و کۆگای ناوخۆیی "بەشێکە لە براوسەری کۆمپیوتەر" بەکار ئەهێنێت؟'
+                kr: 'بۆچی "Math with Science" کووکی و کۆگای ناوخۆیی "بەشێکە لە براوسەر" بەکار ئەهێنێت؟'
             },
             answer: {
                 en: `Math with Scince uses cookies and localStorage to store user perferences and it is only used to remember "Theme Color" and "Language",
-                and they are just for getting user experience better and we don't save any other datas.`,
+                and they are just for getting user experience better and we don't save any other data.`,
                 kr: `"Math with Science" کووکی و کۆگای ناوخۆیی بەکار ئەهێنێت تەنها بۆ هەڵگرتنی "ڕەنگی وێبسایت" و "زمانی هەڵبژێردراو" و ئەوانەش تەنها بۆ
                 باشترکردنی مامەڵەی بەکارهێنەرە لەگەڵ وێبسایتەکە و هیچ داتایەکی تر سەیڤ ناکرێت.`
             }
