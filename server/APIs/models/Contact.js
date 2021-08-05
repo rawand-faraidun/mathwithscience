@@ -7,27 +7,22 @@ const mongoose = require("mongoose")
 const orderSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true,
         maxLength: 50
     },
     email: {
         type: String,
-        required: true,
         maxLength: 50
     },
     cause: {
         type: String,
-        required: true,
         maxLength: 50
     },
     title: {
         type: String,
-        required: true,
         maxLength: 100
     },
     description: {
         type: String,
-        required: true,
         maxLength: 255
     },
 })

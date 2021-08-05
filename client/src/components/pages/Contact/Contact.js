@@ -37,6 +37,16 @@ const componentContent = {
     submit: {
         en: 'Submit',
         kr: 'ناردن'
+    },
+    alert: {
+        maxCheck: {
+            en: 'cant be longer than',
+            kr: 'نابێت زیاتر بێت لە'
+        },
+        emptyCheck: {
+            en: 'must fill atleast one field to submit',
+            kr: 'پێویستە بەلایەنی کەمەوە زانیاریەک پڕ بکەیتەوە',
+        }
     }
 }
 
@@ -77,14 +87,16 @@ export default function Contact() {
 
         // checking for not typed fields
         for (const [field, value] of Object.entries(values)) {
-            if (value.field.length === 0) {
-                return alert(`${field} is empty`)
-            }
             if (value.field.length > value.max) {
-                return alert(`${field} cant be longer than ${value.max}`);
+                return alert(
+                    `${componentContent[field][languageHelper.getLanguageSymbol()]} ${componentContent.alert.maxCheck[languageHelper.getLanguageSymbol()]} ${value.max}`
+                )
             }
             data[field] = value.field
         }
+
+        // must have atleast 1 input filled
+        if (!Object.values(data).some((value) => value.length > 0)) return alert(componentContent.alert.emptyCheck[languageHelper.getLanguageSymbol()])
 
 
         // sending the data to the backend
