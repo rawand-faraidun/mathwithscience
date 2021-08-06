@@ -104,8 +104,8 @@
 
 // sizings for screens bigger than 1600px
 :root {
-    // image sizes
-    --brand-image-size: 1.8rem; // 28.8px
+    // brand image size
+    --brand-image-size: 1.125rem; // 20px
 
     // header
     --header-height-size: 5rem; // the height of the header
@@ -132,8 +132,6 @@
 // sizing for screens smaller than 1600px
 @media screen and (max-width: 1600px) {
     :root {
-        --brand-image-size: 1.6rem; // 25.6px
-
         --nav-link-font-size: 1rem; //16px
 
         --xx-huge-font-size: 2.75rem; // 44px
@@ -155,8 +153,6 @@
 // sizing for screens smaller than 1024px
 @media screen and (max-width: 1024px) {
     :root {
-        --brand-image-size: 1.8rem; // 28.8px
-
         --nav-link-font-size: 1.4rem; // 22.4px
     }
 }
