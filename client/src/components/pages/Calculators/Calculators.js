@@ -47,6 +47,7 @@ function CalculatorsRoutes() {
                 <Helmet>
                     <title>Calculators | Math with Science</title>
                     <meta name="description" content="list of all calculators provieded by Math with Science" />
+                    <meta name="keywords" content="math with science, math, science, online calculator, all calculators, list of all math with science calculators" />
                 </Helmet>
 
 
@@ -81,7 +82,7 @@ function CalculatorsRoutes() {
 
     // if there was calculatorUrlName, then it is a calculator page
     if (route.calculatorUrlName) {
-        
+
         // getting the collection choosen in the url
         const calculator = Calculators.findOne({ urlName: route.calculatorUrlName })
 
@@ -91,15 +92,15 @@ function CalculatorsRoutes() {
                 customButton={{ name: 'calculators', url: '/calculators' }} />
         }
 
-        
+
         return (
             <>
-            <div className="calculators long-element">
+                <div className="calculators long-element">
 
-                {/* Getting wanted calculator */}
-                <CalculatorPage calculatorData={calculator} haveHeader useHelmet />
+                    {/* Getting wanted calculator */}
+                    <CalculatorPage calculatorData={calculator} haveHeader useHelmet />
 
-            </div>
+                </div>
             </>
         )
     }

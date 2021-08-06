@@ -1,5 +1,4 @@
 import React from 'react'
-import { Helmet } from 'react-helmet'
 
 import HomeMain from './HomeMain/HomeMain'
 import PopularCalculators from './PopularCalculators/PopularCalculators'
@@ -16,13 +15,6 @@ export default function Home() {
         <>
             {/* homepage */}
             <div>
-
-                {/* overriding document head */}
-                <Helmet>
-                    <title>Math with Science | free helping website with math and science problems</title>
-                    <meta name="description" content="Math with Science is a website to help anyone with theit math problems" />
-                </Helmet>
-
 
                 {/* main part of homepage */}
                 <HomeMain />

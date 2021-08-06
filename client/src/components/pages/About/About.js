@@ -26,6 +26,7 @@ export default function About() {
             <Helmet>
                 <title>About | Math with Science</title>
                 <meta name="description" content="About math with science idea, project, creators, and contributors" />
+                <meta name="keywords" content="math with science, math, science, online calculator, about math with science, about the developers" />
             </Helmet>
 
 
@@ -105,7 +106,7 @@ export default function About() {
                 <div className="made-with-love">
                     made with {<FontAwesomeIcon icon={faHeart} className="heart" />} and {<FontAwesomeIcon icon={faMusic} className="music" />}, just for you
                 </div>
-                
+
             </div>
         </>
     )

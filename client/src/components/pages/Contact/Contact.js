@@ -134,6 +134,7 @@ export default function Contact() {
             <Helmet>
                 <title>{componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science</title>
                 <meta name="description" content={`${componentContent.head[languageHelper.getLanguageSymbol()]}`} />
+                <meta name="keywords" content="math with science, math, science, online calculator, contact, contact math with science" />
             </Helmet>
 
 

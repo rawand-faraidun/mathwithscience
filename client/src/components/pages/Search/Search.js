@@ -39,11 +39,11 @@ export default function CalculatorsRoutes() {
 
     return (
         <>
-
             {/* overriding document head */}
             <Helmet>
                 <title>{componentContent[languageHelper.getLanguageSymbol()].title} | Math with Science</title>
                 <meta name="description" content={`${componentContent[languageHelper.getLanguageSymbol()].description}`} />
+                <meta name="keywords" content="math with science, math, science, online calculator, search for calculators and collections" />
             </Helmet>
 
 

@@ -16,6 +16,8 @@ import languageHelper from '../../../partials/languageHelper'
  */
 export default function CalculatorPage(props) {
 
+    console.log(props.calculatorData.keywords.toString());
+
     return (
         <>
             {/* overriding document head */}
@@ -24,6 +26,9 @@ export default function CalculatorPage(props) {
                 <Helmet>
                     <title>{props.calculatorData.en.name} | Math with Science</title>
                     <meta name="description" content={props.calculatorData[languageHelper.getLanguageSymbol()].description} />
+                    <meta name="keywords"
+                        content={`math with science, math, science, online calculator, about math with science, about the developers, ${props.calculatorData.keywords.toString()}`}
+                    />
                 </Helmet>
             ) : ''}
 

@@ -49,11 +49,11 @@ const componentContent = {
 export default function PrivacyPolicy() {
     return (
         <>
-
             {/* overriding document head */}
             <Helmet>
                 <title>{componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science</title>
                 <meta name="description" content={`${componentContent.head[languageHelper.getLanguageSymbol()]}`} />
+                <meta name="keywords" content="math with science, math, science, online calculator, privacy policy, cookie, math with science privacy policy and cookies" />
             </Helmet>
 
 

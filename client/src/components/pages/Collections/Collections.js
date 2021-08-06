@@ -47,6 +47,7 @@ export default function CollectionsRoutes() {
                 <Helmet>
                     <title>Collections | Math with Science</title>
                     <meta name="description" content="List of all collections provieded by Math with Science" />
+                    <meta name="keywords" content="math with science, math, science, online calculator, all collections, list of all math with science collections" />
                 </Helmet>
 
 
@@ -101,13 +102,15 @@ export default function CollectionsRoutes() {
             briefDescription: 150
         })
 
-
         return (
             <>
                 {/* overriding document head */}
                 <Helmet>
-                    <title>{collection.en.name} | Math with Science</title>
-                    <meta name="description" content={collection[languageHelper.getLanguageSymbol()].name} />
+                    <title>{collection[languageHelper.getLanguageSymbol()].name} | Math with Science</title>
+                    <meta name="description" content={collection[languageHelper.getLanguageSymbol()].description} />
+                    <meta name="keywords"
+                        content={`math with science, math, science, online calculator, about math with science, about the developers, ${collection.keywords.toString()}`}
+                    />
                 </Helmet>
 
 
