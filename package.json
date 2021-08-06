@@ -1,14 +1,17 @@
 {
   "name": "math-with-science",
   "version": "2.0.0",
-  "description": "Math with Science is an open source project contains math and science problem solvers and the goal is to help anyone struggling with any equation and and anyone can improve the project",
+  "description": "Math with Science is an Open Source MERN project contains math and science problem solvers and the goal is to help anyone struggling with any math problems",
   "main": "server/server.js",
   "scripts": {
     "start": "npm run server",
-    "server": "cd server && npm run start",
+    "server": "cd server && npm start",
+    "server-prebuild": "cd server && npm run pre-build",
     "client": "cd client && npm start",
-    "dev": "concurrently \"cd server && npm run test\" \"cd client && npm start\"",
-    "heroku-prebuild": "npm install && cd server && npm install && cd .. && cd client && npm run prebuild && npm run build && cd .."
+    "client-prebuild": "cd client && npm run pre-build",
+    "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run test\" \"cd client && npm start\"",
+    "pre-build": "npm run server-prebuild & npm run client-prebuild",
+    "heroku-prebuild": "npm run pre-build"
   },
   "repository": {
     "type": "git",
