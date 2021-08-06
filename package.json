@@ -1,5 +1,5 @@
 {
-  "name": "math-with-science",
+  "name": "mathwithscience",
   "version": "2.0.0",
   "description": "Math with Science is an Open Source MERN project contains math and science problem solvers and the goal is to help anyone struggling with any math problems",
   "main": "server/server.js",
