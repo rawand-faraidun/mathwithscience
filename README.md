@@ -11,7 +11,7 @@ git clone https://github.com/rawand-faraidun/math-with-science.git
 ```
 
 ## Usage
-You run this project this ways:
+You can run this project this ways:
 
 1. You can use `server` or `client` scripts to run any of them or cd into them and start them there.
 
@@ -60,6 +60,7 @@ Don't know how to contribute? read these articles: <br />
 https://www.dataschool.io/how-to-contribute-on-github/ <br />
 https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
 
-<br /><br />
+<br />
+
 ## LICENSE : MIT
 https://github.com/rawand-faraidun/math-with-science/blob/main/LICENSE
