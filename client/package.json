@@ -43,8 +43,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "compile-scss": "gulp scss",
-    "prebuild": "npm install && npm run compile-scss",
-    "fullbuild": "npm run prebuild && npm run build"
+    "prebuild": "npm install && npm run compile-scss"
   },
   "eslintConfig": {
     "extends": [

@@ -6,11 +6,12 @@
   "scripts": {
     "start": "npm run server",
     "server": "cd server && npm start",
-    "server-prebuild": "cd server && npm run pre-build",
+    "server-prebuild": "cd server && npm run prebuild",
     "client": "cd client && npm start",
-    "client-prebuild": "cd client && npm run pre-build",
+    "client-prebuild": "cd client && npm run prebuild",
+    "client-build": "cd client && npm run build",
     "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run dev\" \"cd client && npm start\"",
-    "pre-build": "npm run server-prebuild & npm run client-prebuild",
+    "pre-build": "npm run server-prebuild & npm run client-build",
     "heroku-prebuild": "npm run pre-build"
   },
   "repository": {
