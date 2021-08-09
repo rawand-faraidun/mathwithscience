@@ -11,6 +11,10 @@ import MhamadHassanImage from './creator-images/mhamad-hasan.jpg'
 
 // about page contents
 const aboutContent = {
+    head: {
+        en: 'About',
+        kr: 'دەربارە'
+    },
     articles: [
         {
             heading: {

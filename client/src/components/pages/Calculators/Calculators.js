@@ -45,9 +45,13 @@ function CalculatorsRoutes() {
             <>
                 {/* overriding document head */}
                 <Helmet>
-                    <title>Calculators | Math with Science</title>
-                    <meta name="description" content="list of all calculators provieded by Math with Science" />
+                    <title>{componentContent[languageHelper.getLanguageSymbol()].title} | Math with Science</title>
+                    <meta name="description" content="List of all calculators provieded by Math with Science." />
                     <meta name="keywords" content="math with science, math, science, online calculator, all calculators, list of all math with science calculators" />
+
+                    <meta property="og:title" content={`${componentContent[languageHelper.getLanguageSymbol()].title} | Math with Science`} />
+                    <meta property="og:description" content="List of all calculators provieded by Math with Science." />
+                    <meta property="og:url" content={window.location.href} />
                 </Helmet>
 
 

@@ -29,6 +29,10 @@ export default function CalculatorPage(props) {
                     <meta name="keywords"
                         content={`math with science, math, science, online calculator, about math with science, about the developers, ${props.calculatorData.keywords.toString()}`}
                     />
+
+                    <meta property="og:title" content={`${props.calculatorData.en.name} | Math with Science`} />
+                    <meta property="og:description" content={props.calculatorData[languageHelper.getLanguageSymbol()].description} />
+                    <meta property="og:url" content={window.location.href} />
                 </Helmet>
             ) : ''}
 

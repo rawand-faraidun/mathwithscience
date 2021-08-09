@@ -135,6 +135,10 @@ export default function Contact() {
                 <title>{componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science</title>
                 <meta name="description" content={`${componentContent.head[languageHelper.getLanguageSymbol()]}`} />
                 <meta name="keywords" content="math with science, math, science, online calculator, contact, contact math with science" />
+
+                <meta property="og:title" content={`${componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science`} />
+                <meta property="og:description" content={`${componentContent.head[languageHelper.getLanguageSymbol()]}`} />
+                <meta property="og:url" content={window.location.href} />
             </Helmet>
 
 

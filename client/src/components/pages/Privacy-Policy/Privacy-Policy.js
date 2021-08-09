@@ -52,8 +52,12 @@ export default function PrivacyPolicy() {
             {/* overriding document head */}
             <Helmet>
                 <title>{componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science</title>
-                <meta name="description" content={`${componentContent.head[languageHelper.getLanguageSymbol()]}`} />
+                <meta name="description" content={componentContent.head[languageHelper.getLanguageSymbol()]} />
                 <meta name="keywords" content="math with science, math, science, online calculator, privacy policy, cookie, math with science privacy policy and cookies" />
+
+                <meta property="og:title" content={`${componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science`} />
+                <meta property="og:description" content={componentContent.head[languageHelper.getLanguageSymbol()]} />
+                <meta property="og:url" content={window.location.href} />
             </Helmet>
 
 

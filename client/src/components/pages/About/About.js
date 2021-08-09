@@ -24,9 +24,13 @@ export default function About() {
         <>
             {/* overriding document head */}
             <Helmet>
-                <title>About | Math with Science</title>
-                <meta name="description" content="About math with science idea, project, creators, and contributors" />
+                <title>{componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science</title>
+                <meta name="description" content="About math with science idea, project, creators, and contributors." />
                 <meta name="keywords" content="math with science, math, science, online calculator, about math with science, about the developers" />
+
+                <meta property="og:title" content={`${componentContent.head[languageHelper.getLanguageSymbol()]} | Math with Science`} />
+                <meta property="og:description" content="About math with science idea, project, creators, and contributors." />
+                <meta property="og:url" content={window.location.href} />
             </Helmet>
 
 

@@ -42,8 +42,12 @@ export default function CalculatorsRoutes() {
             {/* overriding document head */}
             <Helmet>
                 <title>{componentContent[languageHelper.getLanguageSymbol()].title} | Math with Science</title>
-                <meta name="description" content={`${componentContent[languageHelper.getLanguageSymbol()].description}`} />
+                <meta name="description" content={componentContent[languageHelper.getLanguageSymbol()].description} />
                 <meta name="keywords" content="math with science, math, science, online calculator, search for calculators and collections" />
+
+                <meta property="og:title" content={`${componentContent[languageHelper.getLanguageSymbol()].title} | Math with Science`} />
+                <meta property="og:description" content={componentContent[languageHelper.getLanguageSymbol()].description} />
+                <meta property="og:url" content={window.location.href} />
             </Helmet>
 
 
