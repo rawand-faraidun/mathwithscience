@@ -1,4 +1,4 @@
-# [math with science](https://www.mathwithscience.com/)
+# [Math with Science](https://www.mathwithscience.com/)
 Math with Science is an open-source MERN project that contains math and science problem solvers and the goal is to help anyone struggling with any math problems.	
 
 <br />
@@ -6,23 +6,27 @@ Math with Science is an open-source MERN project that contains math and science 
 ![Math with Science brand logo](https://i.ibb.co/g6b0z0B/math-with-science-brand-01.jpg)
 
 ## installation
+
+Getting a local copy of the project.
 ```git
 git clone https://github.com/rawand-faraidun/mathwithscience.git
 ```
 
 ## Usage
-You can run this project in these ways:
 
-1. Use `server` script to run the server, `client` script to run the client, or cd into them and start them there.
+**Note**: before running the project, pay attention to these steps:
 
-running server: 
+* Watch `.env.example` file in and make a `.env` file based on it.
+
+* Run `client-prebuild` and `server-prebuild` scripts, or read `README.md` file in [`server`](https://github.com/rawand-faraidun/mathwithscience/tree/main/server) and [`client`](https://github.com/rawand-faraidun/mathwithscience/tree/main/client) folders to know more about the project's function.
+
+<br />
+
+The project can be run this ways:
+
+1. Use server to serve the static front-end *(this is how the website works)*, this can be done using `start` script.
 ```npm
-npm run server
-```
-
-running client: 
-```npm
-npm run client
+npm start
 ```
 
 2. Use React development and server seperatly using `dev` script, by default the server runs on port **5000** and react development runs on port **3000**.
@@ -30,31 +34,31 @@ npm run client
 npm run dev
 ```
 
-3. Use server to serve the static front-end *(this is how the website works)*, this can be done using `start` script.
+3. Use `server` script to run the server, `client` script to run the client, or cd into them and start them there.
+
+run server:
 ```npm
-npm run dev
+npm run server
 ```
 
-
-**Note**: before running the project, pay attention to these steps:
-
-* Watch `.env.example` file in and make a `.env` file based on it.
-
-* Run `client-prebuild` and `server-prebuild` scripts, or read `README.md` file in `server` and `client` folders to know more about the project's function.
+run client:
+```npm
+npm run client
+```
 
 ## Contribution
 Contributions are always welcome.  
-**any contribution is being reviewed and tested before acceptng it.**
+**any contribution is being reviewed and tested before acceptng it**.
 
 In general, we are looking for these kind of contributions:
 
-* Adding new features *(example: new calculators, new branches(new branches must have atlease one calculator), new languages)*
+* Adding new features *(example: new calculators, new branches(new branches must have atlease one calculator), new languages)*.
 
-* Improving excisting features *(example: improvements in the functionality, improvment in rendering elements, simplifing the functionality)*
+* Improving excisting features *(example: improvements in the functionality, improvment in rendering elements, simplifing the functionality)*.
 
-* fixing comments *all components are written only by me and I expect mistakes in their comments*
+* fixing comments *all components are written only by me and I expect mistakes in their comments*.
 
-* If you want to contribute but not sure about it, or if they fit in these points, don't worry about it because they are only just what we are looking for in this moment, but we appreciate any imporovment
+* If you want to contribute but not sure about it, or if they fit in these points, don't worry about it because they are only just what we are looking for in this moment, but we appreciate any imporovment.
 
 Don't know how to contribute? read these articles: <br />
 https://www.dataschool.io/how-to-contribute-on-github/ <br />
