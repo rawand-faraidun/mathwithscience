@@ -14,13 +14,13 @@ git clone https://github.com/rawand-faraidun/mathwithscience.git
 
 ## Usage
 
-**Note**: before running the project, pay attention to these steps:
+**Note**: before running the project, pay attention to these points:
 
 * Watch `.env.example` file in and make a `.env` file based on it.
 
 * Run `client-prebuild` and `server-prebuild` scripts, or read `README.md` file in [`server`](https://github.com/rawand-faraidun/mathwithscience/tree/main/server#readme) and [`client`](https://github.com/rawand-faraidun/mathwithscience/tree/main/client#readme) folders to know more about the project's function.
 
-### The project can be run this ways:
+### The project can be run these ways:
 
 1. Use server to serve the static front-end *(this is how the website works)*, this can be done using `start` script.
 ```npm

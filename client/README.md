@@ -14,7 +14,7 @@ Or install dependencies with:
 npm install
 ```
 
-**NOTE**: the front-end components are designed with [SCSS](https://sass-lang.com/), using a SASS, SCSS compiler for your code editor is recomended, or use `compile-scss` script every time to make changes take place in css files.
+**NOTE**: the front-end components are designed with [SCSS](https://sass-lang.com/), using a SASS, SCSS compiler for your code editor is recomended, or use `compile-scss` script after every changes to save them into CSS files.
 ```npm
 npm run compile-scss
 ```
