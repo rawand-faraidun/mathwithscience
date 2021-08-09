@@ -20,9 +20,7 @@ git clone https://github.com/rawand-faraidun/mathwithscience.git
 
 * Run `client-prebuild` and `server-prebuild` scripts, or read `README.md` file in [`server`](https://github.com/rawand-faraidun/mathwithscience/tree/main/server) and [`client`](https://github.com/rawand-faraidun/mathwithscience/tree/main/client) folders to know more about the project's function.
 
-<br />
-
-The project can be run this ways:
+### The project can be run this ways:
 
 1. Use server to serve the static front-end *(this is how the website works)*, this can be done using `start` script.
 ```npm
@@ -60,8 +58,8 @@ In general, we are looking for these kind of contributions:
 
 * If you want to contribute but not sure about it, or if they fit in these points, don't worry about it because they are only just what we are looking for in this moment, but we appreciate any imporovment.
 
-Don't know how to contribute? read these articles: <br />
-https://www.dataschool.io/how-to-contribute-on-github/ <br />
+Don't know how to contribute? read these articles:  
+https://www.dataschool.io/how-to-contribute-on-github/   
 https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
 
 <br />

@@ -1,7 +1,8 @@
-# [Math with Science](https://www.mathwithscience.com/) / Server
+# [Math with Science](https://www.mathwithscience.com/) - Server
 Server side (Back-end) of math with science website.
 
-The server is made with [Express.js](https://expressjs.com/), it servers `index.html` file from client side build folder for every get routes, to try the server make sure the build folder is ready before starting it [(read more)](https://github.com/rawand-faraidun/mathwithscience/tree/main/client), or use the server and the client independently as they are connected through RestAPIs.
+The server is made with [Express.js](https://expressjs.com/), it servers `index.html` file from client side build folder for every get routes, to try the server make sure the build folder is ready before starting it [(read more)](https://github.com/rawand-faraidun/mathwithscience/tree/main/client), or use the server and the client independently as they are connected through RestAPIs.  
+Post routes and database models are defined in [APIs](https://github.com/rawand-faraidun/mathwithscience/tree/main/server/APIs) folder
 
 ## Getting started
 run `pre-build` script to install the dependencies.
