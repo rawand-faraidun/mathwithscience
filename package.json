@@ -9,7 +9,7 @@
     "server-prebuild": "cd server && npm run pre-build",
     "client": "cd client && npm start",
     "client-prebuild": "cd client && npm run pre-build",
-    "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run test\" \"cd client && npm start\"",
+    "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run dev\" \"cd client && npm start\"",
     "pre-build": "npm run server-prebuild & npm run client-prebuild",
     "heroku-prebuild": "npm run pre-build"
   },
