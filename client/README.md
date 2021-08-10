@@ -20,7 +20,7 @@ npm run compile-scss
 ```
 
 ## [public](https://github.com/rawand-faraidun/mathwithscience/tree/main/client/public) folder
-Contains partial designs (`partials.scss`), website images, and fonts *(at the moment it only conytains kurdish font as the english ones are added via google fonts in `partials.scss`)*.
+Contains partial designs (`partials.scss`), website images, and fonts *(at the moment it only contains kurdish font as the english ones are added via google fonts in `partials.scss`)*.
 
 ## [src](https://github.com/rawand-faraidun/mathwithscience/tree/main/client/src) folder
 Contains all components and datas for the front-end.
@@ -30,7 +30,7 @@ Contains data for all collections and calculators and their components.
 
 * [`Calculators-Data.js`](https://github.com/rawand-faraidun/mathwithscience/blob/main/client/src/components/DATA/Calculators-Data.js),
 [`Collections-Data.js`](https://github.com/rawand-faraidun/mathwithscience/blob/main/client/src/components/DATA/Collections-Data.js) 
-files are Database-like files, they conytains datas for collections and calculators.  
+files are Database-like files, they contains datas for collections and calculators.  
 
 * [`Calculators.js`](https://github.com/rawand-faraidun/mathwithscience/blob/main/client/src/components/DATA/Calculators.js),
 [`Collections.js`](https://github.com/rawand-faraidun/mathwithscience/blob/main/client/src/components/DATA/Collections.js)
