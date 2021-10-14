@@ -1,0 +1,218 @@
+/*******((***************
+***Calculator Defaults***
+************************/
+
+// input fields
+.input-field {
+    padding: 0.25rem 0.4rem 0.1rem;
+    width: 100%;
+    font-size: var(--medium-font-size);
+    color: var(--head-text-color);
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 2px var(--main-green-color);
+
+    // input field placeholder
+    &::placeholder {
+        color: var(--placeholder-text-color);
+    }
+
+    // answerfields
+    &.answer-field {
+        border-color: var(--main-blue-color);
+    }
+
+    // input focus, used when wanted to change input boarder to blue when focused
+    &.input-focus {
+        transition: border-color 0.3s ease;
+        &:focus {
+            border-color: var(--main-blue-color);
+        }
+    }
+
+    // error on answer field
+    &.error {
+        color: var(--main-red-color);
+        border-color: var(--main-red-color);
+        animation: shake 0.2s ease-in-out 0s 2;
+
+        //shake for wrong input
+        @keyframes shake {
+            0% {
+                transform: none;
+            }
+            25% {
+                transform: translateX(-0.5rem);
+            }
+            75% {
+                transform: translateX(0.5rem);
+            }
+            100% {
+                transform: none;
+            }
+        }
+    }
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .input-field {
+        font-size: var(--small-font-size);
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// input labels
+.label {
+    color: var(--head-text-color);
+    font-family: var(--body-font-family);
+    font-size: var(--large-font-size);
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .label {
+        font-size: var(--medium-font-size);
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// proportion ratio controls
+.dropdown-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    // the space between the label and the dropdown
+    .space {
+        margin: 0 1rem;
+    }
+}
+
+// dropdowns
+.dropdown {
+    margin-left: -0.25rem;
+    padding: 0.25rem;
+    font-family: var(--body-font-family);
+    font-size: var(--medium-font-size);
+
+    //options of the dropdown
+    option {
+        font-size: var(--small-font-size);
+    }
+}
+
+// for screens smaller than 1600px
+@media screen and (max-width: 1600px) {
+    .dropdown {
+        font-size: var(--small-font-size);
+
+        //options of the dropdown
+        option {
+            font-size: var(--x-small-font-size);
+        }
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// component-grid
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        3,
+        calc((100% - 10rem) / 3)
+    ); // these numbers are based on width and padding of the grid section
+    column-gap: 5rem;
+    row-gap: 3rem;
+}
+
+// component-oneline
+.component-oneline {
+    display: grid;
+    grid-template-columns: 1 100%;
+    row-gap: 3rem;
+}
+
+// component-small makes max width 500px
+.component-small {
+    margin: auto;
+    width: clamp(0px, 100%, 500px);
+}
+
+// component-smaller makes max width 20rem
+.component-smaller {
+    margin: auto;
+    width: clamp(1px, 100%, 20rem);
+}
+
+// changing component-grid grid to 2 columns in small screens
+@media screen and (max-width: 1024px) {
+    .component-grid {
+        grid-template-columns: repeat(2, calc((100% - 5rem) / 2));
+    }
+}
+
+// changing component-grid grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .component-grid {
+        grid-template-columns: repeat(1, 100%);
+        column-gap: unset;
+    }
+
+    .component-smaller {
+        margin: auto;
+        width: 100%;
+    }
+}
+
+////////////////
+
+////////////////
+
+////////////////
+
+// calculators spacing
+
+.calculators-margin-top-4 {
+    margin-top: 4rem !important;
+}
+
+.calculators-margin-top-3 {
+    margin-top: 3rem !important;
+}
+
+.calculators-margin-top-2 {
+    margin-top: 2rem !important;
+}
+
+// shape sizes
+
+// shape sized by width
+.shape-width {
+    width: 10rem;
+}
+
+// shape sized by height
+.shape-height {
+    width: fit-content;
+    height: 10rem;
+
+    svg {
+        height: 100%;
+    }
+}

@@ -1,0 +1,120 @@
+/********************************
+***header & Navigation Designs***
+********************************/
+
+// designing the header
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex; // using flex display to position elements easily
+    width: 100%;
+    height: var(--header-height-size);
+    padding: var(--padding);
+    z-index: 10;
+    background-color: var(--header-background-color);
+
+    // the main part of header, this will be the header of small navigations
+    .nav-main {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        z-index: 12;
+
+        // this will thake the space between braqnd and burger in mobile view
+        .nav-main-space {
+            flex: 1;
+            display: none;
+        }
+
+        // hidding the navigation burger in small screens
+        .nav-burger {
+            display: none;
+        }
+    }
+
+    .nav-holder {
+        position: relative; // using relative positioning to reposition the animation easily
+        display: flex; // using flex display to show search bar and links in a line
+        align-items: center;
+        z-index: 11; // childs z index is 2 to make the gradiant layer qork perfectly if displayed
+    }
+
+    // the navigation closer
+    .nav-drawer-closer {
+        display: none;
+    }
+
+    // transparent header class
+    &.transparent-header {
+        background-color: transparent;
+        transition: background 0.3s ease;
+    }
+}
+
+////////////////
+
+// changing the header to header and navigation drawe in small screens
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 0; // removing the padding of the header, instead adding it to navigation main
+
+        .nav-main {
+            padding: var(--padding);
+            width: 100%;
+            height: 100%;
+
+            // unhiddin the element to take the space
+            .nav-main-space {
+                display: block;
+            }
+
+            // unhidding the navihation burger
+            .nav-burger {
+                display: block;
+            }
+        }
+
+        // making the navigation holder as navigation drawer
+        .nav-holder {
+            flex: unset;
+            flex-direction: column;
+            padding: var(--padding);
+            padding-top: 10vh;
+            padding-bottom: 10vh;
+            position: absolute; // using absolute positioning to place it easily under the nav main
+            top: var(--header-height-size); // positiong excactly under the header
+            left: -75vw;
+            width: 75vw;
+            height: calc(100vh - var(--header-height-size));
+            background-color: var(--body-color);
+            transition: left 0.6s ease-in-out; // this transition works in the navigation drawer opening for mobile
+
+            // the nav drawer shows when the navigation drawer is opened
+            &.nav-holder-opened {
+                left: 0;
+            }
+        }
+
+        // navigation drawer closer
+        .nav-drawer-closer {
+            display: block;
+            position: absolute;
+            top: var(--header-height-size); // positiong excactly under the header
+            left: 0;
+            width: 100vw;
+            height: calc(100vh - var(--header-height-size));
+            background-color: var(--black-color);
+            z-index: 1;
+            visibility: hidden; // usig visibility to hide the closer
+            opacity: 0; // using opacity to animate when it shows
+            transition: opacity 0.6s, visibility 0.6s ease-in-out;
+
+            // when the navigation drawer is opened, the closer will show up
+            &.nav-drawer-closer-display {
+                visibility: visible;
+                opacity: 0.4;
+            }
+        }
+    }
+}

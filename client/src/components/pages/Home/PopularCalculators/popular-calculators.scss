@@ -1,0 +1,129 @@
+/************************
+***popular calculators***
+************************/
+
+//poplar calculators in homepage
+.popular-calculators {
+    margin-top: 7rem;
+    padding: var(--padding-sides);
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    background-color: #008b58;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+    // background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+    // background-size: 15rem;
+
+    // title of the popular calculators
+    .popular-calculators-title {
+        font-family: var(--body-font-family);
+        font-size: var(--xx-large-font-size);
+        // color: var(--head-text-color);
+        color: var(--white-color);
+        text-align: center;
+
+    }
+
+    // the grid of popular calculators
+    .popular-calculators-grid {
+        margin-top: 3rem;
+        display: grid;
+        grid-template-columns: repeat(4, 18.5rem); // these numbers are based on width and padding variables
+        column-gap: 3rem;
+        row-gap: 2rem;
+
+        // designing each calculator card
+        .calculator {
+            padding: 2rem 1rem;
+            text-align: center;
+            background-color: var(--body-color);
+            border: 1px solid rgba(var(--main-background-color-rgb), 0.15);
+            border-radius: var(--small-font-size);
+            box-shadow: 6px 8px 42px 1px rgba(#000, 0.15);
+            transition: transform 0.2s ease;
+
+            // branch name
+            .calculator-name {
+                font-family: var(--head-font-family);
+                font-size: var(--x-large-font-size);
+                color: var(--head-text-color);
+            }
+
+            // branch description
+            .calculator-description {
+                margin-top: 1.5rem;
+                font-family: var(--head-font-family);
+                font-size: var(--small-font-size);
+                color: var(--body-text-color);
+            }
+
+            // hovering each brand card
+            &:hover {
+                transform: scale(1.075); // scalling it to make it larger
+            }
+        }
+    }
+}
+
+////////////////
+
+// resezing calculators card for screens saller than 1600px
+@media screen and (max-width: 1600px) {
+    .popular-calculators {
+        .popular-calculators-grid {
+            grid-template-columns: repeat(4, 16.25rem);
+        }
+    }
+}
+
+// resezing calculators card for screens saller than 1360px
+@media screen and (max-width: 1360px) {
+    .popular-calculators {
+        .popular-calculators-grid {
+            grid-template-columns: repeat(4, calc((100% - 9rem) / 4));
+        }
+    }
+}
+
+// resezing calculators card for small screens
+@media screen and (max-width: 1024px) {
+    .popular-calculators {
+        .popular-calculators-grid {
+            grid-template-columns: repeat(3, calc((100% - 6rem) / 3));
+        }
+    }
+}
+
+// resezing calculators card for ipad screens
+@media screen and (max-width: 768px) {
+    .popular-calculators {
+        .popular-calculators-grid {
+            grid-template-columns: repeat(2, calc((100% - 4rem) / 2));
+            column-gap: 4rem;
+            row-gap: 3rem;
+        }
+    }
+}
+
+// resezing calculators card for mobile screens
+@media screen and (max-width: 500px) {
+    .popular-calculators {
+        .popular-calculators-grid {
+            grid-template-columns: repeat(1, 100%);
+            column-gap: unset;
+            row-gap: 1.5rem;
+
+            .calculator {
+                display: none; // hidding all calculators except the first to 5th one
+
+                // showing only the first 5
+                &:first-child,
+                &:nth-child(2),
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(5) {
+                    display: block;
+                }
+            }
+        }
+    }
+}

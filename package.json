@@ -1,0 +1,35 @@
+{
+  "name": "mathwithscience",
+  "version": "2.0.0",
+  "description": "Math with Science is an open-source MERN project that contains math and science problem solvers and the goal is to help anyone struggling with any math problems.",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "npm run server",
+    "server": "cd server && npm start",
+    "server-prebuild": "cd server && npm run prebuild",
+    "client": "cd client && npm start",
+    "client-prebuild": "cd client && npm run prebuild",
+    "client-build": "cd client && npm run build",
+    "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run dev\" \"cd client && npm start\"",
+    "pre-build": "npm run server-prebuild & npm run client-build",
+    "heroku-prebuild": "npm run pre-build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rawand-Faraidun/math-with-science.git"
+  },
+  "keywords": [
+    "math-with-science",
+    "caalculators",
+    "open-source"
+  ],
+  "author": "rawand-faraidun <201.rawand@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rawand-Faraidun/math-with-science/issues"
+  },
+  "homepage": "https://github.com/Rawand-Faraidun/math-with-science#readme",
+  "dependencies": {
+    "concurrently": "^6.2.0"
+  }
+}

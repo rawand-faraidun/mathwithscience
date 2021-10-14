@@ -1,0 +1,64 @@
+// designing the changing theme switch
+.theme-switch-holder {
+    margin-left: 2.25rem;
+    padding-top: 3px;
+    position: relative; // using relative positioning to make childs can be positioned easily
+    z-index: 2; // this works like 13 because it's parent z index is 11
+
+    // designing the switch slider
+    .theme-toogler {
+        position: relative; // using absolute
+        top: 0;
+        left: 0;
+        width: calc((var(--nav-link-font-size) * 2) + 8px);
+        height: var(--nav-link-font-size);
+        background-color: var(--main-gray-color);
+        border-radius: var(--nav-link-font-size);
+
+        // designing the switch head
+        &:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%); // making the element vertically centered
+            left: -4px;
+            width: calc(var(--nav-link-font-size) + 8px);
+            height: calc(var(--nav-link-font-size) + 8px);
+            background: var(--body-color) url("https://i.ibb.co/7JfqXxB/sunny.png"); // using background image to get a sunny logo for lightmode
+            background-size: calc(
+                var(--nav-link-font-size) + 4px
+            ); // setting background size to make the image a little smaller
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            transition: left 0.2s, background 0.2s ease-in-out;
+            box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    // the switch input checkbox functionality
+    .theme-switch {
+        display: none; // hiding the switch from user view
+
+        // if the switch is checked, getting to darkmode and changing the switch head background image to a moon
+        &:checked + .theme-toogler::before {
+            left: 50%;
+            background: var(--body-color) url("https://i.ibb.co/FxzBYR9/night.png");
+            background-size: var(--nav-link-font-size);
+            background-repeat: no-repeat;
+            background-position: center;
+            box-shadow: unset;
+        }
+    }
+}
+
+////////////////
+
+// repositioning the theme switcher in mobile views
+@media screen and (max-width: 1024px) {
+    // adding more height to the navigation links to be space between them
+    .theme-switch-holder {
+        margin: 0;
+        margin-top: auto;
+    }
+}

@@ -1,0 +1,11 @@
+/**********
+***Brand***
+**********/
+
+// designing the brand, by default light mode brand is active
+.brand {
+    svg {
+        height: var(--brand-image-size);
+        aspect-ratio: 177.92 / 20.61;
+    }
+}

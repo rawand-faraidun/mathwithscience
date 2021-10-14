@@ -1,0 +1,129 @@
+/**************
+***List View***
+**************/
+
+// list view section
+.list-view {
+    // header of the list view
+    .list-view-header {
+        margin-bottom: 3.5rem;
+
+        // title of the list view
+        .list-view-title {
+            position: relative;
+            display: inline-block;
+            font-family: var(--head-font-family);
+            font-size: var(--xxx-large-font-size);
+            color: var(--head-text-color);
+
+            &:after {
+                content: "";
+                display: block;
+                height: 3px;
+                background-color: var(--main-green-color);
+                border-radius: 2px;
+                width: 100%;
+            }
+        }
+
+        // description of the list view
+        .list-view-description {
+            margin-top: 1.5rem;
+            font-family: var(--head-font-family);
+            font-size: var(--small-font-size);
+            color: var(--body-text-color);
+        }
+    }
+
+    // list view grid
+    .list-view-grid {
+        display: grid;
+        grid-template-columns: repeat(
+            3,
+            calc((100% - 10rem) / 3)
+        ); // these numbers are based on width and padding of the grid section
+        column-gap: 5rem;
+        row-gap: 3rem;
+
+        // each grid item
+        .grid-item {
+            position: relative;
+
+            // grid item name
+            .grid-item-name {
+                font-family: var(--head-font-family);
+                font-size: var(--x-large-font-size);
+                transition: font-size 0.3s ease-in-out;
+
+                // gird item link
+                a {
+                    color: var(--head-text-color);
+
+                    // moving the arrow when the link hovered
+                    &:hover + .grid-item-name-arrow {
+                        margin-left: 2.5rem;
+                    }
+                    //  right to left arrow hover, used in kurdish
+                    &:hover + .grid-item-name-arrow.rtl {
+                        margin-right: 2.5rem;
+                    }
+                }
+
+                // arrow in grid item name
+                .grid-item-name-arrow {
+                    margin-left: 1rem;
+                    font-size: 0.7em;
+                    color: var(--head-text-color);
+                    transition: margin 0.25s ease-in-out;
+                    
+                    // right to left arrow, used in kurdish
+                    &.rtl {
+                        margin-right: 1rem;
+                        .fa-arrow-circle-right {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                // underline on grid item name
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 3px;
+                    background-color: var(--body-text-color);
+                    border-radius: 2px;
+                    width: 100%;
+                }
+            }
+
+            // grid item description
+            .grid-item-description {
+                margin-top: 1.25rem;
+                font-family: var(--head-font-family);
+                font-size: var(--small-font-size);
+                color: var(--body-text-color);
+            }
+        }
+    }
+}
+
+////////////////
+
+// changing list view grid to 2 columns in small screens
+@media screen and (max-width: 1024px) {
+    .list-view {
+        .list-view-grid {
+            grid-template-columns: repeat(2, calc((100% - 5rem) / 2));
+        }
+    }
+}
+
+// changing list view grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .list-view {
+        .list-view-grid {
+            grid-template-columns: repeat(1, 100%);
+            column-gap: unset;
+        }
+    }
+}

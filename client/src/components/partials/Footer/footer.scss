@@ -1,0 +1,123 @@
+/***********
+***Footer***
+***********/
+
+// designing the footer
+.footer {
+    margin-top: 7rem;
+    padding-bottom: 0.4rem;
+
+    // the footer line
+    .footer-line {
+        margin: auto;
+        width: var(--width);
+        height: 2px;
+        background-color: var(--body-text-color);
+        border: none;
+    }
+
+    // the holder of the footer
+    .footer-holder {
+        padding: var(--padding-sides);
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+        display: flex;
+
+        // the left side of the footer
+        .footer-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        // the right side of the footer
+        .footer-right {
+            margin-top: var(--brand-image-size);
+            flex: 1;
+            display: flex;
+
+            // each list in the rightside
+            .footer-list {
+                flex: 1;
+
+                // each link in the list
+                .link {
+                    display: inline-block;
+                    width: 50%;
+                    margin-top: 1rem;
+                    font-family: var(--body-font-family);
+                    font-size: var(--medium-font-size);
+                    color: var(--body-text-color);
+
+                    // the hyperlinks
+                    a {
+                        color: var(--body-text-color);
+                    }
+
+                    // social media links
+                    &.socials {
+                        font-size: var(--large-font-size);
+
+                        // each link
+                        a {
+                            margin: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // details in the footer
+    .footer-details {
+        margin: auto;
+        padding: var(--padding-sides);
+        font-family: var(--body-font-family);
+        font-size: calc(var(--x-small-font-size) - 1px);
+        font-weight: 100;
+        text-align: center;
+        color: var(--body-text-color);
+
+        // making all paragraphs inline with each other
+        p {
+            display: inline;
+        }
+
+        // the divider in footer
+        .footer-details-divider {
+            margin: 0 1.5rem;
+        }
+
+        // privacy policy in footer
+        .footer-privacy-policy {
+            text-decoration: underline;
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+////////////////
+
+// changing the header to header and navigation drawe in small screens
+@media screen and (max-width: 768px) {
+    .footer {
+        .footer-holder {
+            flex-direction: column;
+            .footer-right {
+                margin-top: 2rem;
+            }
+        }
+        .footer-details {
+            line-height: calc(var(--x-small-font-size) * 1.5);
+            // hidding the divider
+            .footer-details-divider {
+                display: none;
+            }
+            p {
+                display: block;
+            }
+        }
+    }
+}

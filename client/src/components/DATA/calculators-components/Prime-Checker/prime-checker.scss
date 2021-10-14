@@ -1,0 +1,51 @@
+/******************
+***Prime Checker***
+******************/
+
+// prime checker element
+.prime-checker {
+    position: relative;
+    margin: auto;
+    width: 20rem;
+
+    // answers part
+    .answers {
+        margin-top: 3rem;
+
+        // prime status
+        .status {
+            margin-bottom: 2rem;
+            text-align: center;
+
+            // prime status text
+            .status-label {
+                font-size: var(--large-font-size);
+                text-decoration: underline;
+                transition: text-decoration-color 0.3s ease;
+
+                // if the number is prime text
+                &.true {
+                    text-decoration-color: var(--main-green-color);
+                }
+
+                // if the number is not prime text
+                &.false {
+                    text-decoration-color: var(--main-red-color);
+                }
+            }
+        }
+
+        // next and previous primes
+        .previous-prime,
+        .next-prime {
+            margin-top: 1rem;
+        }
+    }
+}
+
+// fitting element to screen in small screens
+@media screen and (max-width: 500px) {
+    .prime-checker {
+        width: 100%;
+    }
+}

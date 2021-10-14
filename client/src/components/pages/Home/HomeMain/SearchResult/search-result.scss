@@ -1,0 +1,82 @@
+/*************
+***Collections***
+*************/
+
+// designing the search result view in homepage
+.search-result {
+    margin: auto;
+    margin-top: 5rem;
+    width: 54rem; // 864px
+    display: grid;
+    grid-template-columns: repeat(3, 16rem); // these numbers are based on width and padding of the grid section
+    column-gap: 3rem;
+    row-gap: 2rem;
+
+    // designing each result card
+    .result {
+        padding: 2rem 1rem;
+        // width: 16rem;
+        // height: 16rem;
+        text-align: center;
+        background-color: var(--body-color);
+        border: 1px solid rgba(var(--main-background-color-rgb), 0.15);
+        border-radius: var(--small-font-size);
+        box-shadow: 6px 8px 42px 1px rgba(#000, 0.15);
+        transition: transform 0.2s ease;
+
+        // result name
+        .result-name {
+            font-family: var(--head-font-family);
+            font-size: var(--x-large-font-size);
+            color: var(--head-text-color);
+        }
+
+        // result description
+        .result-description {
+            margin-top: 1.5rem;
+            font-family: var(--head-font-family);
+            font-size: var(--small-font-size);
+            color: var(--body-text-color);
+        }
+
+        // hovering each brand card
+        &:hover {
+            transform: scale(1.075); // scalling it to make it larger
+        }
+    }
+}
+
+// the link to search route
+.link-to-search-route {
+    margin-top: 3rem;
+    text-align: center;
+
+    a {
+        font-family: var(--head-font-family);
+        font-size: var(--large-font-size);
+        color: var(--body-text-color);
+        text-decoration: underline;
+    }
+}
+
+////////////////
+
+// changing search result grid to 2 columns in small screens
+@media screen and (max-width: 1024px) {
+    .search-result {
+        width: 100%;
+        grid-template-columns: repeat(2, calc((100% - 4rem) / 2));
+        column-gap: 4rem;
+        row-gap: 3rem;
+    }
+}
+
+// changing search result grid to 1 columns in mobile screens
+@media screen and (max-width: 500px) {
+    .search-result {
+        margin-top: 3rem;
+        grid-template-columns: repeat(1, 100%);
+        column-gap: unset;
+        row-gap: 1.5rem;
+    }
+}

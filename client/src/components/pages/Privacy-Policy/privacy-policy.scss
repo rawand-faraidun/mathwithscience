@@ -1,0 +1,44 @@
+/*******************
+***Privacy Policy***
+*******************/
+
+// privacy policy section
+.privacy-policy {
+    margin-top: var(--first-element-margin-top);
+    padding: var(--padding-sides);
+
+    // privacy policy head
+    .privacy-policy-head {
+        font-family: var(--head-font-family);
+        font-size: var(--huge-font-size);
+        font-weight: 700;
+        color: var(--head-text-color);
+    }
+
+    // privacy policy contents
+    .privacy-policy-content {
+        margin-bottom: 4rem;
+
+        // privacy policy question
+        .privacy-policy-quesion {
+            margin-top: 3rem;
+
+            // question title
+            .question-title {
+                font-family: var(--body-font-family);
+                font-size: var(--large-font-size);
+                font-weight: 700;
+                color: var(--head-text-color);
+            }
+
+            // question answer
+            .question-answer {
+                margin-top: 0.75rem;
+                font-family: var(--body-font-family);
+                font-size: var(--small-font-size);
+                font-weight: 400;
+                color: var(--body-text-color);
+            }
+        }
+    }
+}
