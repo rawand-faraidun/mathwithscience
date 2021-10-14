@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rawand-faraidun/math-with-science.git"
+    "url": "git+https://github.com/rawand-faraidun/mathwithscience.git"
   },
   "keywords": [
     "math-with-science",
@@ -20,9 +20,9 @@
   "author": "rawand-faraidun <201.rawand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rawand-faraidun/math-with-science/issues"
+    "url": "https://github.com/rawand-faraidun/mathwithscience/issues"
   },
-  "homepage": "https://github.com/rawand-faraidun/math-with-science#readme",
+  "homepage": "https://github.com/rawand-faraidun/mathwithscience#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

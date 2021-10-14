@@ -4,12 +4,12 @@
   "description": "Math with Sciene - Client",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rawand-faraidun/math-with-science.git"
+    "url": "git+https://github.com/rawand-faraidun/mathwithscience.git"
   },
   "author": "rawand-faraidun <201.rawand@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rawand-faraidun/math-with-science/issues"
+    "url": "https://github.com/rawand-faraidun/mathwithscience/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
