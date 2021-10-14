@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="26.989" height="26.989" viewBox="0 0 26.989 26.989">
-  <g id="Logo" transform="translate(-416 -53.919)">
-    <rect id="Line" width="7.621" height="28.792" rx="3.811" transform="translate(436.855 54.663) rotate(45)" fill="#00cc80"/>
-    <circle id="Lower" cx="4.234" cy="4.234" r="4.234" transform="translate(431.013 74.919) rotate(-45)" fill="#00c2ff"/>
-    <circle id="Upper" cx="4.234" cy="4.234" r="4.234" transform="translate(416 59.907) rotate(-45)" fill="#00c2ff"/>
-  </g>
-</svg>
