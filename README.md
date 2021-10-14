@@ -3,7 +3,7 @@ Math with Science is an open-source MERN project that contains math and science 
 
 <br />
 
-![Math with Science brand logo](https://i.ibb.co/g6b0z0B/math-with-science-brand-01.jpg)
+![Math with Science brand logo](https://mathwithscience.com/images/Logo-long.jpg)
 
 ## installation
 
