@@ -20,7 +20,7 @@ npm run compile-scss
 ```
 
 ## [public](https://github.com/rawand-faraidun/mathwithscience/tree/main/client/public) folder
-Contains partial designs (`partials.scss`), website images, and fonts *(at the moment it only contains kurdish font as the english ones are added via google fonts in `partials.scss`)*.
+Contains website images.
 
 ## [src](https://github.com/rawand-faraidun/mathwithscience/tree/main/client/src) folder
 Contains all components and datas for the front-end.
