@@ -70,21 +70,3 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
-const CACHE_NAME = "cache-v1"
-const urlsToCache = [
-  '/static/css/main.c0c06230.chunk.css',
-  '/service-worker.js',
-  '/static/js/2.9b0732da.chunk.js',
-  '/static/js/main.d90af10d.chunk.js'
-]
-
-self.addEventListener('install', function (event) {
-  // Perform install steps
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(function (cache) {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
-  );
-});

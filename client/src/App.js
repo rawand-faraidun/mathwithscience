@@ -17,6 +17,9 @@ import Contact from './components/pages/Contact/Contact'
 import PrivacyPolicy from './components/pages/Privacy-Policy/Privacy-Policy'
 import NotFound404 from './components/pages/others/Not-Found-404/Not-Found-404'
 
+// importing partial designs
+import './components/partials/designs/partials.css'
+
 
 
 // initiating language helper cookie check constructor
