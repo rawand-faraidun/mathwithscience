@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 import './search-result.css'
-import languageHelper from '../../../../partials/languageHelper'
+import languageHelper from '../../../../partials/helpers/Language'
 const Collections = require('../../../../DATA/Collections')
 const Calculators = require('../../../../DATA/Calculators')
 

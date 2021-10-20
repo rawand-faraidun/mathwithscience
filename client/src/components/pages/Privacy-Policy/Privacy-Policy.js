@@ -2,7 +2,7 @@ import React from 'react'
 import { Helmet } from 'react-helmet'
 
 import './privacy-policy.css'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../partials/helpers/Language'
 
 
 

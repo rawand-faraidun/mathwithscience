@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 
 import './search.css'
 import ListView from '../others/List-View/List-View'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../partials/helpers/Language'
 const Calculators = require('../../DATA/Calculators')
 const Collections = require('../../DATA/Collections')
 

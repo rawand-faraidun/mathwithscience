@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 import './language-selector.css'
-import languageHelper from '../../languageHelper'
+import languageHelper from '../../helpers/Language'
 
 
 
@@ -46,7 +46,7 @@ export default function LanguageSelector() {
                 <label className={`language-selector-label ${languageHelper.getClass()}`} htmlFor="language">
 
                     {/* showing label content based on page language */}
-                    {componentsContent[languageHelper.getLanguageSymbol()]} : 
+                    {componentsContent[languageHelper.getLanguageSymbol()]} :
                 </label>
 
                 {/* language selector select */}

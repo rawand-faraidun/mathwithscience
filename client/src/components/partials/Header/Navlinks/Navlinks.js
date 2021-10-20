@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation, Link } from 'react-router-dom'
 
 import './navlinks.css'
-import languageHelper from '../../languageHelper'
+import languageHelper from '../../helpers/Language'
 
 
 

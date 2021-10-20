@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 let nerdamer = require('nerdamer')
 require('nerdamer/Algebra.js')
 require('nerdamer/Calculus.js')

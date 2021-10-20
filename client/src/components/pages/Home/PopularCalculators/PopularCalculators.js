@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './popular-calculators.css'
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 const Calculators = require('../../../DATA/Calculators')
 
 

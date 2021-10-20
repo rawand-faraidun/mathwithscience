@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import './contact.css'
 import logo from './math-with-science.svg'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../partials/helpers/Language'
 
 
 

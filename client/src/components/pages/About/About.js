@@ -5,7 +5,7 @@ import { faHeart, faMusic } from '@fortawesome/free-solid-svg-icons'
 
 import './about.css'
 import aboutContent from './about-content'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../partials/helpers/Language'
 
 
 

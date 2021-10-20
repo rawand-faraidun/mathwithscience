@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import './home-main.css'
 import Particles from 'react-particles-js'
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 import SearchResult from './SearchResult/SearchResult'
 
 

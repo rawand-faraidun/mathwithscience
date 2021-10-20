@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import './not-found-404.css'
-// import languageHelper from '../../../partials/languageHelper'
+// import languageHelper from '../../../partials/Helpers/Language'
 
 
 /**

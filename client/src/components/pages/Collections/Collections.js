@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import './collections.css'
-import languageHelper from '../../partials/languageHelper'
+import languageHelper from '../../partials/helpers/Language'
 import ListView from '../others/List-View/List-View'
 import CalculatorPage from '../others/Calculator-Page/Calculator-Page'
 import NotFound404 from '../others/Not-Found-404/Not-Found-404'

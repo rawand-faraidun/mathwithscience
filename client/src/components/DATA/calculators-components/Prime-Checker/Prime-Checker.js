@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import './prime-checker.css'
 
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 
 
 

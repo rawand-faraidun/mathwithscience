@@ -1,4 +1,4 @@
-import languageHelper from '../partials/languageHelper'
+import languageHelper from '../partials/helpers/Language'
 import cloneDeep from 'lodash/cloneDeep'
 import Collections from './Collections-Data'
 

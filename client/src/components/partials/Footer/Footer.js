@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
-import languageHelper from '../languageHelper'
+import languageHelper from '../helpers/Language'
 import Brand from '../Brand/Brand'
 import LanguageSelector from './LanguageSelector/LanguageSelector'
 

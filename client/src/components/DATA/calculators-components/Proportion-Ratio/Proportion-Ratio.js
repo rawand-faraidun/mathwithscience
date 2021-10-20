@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import './proportion-ratio.css'
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 
 
 

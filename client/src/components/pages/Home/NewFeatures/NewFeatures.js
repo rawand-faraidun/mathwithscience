@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './new-features.css'
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 
 
 

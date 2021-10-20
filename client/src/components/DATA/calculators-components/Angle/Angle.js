@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import languageHelper from '../../../partials/languageHelper'
+import languageHelper from '../../../partials/helpers/Language'
 import { nerdamerCalculate, makeInitialState } from '../calculators-helpers/unit-conversion'
 
 
