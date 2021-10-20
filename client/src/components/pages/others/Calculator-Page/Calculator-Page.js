@@ -16,8 +16,6 @@ import languageHelper from '../../../partials/helpers/Language'
  */
 export default function CalculatorPage(props) {
 
-    console.log(props.calculatorData.keywords.toString());
-
     return (
         <>
             {/* overriding document head */}
