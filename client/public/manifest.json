@@ -1,0 +1,57 @@
+{
+    "name": "Math with Science",
+    "short_name": "Math with Science",
+    "theme_color": "#353535",
+    "background_color": "#353535",
+    "display": "standalone",
+    "scope": "/collections",
+    "start_url": "/collections",
+    "icons": [
+        {
+            "src": "images/logo/logo-white.png",
+            "sizes": "256x256",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/logo/logo72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "images/logo/logo96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "images/logo/logo128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "images/logo/logo144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "images/logo/logo152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "images/logo/logo192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "images/logo/logo256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "images/logo/logo512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
