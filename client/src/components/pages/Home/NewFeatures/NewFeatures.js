@@ -12,6 +12,10 @@ const componentContent = {
         kr: 'تایبەتمەندیە نوێکان',
     },
     features: [
+        {
+            en: 'Added PWA to the websire, now you can add it to home screen and it will work like an app from your device',
+            kr: 'زیادکردنی PWA بۆ وێبسایتەکە کە ئێستا ئەتوانیت وێبسایتەکە وەک ئەپلیکەیشةێکی ئامێرەکەت بەکاربهێنیت بە زیادکردنی بۆ ماڵەوە لە موبایلەکەت'
+        },
         { en: 'Added Kurdish language', kr: 'زیادکردنی زمانی کوردی' },
         { en: 'Added dark theme', kr: 'زیادکردنی دۆخی تاریک' },
         { en: 'Made the UI more user friendly', kr: 'ڕووکاری وێبسایتەکە زیاتر ئاسانکراوە بۆ بەکارهێنەر' },
