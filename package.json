@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/rawand-faraidun/mathwithscience#readme",
   "dependencies": {
-    "concurrently": "^6.2.0"
+    "concurrently": "^6.3.0"
   }
 }
