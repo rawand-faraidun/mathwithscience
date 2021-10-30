@@ -61,6 +61,17 @@
                         // each link
                         a {
                             margin: 1rem;
+
+                            // removing margin on first and last link
+                            &:first-child,
+                            &:last-child {
+                                margin: 0;
+                            }
+
+                            // adding margin between first and last link if there was only 2
+                            &:nth-child(2) {
+                                margin: 1rem;
+                            }
                         }
                     }
                 }

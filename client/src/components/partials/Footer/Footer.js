@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import './footer.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import languageHelper from '../helpers/Language'
 import Brand from '../Brand/Brand'
 import LanguageSelector from './LanguageSelector/LanguageSelector'
@@ -79,9 +79,6 @@ export default function Footer() {
 
                             {/* the social links after the links */}
                             <li className="link socials">
-                                <a href="https://www.instagram.com/mathwithscience/" target="_blank" rel="noreferrer" title="Math with Science on Instagram">
-                                    <FontAwesomeIcon icon={faInstagram} />
-                                </a>
                                 <a href="https://github.com/rawand-faraidun/mathwithscience" target="_blank" rel="noreferrer" title="Math with Science on Github">
                                     <FontAwesomeIcon icon={faGithub} />
                                 </a>
