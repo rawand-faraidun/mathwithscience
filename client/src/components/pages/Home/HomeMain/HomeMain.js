@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import './home-main.css'
-import Particles from 'react-particles-js'
+import Particles from 'react-tsparticles'
 import languageHelper from '../../../partials/helpers/Language'
 import SearchResult from './SearchResult/SearchResult'
 
@@ -33,6 +33,9 @@ export default function HomeMain() {
     // search text
     const [searchText, setSearchText] = useState('')
 
+    // determining if the particles are ready or not
+    const [particlesReady, setParticlesReady] = useState(false)
+
     // handling the inputs in search bar
     function handleSearch(e) {
         setSearchText(e.target.value)
@@ -56,14 +59,60 @@ export default function HomeMain() {
                 {/* animation background */}
                 <Particles
                     className="home-animation"
-                    params={{
+                    id="tsparticles"
+                    loaded={() => {
+                        setTimeout((container) => {
+                            // changing particles ready when they are generated
+                            setParticlesReady(true)
+                        }, 1)
+                    }}
+                    options={{
+                        fpsLimit: 60,
+                        interactivity: {
+                            events: {
+                                onClick: {
+                                    enable: true,
+                                    mode: "push",
+                                },
+                                resize: true,
+                            },
+                            modes: {
+                                push: {
+                                    quantity: 4,
+                                },
+                            },
+                        },
                         particles: {
+                            links: {
+                                distance: 150,
+                                enable: true,
+                                opacity: 0.5,
+                                width: 1,
+                            },
+                            collisions: {
+                                enable: true,
+                            },
+                            move: {
+                                direction: "none",
+                                enable: true,
+                                outMode: "bounce",
+                                random: false,
+                                speed: 1.3,
+                                straight: false,
+                            },
                             number: {
-                                value: 70,
                                 density: {
                                     enable: true,
-                                    value_area: 1000
-                                }
+                                    value_area: 1000,
+                                },
+                                value: 70,
+                                limit: 120
+                            },
+                            opacity: {
+                                value: 0.5,
+                            },
+                            shape: {
+                                type: "circle",
                             },
                             size: {
                                 value: 3,
@@ -73,11 +122,10 @@ export default function HomeMain() {
                                     speed: 3
                                 }
                             },
-                            move: {
-                                speed: 1.3
-                            }
-                        }
-                    }}
+                        },
+                        detectRetina: true,
+                    }
+                    }
                 />
 
 

@@ -17,6 +17,11 @@
         height: 33rem;
         background: #002d4d;
         z-index: -1;
+
+        // removing fixed positioning from the canvas
+        canvas {
+            position: relative !important;
+        }
     }
 
     // homepage search
