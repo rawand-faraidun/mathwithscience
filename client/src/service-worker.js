@@ -70,3 +70,12 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+
+// getting newest update if possible
+self.addEventListener('fetch', function (event) {
+  event.respondWith(
+    fetch(event.request).catch(function () {
+      return caches.match(event.request)
+    })
+  )
+})
