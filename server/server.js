@@ -25,7 +25,6 @@ mongoose.connect(
 )
     .then(console.log("!!DB CONEECTED!!"))
     .catch(err => { console.log(`!!!DATABASE CONNECTION ERROR: ${err}`) })
-mongoose.set("useCreateIndex", true)
 
 
 
