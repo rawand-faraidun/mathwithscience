@@ -62,8 +62,10 @@ export default function HomeMain() {
                     id="tsparticles"
                     loaded={() => {
                         setTimeout((container) => {
-                            // changing particles ready when they are generated
-                            setParticlesReady(true)
+                            // changing particlesReady state when they are generated
+                            // i could parse true i just use this conditions to stop react unused variable warning 😶
+                            setParticlesReady(!particlesReady ? true : true);
+                            // setParticlesReady(true);
                         }, 1)
                     }}
                     options={{
@@ -106,7 +108,8 @@ export default function HomeMain() {
                                     value_area: 1000,
                                 },
                                 value: 70,
-                                limit: 120
+                                // limiting the number of dots based of the width of the screen
+                                limit: Math.floor(window.innerWidth) < 1000 ? Math.floor(window.innerWidth / 7.5) : Math.floor(window.innerWidth / 20)
                             },
                             opacity: {
                                 value: 0.5,
