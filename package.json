@@ -27,7 +27,7 @@
     "url": "https://github.com/rawand-faraidun/mathwithscience/issues"
   },
   "homepage": "https://github.com/rawand-faraidun/mathwithscience#readme",
-  "dependencies": {
-    "concurrently": "^6.3.0"
+  "devDependencies": {
+    "concurrently": "^7.1.0"
   }
 }

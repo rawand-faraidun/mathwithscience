@@ -24,11 +24,11 @@
   },
   "homepage": "https://github.com/rawand-faraidun/mathwithscience#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^6.0.12",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.1",
     "path": "^0.12.7"
   }
 }
