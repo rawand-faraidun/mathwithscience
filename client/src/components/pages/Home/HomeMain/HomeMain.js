@@ -127,8 +127,8 @@ export default function HomeMain() {
                             },
                         },
                         detectRetina: true,
-                    }
-                    }
+                        fullScreen: { enable: false }
+                    }}
                 />
 
 
