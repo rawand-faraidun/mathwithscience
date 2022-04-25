@@ -3,7 +3,7 @@
     "short_name": "Math with Science",
     "theme_color": "#353535",
     "background_color": "#353535",
-    "display": "standalone",
+    "display": "fullscreen",
     "scope": "/collections",
     "start_url": "/collections",
     "icons": [
