@@ -29,6 +29,7 @@ export default function HomeMain() {
                         setTimeout((container) => {
                             // changing particlesReady state when they are generated
                             // i could parse true i just use this conditions to stop react unused variable warning 😶
+
                             setParticlesReady(!particlesReady ? true : true);
                             // setParticlesReady(true);
                         }, 1)
