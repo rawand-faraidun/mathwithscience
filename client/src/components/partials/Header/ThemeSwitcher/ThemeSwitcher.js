@@ -12,6 +12,11 @@ export default function ThemeSwitcher() {
     // theme state value is based on the user chossen theme color before
     const [themeState, setThemeState] = useState(localStorage.getItem('theme-color'))
 
+    // setting dark theme color if the user didint choose a theme color before
+    if (themeState === null) {
+        setThemeState('dark')
+    }
+
     // adding theme color property to the HTML
     document.documentElement.setAttribute('theme-color', themeState)
 
