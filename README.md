@@ -18,7 +18,7 @@ git clone https://github.com/rawand-faraidun/mathwithscience.git
 
 * Watch `.env.example` file in and make a `.env` file based on it.
 
-* Run `client-prebuild` and `server-prebuild` scripts, or read `README.md` file in [`server`](https://github.com/rawand-faraidun/mathwithscience/tree/main/server#readme) and [`client`](https://github.com/rawand-faraidun/mathwithscience/tree/main/client#readme) folders to know more about the project's function.
+* Run `pre-build` script, or read `README.md` file in [`server`](https://github.com/rawand-faraidun/mathwithscience/tree/main/server#readme) and [`client`](https://github.com/rawand-faraidun/mathwithscience/tree/main/client#readme) folders to know more about the project's function.
 
 ### The project can be run these ways:
 
