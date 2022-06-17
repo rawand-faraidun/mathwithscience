@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 
 import languageHelper from './components/partials/helpers/Language'
 import ScrollToTop from './components/partials/helpers/ScrollToTop'
@@ -55,72 +55,47 @@ export default function App() {
 
 
                 {/* routes switch */}
-                <Switch>
+                <Routes>
+
+                    {/* 404 route, it shows current pathname not match any route */}
+                    <Route path="*"
+                        element={<NotFound404 invailedUrl={'this-path'} customButton={{ name: 'Calculators', url: '/calculators' }} />}
+                    />
+
 
                     {/* Home route */}
-                    <Route path="/" exact >
-                        <Home />
-                    </Route>
+                    <Route path="/" element={<Home />} />
 
 
                     {/* Collections route */}
-                    <Route
-                        path=
-                        {[
-                            "/collections",
-                            "/collections/:collectionUrlName",
-                            "/collections/:collectionUrlName/:calculatorUrlName"
-                        ]}
-                        exact
-                    >
-                        <CollectionsRoutes />
-                    </Route>
+                    <Route path="/collections" element={<CollectionsRoutes />} />
+                    <Route path="/collections/:collectionUrlName" element={<CollectionsRoutes />} />
+                    <Route path="/collections/:collectionUrlName/:calculatorUrlName" element={<CollectionsRoutes />} />
 
 
                     {/* Calculators route */}
-                    <Route
-                        path=
-                        {[
-                            "/calculators",
-                            "/calculators/:calculatorUrlName"
-                        ]}
-                        exact
-                    >
-                        <CalculatorsRoutes />
-                    </Route>
+                    <Route path="/calculators" element={<CalculatorsRoutes />} />
+                    <Route path="/calculators/:calculatorUrlName" element={<CalculatorsRoutes />} />
 
 
                     {/* search route */}
-                    <Redirect from="/search" to="/" exact />
-                    <Route path="/search/:searchText" exact >
-                        <Search />
-                    </Route>
+                    <Route path="/search" element={<Navigate to="/" replace />} />
+                    <Route path="/search/:searchText" element={<Search />} />
 
 
                     {/* about route */}
-                    <Route path={["/about", "/about-us"]} exact >
-                        <About />
-                    </Route>
+                    <Route path="/about" element={<About />} />
+                    <Route path="/about-us" element={<About />} />
 
 
                     {/* contact route */}
-                    <Route path="/contact" exact >
-                        <Contact />
-                    </Route>
+                    <Route path="/contact" element={<Contact />} />
 
 
                     {/* privacy policy route */}
-                    <Route path="/privacy-policy" exact >
-                        <PrivacyPolicy />
-                    </Route>
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-
-                    {/* 404 route, it shows current pathname not match any route */}
-                    <Route>
-                        <NotFound404 invailedUrl={'this-path'} customButton={{ name: 'Calculators', url: '/calculators' }} />
-                    </Route>
-
-                </Switch>
+                </Routes>
 
 
                 {/* <div style={{ position: 'absolute', top: '2000px', height: '40px', width: '100%' }}>aaa</div> */}

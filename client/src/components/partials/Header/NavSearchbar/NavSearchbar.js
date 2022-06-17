@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 import './nav-searchbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,7 +13,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 export default function NavSearchbar() {
 
     // getting history reference
-    const history = useHistory()
+    const navigate = useNavigate()
     // checking if the user is in home page, this element is not shown in homepage header
     const thisPath = useLocation().pathname
 
@@ -29,7 +29,7 @@ export default function NavSearchbar() {
     // listening to pressing enter, it will redirect user to search route
     function acceptSearchOnEnter(e) {
         if (e.keyCode === 13 && searchText !== '') { // enter keycode
-            history.push(`/search/${searchText}`)
+            navigate(`/search/${searchText}`)
             setSearchText('')
         }
     }
@@ -37,7 +37,7 @@ export default function NavSearchbar() {
     // click on search icon redirects to search route
     function acceptSearchByIcon(e) {
         if (searchText !== '') {
-            history.push(`/search/${searchText}`)
+            navigate(`/search/${searchText}`)
             setSearchText('')
         }
     }

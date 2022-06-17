@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import SearchResult from './SearchResult/SearchResult'
 
 import languageHelper from '../../../partials/helpers/Language'
@@ -25,8 +25,8 @@ const componentContent = {
  */
 export default function SearchContainer() {
 
-    // getting history reference
-    const history = useHistory()
+    // getting navigate reference
+    const navigate = useNavigate()
 
     // search text
     const [searchText, setSearchText] = useState('')
@@ -39,7 +39,7 @@ export default function SearchContainer() {
     // listening to pressing enter, it will redirect user to search route
     function acceptSearchOnEnter(e) {
         if (e.keyCode === 13 && searchText !== '') { // enter keycode
-            history.push(`/search/${searchText}`)
+            navigate(`/search/${searchText}`)
             setSearchText('')
         }
     }
