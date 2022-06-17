@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Particles from 'react-tsparticles'
+import { loadFull } from "tsparticles"
 
 import './home-main.css'
 import SearchContainer from './SearchContainer'
@@ -11,8 +12,14 @@ import SearchContainer from './SearchContainer'
  */
 export default function HomeMain() {
 
-    // determining if the particles are ready or not
-    const [particlesReady, setParticlesReady] = useState(false)
+    const particlesInit = async (main) => {
+        // console.log(main);
+        await loadFull(main);
+    };
+
+    const particlesLoaded = (container) => {
+        // console.log(container);
+    };
 
 
     return (
@@ -25,15 +32,8 @@ export default function HomeMain() {
                 <Particles
                     className="home-animation"
                     id="tsparticles"
-                    loaded={() => {
-                        setTimeout((container) => {
-                            // changing particlesReady state when they are generated
-                            // i could parse true i just use this conditions to stop react unused variable warning 😶
-
-                            setParticlesReady(!particlesReady ? true : true);
-                            // setParticlesReady(true);
-                        }, 1)
-                    }}
+                    init={particlesInit}
+                    loaded={particlesLoaded}
                     options={{
                         fpsLimit: 60,
                         interactivity: {
