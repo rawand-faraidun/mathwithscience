@@ -10,7 +10,8 @@
     "client": "cd client && npm start",
     "client-build": "cd client && npm run build",
     "dev": "concurrently -n SERVER,CLIENT -c green,blue \"cd server && npm run dev\" \"cd client && npm start\"",
-    "heroku-prebuild": "cd server && npm run prebuild && cd ../client && npm run build"
+    "pre-build": "cd server && npm run prebuild && cd ../client && npm run build",
+    "heroku-prebuild": "npm run pre-build"
   },
   "repository": {
     "type": "git",
