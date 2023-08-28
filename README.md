@@ -1,9 +1,9 @@
-# [Math with Science](https://www.mathwithscience.com/)
+# Math with Science
 Math with Science is an open-source MERN project that contains math and science problem solvers and the goal is to help anyone struggling with any math problems.	
 
 <br />
 
-![Math with Science brand logo](https://mathwithscience.com/images/Logo-long.jpg)
+![Math with Science brand logo](https://raw.githubusercontent.com/rawand-faraidun/mathwithscience/main/client/public/images/Logo-long.jpg)
 
 ## installation
 
@@ -43,26 +43,3 @@ run client:
 ```npm
 npm run client
 ```
-
-## Contribution
-Contributions are always welcome.  
-**any contribution is being reviewed and tested before acceptng it**.
-
-In general, we are looking for these kind of contributions:
-
-* Adding new features *(example: new calculators, new branches(new branches must have atlease one calculator), new languages)*.
-
-* Improving excisting features *(example: improvements in the functionality, improvment in rendering elements, simplifing the functionality)*.
-
-* fixing comments *all components are written only by me and I expect mistakes in their comments*.
-
-* If you want to contribute but not sure about it, or if they fit in these points, don't worry about it because they are only just what we are looking for in this moment, but we appreciate any imporovment.
-
-Don't know how to contribute? read these articles:  
-https://www.dataschool.io/how-to-contribute-on-github/   
-https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/
-
-<br />
-
-## LICENSE : MIT
-https://github.com/rawand-faraidun/mathwithscience/blob/main/LICENSE
